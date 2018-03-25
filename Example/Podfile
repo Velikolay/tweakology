@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'tweakology_Example' do
+  pod 'tweakology', :path => '../'
+
+  target 'tweakology_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
