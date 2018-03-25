@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		05A80A76965C8FD19DBF5E66 /* Pods_tweakology_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E46DB995601DDB2491AE2 /* Pods_tweakology_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACD81AFB9204008FA782 /* TweakologyDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* TweakologyDemoViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		615E889EC680F2845B0D2D74 /* Pods_tweakology_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60944201D0E2E9D30D3BB3B /* Pods_tweakology_Example.framework */; };
+		A2416B2020683536009B1636 /* TweakologyDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2416B1F20683536009B1636 /* TweakologyDemoView.swift */; };
+		A2FDDECF20683F8600A5E170 /* TweakologyUIExperimentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDDECE20683F8600A5E170 /* TweakologyUIExperimentConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +29,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003EAB3864645EC7D6BF7F06 /* tweakology.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = tweakology.podspec; path = ../tweakology.podspec; sourceTree = "<group>"; };
+		003EAB3864645EC7D6BF7F06 /* tweakology.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = tweakology.podspec; path = ../tweakology.podspec; sourceTree = "<group>"; };
 		50F3B7D5B05E5EDF0A6D4C73 /* Pods-tweakology_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweakology_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* tweakology_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweakology_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* TweakologyDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakologyDemoViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* tweakology_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tweakology_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6138DA722BA2DC5CA4D6B621 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6138DA722BA2DC5CA4D6B621 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		74BF5A7CCFD0EC49AE3A9727 /* Pods-tweakology_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweakology_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		77EA9B39E1B60C58B5CAD0E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		77EA9B39E1B60C58B5CAD0E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A2416B1F20683536009B1636 /* TweakologyDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakologyDemoView.swift; sourceTree = "<group>"; };
+		A2FDDECE20683F8600A5E170 /* TweakologyUIExperimentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakologyUIExperimentConfig.swift; sourceTree = "<group>"; };
 		AAF7FDB221AE11B2BA052E36 /* Pods-tweakology_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweakology_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B37E46DB995601DDB2491AE2 /* Pods_tweakology_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweakology_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3A9F3609220FF6EC6F7FB8 /* Pods-tweakology_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweakology_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,8 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACD71AFB9204008FA782 /* TweakologyDemoViewController.swift */,
+				A2416B1F20683536009B1636 /* TweakologyDemoView.swift */,
+				A2FDDECE20683F8600A5E170 /* TweakologyUIExperimentConfig.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -248,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -361,7 +363,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				A2FDDECF20683F8600A5E170 /* TweakologyUIExperimentConfig.swift in Sources */,
+				A2416B2020683536009B1636 /* TweakologyDemoView.swift in Sources */,
+				607FACD81AFB9204008FA782 /* TweakologyDemoViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

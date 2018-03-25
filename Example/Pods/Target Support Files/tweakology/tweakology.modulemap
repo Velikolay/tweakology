@@ -1,0 +1,6 @@
+framework module tweakology {
+  umbrella header "tweakology-umbrella.h"
+
+  export *
+  module * { export * }
+}

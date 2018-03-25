@@ -1,0 +1,16 @@
+PODS:
+  - tweakology (0.1.0)
+
+DEPENDENCIES:
+  - tweakology (from `../`)
+
+EXTERNAL SOURCES:
+  tweakology:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  tweakology: d6b49cbc0f1d411b6b83652e5ca5defad34354bb
+
+PODFILE CHECKSUM: 4fb3c8f0dd46af5ba1d3f21b5c7cc73c96062bb4
+
+COCOAPODS: 1.2.1

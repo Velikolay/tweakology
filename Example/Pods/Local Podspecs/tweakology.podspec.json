@@ -1,0 +1,22 @@
+{
+  "name": "tweakology",
+  "version": "0.1.0",
+  "summary": "A short description of tweakology.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Nikolay Ivanov/tweakology",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Nikolay Ivanov": "felinephonix@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Nikolay Ivanov/tweakology.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "tweakology/Classes/**/*"
+}
