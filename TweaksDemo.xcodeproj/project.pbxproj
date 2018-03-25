@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A2CA79232055D25000CA745B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79222055D25000CA745B /* AppDelegate.swift */; };
-		A2CA79252055D25000CA745B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79242055D25000CA745B /* ViewController.swift */; };
-		A2CA79282055D25000CA745B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CA79262055D25000CA745B /* Main.storyboard */; };
+		A2CA79252055D25000CA745B /* TweaksDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79242055D25000CA745B /* TweaksDemoViewController.swift */; };
 		A2CA792A2055D25000CA745B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CA79292055D25000CA745B /* Assets.xcassets */; };
 		A2CA792D2055D25000CA745B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CA792B2055D25000CA745B /* LaunchScreen.storyboard */; };
 		A2CA79382055D25000CA745B /* TweaksDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79372055D25000CA745B /* TweaksDemoTests.swift */; };
+		A2CA79432055DD9F00CA745B /* TweaksDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79422055DD9F00CA745B /* TweaksDemoView.swift */; };
+		A2CA79452057F26B00CA745B /* TweaksLayoutInspectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA79442057F26B00CA745B /* TweaksLayoutInspectorProtocol.swift */; };
+		A2CA794720580BE500CA745B /* UIViewController+TweaksLayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA794620580BE500CA745B /* UIViewController+TweaksLayoutInspector.swift */; };
+		A2CA794920582AB400CA745B /* UIExperimentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA794820582AB400CA745B /* UIExperimentConfig.swift */; };
+		A2CA794B2058454C00CA745B /* TweaksUIConfigProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA794A2058454C00CA745B /* TweaksUIConfigProtocols.swift */; };
+		A2CA794D2058906200CA745B /* TweaksUIConfigEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA794C2058906200CA745B /* TweaksUIConfigEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +33,19 @@
 /* Begin PBXFileReference section */
 		A2CA791F2055D25000CA745B /* TweaksDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweaksDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CA79222055D25000CA745B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2CA79242055D25000CA745B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A2CA79272055D25000CA745B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2CA79242055D25000CA745B /* TweaksDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksDemoViewController.swift; sourceTree = "<group>"; };
 		A2CA79292055D25000CA745B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2CA792C2055D25000CA745B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2CA792E2055D25000CA745B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2CA79332055D25000CA745B /* TweaksDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweaksDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CA79372055D25000CA745B /* TweaksDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksDemoTests.swift; sourceTree = "<group>"; };
 		A2CA79392055D25000CA745B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CA79422055DD9F00CA745B /* TweaksDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksDemoView.swift; sourceTree = "<group>"; };
+		A2CA79442057F26B00CA745B /* TweaksLayoutInspectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksLayoutInspectorProtocol.swift; sourceTree = "<group>"; };
+		A2CA794620580BE500CA745B /* UIViewController+TweaksLayoutInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TweaksLayoutInspector.swift"; sourceTree = "<group>"; };
+		A2CA794820582AB400CA745B /* UIExperimentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExperimentConfig.swift; sourceTree = "<group>"; };
+		A2CA794A2058454C00CA745B /* TweaksUIConfigProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksUIConfigProtocols.swift; sourceTree = "<group>"; };
+		A2CA794C2058906200CA745B /* TweaksUIConfigEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksUIConfigEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +88,16 @@
 			isa = PBXGroup;
 			children = (
 				A2CA79222055D25000CA745B /* AppDelegate.swift */,
-				A2CA79242055D25000CA745B /* ViewController.swift */,
-				A2CA79262055D25000CA745B /* Main.storyboard */,
+				A2CA79242055D25000CA745B /* TweaksDemoViewController.swift */,
+				A2CA79422055DD9F00CA745B /* TweaksDemoView.swift */,
 				A2CA79292055D25000CA745B /* Assets.xcassets */,
 				A2CA792B2055D25000CA745B /* LaunchScreen.storyboard */,
 				A2CA792E2055D25000CA745B /* Info.plist */,
+				A2CA79442057F26B00CA745B /* TweaksLayoutInspectorProtocol.swift */,
+				A2CA794620580BE500CA745B /* UIViewController+TweaksLayoutInspector.swift */,
+				A2CA794C2058906200CA745B /* TweaksUIConfigEngine.swift */,
+				A2CA794820582AB400CA745B /* UIExperimentConfig.swift */,
+				A2CA794A2058454C00CA745B /* TweaksUIConfigProtocols.swift */,
 			);
 			path = TweaksDemo;
 			sourceTree = "<group>";
@@ -181,7 +196,6 @@
 			files = (
 				A2CA792D2055D25000CA745B /* LaunchScreen.storyboard in Resources */,
 				A2CA792A2055D25000CA745B /* Assets.xcassets in Resources */,
-				A2CA79282055D25000CA745B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +213,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2CA79252055D25000CA745B /* ViewController.swift in Sources */,
+				A2CA79432055DD9F00CA745B /* TweaksDemoView.swift in Sources */,
+				A2CA79252055D25000CA745B /* TweaksDemoViewController.swift in Sources */,
+				A2CA794920582AB400CA745B /* UIExperimentConfig.swift in Sources */,
+				A2CA794B2058454C00CA745B /* TweaksUIConfigProtocols.swift in Sources */,
+				A2CA79452057F26B00CA745B /* TweaksLayoutInspectorProtocol.swift in Sources */,
+				A2CA794720580BE500CA745B /* UIViewController+TweaksLayoutInspector.swift in Sources */,
+				A2CA794D2058906200CA745B /* TweaksUIConfigEngine.swift in Sources */,
 				A2CA79232055D25000CA745B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,14 +243,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A2CA79262055D25000CA745B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2CA79272055D25000CA745B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A2CA792B2055D25000CA745B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
