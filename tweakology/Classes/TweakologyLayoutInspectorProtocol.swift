@@ -12,7 +12,7 @@ public struct IndexedView {
     var parentId: String
     var isTerminal: Bool
     var type: String
-    var view: UIView
+    public var view: UIView
 }
 
 public protocol TweakologyLayoutInspectorProtocol {

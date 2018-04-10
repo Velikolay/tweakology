@@ -28,6 +28,11 @@ extension UIViewController: TweakologyLayoutInspectorProtocol {
                     //                    print(viewType, "subview")
                     //                    print(viewType, "constraints:", uiButton.constraints)
                     //                    print(viewType, "constraints:", uiButton.superview!.constraints)
+                } else if let uiImageView = view as? UIImageView {
+                    viewIndex[String(viewId)] = IndexedView(id: String(viewId), parentId: String(parentId), isTerminal: true, type: "UIImageView", view: uiImageView)
+                    //                    print(viewType, "subview")
+                    //                    print(viewType, "constraints:", uiButton.constraints)
+                    //                    print(viewType, "constraints:", uiButton.superview!.constraints)
                 } else {
                     // compound view
                     viewIndex[String(viewId)] = IndexedView(id: String(viewId), parentId: String(parentId), isTerminal: false, type: "UIView", view: view)
@@ -36,7 +41,7 @@ extension UIViewController: TweakologyLayoutInspectorProtocol {
             }
         }
     }
-    
+
     private func typeNameOf(object: Any) -> String {
         let thisType = type(of: object)
         return String(describing: thisType)

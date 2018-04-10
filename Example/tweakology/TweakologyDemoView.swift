@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class TweakologyDemoView: UIView {
+    weak var delegate:TweakologyDemoViewController?
+
     var label: UILabel = UILabel()
     var button: UIButton = UIButton()
     
@@ -37,7 +39,7 @@ class TweakologyDemoView: UIView {
         button.addTarget(self, action: #selector(self.pressButton(_:)), for: UIControlEvents.touchUpInside)
         self.addSubview(button)
     }
-    
+
     func setConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -53,6 +55,6 @@ class TweakologyDemoView: UIView {
     }
     
     @objc func pressButton(_ sender: UIButton) {
-        print("Button pressed!")
+        self.delegate?.pressButton(sender)
     }
 }

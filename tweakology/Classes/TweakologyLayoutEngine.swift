@@ -152,7 +152,7 @@ public class TweakologyLayoutEngine {
     private func setUIViewObjectConstraints(viewIndex: inout ViewIndex, viewConfig: [String: Any], view: UIView, modify: Bool) {
         if let constraints = viewConfig["constraints"] as? [String: String] {
             view.translatesAutoresizingMaskIntoConstraints = false
-            
+
             for (anchor, val) in constraints {
                 let tokens = parseExpression(expr: val)
                 let relativeViewId = tokens[0]
