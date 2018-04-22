@@ -38,8 +38,16 @@ extension UIView {
         }
         set { associateObject(base: self, key: &imageKey, value: newValue) }
     }
-    
+
     public func recursiveRender() {
+        self.nonRecursiveRender()
+
+        for view in self.subviews {
+            view.recursiveRender()
+        }
+    }
+
+    public func nonRecursiveRender() {
         for view in self.subviews {
             view.isHidden = true
         }
@@ -49,13 +57,9 @@ extension UIView {
         for view in self.subviews {
             view.isHidden = false
         }
-
-        for view in self.subviews {
-            view.recursiveRender()
-        }
     }
 
-    private func renderImage() -> UIImage? {
+    public func renderImage() -> UIImage? {
         if #available(iOS 10.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: self.bounds)
             return renderer.image { rendererContext in

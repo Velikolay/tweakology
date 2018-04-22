@@ -31,7 +31,9 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'tweakology/Classes/**/*'
-  
+
+  s.dependency 'GCDWebServer', '~> 3.0'  
+  s.dependency 'ObjectMapper', '~> 3.1'
   # s.resource_bundles = {
   #   'tweakology' => ['tweakology/Assets/*.png']
   # }

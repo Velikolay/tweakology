@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import tweakology
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tweakologyAgent: TweakologyAgent?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController.view.backgroundColor = UIColor.white
         window!.rootViewController = rootViewController
         window!.makeKeyAndVisible()
+        tweakologyAgent = TweakologyAgent()
+        tweakologyAgent?.start()
         return true
     }
 

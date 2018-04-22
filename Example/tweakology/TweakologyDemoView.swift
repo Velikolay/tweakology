@@ -29,6 +29,7 @@ class TweakologyDemoView: UIView {
         self.backgroundColor = UIColor.brown
         
         label.backgroundColor = UIColor.green
+        label.tag = 2;
         label.textAlignment = NSTextAlignment.center
         label.text = "test label"
         label.textColor = UIColor.black
