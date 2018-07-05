@@ -58,7 +58,7 @@ let changeSeq: [[String: Any]] = [
                 "titleColor": "red",
             ],
             "layer": [
-                "borderColor": "black",
+                "borderColor": "#b3ff26",
                 "borderWidth": 4.0,
                 "cornerRadius": 16
             ]

@@ -80,11 +80,11 @@ public class TweakologyLayoutEngine {
                 !self.setUIButtonSpecificProperty(view: view, key: key, value: val) {
                 if let valStr = val as? String {
                     if (view.value(forKey: key) as? UIColor) != nil {
-                        if let color = toUIColor(colorName: valStr) {
+                        if let color = toUIColor(colorValue: valStr) {
                             view.setValue(color, forKey: key)
                         }
                     } else if(CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
-                        if let color = toUIColor(colorName: valStr) {
+                        if let color = toUIColor(colorValue: valStr) {
                             view.setValue(color.cgColor, forKey: key)
                         }
                     } else {
@@ -116,7 +116,7 @@ public class TweakologyLayoutEngine {
             if key == "title" {
                 buttonView.setTitle(value as? String, for: UIControlState.normal)
                 return true
-            } else if key == "titleColor", let color = toUIColor(colorName: value as! String) {
+            } else if key == "titleColor", let color = toUIColor(colorValue: value as! String) {
                 buttonView.setTitleColor(color, for:  UIControlState.normal)
                 return true
             }
@@ -129,11 +129,11 @@ public class TweakologyLayoutEngine {
         for (key, val) in layerConfig {
             if let valStr = val as? String {
                 if (layer.value(forKey: key) as? UIColor) != nil {
-                    if let color = toUIColor(colorName: valStr) {
+                    if let color = toUIColor(colorValue: valStr) {
                         layer.setValue(color, forKey: key)
                     }
                 } else if(CFGetTypeID(layer.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
-                    if let color = toUIColor(colorName: valStr) {
+                    if let color = toUIColor(colorValue: valStr) {
                         layer.setValue(color.cgColor, forKey: key)
                     }
                 } else {
@@ -322,21 +322,42 @@ func stringClassFromString(_ className: String) -> AnyClass! {
     return cls;
 }
 
-func toUIColor(colorName: String) -> UIColor? {
-    if colorName == "black" {
+func toUIColor(colorValue: String) -> UIColor? {
+    let hexColorPattern = "^#([0-9a-f]{6})$"
+    if colorValue.range(of: hexColorPattern, options: .regularExpression, range: nil, locale: nil) != nil {
+        return colorFromHex(hexColor: colorValue)
+    } else if colorValue == "black" {
         return UIColor.black
-    } else if colorName == "white" {
+    } else if colorValue == "white" {
         return UIColor.white
-    } else if colorName == "green" {
+    } else if colorValue == "green" {
         return UIColor.green
-    } else if colorName == "brown" {
+    } else if colorValue == "brown" {
         return UIColor.brown
-    } else if colorName == "blue" {
+    } else if colorValue == "blue" {
         return UIColor.blue
-    }  else if colorName == "red" {
+    }  else if colorValue == "red" {
         return UIColor.red
     }
     return nil
+}
+
+func colorFromHex(hexColor: String) -> UIColor {
+    let hex = hexColor.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+    var int = UInt32()
+    Scanner(string: hex).scanHexInt32(&int)
+    let a, r, g, b: UInt32
+    switch hex.characters.count {
+    case 3: // RGB (12-bit)
+        (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+    case 6: // RGB (24-bit)
+        (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+    case 8: // ARGB (32-bit)
+        (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+    default:
+        return .clear
+    }
+    return UIColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
 }
 
 func toNSTextAlignment(alignment: String) -> NSTextAlignment? {
