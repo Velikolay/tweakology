@@ -13,7 +13,7 @@ let changeSeq: [[String: Any]] = [
         "operation": "insert",
         "view" : [
             "id": "ZDZiNTY5ZW",
-            "parentId": "MGQ3MDAyZD",
+            "superview": "MGQ3MDAyZD",
             "index": 2,
             "type": "UILabel",
             "props" : [
@@ -23,9 +23,9 @@ let changeSeq: [[String: Any]] = [
                 "backgroundColor": "red"
             ],
             "constraints": [
-                "topAnchor": "$(MGQ3MDAyZD) + 20",
-                "leadingAnchor": "$(MGQ3MDAyZD) + 20",
-                "trailingAnchor": "$(MGQ3MDAyZD) - 20",
+                "topAnchor": "$(superview) + 20",
+                "leadingAnchor": "$(superview) + 20",
+                "trailingAnchor": "$(superview) - 20",
                 "heightAnchor": "60"
             ]
         ]
@@ -44,7 +44,7 @@ let changeSeq: [[String: Any]] = [
         "view": [
             "id": "MGQ3MDAyZD",
             "frame": [
-                "height": "$(MGQ3MDAyZD) - 20"
+                "height": "$(self) - 20"
             ]
         ]
     ],

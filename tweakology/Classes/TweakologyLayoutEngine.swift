@@ -30,12 +30,12 @@ public class TweakologyLayoutEngine {
 
     private func handleUIViewInsert(viewIndex: inout ViewIndex, change: [String: Any]) {
         let viewConfig = dictVal(dict: change, key: "view")
-        let parentId = strVal(dict: viewConfig, key: "parentId")
-        if let parentView = viewIndex[parentId] {
+        let superviewId = strVal(dict: viewConfig, key: "superview")
+        if let superview = viewIndex[superviewId] {
             let viewId = strVal(dict: viewConfig, key: "id")
             let viewType = strVal(dict: viewConfig, key: "type")
             let view = self.createUIViewObject(viewConfig: viewConfig)
-            parentView.view.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
+            superview.view.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
             self.setUIViewObjectConstraints(viewIndex: &viewIndex, viewConfig: viewConfig, view: view, modify: false)
             viewIndex[viewId] = IndexedView(id: viewId, isTerminal: true, type: viewType, view: view)
         }
@@ -153,48 +153,58 @@ public class TweakologyLayoutEngine {
         if let constraints = viewConfig["constraints"] as? [String: String] {
             view.translatesAutoresizingMaskIntoConstraints = false
 
-            for (anchor, val) in constraints {
+            for (attr, val) in constraints {
                 let tokens = parseExpression(expr: val)
-                let relativeViewId = tokens[0]
-                var relativeViewAnchor = tokens[1]
-                if relativeViewAnchor.isEmpty {
-                    relativeViewAnchor = anchor
+                let secondViewId = tokens[0]
+                var secondViewAttribute = tokens[1]
+                if secondViewAttribute.isEmpty {
+                    secondViewAttribute = attr
                 }
                 guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
-                
-                if relativeViewId.isEmpty {
-                    if let layoutAnchor = view.value(forKey: anchor) as? NSLayoutDimension {
+
+                if secondViewId.isEmpty {
+                    if let layoutAttribute = view.value(forKey: attr) as? NSLayoutDimension {
                         if (modify) {
-                            if let constraint = view.constraints.filter({ $0.firstAnchor == layoutAnchor }).first { // assuming it's only one
+                            if let constraint = view.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
                                 constraint.isActive = false
                             }
                         }
-                        layoutAnchor.constraint(equalToConstant: CGFloat(truncating: constant)).isActive = true
+                        layoutAttribute.constraint(equalToConstant: CGFloat(truncating: constant)).isActive = true
                     }
                 } else {
-                    if let relativeView = viewIndex[relativeViewId]?.view {
-                        if let layoutAnchor = view.value(forKey: anchor) as? NSLayoutAnchor<NSLayoutXAxisAnchor> {
-                            let relativeAnchor = relativeView.value(forKey: relativeViewAnchor) as! NSLayoutAnchor<NSLayoutXAxisAnchor>
+                    if let secondView = self.viewWith(id: secondViewId, viewIndex: &viewIndex, view: view) {
+                        if let layoutAttribute = view.value(forKey: attr) as? NSLayoutAnchor<NSLayoutXAxisAnchor> {
+                            let relativeAnchor = secondView.value(forKey: secondViewAttribute) as! NSLayoutAnchor<NSLayoutXAxisAnchor>
                             if (modify) {
-                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAnchor }).first { // assuming it's only one
+                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
                                     constraint.isActive = false
                                 }
                             }
-                            layoutAnchor.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
+                            layoutAttribute.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
                         }
                         
-                        if let layoutAnchor = view.value(forKey: anchor) as? NSLayoutAnchor<NSLayoutYAxisAnchor> {
-                            let relativeAnchor = relativeView.value(forKey: relativeViewAnchor) as! NSLayoutAnchor<NSLayoutYAxisAnchor>
+                        if let layoutAttribute = view.value(forKey: attr) as? NSLayoutAnchor<NSLayoutYAxisAnchor> {
+                            let relativeAnchor = secondView.value(forKey: secondViewAttribute) as! NSLayoutAnchor<NSLayoutYAxisAnchor>
                             if (modify) {
-                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAnchor }).first { // assuming it's only one
+                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
                                     constraint.isActive = false
                                 }
                             }
-                            layoutAnchor.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
+                            layoutAttribute.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
                         }
                     }
                 }
             }
+        }
+    }
+    
+    private func viewWith(id: String, viewIndex: inout ViewIndex, view: UIView) -> UIView? {
+        if id == "self" {
+            return view;
+        } else if id == "superview" {
+            return view.superview;
+        } else {
+            return viewIndex[id]?.view
         }
     }
 
@@ -218,29 +228,33 @@ public class TweakologyLayoutEngine {
             var height = view.frame.height
             var width = view.frame.width
             
-            for (prop, val) in frameConfig {
+            for (attr, val) in frameConfig {
                 let tokens = parseExpression(expr: val)
                 let secondViewId = tokens[0]
-                var secondViewProperty = tokens[1]
-                if secondViewProperty.isEmpty {
-                    secondViewProperty = prop
+                var secondViewAttribute = tokens[1]
+
+                if secondViewAttribute.isEmpty {
+                    secondViewAttribute = attr
                 }
+
                 guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
                 var propVal = CGFloat(truncating: constant)
+
                 if !secondViewId.isEmpty {
-                    if let secondView = viewIndex[secondViewId]?.view {
-                        if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewProperty) {
+                    if let secondView = self.viewWith(id: secondViewId, viewIndex: &viewIndex, view: view) {
+                        if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewAttribute) {
                             propVal += secondViewPropVal
                         }
                     }
                 }
-                if prop == "height" {
+
+                if attr == "height" {
                     height = propVal
-                } else if prop == "width" {
+                } else if attr == "width" {
                     width = propVal
-                } else if prop == "x" {
+                } else if attr == "x" {
                     x = propVal
-                } else if prop == "y" {
+                } else if attr == "y" {
                     y = propVal
                 }
             }
@@ -251,45 +265,45 @@ public class TweakologyLayoutEngine {
 
 func parseExpression(expr: String) -> [String] {
     do {
-        let base64Matcher = "[A-Za-z0-9+/=]+"
-        let relativeViewOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\) ([+-]) ([1-9][0-9]*)$")
-        let relativeViewOffsetResults = relativeViewOffsetRegex.matches(in: expr,
+        let viewMatcher = "self|superview|[A-Za-z0-9+/=]+"
+        let secondViewOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\) ([+-]) ([1-9][0-9]*)$")
+        let secondViewOffsetResults = secondViewOffsetRegex.matches(in: expr,
                                                                         range: NSRange(expr.startIndex..., in: expr))
-        if relativeViewOffsetResults.count > 0 {
-            let sign = String(expr[Range(relativeViewOffsetResults[0].range(at: 2), in: expr)!])
-            var constant = String(expr[Range(relativeViewOffsetResults[0].range(at: 3), in: expr)!])
+        if secondViewOffsetResults.count > 0 {
+            let sign = String(expr[Range(secondViewOffsetResults[0].range(at: 2), in: expr)!])
+            var constant = String(expr[Range(secondViewOffsetResults[0].range(at: 3), in: expr)!])
             if (sign == "-") {
                 constant = "-" + constant
             }
-            return [String(expr[Range(relativeViewOffsetResults[0].range(at: 1), in: expr)!]), "", constant]
+            return [String(expr[Range(secondViewOffsetResults[0].range(at: 1), in: expr)!]), "", constant]
         }
         
-        let relativeViewAnchorOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)\\.([A-z]+) ([+-]) ([1-9][0-9]*)$")
-        let relativeViewAnchorOffsetResults = relativeViewAnchorOffsetRegex.matches(in: expr,
+        let secondViewAnchorOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)\\.([A-z]+) ([+-]) ([1-9][0-9]*)$")
+        let secondViewAnchorOffsetResults = secondViewAnchorOffsetRegex.matches(in: expr,
                                                                                     range: NSRange(expr.startIndex..., in: expr))
-        if relativeViewAnchorOffsetResults.count > 0 {
-            let sign = String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 3), in: expr)!])
-            var constant = String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 4), in: expr)!])
+        if secondViewAnchorOffsetResults.count > 0 {
+            let sign = String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 3), in: expr)!])
+            var constant = String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 4), in: expr)!])
             if (sign == "-") {
                 constant = "-" + constant
             }
-            return [String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 1), in: expr)!]), String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 2), in: expr)!]), constant]
+            return [String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 1), in: expr)!]), String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 2), in: expr)!]), constant]
         }
         
-        let relativeViewNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)$")
-        let relativeViewNoOffsetResult = relativeViewNoOffsetRegex.matches(in: expr,
+        let secondViewNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)$")
+        let secondViewNoOffsetResult = secondViewNoOffsetRegex.matches(in: expr,
                                                                            range: NSRange(expr.startIndex..., in: expr))
-        if relativeViewNoOffsetResult.count > 0 {
-            return [String(expr[Range(relativeViewNoOffsetResult[0].range(at: 1), in: expr)!]), "", "0"]
+        if secondViewNoOffsetResult.count > 0 {
+            return [String(expr[Range(secondViewNoOffsetResult[0].range(at: 1), in: expr)!]), "", "0"]
         }
         
-        let relativeViewAnchorNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)\\.([A-z]+)$")
-        let relativeViewAnchorNoOffsetResult = relativeViewAnchorNoOffsetRegex.matches(in: expr,
+        let secondViewAnchorNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)\\.([A-z]+)$")
+        let secondViewAnchorNoOffsetResult = secondViewAnchorNoOffsetRegex.matches(in: expr,
                                                                                        range: NSRange(expr.startIndex..., in: expr))
-        if relativeViewAnchorNoOffsetResult.count > 0 {
-            return [String(expr[Range(relativeViewAnchorNoOffsetResult[0].range(at: 1), in: expr)!]), String(expr[Range(relativeViewAnchorNoOffsetResult[0].range(at: 2), in: expr)!]), "0"]
+        if secondViewAnchorNoOffsetResult.count > 0 {
+            return [String(expr[Range(secondViewAnchorNoOffsetResult[0].range(at: 1), in: expr)!]), String(expr[Range(secondViewAnchorNoOffsetResult[0].range(at: 2), in: expr)!]), "0"]
         }
-        
+
         return ["", "", expr]
     } catch let error {
         print("invalid regex: \(error.localizedDescription)")
