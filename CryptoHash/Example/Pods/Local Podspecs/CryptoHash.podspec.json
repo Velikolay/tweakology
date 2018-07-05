@@ -1,0 +1,22 @@
+{
+  "name": "CryptoHash",
+  "version": "0.1.0",
+  "summary": "A short description of CryptoHash.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Nikolay Ivanov/CryptoHash",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Nikolay Ivanov": "nikolay.ivanov@skyscanner.net"
+  },
+  "source": {
+    "git": "https://github.com/Nikolay Ivanov/CryptoHash.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CryptoHash/Classes/**/*"
+}

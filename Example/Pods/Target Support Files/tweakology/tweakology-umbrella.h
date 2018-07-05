@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "CryptoHash.h"
+#import "CryptoHash-umbrella.h"
+#import "Pods-CryptoHash_Tests-umbrella.h"
 
 FOUNDATION_EXPORT double tweakologyVersionNumber;
 FOUNDATION_EXPORT const unsigned char tweakologyVersionString[];

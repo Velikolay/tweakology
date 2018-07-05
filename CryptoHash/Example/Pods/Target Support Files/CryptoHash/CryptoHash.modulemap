@@ -1,0 +1,6 @@
+framework module CryptoHash {
+  umbrella header "CryptoHash-umbrella.h"
+
+  export *
+  module * { export * }
+}

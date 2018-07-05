@@ -34,6 +34,10 @@ TODO: Add long description of the pod here.
 
   s.dependency 'GCDWebServer', '~> 3.0'  
   s.dependency 'ObjectMapper', '~> 3.1'
+  s.subspec 'CryptoHash' do |ss|
+    ss.source_files = 'CryptoHash/**/*.{h,m}'
+  end
+
   # s.resource_bundles = {
   #   'tweakology' => ['tweakology/Assets/*.png']
   # }

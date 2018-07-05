@@ -14,9 +14,10 @@ extension UIFont: StaticMappable {
     }
 
     public func mapping(map: Map) {
-        fontName >>> map["name"]
-        pointSize >>> map["size"]
-        self.fontDescriptor.symbolicTraits.rawValue >>> map["trait"]
+        fontName >>> map["fontName"]
+        pointSize >>> map["pointSize"]
+        familyName >>> map["familyName"]
+        fontDescriptor.symbolicTraits.rawValue >>> map["trait"]
     }
 
 }

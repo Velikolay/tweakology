@@ -8,17 +8,29 @@
 import Foundation
 
 extension UIView {
-    
+
     var hierarchyMetadata: String {
         let className = String(describing:type(of: self))
         let parentVCClassName = (self.parentViewController != nil) ? String(describing:type(of: self.parentViewController!)): "none"
-
         if let parent = self.superview {
             let viewIndex = parent.subviews.index(of: self)
-            return parent.hierarchyMetadata + "|" + className + ":" + String(describing: viewIndex!) + ":" + parentVCClassName
+            let viewMetadata = className + ":" + String(describing: viewIndex!) + ":" + parentVCClassName
+            if parent != UIApplication.shared.keyWindow {
+                return parent.hierarchyMetadata + "|" + viewMetadata
+            } else {
+                return viewMetadata
+            }
         } else {
             return className + ":0:" + parentVCClassName
         }
+    }
+
+    var uid: String? {
+        guard let data = CryptoHash.sha1(hierarchyMetadata).data(using: String.Encoding.utf8) else {
+            return nil
+        }
+
+        return String(data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)).prefix(10))
     }
 
     var parentViewController: UIViewController? {

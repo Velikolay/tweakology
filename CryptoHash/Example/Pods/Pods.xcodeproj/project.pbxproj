@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35D6C342C724CEDDB4537BDEF4D0FECC /* Pods-CryptoHash_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 849740BF6E3CBB7EB5CD98857958B2D4 /* Pods-CryptoHash_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7525EECFEB1DDA41CD66F5CD65A51CCF /* Pods-CryptoHash_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7ECFC073CD11E5BF1FF7F6C8776EAA /* Pods-CryptoHash_Tests-dummy.m */; };
+		7F80AE5811D4A78494B8CB0D983DE141 /* CryptoHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C51EAA4D06A49B05303DE5EDC7C6E51 /* CryptoHash-dummy.m */; };
+		9ADA661B73C2C002E36AC4FF35CCC3B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A2D66D6120ED0C1C00BB0D05 /* CryptoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = A2D66D6020ED0C1C00BB0D05 /* CryptoHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2D66D6320ED0C3800BB0D05 /* CryptoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D66D6220ED0C3800BB0D05 /* CryptoHash.m */; };
+		D37B806A90527E1A94CC80E88A69B511 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		DFA24064F98229A0754114327F77F7E1 /* CryptoHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E4F9C913BD5FA8827A815803B012A7 /* CryptoHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1DE8FF20CABC2B82221B7A31270B47E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17449D5F56247ACF525C68738D301704;
+			remoteInfo = CryptoHash;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C1B8CEB911DCC6DFC62D195015E3DC /* CryptoHash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoHash.xcconfig; sourceTree = "<group>"; };
+		1CB52AE01BF4CA447C26C22DEA006252 /* Pods_CryptoHash_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoHash_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E33776A090933C1ED11E779FE365B1E /* Pods-CryptoHash_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptoHash_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		328DD22C46B863538DE4FCE6877F6005 /* CryptoHash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoHash.modulemap; sourceTree = "<group>"; };
+		3C51EAA4D06A49B05303DE5EDC7C6E51 /* CryptoHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoHash-dummy.m"; sourceTree = "<group>"; };
+		3E1987343DB4B2421A0C16CB39367957 /* Pods-CryptoHash_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CryptoHash_Tests-resources.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		67636D57D01F7197E68BCCF926DDCFCD /* Pods-CryptoHash_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptoHash_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		849740BF6E3CBB7EB5CD98857958B2D4 /* Pods-CryptoHash_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptoHash_Tests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9514B4BFBE2D40B48D47F2369A782B45 /* Pods-CryptoHash_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CryptoHash_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		985E3695B86E6E2325EE8CD1AF9EADC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2D66D6020ED0C1C00BB0D05 /* CryptoHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoHash.h; sourceTree = "<group>"; };
+		A2D66D6220ED0C3800BB0D05 /* CryptoHash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoHash.m; sourceTree = "<group>"; };
+		B0E4F9C913BD5FA8827A815803B012A7 /* CryptoHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoHash-umbrella.h"; sourceTree = "<group>"; };
+		BA7ECFC073CD11E5BF1FF7F6C8776EAA /* Pods-CryptoHash_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CryptoHash_Tests-dummy.m"; sourceTree = "<group>"; };
+		CA8469AC275E8E055065976BA05FFD42 /* CryptoHash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoHash-prefix.pch"; sourceTree = "<group>"; };
+		D290EBF0719618099A498A1DC445ADA9 /* Pods-CryptoHash_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CryptoHash_Tests.modulemap"; sourceTree = "<group>"; };
+		DA62C0991454832BE95E41A9A6456EE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF3213238F3034A57CECCEC56C408226 /* Pods-CryptoHash_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CryptoHash_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EC007A53ED38B9B4AD2AEB38E60F9135 /* Pods-CryptoHash_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptoHash_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F54C68D5B995D099A130177591986602 /* CryptoHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		030F14AEF5BFC8F1CB213ECDFB6EE1BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D37B806A90527E1A94CC80E88A69B511 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		672F9EA31C067DA8628674EC8EDCCE9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ADA661B73C2C002E36AC4FF35CCC3B9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BE23706A038102F6BB214CF1F28EC9F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A2D66D6020ED0C1C00BB0D05 /* CryptoHash.h */,
+				A2D66D6220ED0C3800BB0D05 /* CryptoHash.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5E55CB8353A58BB23FF23DF7A726143A /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				7CB69B56E195F39AEC4420C62CD69369 /* CryptoHash */,
+				EBE1AD0B8D4F669FE10C7A0AFD2F710D /* Support Files */,
+			);
+			name = CryptoHash;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7CB69B56E195F39AEC4420C62CD69369 /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				2BE23706A038102F6BB214CF1F28EC9F /* Classes */,
+			);
+			path = CryptoHash;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E1E46BCB1AEE57A3E6FA769199E195E2 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A46A2869E64787503EC5482244F1D12E /* Products */,
+				E6C439A0184F9FEB8EDDCCD937A61635 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A46A2869E64787503EC5482244F1D12E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F54C68D5B995D099A130177591986602 /* CryptoHash.framework */,
+				1CB52AE01BF4CA447C26C22DEA006252 /* Pods_CryptoHash_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B79E37146805F290D4D740C6FA84EAC4 /* Pods-CryptoHash_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				985E3695B86E6E2325EE8CD1AF9EADC9 /* Info.plist */,
+				D290EBF0719618099A498A1DC445ADA9 /* Pods-CryptoHash_Tests.modulemap */,
+				DF3213238F3034A57CECCEC56C408226 /* Pods-CryptoHash_Tests-acknowledgements.markdown */,
+				67636D57D01F7197E68BCCF926DDCFCD /* Pods-CryptoHash_Tests-acknowledgements.plist */,
+				BA7ECFC073CD11E5BF1FF7F6C8776EAA /* Pods-CryptoHash_Tests-dummy.m */,
+				9514B4BFBE2D40B48D47F2369A782B45 /* Pods-CryptoHash_Tests-frameworks.sh */,
+				3E1987343DB4B2421A0C16CB39367957 /* Pods-CryptoHash_Tests-resources.sh */,
+				849740BF6E3CBB7EB5CD98857958B2D4 /* Pods-CryptoHash_Tests-umbrella.h */,
+				EC007A53ED38B9B4AD2AEB38E60F9135 /* Pods-CryptoHash_Tests.debug.xcconfig */,
+				2E33776A090933C1ED11E779FE365B1E /* Pods-CryptoHash_Tests.release.xcconfig */,
+			);
+			name = "Pods-CryptoHash_Tests";
+			path = "Target Support Files/Pods-CryptoHash_Tests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E1E46BCB1AEE57A3E6FA769199E195E2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E55CB8353A58BB23FF23DF7A726143A /* CryptoHash */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E6C439A0184F9FEB8EDDCCD937A61635 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B79E37146805F290D4D740C6FA84EAC4 /* Pods-CryptoHash_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EBE1AD0B8D4F669FE10C7A0AFD2F710D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				328DD22C46B863538DE4FCE6877F6005 /* CryptoHash.modulemap */,
+				00C1B8CEB911DCC6DFC62D195015E3DC /* CryptoHash.xcconfig */,
+				3C51EAA4D06A49B05303DE5EDC7C6E51 /* CryptoHash-dummy.m */,
+				CA8469AC275E8E055065976BA05FFD42 /* CryptoHash-prefix.pch */,
+				B0E4F9C913BD5FA8827A815803B012A7 /* CryptoHash-umbrella.h */,
+				DA62C0991454832BE95E41A9A6456EE3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CryptoHash";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0BB8DF68FCF61DBE515F7B42952EF5CC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35D6C342C724CEDDB4537BDEF4D0FECC /* Pods-CryptoHash_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CB38F9ABC5CDE3DF9E68EC0DC989F66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFA24064F98229A0754114327F77F7E1 /* CryptoHash-umbrella.h in Headers */,
+				A2D66D6120ED0C1C00BB0D05 /* CryptoHash.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		17449D5F56247ACF525C68738D301704 /* CryptoHash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D527108AB2ED86C678E848B9081CDF3 /* Build configuration list for PBXNativeTarget "CryptoHash" */;
+			buildPhases = (
+				DD3805C8F664F3B3D3B2B3A098AD4A08 /* Sources */,
+				672F9EA31C067DA8628674EC8EDCCE9F /* Frameworks */,
+				5CB38F9ABC5CDE3DF9E68EC0DC989F66 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoHash;
+			productName = CryptoHash;
+			productReference = F54C68D5B995D099A130177591986602 /* CryptoHash.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		41F967E14A0EBA3BB6FE373B3DBE3EC8 /* Pods-CryptoHash_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B7F5CE4486646D0E32962CB7A7DD12E /* Build configuration list for PBXNativeTarget "Pods-CryptoHash_Tests" */;
+			buildPhases = (
+				B2098D25753D024B23360018222C3E84 /* Sources */,
+				030F14AEF5BFC8F1CB213ECDFB6EE1BA /* Frameworks */,
+				0BB8DF68FCF61DBE515F7B42952EF5CC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0A94DA61D97776D17E10820A64E7F95 /* PBXTargetDependency */,
+			);
+			name = "Pods-CryptoHash_Tests";
+			productName = "Pods-CryptoHash_Tests";
+			productReference = 1CB52AE01BF4CA447C26C22DEA006252 /* Pods_CryptoHash_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A46A2869E64787503EC5482244F1D12E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17449D5F56247ACF525C68738D301704 /* CryptoHash */,
+				41F967E14A0EBA3BB6FE373B3DBE3EC8 /* Pods-CryptoHash_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2098D25753D024B23360018222C3E84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7525EECFEB1DDA41CD66F5CD65A51CCF /* Pods-CryptoHash_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD3805C8F664F3B3D3B2B3A098AD4A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F80AE5811D4A78494B8CB0D983DE141 /* CryptoHash-dummy.m in Sources */,
+				A2D66D6320ED0C3800BB0D05 /* CryptoHash.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0A94DA61D97776D17E10820A64E7F95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoHash;
+			target = 17449D5F56247ACF525C68738D301704 /* CryptoHash */;
+			targetProxy = F1DE8FF20CABC2B82221B7A31270B47E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49D8B3406CB7ACBAA7917CF85E429B28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C1B8CEB911DCC6DFC62D195015E3DC /* CryptoHash.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CryptoHash/CryptoHash-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CryptoHash/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CryptoHash/CryptoHash.modulemap";
+				PRODUCT_NAME = CryptoHash;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5C23FA338A52BBD9A26B0677512C4423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E33776A090933C1ED11E779FE365B1E /* Pods-CryptoHash_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CryptoHash_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CryptoHash_Tests/Pods-CryptoHash_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CryptoHash_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71BEF16C44E3A53DC7D5672D4618442F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC007A53ED38B9B4AD2AEB38E60F9135 /* Pods-CryptoHash_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CryptoHash_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CryptoHash_Tests/Pods-CryptoHash_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CryptoHash_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		801354627C5B958C548FC66895FAB270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C1B8CEB911DCC6DFC62D195015E3DC /* CryptoHash.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CryptoHash/CryptoHash-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CryptoHash/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CryptoHash/CryptoHash.modulemap";
+				PRODUCT_NAME = CryptoHash;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		827269710C98D60C14D46BC6AF9BF728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D796F128659FE2D43AB91CF1688A32CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D527108AB2ED86C678E848B9081CDF3 /* Build configuration list for PBXNativeTarget "CryptoHash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801354627C5B958C548FC66895FAB270 /* Debug */,
+				49D8B3406CB7ACBAA7917CF85E429B28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B7F5CE4486646D0E32962CB7A7DD12E /* Build configuration list for PBXNativeTarget "Pods-CryptoHash_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71BEF16C44E3A53DC7D5672D4618442F /* Debug */,
+				5C23FA338A52BBD9A26B0677512C4423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D796F128659FE2D43AB91CF1688A32CA /* Debug */,
+				827269710C98D60C14D46BC6AF9BF728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

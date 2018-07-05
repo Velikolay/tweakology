@@ -24,7 +24,6 @@ class TweakologyDemoViewController: UIViewController {
 
         if #available(iOS 10.0, *) {
             if self.viewIndex == nil {
-                print(index)
                 self.viewIndex = self.inspectLayout()
                 let engine = TweakologyLayoutEngine()
                 engine.tweak(viewIndex: &self.viewIndex!, changeSeq: changeSeq)

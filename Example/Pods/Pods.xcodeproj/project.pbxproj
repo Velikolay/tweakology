@@ -7,81 +7,295 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		177C98E201E92A5D31D4B7C902358D46 /* tweakology-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBFFE576D915193F34A71D5AC395A0A /* tweakology-dummy.m */; };
-		1A8100B25039BE07EF452116D4D170DA /* Pods-tweakology_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F418AE30D05E10EC9D5B887D851FE42 /* Pods-tweakology_Example-dummy.m */; };
-		255D737E95D973300594E7697861BB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		2AD19312A583A15856D2BB124118CEA1 /* UIViewController+TweakologyLayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728CE8A0E439BFD1384CF5BDDAD9DB72 /* UIViewController+TweakologyLayoutInspector.swift */; };
-		375C802576B72F596FE0D157976CABEF /* tweakology-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF035B805BB8BD77133414DC6DD24A74 /* tweakology-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		421A401F040324FE3FF41FDB243E8077 /* TweakologyLayoutInspectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6570EACB8FB107F878D4728F8344919A /* TweakologyLayoutInspectorProtocol.swift */; };
-		4DDAE716316DE386C6334CEE23B3C7D7 /* Pods-tweakology_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA959C22EFE79BA8C710FB606767DC16 /* Pods-tweakology_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75FFCB8DBF429617B60D3037A81DD161 /* Pods-tweakology_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25839989C4162076059E9CAAE61ACD74 /* Pods-tweakology_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99D2468884D7BA19F9EE44A5145FFE5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E1B841AC111FF6CEC510CAEE26099EA4 /* TweakologyLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFFD3A18D34C56D2D114EDDE3218C9 /* TweakologyLayoutEngine.swift */; };
-		E33FC1A83A80DFBA933D407AF7947465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		FA2B28AB16EDAC7A952F6D7853ECA5BD /* Pods-tweakology_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 917EFD68C3A8875544A105BFF57C9B03 /* Pods-tweakology_Tests-dummy.m */; };
+		09653FC2EBBCE247EA393AE5CD3EED71 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E58A6B98860A40C10B871058AC4CB3 /* ObjectMapper.framework */; };
+		0F981C56836FE34E921BC7253826A170 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B296E189026F8205DFCFAA7543BB44C6 /* CustomDateFormatTransform.swift */; };
+		11E01CD86730F1EE4C371D4C53CB201F /* tweakology-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD69CF2CF61E638BC6F5B0C272B3598 /* tweakology-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		134859C42E05396F62489E4329ECF6EA /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9FBE0B32DA9C7566F38258DFE17E04 /* ToJSON.swift */; };
+		13DEF7F9CF3B497997107E00EC6D32D7 /* UIFont+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D6906D407A244B549C633DF2479FB /* UIFont+Mappable.swift */; };
+		17A6C6141E878921A935125A7E83D572 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0218355A9A38C9208709422597B870 /* GCDWebServerErrorResponse.m */; };
+		1894026C296B8A77711607C98ED40C86 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D44DA8B39D315608D6E83CC3F1D07C /* IntegerOperators.swift */; };
+		18E9B5E96557418567FCB7DCC559299F /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905FF3CF3E579919CBF4D5E029FCEDEE /* TransformOperators.swift */; };
+		194858D10B9B1DD9FFEFBE4EAA0700F3 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1E57B08582653D64A1B008345AA1A /* TransformOf.swift */; };
+		1DEE28B20E3A37128685CAD0AFD73D45 /* TweakologyAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA1F6DB12925B2D7F69210F2943CDA8 /* TweakologyAgent.swift */; };
+		208EEC9D3507301018F32AD2D426F0A3 /* UIView+HierarchyMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE3956D78BFBCAAAA2DF0FF406056C0 /* UIView+HierarchyMetadata.swift */; };
+		236B83ABDAC4A32E7CEA4705EDE1179A /* UIButton+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163483C34709D065E736AF83832BBDA /* UIButton+MappableOverride.swift */; };
+		255C4ADB2BD82FEEF86A3D4D43F31C63 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818761E64B0B2634A61EA8D3FCD8B09F /* ISO8601DateTransform.swift */; };
+		255D737E95D973300594E7697861BB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */; };
+		2587DB9826410B97C29AAC275C31E17B /* Pods-CryptoHash_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 636B7B50FDE7E938F277D975F0ED2953 /* Pods-CryptoHash_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26000E48B1CD05A025CD0ED5C8B02166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */; };
+		262E4F394D171775CC15269FB4974169 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A797C85A1D1044B87DE5226E287F7EA4 /* Tests.m */; };
+		27156C9092B7A82E24CF96312A941150 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250E58A176AE70A29BFDEC4BE107A33 /* TransformType.swift */; };
+		2D89AB26203628C04B3E87D045525701 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C53EC50F2CE009335B7ADB09FCCBA6 /* MapError.swift */; };
+		3B7554FE6AAD63F8AF65CA5ED3141A7C /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B190570E4CA834A77BFE6E930CEE61C /* GCDWebServerDataResponse.m */; };
+		3C87144F6101B3DCB0E52ADE08E62BAA /* UIView+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2071DB193A94CFECAD1307AD27FF2019 /* UIView+Mappable.swift */; };
+		4215D7313CE6E738AAD80E9FEC6C60CC /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A1EF9FC8B25D5C014E95444B3658 /* DateFormatterTransform.swift */; };
+		48C7AD806F2DA2567C692E5BBD60C02B /* Pods-tweakology_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50B7F1B0644E6D5FF7A02C1BED55F501 /* TweaksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59709881AC196820B0B8A4FDCBE3CE /* TweaksStorage.swift */; };
+		528723317954B1D0AF5AB63A2F74F2D8 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B673D28D42BF4D0B51DCA480087B70A5 /* GCDWebServerResponse.m */; };
+		52CF5BFD5B3F75ED4C76D8E1989564FB /* CryptoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CC55D1B0119893223E6A692A0578B8 /* CryptoHash.m */; };
+		53D351E0789DC20EBFFD379BBEA50A22 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBB8F73A5B9B81C4944543F66EF1B9E /* GCDWebServerConnection.m */; };
+		54F6C1DD0DAC79ADCC7178EA81760558 /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C8253D70D71E0106FDD076563FE2B /* GCDWebServerFileResponse.m */; };
+		551FB4DF0E5072BB849BB4FCE74F7361 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05776F1727120617A6A2BF53EDE537 /* HexColorTransform.swift */; };
+		59109302859941E04E87DC7044DFEE89 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF73236660B2C764BEC5B0903EECD67 /* ObjectMapper-dummy.m */; };
+		598542481F812B4577712805DCF4816D /* UIView+RenderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6E1773FAF1A149F610A6FB301819B /* UIView+RenderImage.swift */; };
+		62E543AFAF89752AB51EEEDE83439292 /* GCDWebServerDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F5CBAC0A8DD29764B964404784452 /* GCDWebServerDataRequest.m */; };
+		67A4D8A24085ADC44A65404E73461B43 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30DC992F85D61160BFFCE666C0163F /* Mappable.swift */; };
+		6B80C04509C2C2D5835E7BA7DAA79149 /* GCDWebServerStreamedResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 71B1BCCE2E707ED31ABAD7D998FABE72 /* GCDWebServerStreamedResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C2FE27FDBD6621AAB57E4082419C347 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CACBB7B8D012899FFA2A00359D4FA /* NSDecimalNumberTransform.swift */; };
+		6F96C842C24F41D51F37439BB8487D29 /* UILabel+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F5CC322DBE52401FF1DD591D6B821 /* UILabel+MappableOverride.swift */; };
+		706840688BA7E9BDE5F4DD2C0E558835 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3580E08C8F5C6A0ECC97DD453E6DBD9E /* EnumOperators.swift */; };
+		712EB11F6DDD5372AFAF45439DE5EE7A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE285697234AC8EBD6E60EDB713A8BB /* CFNetwork.framework */; };
+		722A5AF46F8C5D56564E86D84F29347E /* GCDWebServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DF3595ECEFB795CB5EC046D35F3A2BB2 /* GCDWebServerRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75FFCB8DBF429617B60D3037A81DD161 /* Pods-tweakology_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77CA4CD47748C0B69982A6D82C2799D5 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7429841D72824AE0525131C20CBF6DEB /* Mapper.swift */; };
+		78C198E9BB56FB59BD494C8FA759645B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */; };
+		7B644CDEFB1543D7A7642386B7B71CB0 /* GCDWebServerFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 864842035DF56045DCC1020D591943A5 /* GCDWebServerFileRequest.m */; };
+		7E14026A1161AB90482461C7FA6EA9DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */; };
+		7E7FD57AF138183D9FF3658B84E6C0A0 /* GCDWebServerURLEncodedFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = ADA71694CCE6853F4640D7D39988C058 /* GCDWebServerURLEncodedFormRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FAF962B8C7835FE24B87E0491ABD3BF /* GCDWebServerDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 96CA36D9D45D65C583A4D6E26758D6DE /* GCDWebServerDataRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89D1A50922028B7D2B185F4A675B4D7D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AC6751925003002B6A180637640A55 /* MobileCoreServices.framework */; };
+		89F0BD651AED40B979BE4DE319A675E0 /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1ED23FE0C9E380097E0F5ABA2DE37 /* MappableOverrideProtocol.swift */; };
+		93F748D723B8A26F9F86DEE7517ECE3E /* GCDWebServerDataResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F0EB65102648935637FC4B85065AF41 /* GCDWebServerDataResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		965D2AFD4838745615E442A537BF2DCB /* UIColor+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DE7AC2657F7CAD73B9232EE019DD6 /* UIColor+Mappable.swift */; };
+		9ED803A158FAC2A3129CA01F747B93DA /* UIViewController+TweakologyLayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37CFD9CE4F558DCE504363E35043B9 /* UIViewController+TweakologyLayoutInspector.swift */; };
+		A128DBCF691E0F4D2AC3EEA36F7BD562 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 195384E6AFC1255FD8D69DD4759E593A /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5BFC49ED41BC416BEBF4772517AB741 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C4750D02A212F3D2A49614F59BEED /* Map.swift */; };
+		A760CBDBA682C1029FDC104FA2CE036A /* CryptoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = C581119FB521596F86138B43DEEC291C /* CryptoHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7DB03F2E311A12C08C6ABA437DA5D7D /* GCDWebServerHTTPStatusCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1688CCF8D6F4ED35A69879B476A97D2D /* GCDWebServerHTTPStatusCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7BBB6E29D7F28E69B81F07854F18AD /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FF1E4C9BCCC3236E620880BE080F5 /* GCDWebServerRequest.m */; };
+		AB8976B648DECB1879A6002FCF2F6102 /* Pods-tweakology_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */; };
+		B2EFEFFB34D517F8E9A203B674AEBD13 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08A4180F7A5009640725F128EA0813 /* DictionaryTransform.swift */; };
+		B4911B17CF238F3346307208CB00AEB2 /* GCDWebServerFileRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 757161A8E28372060C9FEDE1B6C9E95C /* GCDWebServerFileRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6E824962197C1928ADD5A481A8718B3 /* CryptoHash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0077EA6488DDE75A9328244D8135037 /* CryptoHash-dummy.m */; };
+		B9C39C539A810D1958AEEF1AEC0FD75C /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CAA685DD7E974C33FF6797B26151FA /* ImmutableMappable.swift */; };
+		BD02C8834FBD607EF31B7088F61EE19B /* TweakologyLayoutInspectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E9FB274557054659E78AC1727D649 /* TweakologyLayoutInspectorProtocol.swift */; };
+		BEC201BABAE91076042A1E129F4DA3C3 /* GCDWebServerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C282BA93035FB040925295D8FB1C58F /* GCDWebServerConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF2F9CB14A46386124DA587D5601A8CF /* GCDWebServerFileResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B3387724C728C0C5E49602E37B0D9F /* GCDWebServerFileResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCC96B07137471CEBD04589F3FF98C5 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E33F0D11AE0776FB3A67494CA54B1F7 /* GCDWebServerFunctions.m */; };
+		C0C767CEEC23B87C28E12514EB40B595 /* GCDWebServer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B6434C7C3DB031842E3F64C09CD4D /* GCDWebServer-dummy.m */; };
+		C6849120165F30269287E68639EB73B5 /* TweakologyLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD208523C8AB4EC53D30F2CE0836888 /* TweakologyLayoutEngine.swift */; };
+		C7C59EABCA3DDF9027315567A86633C9 /* GCDWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF8689D10CF324256381729B4C407CF /* GCDWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA626FA4E095B938ADE36DE43A6B841B /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D520D8AEAFC5F4E58D51A64AFB4 /* GCDWebServerStreamedResponse.m */; };
+		CACF15209B6892C4EFC1F0E379944344 /* CGRect+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D425A566305C9C7CCDD4978EB826081F /* CGRect+Mappable.swift */; };
+		D1A62C8E4A8515878F5C2920C96B01F1 /* Pods-CryptoHash_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8694E38394E053A9424DED72E2CD51 /* Pods-CryptoHash_Tests-dummy.m */; };
+		D6CB3B96FE8AE0307F1F8959E648056C /* GCDWebServerMultiPartFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C54A6131EF4A6FF55511029C2CA61925 /* GCDWebServerMultiPartFormRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D968E3B8DD541A17BEC730B7002FC70A /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BA0C914FE19AED9BF33AAFC792FCF /* GCDWebServer.m */; };
+		DB87FF0D3B17ABB5452FDD4D70C9A84D /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7A0A3FEA3F579739AD2212A37CEC3 /* FromJSON.swift */; };
+		DC031CF0E61CC9BB8CA74D347D6AF8AB /* GCDWebServerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 804A2C3639A6828E839B9B74BE6E7E40 /* GCDWebServerPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		DC09F868362D0A2A04B9F976EA736327 /* GCDWebServerErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7ED1D1BBE4DCDECBFB5C3FF88D906C /* GCDWebServerErrorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE59D3775F15714D2A4D6E0493982534 /* GCDWebServerFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BABE9FB54599DD1012292B979ED773 /* GCDWebServerFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9FA66200123610C2387FF3196460246 /* GCDWebServerResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 82501A4C8BE99B055147C849388CBF4D /* GCDWebServerResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA67527CAF7ED571C8A84B66DDD70FBE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD028BD446318762A662F52D0DBA8709 /* Operators.swift */; };
+		EAD1E11BB0EF59E7FF8F66DBA660A956 /* CryptoHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A83976DFFF671372536FF19498451645 /* CryptoHash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1A896625476730D64BF9645624BBAD /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA99AF91DA52DD375AEE44A7E873603 /* DataTransform.swift */; };
+		EEDC6F805D83C380D14C45A773AF430D /* GCDWebServerURLEncodedFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD077D12EF2D0508DEAD4073F941673 /* GCDWebServerURLEncodedFormRequest.m */; };
+		F299CDFFDB371F3F29D34B1E5D346969 /* tweakology-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96271A54A415AA12072FA2E227BA0115 /* tweakology-dummy.m */; };
+		F527B0A072DFD754B471E4C1F6B16C48 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4CD04E8F56E2CD624F4A2B2CFE55A9 /* URLTransform.swift */; };
+		F6D39919E7A93EF730A42C5454FE14DA /* GCDWebServer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 217F1E7FFE2F9D4556882E2DB10662C8 /* GCDWebServer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F709CDA8E32FD850396F71FA35DE1C1C /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 427FAEFDA1E8F504675DA1AABFCD785C /* GCDWebServerMultiPartFormRequest.m */; };
+		F9B63BDA169DB048D41DA8395261AEBA /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E4A0587AF63C9FF255F3CAFD5D83C /* DateTransform.swift */; };
+		FA2B28AB16EDAC7A952F6D7853ECA5BD /* Pods-tweakology_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */; };
+		FCE734BD83FB03D3DC9F8AA843ECD73B /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5465495D657AD1077A57133A6EFEB8D9 /* EnumTransform.swift */; };
+		FCFDAFA0F5FD26325F9CEB8931198D6E /* GCDWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5984314F922313D8D79D958E98F54D43 /* GCDWebServer.framework */; };
+		FDFE68B35004156B109C23747B524140 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		25587802389C7FFA234F90379759AD49 /* PBXContainerItemProxy */ = {
+		03C664C31E59B30A14672FAB1FC4E901 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 85126208FD2A6D007439B9F488263847;
+			remoteGlobalIDString = 1252D2FE5A3F0266E8959BB670344352;
+			remoteInfo = GCDWebServer;
+		};
+		309C5B53A1FB3625DB3EBBD5AAA6CAF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252D2FE5A3F0266E8959BB670344352;
+			remoteInfo = GCDWebServer;
+		};
+		4F9015BF54EE83A6906AC7C6694633E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E73200FAD07AE129427F1DFCC5016535;
 			remoteInfo = tweakology;
+		};
+		C75C9BBC7C6CAB045147F7985955CBE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD6C9FB6B052E1CF663F8A56041EA163;
+			remoteInfo = ObjectMapper;
+		};
+		D71320EDE8409604EDD96B64535B6A3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD6C9FB6B052E1CF663F8A56041EA163;
+			remoteInfo = ObjectMapper;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0290876D484F14DC0E33DA690FDCFF9E /* Pods_tweakology_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweakology_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		04BB9A26B6A41C6A1DAAF32DA9399807 /* tweakology.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = tweakology.xcconfig; sourceTree = "<group>"; };
-		072A651671ADEE35B397DCA641C03138 /* Pods-tweakology_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		169B3EA90CB4F1C911B10C0D472C08F3 /* Pods-tweakology_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		25839989C4162076059E9CAAE61ACD74 /* Pods-tweakology_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Tests-umbrella.h"; sourceTree = "<group>"; };
-		30C794FD9DF23A20804144B890AEDF96 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		401A386737801E0B3234C1A7B92D54AF /* Pods-tweakology_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		42D4A073A02465295B74E6E7FE0D579E /* Pods-tweakology_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4461DC3E4AA89B0D0D9C0AAD111E6C94 /* Pods_tweakology_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweakology_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46A5FE12B2C881C332549543DCA556BE /* tweakology-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-prefix.pch"; sourceTree = "<group>"; };
-		494E71F46CEFF0330AB37C3728E509E6 /* Pods-tweakology_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4BA52755AA0C93BDE9A77126C0815B01 /* Pods-tweakology_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6570EACB8FB107F878D4728F8344919A /* TweakologyLayoutInspectorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyLayoutInspectorProtocol.swift; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6724B805CB2245B3425B68A69913EC86 /* Pods-tweakology_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tweakology_Example.modulemap"; sourceTree = "<group>"; };
-		6FFFFD3A18D34C56D2D114EDDE3218C9 /* TweakologyLayoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyLayoutEngine.swift; sourceTree = "<group>"; };
-		728CE8A0E439BFD1384CF5BDDAD9DB72 /* UIViewController+TweakologyLayoutInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+TweakologyLayoutInspector.swift"; sourceTree = "<group>"; };
-		7859567BEBC3CF997130672A28D67363 /* Pods-tweakology_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tweakology_Tests.modulemap"; sourceTree = "<group>"; };
-		7F418AE30D05E10EC9D5B887D851FE42 /* Pods-tweakology_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Example-dummy.m"; sourceTree = "<group>"; };
-		8E0C80B84C2F283862D3D5BEC45FE5BA /* Pods-tweakology_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-resources.sh"; sourceTree = "<group>"; };
-		917EFD68C3A8875544A105BFF57C9B03 /* Pods-tweakology_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94F34393C76C69DB85F6A4247EC83035 /* Pods-tweakology_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		A38B35755BB367F761FFFCDFD3382C87 /* Pods-tweakology_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AC197A15C8A5C34C680F2B691AEED296 /* tweakology.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = tweakology.modulemap; sourceTree = "<group>"; };
-		AF6519565195918F5F59AAD046A91B00 /* Pods-tweakology_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-resources.sh"; sourceTree = "<group>"; };
-		B06B36E954E2CF129C8D9C63C9BDBA48 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3047944AB36F0E225F215E8BE5E3D32 /* tweakology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = tweakology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEDF4CD6F27B66C5AD3AADEA06F8BAF5 /* Pods-tweakology_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BF035B805BB8BD77133414DC6DD24A74 /* tweakology-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-umbrella.h"; sourceTree = "<group>"; };
-		C45F06EBD5532447B359A9DEDA92269F /* Pods-tweakology_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CB309A8838BF989C1D92EAA9FDE1FB90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA959C22EFE79BA8C710FB606767DC16 /* Pods-tweakology_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Example-umbrella.h"; sourceTree = "<group>"; };
-		ECBFFE576D915193F34A71D5AC395A0A /* tweakology-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tweakology-dummy.m"; sourceTree = "<group>"; };
+		065E9FB274557054659E78AC1727D649 /* TweakologyLayoutInspectorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyLayoutInspectorProtocol.swift; sourceTree = "<group>"; };
+		06C1ED23FE0C9E380097E0F5ABA2DE37 /* MappableOverrideProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MappableOverrideProtocol.swift; sourceTree = "<group>"; };
+		06DC7D520D8AEAFC5F4E58D51A64AFB4 /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerStreamedResponse.m; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
+		07BE631A058025E6EDFEA70E5615B403 /* GCDWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GCDWebServer.framework; path = GCDWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A46A7FBB6F416DAA8400E49489C7939 /* Pods_tweakology_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tweakology_Example.framework; path = "Pods-tweakology_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AF73236660B2C764BEC5B0903EECD67 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
+		0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0D37CFD9CE4F558DCE504363E35043B9 /* UIViewController+TweakologyLayoutInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+TweakologyLayoutInspector.swift"; sourceTree = "<group>"; };
+		0D59709881AC196820B0B8A4FDCBE3CE /* TweaksStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweaksStorage.swift; sourceTree = "<group>"; };
+		0E5F5CBAC0A8DD29764B964404784452 /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataRequest.m; path = GCDWebServer/Requests/GCDWebServerDataRequest.m; sourceTree = "<group>"; };
+		12E58A6B98860A40C10B871058AC4CB3 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13CAA685DD7E974C33FF6797B26151FA /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
+		14C98E67F1F2E9DC84095723F89D8D80 /* Pods-tweakology_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1688CCF8D6F4ED35A69879B476A97D2D /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerHTTPStatusCodes.h; path = GCDWebServer/Core/GCDWebServerHTTPStatusCodes.h; sourceTree = "<group>"; };
+		195384E6AFC1255FD8D69DD4759E593A /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
+		1C16AFDFDA0B31B5D30180C0C08DC4E3 /* GCDWebServer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GCDWebServer.modulemap; sourceTree = "<group>"; };
+		1DBB8F73A5B9B81C4944543F66EF1B9E /* GCDWebServerConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerConnection.m; path = GCDWebServer/Core/GCDWebServerConnection.m; sourceTree = "<group>"; };
+		1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2071DB193A94CFECAD1307AD27FF2019 /* UIView+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Mappable.swift"; sourceTree = "<group>"; };
+		217F1E7FFE2F9D4556882E2DB10662C8 /* GCDWebServer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCDWebServer-umbrella.h"; sourceTree = "<group>"; };
+		2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Tests-dummy.m"; sourceTree = "<group>"; };
+		2592EE281C1281D16E13C0FBEACD3448 /* GCDWebServer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCDWebServer-prefix.pch"; sourceTree = "<group>"; };
+		25AC6751925003002B6A180637640A55 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		25DC7F40F294251A86CCEBBEA2742247 /* Pods-tweakology_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-frameworks.sh"; sourceTree = "<group>"; };
+		27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2929B82E33D167F3B2BD578F6D789EB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A08A4180F7A5009640725F128EA0813 /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
+		2B2BA0C914FE19AED9BF33AAFC792FCF /* GCDWebServer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServer.m; path = GCDWebServer/Core/GCDWebServer.m; sourceTree = "<group>"; };
+		2B4CD04E8F56E2CD624F4A2B2CFE55A9 /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
+		2B63B09493B7A1B204A5FBEEC8294641 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
+		2C1AD0769E422D46E9B9EDF3300CFF12 /* tweakology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = tweakology.framework; path = tweakology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Example-dummy.m"; sourceTree = "<group>"; };
+		2D1EA3D9FA7ACAF6B7A6274FCAC589AA /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		2DA99AF91DA52DD375AEE44A7E873603 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
+		3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Tests-umbrella.h"; sourceTree = "<group>"; };
+		32E8886A21B494A7CA2161112039D20E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3580E08C8F5C6A0ECC97DD453E6DBD9E /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
+		35D04AB9550DC2F8816085F01AE7317B /* Pods-tweakology_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		36D59C4C04C9B0CCE24B7D89A3D6C93D /* tweakology.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = tweakology.xcconfig; sourceTree = "<group>"; };
+		3A7ED1D1BBE4DCDECBFB5C3FF88D906C /* GCDWebServerErrorResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerErrorResponse.h; path = GCDWebServer/Responses/GCDWebServerErrorResponse.h; sourceTree = "<group>"; };
+		3C23C95C7638F6E73839AF500DA4C937 /* Pods-tweakology_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tweakology_Tests.modulemap"; sourceTree = "<group>"; };
+		3E33F0D11AE0776FB3A67494CA54B1F7 /* GCDWebServerFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFunctions.m; path = GCDWebServer/Core/GCDWebServerFunctions.m; sourceTree = "<group>"; };
+		40B3387724C728C0C5E49602E37B0D9F /* GCDWebServerFileResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileResponse.h; path = GCDWebServer/Responses/GCDWebServerFileResponse.h; sourceTree = "<group>"; };
+		427FAEFDA1E8F504675DA1AABFCD785C /* GCDWebServerMultiPartFormRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerMultiPartFormRequest.m; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.m; sourceTree = "<group>"; };
+		435DE7AC2657F7CAD73B9232EE019DD6 /* UIColor+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Mappable.swift"; sourceTree = "<group>"; };
+		48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-tweakology_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4C05776F1727120617A6A2BF53EDE537 /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
+		4C6C8253D70D71E0106FDD076563FE2B /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileResponse.m; path = GCDWebServer/Responses/GCDWebServerFileResponse.m; sourceTree = "<group>"; };
+		4C8694E38394E053A9424DED72E2CD51 /* Pods-CryptoHash_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CryptoHash_Tests-dummy.m"; sourceTree = "<group>"; };
+		4CE8A1EF9FC8B25D5C014E95444B3658 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
+		4E30DC992F85D61160BFFCE666C0163F /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
+		524B6434C7C3DB031842E3F64C09CD4D /* GCDWebServer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GCDWebServer-dummy.m"; sourceTree = "<group>"; };
+		5465495D657AD1077A57133A6EFEB8D9 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
+		56B49CC6DB4AE17B9A6A8026022EDA74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5984314F922313D8D79D958E98F54D43 /* GCDWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GCDWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B190570E4CA834A77BFE6E930CEE61C /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataResponse.m; path = GCDWebServer/Responses/GCDWebServerDataResponse.m; sourceTree = "<group>"; };
+		5DF8689D10CF324256381729B4C407CF /* GCDWebServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServer.h; path = GCDWebServer/Core/GCDWebServer.h; sourceTree = "<group>"; };
+		636B7B50FDE7E938F277D975F0ED2953 /* Pods-CryptoHash_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptoHash_Tests-umbrella.h"; sourceTree = "<group>"; };
+		6C282BA93035FB040925295D8FB1C58F /* GCDWebServerConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerConnection.h; path = GCDWebServer/Core/GCDWebServerConnection.h; sourceTree = "<group>"; };
+		6DE3956D78BFBCAAAA2DF0FF406056C0 /* UIView+HierarchyMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+HierarchyMetadata.swift"; sourceTree = "<group>"; };
+		71B1BCCE2E707ED31ABAD7D998FABE72 /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.h; sourceTree = "<group>"; };
+		7429841D72824AE0525131C20CBF6DEB /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
+		757161A8E28372060C9FEDE1B6C9E95C /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileRequest.h; path = GCDWebServer/Requests/GCDWebServerFileRequest.h; sourceTree = "<group>"; };
+		7AFB3582B48A785A40A856A5A41C94A9 /* Pods-tweakology_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tweakology_Example.modulemap"; sourceTree = "<group>"; };
+		804A2C3639A6828E839B9B74BE6E7E40 /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerPrivate.h; path = GCDWebServer/Core/GCDWebServerPrivate.h; sourceTree = "<group>"; };
+		8163483C34709D065E736AF83832BBDA /* UIButton+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+MappableOverride.swift"; sourceTree = "<group>"; };
+		816F5CC322DBE52401FF1DD591D6B821 /* UILabel+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+MappableOverride.swift"; sourceTree = "<group>"; };
+		818761E64B0B2634A61EA8D3FCD8B09F /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		82501A4C8BE99B055147C849388CBF4D /* GCDWebServerResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerResponse.h; path = GCDWebServer/Core/GCDWebServerResponse.h; sourceTree = "<group>"; };
+		864842035DF56045DCC1020D591943A5 /* GCDWebServerFileRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileRequest.m; path = GCDWebServer/Requests/GCDWebServerFileRequest.m; sourceTree = "<group>"; };
+		8AB181B5AB00071B0133A053255AF363 /* tweakology-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-prefix.pch"; sourceTree = "<group>"; };
+		8E9FBE0B32DA9C7566F38258DFE17E04 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
+		905FF3CF3E579919CBF4D5E029FCEDEE /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
+		9250E58A176AE70A29BFDEC4BE107A33 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96271A54A415AA12072FA2E227BA0115 /* tweakology-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tweakology-dummy.m"; sourceTree = "<group>"; };
+		96BABE9FB54599DD1012292B979ED773 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = GCDWebServer/Core/GCDWebServerFunctions.h; sourceTree = "<group>"; };
+		96CA36D9D45D65C583A4D6E26758D6DE /* GCDWebServerDataRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataRequest.h; path = GCDWebServer/Requests/GCDWebServerDataRequest.h; sourceTree = "<group>"; };
+		99D44DA8B39D315608D6E83CC3F1D07C /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
+		9C61B3E2AF39D779A3D5996A11E0BD50 /* tweakology.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = tweakology.modulemap; sourceTree = "<group>"; };
+		9CD077D12EF2D0508DEAD4073F941673 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.m; sourceTree = "<group>"; };
+		9F0EB65102648935637FC4B85065AF41 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = GCDWebServer/Responses/GCDWebServerDataResponse.h; sourceTree = "<group>"; };
+		9F3D6906D407A244B549C633DF2479FB /* UIFont+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+Mappable.swift"; sourceTree = "<group>"; };
+		9FA1F6DB12925B2D7F69210F2943CDA8 /* TweakologyAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyAgent.swift; sourceTree = "<group>"; };
+		A0077EA6488DDE75A9328244D8135037 /* CryptoHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoHash-dummy.m"; sourceTree = "<group>"; };
+		A3AC966541CBD5743FBC2A6427300692 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52E60CFE47D3BBA329820B8609D350A /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
+		A797C85A1D1044B87DE5226E287F7EA4 /* Tests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		A7CC55D1B0119893223E6A692A0578B8 /* CryptoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CryptoHash.m; sourceTree = "<group>"; };
+		A83976DFFF671372536FF19498451645 /* CryptoHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoHash-umbrella.h"; sourceTree = "<group>"; };
+		A8FE2ED7919E09A806205A5C3164222D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC0CACBB7B8D012899FFA2A00359D4FA /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		AD028BD446318762A662F52D0DBA8709 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		ADA71694CCE6853F4640D7D39988C058 /* GCDWebServerURLEncodedFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerURLEncodedFormRequest.h; path = GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.h; sourceTree = "<group>"; };
+		B296E189026F8205DFCFAA7543BB44C6 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		B30E4A0587AF63C9FF255F3CAFD5D83C /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
+		B413C7207866F06949F49AB9B0E74339 /* Pods_tweakology_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tweakology_Tests.framework; path = "Pods-tweakology_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B673D28D42BF4D0B51DCA480087B70A5 /* GCDWebServerResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerResponse.m; path = GCDWebServer/Core/GCDWebServerResponse.m; sourceTree = "<group>"; };
+		B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Example-umbrella.h"; sourceTree = "<group>"; };
+		BAC1E57B08582653D64A1B008345AA1A /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
+		BCE285697234AC8EBD6E60EDB713A8BB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		BCE7A0DE02D8CD70296C26D14F18806C /* Pods-tweakology_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BD4C4750D02A212F3D2A49614F59BEED /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
+		BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-tweakology_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-resources.sh"; sourceTree = "<group>"; };
+		BF0FF1E4C9BCCC3236E620880BE080F5 /* GCDWebServerRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerRequest.m; path = GCDWebServer/Core/GCDWebServerRequest.m; sourceTree = "<group>"; };
+		BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCDWebServer.xcconfig; sourceTree = "<group>"; };
+		C2E6E1773FAF1A149F610A6FB301819B /* UIView+RenderImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+RenderImage.swift"; sourceTree = "<group>"; };
+		C54A6131EF4A6FF55511029C2CA61925 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
+		C581119FB521596F86138B43DEEC291C /* CryptoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CryptoHash.h; sourceTree = "<group>"; };
+		C5F58046A6C5FD85457158E807196C1A /* Pods-tweakology_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-resources.sh"; sourceTree = "<group>"; };
+		CF0218355A9A38C9208709422597B870 /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerErrorResponse.m; path = GCDWebServer/Responses/GCDWebServerErrorResponse.m; sourceTree = "<group>"; };
+		D3C84FA9E96150DFDA1C62DC8B85D85F /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D425A566305C9C7CCDD4978EB826081F /* CGRect+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Mappable.swift"; sourceTree = "<group>"; };
+		DBD208523C8AB4EC53D30F2CE0836888 /* TweakologyLayoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyLayoutEngine.swift; sourceTree = "<group>"; };
+		DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DCD69CF2CF61E638BC6F5B0C272B3598 /* tweakology-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-umbrella.h"; sourceTree = "<group>"; };
+		DF3595ECEFB795CB5EC046D35F3A2BB2 /* GCDWebServerRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerRequest.h; path = GCDWebServer/Core/GCDWebServerRequest.h; sourceTree = "<group>"; };
+		E2C53EC50F2CE009335B7ADB09FCCBA6 /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
+		EE7812DC772779AD6BE0E0B425CC690B /* Pods-tweakology_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F0E7A0A3FEA3F579739AD2212A37CEC3 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		240DB25C605BF5B1B573B461960D3EE2 /* Frameworks */ = {
+		0EBE9C02F4AF4D1253DE260D290AEDE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33FC1A83A80DFBA933D407AF7947465 /* Foundation.framework in Frameworks */,
+				7E14026A1161AB90482461C7FA6EA9DA /* Foundation.framework in Frameworks */,
+				FCFDAFA0F5FD26325F9CEB8931198D6E /* GCDWebServer.framework in Frameworks */,
+				09653FC2EBBCE247EA393AE5CD3EED71 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2ECCDB4363669496A3439F5A04850A5C /* Frameworks */ = {
+		B4492D2026C6838F33DD08B302F3E503 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99D2468884D7BA19F9EE44A5145FFE5C /* Foundation.framework in Frameworks */,
+				712EB11F6DDD5372AFAF45439DE5EE7A /* CFNetwork.framework in Frameworks */,
+				FDFE68B35004156B109C23747B524140 /* Foundation.framework in Frameworks */,
+				89D1A50922028B7D2B185F4A675B4D7D /* MobileCoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F4068871A73EB6FBE8042AF2063595 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C198E9BB56FB59BD494C8FA759645B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7572134FA0BE979F1E3DCF221ED6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26000E48B1CD05A025CD0ED5C8B02166 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,154 +310,420 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39745211A96A83FE69966D4888DB8424 /* tweakology */ = {
+		04AAF8C04326A348FCD84490E2C5CF65 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E41794429DC5463320BEC5E2B5A50AA2 /* Support Files */,
-				E59D05642B33778558295460593D038F /* tweakology */,
+				1C16AFDFDA0B31B5D30180C0C08DC4E3 /* GCDWebServer.modulemap */,
+				BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */,
+				524B6434C7C3DB031842E3F64C09CD4D /* GCDWebServer-dummy.m */,
+				2592EE281C1281D16E13C0FBEACD3448 /* GCDWebServer-prefix.pch */,
+				217F1E7FFE2F9D4556882E2DB10662C8 /* GCDWebServer-umbrella.h */,
+				A8FE2ED7919E09A806205A5C3164222D /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GCDWebServer";
+			sourceTree = "<group>";
+		};
+		060BFF49176178C16A5C2BBA8F8CAD83 /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				A390DBD749122DEAA5A5298001815FA8 /* CryptoHash */,
+				29E4EA06A95B9B05DF4B73BE86264550 /* Example */,
+			);
+			name = CryptoHash;
+			path = CryptoHash;
+			sourceTree = "<group>";
+		};
+		1B685B16A789A083AD5AF7800625987B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D425A566305C9C7CCDD4978EB826081F /* CGRect+Mappable.swift */,
+				06C1ED23FE0C9E380097E0F5ABA2DE37 /* MappableOverrideProtocol.swift */,
+				8163483C34709D065E736AF83832BBDA /* UIButton+MappableOverride.swift */,
+				435DE7AC2657F7CAD73B9232EE019DD6 /* UIColor+Mappable.swift */,
+				9F3D6906D407A244B549C633DF2479FB /* UIFont+Mappable.swift */,
+				816F5CC322DBE52401FF1DD591D6B821 /* UILabel+MappableOverride.swift */,
+				2071DB193A94CFECAD1307AD27FF2019 /* UIView+Mappable.swift */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-tweakology_Example */ = {
+			isa = PBXGroup;
+			children = (
+				2929B82E33D167F3B2BD578F6D789EB5 /* Info.plist */,
+				7AFB3582B48A785A40A856A5A41C94A9 /* Pods-tweakology_Example.modulemap */,
+				EE7812DC772779AD6BE0E0B425CC690B /* Pods-tweakology_Example-acknowledgements.markdown */,
+				35D04AB9550DC2F8816085F01AE7317B /* Pods-tweakology_Example-acknowledgements.plist */,
+				2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */,
+				25DC7F40F294251A86CCEBBEA2742247 /* Pods-tweakology_Example-frameworks.sh */,
+				C5F58046A6C5FD85457158E807196C1A /* Pods-tweakology_Example-resources.sh */,
+				B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */,
+				DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */,
+				1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */,
+			);
+			name = "Pods-tweakology_Example";
+			path = "Target Support Files/Pods-tweakology_Example";
+			sourceTree = "<group>";
+		};
+		209FEEAC740769FA976F7E9EC0A56794 /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				A0077EA6488DDE75A9328244D8135037 /* CryptoHash-dummy.m */,
+				A83976DFFF671372536FF19498451645 /* CryptoHash-umbrella.h */,
+			);
+			name = CryptoHash;
+			path = CryptoHash;
+			sourceTree = "<group>";
+		};
+		27F81F8440C11CE8632C056094671B43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07BE631A058025E6EDFEA70E5615B403 /* GCDWebServer.framework */,
+				D3C84FA9E96150DFDA1C62DC8B85D85F /* ObjectMapper.framework */,
+				0A46A7FBB6F416DAA8400E49489C7939 /* Pods_tweakology_Example.framework */,
+				B413C7207866F06949F49AB9B0E74339 /* Pods_tweakology_Tests.framework */,
+				2C1AD0769E422D46E9B9EDF3300CFF12 /* tweakology.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29E4EA06A95B9B05DF4B73BE86264550 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				487B21019C149F736436DAB147CBBDC8 /* Pods */,
+				D0CCD7FE42A2BF4C9ECCDFA4FBF93816 /* Tests */,
+			);
+			name = Example;
+			path = Example;
+			sourceTree = "<group>";
+		};
+		429AE1D7A9AB0E66F720A0C2BA78B432 /* Pods-CryptoHash_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4C8694E38394E053A9424DED72E2CD51 /* Pods-CryptoHash_Tests-dummy.m */,
+				636B7B50FDE7E938F277D975F0ED2953 /* Pods-CryptoHash_Tests-umbrella.h */,
+			);
+			name = "Pods-CryptoHash_Tests";
+			path = "Pods-CryptoHash_Tests";
+			sourceTree = "<group>";
+		};
+		487B21019C149F736436DAB147CBBDC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BFA0752BE0D8AC9B38ABF37ECB20D6C /* Target Support Files */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4BC1CDA40FE352EF58AEAA916C07066A /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				9FA1F6DB12925B2D7F69210F2943CDA8 /* TweakologyAgent.swift */,
+				1B685B16A789A083AD5AF7800625987B /* Components */,
+			);
+			name = Agent;
+			path = Agent;
+			sourceTree = "<group>";
+		};
+		4BFA0752BE0D8AC9B38ABF37ECB20D6C /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				209FEEAC740769FA976F7E9EC0A56794 /* CryptoHash */,
+				429AE1D7A9AB0E66F720A0C2BA78B432 /* Pods-CryptoHash_Tests */,
+			);
+			name = "Target Support Files";
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		5A41CEE9E1061FC7609E0216FE8D3C16 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				B296E189026F8205DFCFAA7543BB44C6 /* CustomDateFormatTransform.swift */,
+				2DA99AF91DA52DD375AEE44A7E873603 /* DataTransform.swift */,
+				4CE8A1EF9FC8B25D5C014E95444B3658 /* DateFormatterTransform.swift */,
+				B30E4A0587AF63C9FF255F3CAFD5D83C /* DateTransform.swift */,
+				2A08A4180F7A5009640725F128EA0813 /* DictionaryTransform.swift */,
+				3580E08C8F5C6A0ECC97DD453E6DBD9E /* EnumOperators.swift */,
+				5465495D657AD1077A57133A6EFEB8D9 /* EnumTransform.swift */,
+				F0E7A0A3FEA3F579739AD2212A37CEC3 /* FromJSON.swift */,
+				4C05776F1727120617A6A2BF53EDE537 /* HexColorTransform.swift */,
+				13CAA685DD7E974C33FF6797B26151FA /* ImmutableMappable.swift */,
+				99D44DA8B39D315608D6E83CC3F1D07C /* IntegerOperators.swift */,
+				818761E64B0B2634A61EA8D3FCD8B09F /* ISO8601DateTransform.swift */,
+				BD4C4750D02A212F3D2A49614F59BEED /* Map.swift */,
+				E2C53EC50F2CE009335B7ADB09FCCBA6 /* MapError.swift */,
+				4E30DC992F85D61160BFFCE666C0163F /* Mappable.swift */,
+				7429841D72824AE0525131C20CBF6DEB /* Mapper.swift */,
+				AC0CACBB7B8D012899FFA2A00359D4FA /* NSDecimalNumberTransform.swift */,
+				AD028BD446318762A662F52D0DBA8709 /* Operators.swift */,
+				8E9FBE0B32DA9C7566F38258DFE17E04 /* ToJSON.swift */,
+				BAC1E57B08582653D64A1B008345AA1A /* TransformOf.swift */,
+				905FF3CF3E579919CBF4D5E029FCEDEE /* TransformOperators.swift */,
+				9250E58A176AE70A29BFDEC4BE107A33 /* TransformType.swift */,
+				2B4CD04E8F56E2CD624F4A2B2CFE55A9 /* URLTransform.swift */,
+				DA23529BF00448D29470D3EEF8F14F0C /* Support Files */,
+			);
+			name = ObjectMapper;
+			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		5A94D24560AC02F66EEA649E4E747BEF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C581119FB521596F86138B43DEEC291C /* CryptoHash.h */,
+				A7CC55D1B0119893223E6A692A0578B8 /* CryptoHash.m */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5D3CF180B255A94DF23E361FB312B44E /* tweakology */ = {
+			isa = PBXGroup;
+			children = (
+				B040389E20038E32FA97E8426D3F021E /* CryptoHash */,
+				8C57DDCEBF7063AEF1A0A9AFD91747D0 /* Support Files */,
+				FC1449B3F4F124D70EA57FCEA24EE582 /* tweakology */,
 			);
 			name = tweakology;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		404672370B46AE6DB5403AC79113743A /* Pods-tweakology_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				30C794FD9DF23A20804144B890AEDF96 /* Info.plist */,
-				7859567BEBC3CF997130672A28D67363 /* Pods-tweakology_Tests.modulemap */,
-				BEDF4CD6F27B66C5AD3AADEA06F8BAF5 /* Pods-tweakology_Tests-acknowledgements.markdown */,
-				42D4A073A02465295B74E6E7FE0D579E /* Pods-tweakology_Tests-acknowledgements.plist */,
-				917EFD68C3A8875544A105BFF57C9B03 /* Pods-tweakology_Tests-dummy.m */,
-				94F34393C76C69DB85F6A4247EC83035 /* Pods-tweakology_Tests-frameworks.sh */,
-				AF6519565195918F5F59AAD046A91B00 /* Pods-tweakology_Tests-resources.sh */,
-				25839989C4162076059E9CAAE61ACD74 /* Pods-tweakology_Tests-umbrella.h */,
-				401A386737801E0B3234C1A7B92D54AF /* Pods-tweakology_Tests.debug.xcconfig */,
-				169B3EA90CB4F1C911B10C0D472C08F3 /* Pods-tweakology_Tests.release.xcconfig */,
-			);
-			name = "Pods-tweakology_Tests";
-			path = "Target Support Files/Pods-tweakology_Tests";
-			sourceTree = "<group>";
-		};
 		63BC2D69C108C42861E64245A61EFA29 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				838D8FC91FE74C5C8584023D905BDECD /* Pods-tweakology_Example */,
-				404672370B46AE6DB5403AC79113743A /* Pods-tweakology_Tests */,
+				1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-tweakology_Example */,
+				E016F6E5C926F735F936FE124651017E /* Pods-tweakology_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6A78B94831F164F11C4FA07322F0F3DC /* Development Pods */ = {
+		682DDB8D1B97C6264E8651C0582EA2DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				39745211A96A83FE69966D4888DB8424 /* tweakology */,
+				5DF8689D10CF324256381729B4C407CF /* GCDWebServer.h */,
+				2B2BA0C914FE19AED9BF33AAFC792FCF /* GCDWebServer.m */,
+				6C282BA93035FB040925295D8FB1C58F /* GCDWebServerConnection.h */,
+				1DBB8F73A5B9B81C4944543F66EF1B9E /* GCDWebServerConnection.m */,
+				96CA36D9D45D65C583A4D6E26758D6DE /* GCDWebServerDataRequest.h */,
+				0E5F5CBAC0A8DD29764B964404784452 /* GCDWebServerDataRequest.m */,
+				9F0EB65102648935637FC4B85065AF41 /* GCDWebServerDataResponse.h */,
+				5B190570E4CA834A77BFE6E930CEE61C /* GCDWebServerDataResponse.m */,
+				3A7ED1D1BBE4DCDECBFB5C3FF88D906C /* GCDWebServerErrorResponse.h */,
+				CF0218355A9A38C9208709422597B870 /* GCDWebServerErrorResponse.m */,
+				757161A8E28372060C9FEDE1B6C9E95C /* GCDWebServerFileRequest.h */,
+				864842035DF56045DCC1020D591943A5 /* GCDWebServerFileRequest.m */,
+				40B3387724C728C0C5E49602E37B0D9F /* GCDWebServerFileResponse.h */,
+				4C6C8253D70D71E0106FDD076563FE2B /* GCDWebServerFileResponse.m */,
+				96BABE9FB54599DD1012292B979ED773 /* GCDWebServerFunctions.h */,
+				3E33F0D11AE0776FB3A67494CA54B1F7 /* GCDWebServerFunctions.m */,
+				1688CCF8D6F4ED35A69879B476A97D2D /* GCDWebServerHTTPStatusCodes.h */,
+				C54A6131EF4A6FF55511029C2CA61925 /* GCDWebServerMultiPartFormRequest.h */,
+				427FAEFDA1E8F504675DA1AABFCD785C /* GCDWebServerMultiPartFormRequest.m */,
+				804A2C3639A6828E839B9B74BE6E7E40 /* GCDWebServerPrivate.h */,
+				DF3595ECEFB795CB5EC046D35F3A2BB2 /* GCDWebServerRequest.h */,
+				BF0FF1E4C9BCCC3236E620880BE080F5 /* GCDWebServerRequest.m */,
+				82501A4C8BE99B055147C849388CBF4D /* GCDWebServerResponse.h */,
+				B673D28D42BF4D0B51DCA480087B70A5 /* GCDWebServerResponse.m */,
+				71B1BCCE2E707ED31ABAD7D998FABE72 /* GCDWebServerStreamedResponse.h */,
+				06DC7D520D8AEAFC5F4E58D51A64AFB4 /* GCDWebServerStreamedResponse.m */,
+				ADA71694CCE6853F4640D7D39988C058 /* GCDWebServerURLEncodedFormRequest.h */,
+				9CD077D12EF2D0508DEAD4073F941673 /* GCDWebServerURLEncodedFormRequest.m */,
 			);
-			name = "Development Pods";
+			name = Core;
+			sourceTree = "<group>";
+		};
+		6FEC40D1E651397222D0BC9D00EA1E1F /* GCDWebServer */ = {
+			isa = PBXGroup;
+			children = (
+				682DDB8D1B97C6264E8651C0582EA2DD /* Core */,
+				04AAF8C04326A348FCD84490E2C5CF65 /* Support Files */,
+			);
+			name = GCDWebServer;
+			path = GCDWebServer;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				6A78B94831F164F11C4FA07322F0F3DC /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9F8C05F41516EA560CA5D83D454A1530 /* Products */,
+				B15F757DAB077366ED8A15601F13E723 /* Development Pods */,
+				A288E09F7D5F620A525654F30EB7A1B3 /* Frameworks */,
+				AB5B95F292AF4820CE8DB326C5975B54 /* Pods */,
+				27F81F8440C11CE8632C056094671B43 /* Products */,
 				63BC2D69C108C42861E64245A61EFA29 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		838D8FC91FE74C5C8584023D905BDECD /* Pods-tweakology_Example */ = {
+		8C57DDCEBF7063AEF1A0A9AFD91747D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB309A8838BF989C1D92EAA9FDE1FB90 /* Info.plist */,
-				6724B805CB2245B3425B68A69913EC86 /* Pods-tweakology_Example.modulemap */,
-				494E71F46CEFF0330AB37C3728E509E6 /* Pods-tweakology_Example-acknowledgements.markdown */,
-				072A651671ADEE35B397DCA641C03138 /* Pods-tweakology_Example-acknowledgements.plist */,
-				7F418AE30D05E10EC9D5B887D851FE42 /* Pods-tweakology_Example-dummy.m */,
-				C45F06EBD5532447B359A9DEDA92269F /* Pods-tweakology_Example-frameworks.sh */,
-				8E0C80B84C2F283862D3D5BEC45FE5BA /* Pods-tweakology_Example-resources.sh */,
-				DA959C22EFE79BA8C710FB606767DC16 /* Pods-tweakology_Example-umbrella.h */,
-				4BA52755AA0C93BDE9A77126C0815B01 /* Pods-tweakology_Example.debug.xcconfig */,
-				A38B35755BB367F761FFFCDFD3382C87 /* Pods-tweakology_Example.release.xcconfig */,
-			);
-			name = "Pods-tweakology_Example";
-			path = "Target Support Files/Pods-tweakology_Example";
-			sourceTree = "<group>";
-		};
-		9F8C05F41516EA560CA5D83D454A1530 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4461DC3E4AA89B0D0D9C0AAD111E6C94 /* Pods_tweakology_Example.framework */,
-				0290876D484F14DC0E33DA690FDCFF9E /* Pods_tweakology_Tests.framework */,
-				B3047944AB36F0E225F215E8BE5E3D32 /* tweakology.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8E76DC9F05CA39D9D70BC2F210E6309 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				6FFFFD3A18D34C56D2D114EDDE3218C9 /* TweakologyLayoutEngine.swift */,
-				6570EACB8FB107F878D4728F8344919A /* TweakologyLayoutInspectorProtocol.swift */,
-				728CE8A0E439BFD1384CF5BDDAD9DB72 /* UIViewController+TweakologyLayoutInspector.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E41794429DC5463320BEC5E2B5A50AA2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B06B36E954E2CF129C8D9C63C9BDBA48 /* Info.plist */,
-				AC197A15C8A5C34C680F2B691AEED296 /* tweakology.modulemap */,
-				04BB9A26B6A41C6A1DAAF32DA9399807 /* tweakology.xcconfig */,
-				ECBFFE576D915193F34A71D5AC395A0A /* tweakology-dummy.m */,
-				46A5FE12B2C881C332549543DCA556BE /* tweakology-prefix.pch */,
-				BF035B805BB8BD77133414DC6DD24A74 /* tweakology-umbrella.h */,
+				A3AC966541CBD5743FBC2A6427300692 /* Info.plist */,
+				9C61B3E2AF39D779A3D5996A11E0BD50 /* tweakology.modulemap */,
+				36D59C4C04C9B0CCE24B7D89A3D6C93D /* tweakology.xcconfig */,
+				96271A54A415AA12072FA2E227BA0115 /* tweakology-dummy.m */,
+				8AB181B5AB00071B0133A053255AF363 /* tweakology-prefix.pch */,
+				DCD69CF2CF61E638BC6F5B0C272B3598 /* tweakology-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/tweakology";
 			sourceTree = "<group>";
 		};
-		E59D05642B33778558295460593D038F /* tweakology */ = {
+		A288E09F7D5F620A525654F30EB7A1B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8E76DC9F05CA39D9D70BC2F210E6309 /* Classes */,
+				5984314F922313D8D79D958E98F54D43 /* GCDWebServer.framework */,
+				12E58A6B98860A40C10B871058AC4CB3 /* ObjectMapper.framework */,
+				D1B1843BB95793506C9C53BF03CFC8D7 /* iOS */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A390DBD749122DEAA5A5298001815FA8 /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				5A94D24560AC02F66EEA649E4E747BEF /* Classes */,
+			);
+			name = CryptoHash;
+			path = CryptoHash;
+			sourceTree = "<group>";
+		};
+		AB5B95F292AF4820CE8DB326C5975B54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FEC40D1E651397222D0BC9D00EA1E1F /* GCDWebServer */,
+				5A41CEE9E1061FC7609E0216FE8D3C16 /* ObjectMapper */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B040389E20038E32FA97E8426D3F021E /* CryptoHash */ = {
+			isa = PBXGroup;
+			children = (
+				060BFF49176178C16A5C2BBA8F8CAD83 /* CryptoHash */,
+			);
+			name = CryptoHash;
+			sourceTree = "<group>";
+		};
+		B15F757DAB077366ED8A15601F13E723 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D3CF180B255A94DF23E361FB312B44E /* tweakology */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D0CCD7FE42A2BF4C9ECCDFA4FBF93816 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A797C85A1D1044B87DE5226E287F7EA4 /* Tests.m */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D1B1843BB95793506C9C53BF03CFC8D7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BCE285697234AC8EBD6E60EDB713A8BB /* CFNetwork.framework */,
+				0B60634547C7DC28383AAEFC53A86CB6 /* Foundation.framework */,
+				25AC6751925003002B6A180637640A55 /* MobileCoreServices.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA23529BF00448D29470D3EEF8F14F0C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				32E8886A21B494A7CA2161112039D20E /* Info.plist */,
+				A52E60CFE47D3BBA329820B8609D350A /* ObjectMapper.modulemap */,
+				2B63B09493B7A1B204A5FBEEC8294641 /* ObjectMapper.xcconfig */,
+				0AF73236660B2C764BEC5B0903EECD67 /* ObjectMapper-dummy.m */,
+				2D1EA3D9FA7ACAF6B7A6274FCAC589AA /* ObjectMapper-prefix.pch */,
+				195384E6AFC1255FD8D69DD4759E593A /* ObjectMapper-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ObjectMapper";
+			sourceTree = "<group>";
+		};
+		E016F6E5C926F735F936FE124651017E /* Pods-tweakology_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				56B49CC6DB4AE17B9A6A8026022EDA74 /* Info.plist */,
+				3C23C95C7638F6E73839AF500DA4C937 /* Pods-tweakology_Tests.modulemap */,
+				48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-tweakology_Tests-acknowledgements.markdown */,
+				14C98E67F1F2E9DC84095723F89D8D80 /* Pods-tweakology_Tests-acknowledgements.plist */,
+				2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */,
+				BCE7A0DE02D8CD70296C26D14F18806C /* Pods-tweakology_Tests-frameworks.sh */,
+				BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-tweakology_Tests-resources.sh */,
+				31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */,
+				27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */,
+				3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */,
+			);
+			name = "Pods-tweakology_Tests";
+			path = "Target Support Files/Pods-tweakology_Tests";
+			sourceTree = "<group>";
+		};
+		F8E776866D5C9E6A170941DEB30443CA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DBD208523C8AB4EC53D30F2CE0836888 /* TweakologyLayoutEngine.swift */,
+				065E9FB274557054659E78AC1727D649 /* TweakologyLayoutInspectorProtocol.swift */,
+				0D59709881AC196820B0B8A4FDCBE3CE /* TweaksStorage.swift */,
+				6DE3956D78BFBCAAAA2DF0FF406056C0 /* UIView+HierarchyMetadata.swift */,
+				C2E6E1773FAF1A149F610A6FB301819B /* UIView+RenderImage.swift */,
+				0D37CFD9CE4F558DCE504363E35043B9 /* UIViewController+TweakologyLayoutInspector.swift */,
+				4BC1CDA40FE352EF58AEAA916C07066A /* Agent */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FC1449B3F4F124D70EA57FCEA24EE582 /* tweakology */ = {
+			isa = PBXGroup;
+			children = (
+				F8E776866D5C9E6A170941DEB30443CA /* Classes */,
+			);
+			name = tweakology;
 			path = tweakology;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		66F04BAA3F90D1C60852D9892D3B8869 /* Headers */ = {
+		21EECB8E7665942A12B39FA6590FBEC9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDAE716316DE386C6334CEE23B3C7D7 /* Pods-tweakology_Example-umbrella.h in Headers */,
+				EAD1E11BB0EF59E7FF8F66DBA660A956 /* CryptoHash-umbrella.h in Headers */,
+				A760CBDBA682C1029FDC104FA2CE036A /* CryptoHash.h in Headers */,
+				2587DB9826410B97C29AAC275C31E17B /* Pods-CryptoHash_Tests-umbrella.h in Headers */,
+				11E01CD86730F1EE4C371D4C53CB201F /* tweakology-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92F35948B7B898FC16247A3F0F4551F3 /* Headers */ = {
+		3BA0FB59F7BF97E8494BFE0319D7BF49 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				375C802576B72F596FE0D157976CABEF /* tweakology-umbrella.h in Headers */,
+				F6D39919E7A93EF730A42C5454FE14DA /* GCDWebServer-umbrella.h in Headers */,
+				C7C59EABCA3DDF9027315567A86633C9 /* GCDWebServer.h in Headers */,
+				BEC201BABAE91076042A1E129F4DA3C3 /* GCDWebServerConnection.h in Headers */,
+				7FAF962B8C7835FE24B87E0491ABD3BF /* GCDWebServerDataRequest.h in Headers */,
+				93F748D723B8A26F9F86DEE7517ECE3E /* GCDWebServerDataResponse.h in Headers */,
+				DC09F868362D0A2A04B9F976EA736327 /* GCDWebServerErrorResponse.h in Headers */,
+				B4911B17CF238F3346307208CB00AEB2 /* GCDWebServerFileRequest.h in Headers */,
+				BF2F9CB14A46386124DA587D5601A8CF /* GCDWebServerFileResponse.h in Headers */,
+				DE59D3775F15714D2A4D6E0493982534 /* GCDWebServerFunctions.h in Headers */,
+				A7DB03F2E311A12C08C6ABA437DA5D7D /* GCDWebServerHTTPStatusCodes.h in Headers */,
+				D6CB3B96FE8AE0307F1F8959E648056C /* GCDWebServerMultiPartFormRequest.h in Headers */,
+				DC031CF0E61CC9BB8CA74D347D6AF8AB /* GCDWebServerPrivate.h in Headers */,
+				722A5AF46F8C5D56564E86D84F29347E /* GCDWebServerRequest.h in Headers */,
+				E9FA66200123610C2387FF3196460246 /* GCDWebServerResponse.h in Headers */,
+				6B80C04509C2C2D5835E7BA7DAA79149 /* GCDWebServerStreamedResponse.h in Headers */,
+				7E7FD57AF138183D9FF3658B84E6C0A0 /* GCDWebServerURLEncodedFormRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,42 +735,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E14504BF97086718FC2F410DBAB250E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C7AD806F2DA2567C692E5BBD60C02B /* Pods-tweakology_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57C9456EA5FB7C7D8FC40BACD0F5369 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A128DBCF691E0F4D2AC3EEA36F7BD562 /* ObjectMapper-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6540330157AF50563480645507CDEF5D /* Pods-tweakology_Example */ = {
+		1252D2FE5A3F0266E8959BB670344352 /* GCDWebServer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F801E420C5D4D416DAFEA31764CE0A1F /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */;
+			buildConfigurationList = 41F4D36572763B40C3A8B1A51F58E3A0 /* Build configuration list for PBXNativeTarget "GCDWebServer" */;
 			buildPhases = (
-				60F1D71E3DFFE35AFD7C7B3CF69DCACC /* Sources */,
-				2ECCDB4363669496A3439F5A04850A5C /* Frameworks */,
-				66F04BAA3F90D1C60852D9892D3B8869 /* Headers */,
+				96B50ABFE887FC9A0409FE45E447B095 /* Sources */,
+				B4492D2026C6838F33DD08B302F3E503 /* Frameworks */,
+				3BA0FB59F7BF97E8494BFE0319D7BF49 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8DA6EE7123E57A69DB78F54AC88D51BA /* PBXTargetDependency */,
+			);
+			name = GCDWebServer;
+			productName = GCDWebServer;
+			productReference = 07BE631A058025E6EDFEA70E5615B403 /* GCDWebServer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C1B486B0113B92373D5455A68B88A00 /* Pods-tweakology_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F549FB807985C9872F7A8BC3BAFC29C /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */;
+			buildPhases = (
+				1A2AC9ACF4E3A09488DF72CB8B65FAF2 /* Sources */,
+				DD7572134FA0BE979F1E3DCF221ED6BE /* Frameworks */,
+				E14504BF97086718FC2F410DBAB250E6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F150ECCFE00E11135CE1B97F826FD0D /* PBXTargetDependency */,
+				A26A7419B0500E66A4869DB1D8CDF320 /* PBXTargetDependency */,
+				AE9FE3309E667ECE669E725B33DDE6EF /* PBXTargetDependency */,
 			);
 			name = "Pods-tweakology_Example";
 			productName = "Pods-tweakology_Example";
-			productReference = 4461DC3E4AA89B0D0D9C0AAD111E6C94 /* Pods_tweakology_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		85126208FD2A6D007439B9F488263847 /* tweakology */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C4EB7B648F39B8320BEC54FA71D635C3 /* Build configuration list for PBXNativeTarget "tweakology" */;
-			buildPhases = (
-				79C69A11731B49309B97CC878BFEBE67 /* Sources */,
-				240DB25C605BF5B1B573B461960D3EE2 /* Frameworks */,
-				92F35948B7B898FC16247A3F0F4551F3 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = tweakology;
-			productName = tweakology;
-			productReference = B3047944AB36F0E225F215E8BE5E3D32 /* tweakology.framework */;
+			productReference = 0A46A7FBB6F416DAA8400E49489C7939 /* Pods_tweakology_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9BE53CB880011E128BB40EBE04412EC7 /* Pods-tweakology_Tests */ = {
@@ -307,7 +805,43 @@
 			);
 			name = "Pods-tweakology_Tests";
 			productName = "Pods-tweakology_Tests";
-			productReference = 0290876D484F14DC0E33DA690FDCFF9E /* Pods_tweakology_Tests.framework */;
+			productReference = B413C7207866F06949F49AB9B0E74339 /* Pods_tweakology_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CD6C9FB6B052E1CF663F8A56041EA163 /* ObjectMapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23CFD86DE455F2B998EC09D589DA285D /* Build configuration list for PBXNativeTarget "ObjectMapper" */;
+			buildPhases = (
+				F35FEC988ECD73463D93176BC71A43B1 /* Sources */,
+				C4F4068871A73EB6FBE8042AF2063595 /* Frameworks */,
+				F57C9456EA5FB7C7D8FC40BACD0F5369 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjectMapper;
+			productName = ObjectMapper;
+			productReference = D3C84FA9E96150DFDA1C62DC8B85D85F /* ObjectMapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E73200FAD07AE129427F1DFCC5016535 /* tweakology */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCB3360220920664B60180859CD50DD6 /* Build configuration list for PBXNativeTarget "tweakology" */;
+			buildPhases = (
+				A9151AA07557343E4E0A293C63356E19 /* Sources */,
+				0EBE9C02F4AF4D1253DE260D290AEDE2 /* Frameworks */,
+				21EECB8E7665942A12B39FA6590FBEC9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09581EAA1CCE4AC97B945979EEE6AF0D /* PBXTargetDependency */,
+				4382E6FB99D0E40D5BCBED353D03A50A /* PBXTargetDependency */,
+			);
+			name = tweakology;
+			productName = tweakology;
+			productReference = 2C1AD0769E422D46E9B9EDF3300CFF12 /* tweakology.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -316,8 +850,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -327,34 +861,46 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9F8C05F41516EA560CA5D83D454A1530 /* Products */;
+			productRefGroup = 27F81F8440C11CE8632C056094671B43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6540330157AF50563480645507CDEF5D /* Pods-tweakology_Example */,
+				1252D2FE5A3F0266E8959BB670344352 /* GCDWebServer */,
+				CD6C9FB6B052E1CF663F8A56041EA163 /* ObjectMapper */,
+				4C1B486B0113B92373D5455A68B88A00 /* Pods-tweakology_Example */,
 				9BE53CB880011E128BB40EBE04412EC7 /* Pods-tweakology_Tests */,
-				85126208FD2A6D007439B9F488263847 /* tweakology */,
+				E73200FAD07AE129427F1DFCC5016535 /* tweakology */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		60F1D71E3DFFE35AFD7C7B3CF69DCACC /* Sources */ = {
+		1A2AC9ACF4E3A09488DF72CB8B65FAF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A8100B25039BE07EF452116D4D170DA /* Pods-tweakology_Example-dummy.m in Sources */,
+				AB8976B648DECB1879A6002FCF2F6102 /* Pods-tweakology_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79C69A11731B49309B97CC878BFEBE67 /* Sources */ = {
+		96B50ABFE887FC9A0409FE45E447B095 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177C98E201E92A5D31D4B7C902358D46 /* tweakology-dummy.m in Sources */,
-				E1B841AC111FF6CEC510CAEE26099EA4 /* TweakologyLayoutEngine.swift in Sources */,
-				421A401F040324FE3FF41FDB243E8077 /* TweakologyLayoutInspectorProtocol.swift in Sources */,
-				2AD19312A583A15856D2BB124118CEA1 /* UIViewController+TweakologyLayoutInspector.swift in Sources */,
+				C0C767CEEC23B87C28E12514EB40B595 /* GCDWebServer-dummy.m in Sources */,
+				D968E3B8DD541A17BEC730B7002FC70A /* GCDWebServer.m in Sources */,
+				53D351E0789DC20EBFFD379BBEA50A22 /* GCDWebServerConnection.m in Sources */,
+				62E543AFAF89752AB51EEEDE83439292 /* GCDWebServerDataRequest.m in Sources */,
+				3B7554FE6AAD63F8AF65CA5ED3141A7C /* GCDWebServerDataResponse.m in Sources */,
+				17A6C6141E878921A935125A7E83D572 /* GCDWebServerErrorResponse.m in Sources */,
+				7B644CDEFB1543D7A7642386B7B71CB0 /* GCDWebServerFileRequest.m in Sources */,
+				54F6C1DD0DAC79ADCC7178EA81760558 /* GCDWebServerFileResponse.m in Sources */,
+				BFCC96B07137471CEBD04589F3FF98C5 /* GCDWebServerFunctions.m in Sources */,
+				F709CDA8E32FD850396F71FA35DE1C1C /* GCDWebServerMultiPartFormRequest.m in Sources */,
+				AA7BBB6E29D7F28E69B81F07854F18AD /* GCDWebServerRequest.m in Sources */,
+				528723317954B1D0AF5AB63A2F74F2D8 /* GCDWebServerResponse.m in Sources */,
+				CA626FA4E095B938ADE36DE43A6B841B /* GCDWebServerStreamedResponse.m in Sources */,
+				EEDC6F805D83C380D14C45A773AF430D /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,202 +912,276 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9151AA07557343E4E0A293C63356E19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF15209B6892C4EFC1F0E379944344 /* CGRect+Mappable.swift in Sources */,
+				B6E824962197C1928ADD5A481A8718B3 /* CryptoHash-dummy.m in Sources */,
+				52CF5BFD5B3F75ED4C76D8E1989564FB /* CryptoHash.m in Sources */,
+				89F0BD651AED40B979BE4DE319A675E0 /* MappableOverrideProtocol.swift in Sources */,
+				D1A62C8E4A8515878F5C2920C96B01F1 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
+				262E4F394D171775CC15269FB4974169 /* Tests.m in Sources */,
+				F299CDFFDB371F3F29D34B1E5D346969 /* tweakology-dummy.m in Sources */,
+				1DEE28B20E3A37128685CAD0AFD73D45 /* TweakologyAgent.swift in Sources */,
+				C6849120165F30269287E68639EB73B5 /* TweakologyLayoutEngine.swift in Sources */,
+				BD02C8834FBD607EF31B7088F61EE19B /* TweakologyLayoutInspectorProtocol.swift in Sources */,
+				50B7F1B0644E6D5FF7A02C1BED55F501 /* TweaksStorage.swift in Sources */,
+				236B83ABDAC4A32E7CEA4705EDE1179A /* UIButton+MappableOverride.swift in Sources */,
+				965D2AFD4838745615E442A537BF2DCB /* UIColor+Mappable.swift in Sources */,
+				13DEF7F9CF3B497997107E00EC6D32D7 /* UIFont+Mappable.swift in Sources */,
+				6F96C842C24F41D51F37439BB8487D29 /* UILabel+MappableOverride.swift in Sources */,
+				208EEC9D3507301018F32AD2D426F0A3 /* UIView+HierarchyMetadata.swift in Sources */,
+				3C87144F6101B3DCB0E52ADE08E62BAA /* UIView+Mappable.swift in Sources */,
+				598542481F812B4577712805DCF4816D /* UIView+RenderImage.swift in Sources */,
+				9ED803A158FAC2A3129CA01F747B93DA /* UIViewController+TweakologyLayoutInspector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F35FEC988ECD73463D93176BC71A43B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F981C56836FE34E921BC7253826A170 /* CustomDateFormatTransform.swift in Sources */,
+				EC1A896625476730D64BF9645624BBAD /* DataTransform.swift in Sources */,
+				4215D7313CE6E738AAD80E9FEC6C60CC /* DateFormatterTransform.swift in Sources */,
+				F9B63BDA169DB048D41DA8395261AEBA /* DateTransform.swift in Sources */,
+				B2EFEFFB34D517F8E9A203B674AEBD13 /* DictionaryTransform.swift in Sources */,
+				706840688BA7E9BDE5F4DD2C0E558835 /* EnumOperators.swift in Sources */,
+				FCE734BD83FB03D3DC9F8AA843ECD73B /* EnumTransform.swift in Sources */,
+				DB87FF0D3B17ABB5452FDD4D70C9A84D /* FromJSON.swift in Sources */,
+				551FB4DF0E5072BB849BB4FCE74F7361 /* HexColorTransform.swift in Sources */,
+				B9C39C539A810D1958AEEF1AEC0FD75C /* ImmutableMappable.swift in Sources */,
+				1894026C296B8A77711607C98ED40C86 /* IntegerOperators.swift in Sources */,
+				255C4ADB2BD82FEEF86A3D4D43F31C63 /* ISO8601DateTransform.swift in Sources */,
+				A5BFC49ED41BC416BEBF4772517AB741 /* Map.swift in Sources */,
+				2D89AB26203628C04B3E87D045525701 /* MapError.swift in Sources */,
+				67A4D8A24085ADC44A65404E73461B43 /* Mappable.swift in Sources */,
+				77CA4CD47748C0B69982A6D82C2799D5 /* Mapper.swift in Sources */,
+				6C2FE27FDBD6621AAB57E4082419C347 /* NSDecimalNumberTransform.swift in Sources */,
+				59109302859941E04E87DC7044DFEE89 /* ObjectMapper-dummy.m in Sources */,
+				EA67527CAF7ED571C8A84B66DDD70FBE /* Operators.swift in Sources */,
+				134859C42E05396F62489E4329ECF6EA /* ToJSON.swift in Sources */,
+				194858D10B9B1DD9FFEFBE4EAA0700F3 /* TransformOf.swift in Sources */,
+				18E9B5E96557418567FCB7DCC559299F /* TransformOperators.swift in Sources */,
+				27156C9092B7A82E24CF96312A941150 /* TransformType.swift in Sources */,
+				F527B0A072DFD754B471E4C1F6B16C48 /* URLTransform.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8DA6EE7123E57A69DB78F54AC88D51BA /* PBXTargetDependency */ = {
+		09581EAA1CCE4AC97B945979EEE6AF0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GCDWebServer;
+			target = 1252D2FE5A3F0266E8959BB670344352 /* GCDWebServer */;
+			targetProxy = 309C5B53A1FB3625DB3EBBD5AAA6CAF9 /* PBXContainerItemProxy */;
+		};
+		2F150ECCFE00E11135CE1B97F826FD0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GCDWebServer;
+			target = 1252D2FE5A3F0266E8959BB670344352 /* GCDWebServer */;
+			targetProxy = 03C664C31E59B30A14672FAB1FC4E901 /* PBXContainerItemProxy */;
+		};
+		4382E6FB99D0E40D5BCBED353D03A50A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = CD6C9FB6B052E1CF663F8A56041EA163 /* ObjectMapper */;
+			targetProxy = C75C9BBC7C6CAB045147F7985955CBE9 /* PBXContainerItemProxy */;
+		};
+		A26A7419B0500E66A4869DB1D8CDF320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = CD6C9FB6B052E1CF663F8A56041EA163 /* ObjectMapper */;
+			targetProxy = D71320EDE8409604EDD96B64535B6A3F /* PBXContainerItemProxy */;
+		};
+		AE9FE3309E667ECE669E725B33DDE6EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = tweakology;
-			target = 85126208FD2A6D007439B9F488263847 /* tweakology */;
-			targetProxy = 25587802389C7FFA234F90379759AD49 /* PBXContainerItemProxy */;
+			target = E73200FAD07AE129427F1DFCC5016535 /* tweakology */;
+			targetProxy = 4F9015BF54EE83A6906AC7C6694633E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */ = {
+		09FEEC087231A24676BF30117F87D2A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GCDWebServer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
+				PRODUCT_NAME = GCDWebServer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		388BC114C0729DE64024D9B219AD2D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_tweakology_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SYMROOT = "${SRCROOT}/../build";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		21A754C8FDDCF074EF2CA5DF9325DB04 /* Debug */ = {
+		3CA0AA3F216954F56588FDE4D0344C00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BA52755AA0C93BDE9A77126C0815B01 /* Pods-tweakology_Example.debug.xcconfig */;
+			baseConfigurationReference = 36D59C4C04C9B0CCE24B7D89A3D6C93D /* tweakology.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_tweakology_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3A948B44C9A63E2E9D390A56CD3357B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04BB9A26B6A41C6A1DAAF32DA9399807 /* tweakology.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/tweakology/tweakology-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/tweakology/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/tweakology/tweakology.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = tweakology;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		556BBFD17FCD1790395A2998E4B28EDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04BB9A26B6A41C6A1DAAF32DA9399807 /* tweakology.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/tweakology/tweakology-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/tweakology/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/tweakology/tweakology.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = tweakology;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8A12B86194A40367B9C2956E3F3167EC /* Debug */ = {
+		5CC6C00751F24BF8684374314BC5E2FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 401A386737801E0B3234C1A7B92D54AF /* Pods-tweakology_Tests.debug.xcconfig */;
+			baseConfigurationReference = 2B63B09493B7A1B204A5FBEEC8294641 /* ObjectMapper.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5DD84AC7B5005B238AFF82597EDB7429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_tweakology_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		67801563538FF46CEDD973C72C655778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -575,29 +1195,56 @@
 			};
 			name = Debug;
 		};
-		9A58D65F7BAD69A9BE6E76F982A2C8D2 /* Release */ = {
+		6CA0BB5D87939E89937B4A46C399B93F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A38B35755BB367F761FFFCDFD3382C87 /* Pods-tweakology_Example.release.xcconfig */;
+			baseConfigurationReference = 2B63B09493B7A1B204A5FBEEC8294641 /* ObjectMapper.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7AC6C4B430A5DAD44E5DC0D94F503842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -605,83 +1252,83 @@
 				PRODUCT_NAME = Pods_tweakology_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		9CD12B2DEBC80766EAFCBFD659E1FCBF /* Release */ = {
+		8550A413C6581BC5DA49960F602CD2E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 169B3EA90CB4F1C911B10C0D472C08F3 /* Pods-tweakology_Tests.release.xcconfig */;
+			baseConfigurationReference = 36D59C4C04C9B0CCE24B7D89A3D6C93D /* tweakology.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/tweakology/tweakology-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/tweakology/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_tweakology_Tests;
+				MODULEMAP_FILE = "Target Support Files/tweakology/tweakology.modulemap";
+				PRODUCT_NAME = tweakology;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */ = {
+		991D2ACF36318340024E3F7ACF7FB825 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -690,29 +1337,127 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
+		DA03565BE765DB55C6448FB363A44481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E34D6F14826766DDCB2F2B905EE595D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GCDWebServer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
+				PRODUCT_NAME = GCDWebServer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		23CFD86DE455F2B998EC09D589DA285D /* Build configuration list for PBXNativeTarget "ObjectMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA0BB5D87939E89937B4A46C399B93F /* Debug */,
+				5CC6C00751F24BF8684374314BC5E2FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27CB602EFD167EEB6783356040918A40 /* Build configuration list for PBXNativeTarget "Pods-tweakology_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A12B86194A40367B9C2956E3F3167EC /* Debug */,
-				9CD12B2DEBC80766EAFCBFD659E1FCBF /* Release */,
+				67801563538FF46CEDD973C72C655778 /* Debug */,
+				5DD84AC7B5005B238AFF82597EDB7429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -720,26 +1465,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */,
-				157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */,
+				991D2ACF36318340024E3F7ACF7FB825 /* Debug */,
+				DA03565BE765DB55C6448FB363A44481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4EB7B648F39B8320BEC54FA71D635C3 /* Build configuration list for PBXNativeTarget "tweakology" */ = {
+		2F549FB807985C9872F7A8BC3BAFC29C /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A948B44C9A63E2E9D390A56CD3357B6 /* Debug */,
-				556BBFD17FCD1790395A2998E4B28EDD /* Release */,
+				7AC6C4B430A5DAD44E5DC0D94F503842 /* Debug */,
+				388BC114C0729DE64024D9B219AD2D45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F801E420C5D4D416DAFEA31764CE0A1F /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */ = {
+		41F4D36572763B40C3A8B1A51F58E3A0 /* Build configuration list for PBXNativeTarget "GCDWebServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21A754C8FDDCF074EF2CA5DF9325DB04 /* Debug */,
-				9A58D65F7BAD69A9BE6E76F982A2C8D2 /* Release */,
+				09FEEC087231A24676BF30117F87D2A6 /* Debug */,
+				E34D6F14826766DDCB2F2B905EE595D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCB3360220920664B60180859CD50DD6 /* Build configuration list for PBXNativeTarget "tweakology" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8550A413C6581BC5DA49960F602CD2E8 /* Debug */,
+				3CA0AA3F216954F56588FDE4D0344C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

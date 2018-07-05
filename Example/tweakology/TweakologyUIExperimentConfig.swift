@@ -12,8 +12,8 @@ let changeSeq: [[String: Any]] = [
     [
         "operation": "insert",
         "view" : [
-            "id": "3",
-            "parentId": "0",
+            "id": "ZDZiNTY5ZW",
+            "parentId": "MGQ3MDAyZD",
             "index": 2,
             "type": "UILabel",
             "props" : [
@@ -23,9 +23,9 @@ let changeSeq: [[String: Any]] = [
                 "backgroundColor": "red"
             ],
             "constraints": [
-                "topAnchor": "$0 + 20",
-                "leadingAnchor": "$0 + 20",
-                "trailingAnchor": "$0 - 20",
+                "topAnchor": "$(MGQ3MDAyZD) + 20",
+                "leadingAnchor": "$(MGQ3MDAyZD) + 20",
+                "trailingAnchor": "$(MGQ3MDAyZD) - 20",
                 "heightAnchor": "60"
             ]
         ]
@@ -33,25 +33,25 @@ let changeSeq: [[String: Any]] = [
     [
         "operation": "modify",
         "view": [
-            "id": "1",
+            "id": "N2MyOTZhNT",
             "constraints": [
-                "topAnchor": "$3.bottomAnchor + 20"
+                "topAnchor": "$(ZDZiNTY5ZW).bottomAnchor + 20"
             ]
         ]
     ],
     [
         "operation": "modify",
         "view": [
-            "id": "0",
+            "id": "MGQ3MDAyZD",
             "frame": [
-                "height": "$0 - 20"
+                "height": "$(MGQ3MDAyZD) - 20"
             ]
         ]
     ],
     [
         "operation": "modify",
         "view": [
-            "id": "2",
+            "id": "MjdhMzRjYj",
             "props": [
                 "clipsToBounds": true,
                 "title": "tweaked button",

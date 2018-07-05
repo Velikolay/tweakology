@@ -14,6 +14,6 @@ extension UIButton: MappableOverride {
     }
 
     public func mappingOverride(map: Map) {
-        titleLabel >>> map["title"]
+        titleLabel >>> map["properties.title"]
     }
 }

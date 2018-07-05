@@ -9,7 +9,6 @@ import UIKit
 
 public struct IndexedView {
     var id: String
-    var parentId: String
     var isTerminal: Bool
     var type: String
     public var view: UIView

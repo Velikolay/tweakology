@@ -14,9 +14,8 @@ extension UILabel: MappableOverride {
     }
 
     public func mappingOverride(map: Map) {
-        text <- map["text"]
-        textColor <- map["textColor"]
-        font <- map["font"]
+        text <- map["properties.text"]
+        textColor <- map["properties.textColor"]
+        font <- map["properties.font"]
     }
-
 }

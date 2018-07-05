@@ -37,7 +37,7 @@ public class TweakologyLayoutEngine {
             let view = self.createUIViewObject(viewConfig: viewConfig)
             parentView.view.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
             self.setUIViewObjectConstraints(viewIndex: &viewIndex, viewConfig: viewConfig, view: view, modify: false)
-            viewIndex[viewId] = IndexedView(id: viewId, parentId: parentId, isTerminal: true, type: viewType, view: view)
+            viewIndex[viewId] = IndexedView(id: viewId, isTerminal: true, type: viewType, view: view)
         }
     }
 
@@ -251,7 +251,8 @@ public class TweakologyLayoutEngine {
 
 func parseExpression(expr: String) -> [String] {
     do {
-        let relativeViewOffsetRegex = try NSRegularExpression(pattern: "^\\$([0-9]+) ([+-]) ([1-9][0-9]*)$")
+        let base64Matcher = "[A-Za-z0-9+/=]+"
+        let relativeViewOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\) ([+-]) ([1-9][0-9]*)$")
         let relativeViewOffsetResults = relativeViewOffsetRegex.matches(in: expr,
                                                                         range: NSRange(expr.startIndex..., in: expr))
         if relativeViewOffsetResults.count > 0 {
@@ -263,7 +264,7 @@ func parseExpression(expr: String) -> [String] {
             return [String(expr[Range(relativeViewOffsetResults[0].range(at: 1), in: expr)!]), "", constant]
         }
         
-        let relativeViewAnchorOffsetRegex = try NSRegularExpression(pattern: "^\\$([0-9]+)\\.([A-z]+) ([+-]) ([1-9][0-9]*)$")
+        let relativeViewAnchorOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)\\.([A-z]+) ([+-]) ([1-9][0-9]*)$")
         let relativeViewAnchorOffsetResults = relativeViewAnchorOffsetRegex.matches(in: expr,
                                                                                     range: NSRange(expr.startIndex..., in: expr))
         if relativeViewAnchorOffsetResults.count > 0 {
@@ -275,14 +276,14 @@ func parseExpression(expr: String) -> [String] {
             return [String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 1), in: expr)!]), String(expr[Range(relativeViewAnchorOffsetResults[0].range(at: 2), in: expr)!]), constant]
         }
         
-        let relativeViewNoOffsetRegex = try NSRegularExpression(pattern: "^\\$([0-9]+)$")
+        let relativeViewNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)$")
         let relativeViewNoOffsetResult = relativeViewNoOffsetRegex.matches(in: expr,
                                                                            range: NSRange(expr.startIndex..., in: expr))
         if relativeViewNoOffsetResult.count > 0 {
             return [String(expr[Range(relativeViewNoOffsetResult[0].range(at: 1), in: expr)!]), "", "0"]
         }
         
-        let relativeViewAnchorNoOffsetRegex = try NSRegularExpression(pattern: "^\\$([0-9]+)\\.([A-z]+)$")
+        let relativeViewAnchorNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(base64Matcher))\\)\\.([A-z]+)$")
         let relativeViewAnchorNoOffsetResult = relativeViewAnchorNoOffsetRegex.matches(in: expr,
                                                                                        range: NSRange(expr.startIndex..., in: expr))
         if relativeViewAnchorNoOffsetResult.count > 0 {

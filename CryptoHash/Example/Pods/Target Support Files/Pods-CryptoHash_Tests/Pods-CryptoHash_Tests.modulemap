@@ -1,0 +1,6 @@
+framework module Pods_CryptoHash_Tests {
+  umbrella header "Pods-CryptoHash_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

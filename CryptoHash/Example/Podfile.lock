@@ -1,0 +1,16 @@
+PODS:
+  - CryptoHash (0.1.0)
+
+DEPENDENCIES:
+  - CryptoHash (from `../`)
+
+EXTERNAL SOURCES:
+  CryptoHash:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CryptoHash: 121866ea75a92fcd9614f3601356d4cda460be66
+
+PODFILE CHECKSUM: dd2a5b21742b5c7228f05d20e6ed36d4a946be25
+
+COCOAPODS: 1.2.1
