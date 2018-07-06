@@ -9,6 +9,7 @@
 import UIKit
 import tweakology
 
+@available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController.view.backgroundColor = UIColor.white
         window!.rootViewController = rootViewController
         window!.makeKeyAndVisible()
-        tweakologyAgent = TweakologyAgent()
+        tweakologyAgent = TweakologyAgent(
+            tweaksStorage: TweaksStorage.sharedInstance,
+            tweakologyEngine: TweakologyLayoutEngine.sharedInstance)
         tweakologyAgent?.start()
         return true
     }

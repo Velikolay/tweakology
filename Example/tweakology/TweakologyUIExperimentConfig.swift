@@ -54,8 +54,10 @@ let changeSeq: [[String: Any]] = [
             "id": "MjdhMzRjYj",
             "props": [
                 "clipsToBounds": true,
-                "title": "tweaked button",
-                "titleColor": "red",
+                "title": [
+                    "text": "tweaked button",
+                    "textColor": "red"
+                ]
             ],
             "layer": [
                 "borderColor": "#b3ff26",

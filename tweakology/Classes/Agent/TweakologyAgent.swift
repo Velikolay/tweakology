@@ -9,15 +9,21 @@ import Foundation
 import GCDWebServer
 
 
+@available(iOS 10.0, *)
 public class TweakologyAgent {
 
-    public init() {}
-    
+    private var tweaksStorage: TweaksStorage
+    private var tweakologyEngine: TweakologyLayoutEngine
+
+    public init(tweaksStorage: TweaksStorage, tweakologyEngine: TweakologyLayoutEngine) {
+        self.tweaksStorage = tweaksStorage
+        self.tweakologyEngine = tweakologyEngine
+    }
+
     public func start() {
         
         let webServer = GCDWebServer()
-        let inMemoryStorage = TweaksStorage()
-        
+
         webServer.addDefaultHandler(forMethod: "GET", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
@@ -92,9 +98,10 @@ public class TweakologyAgent {
                 if let window = UIApplication.shared.keyWindow {
                     let params = request.path.split(separator: "/")
                     let tweakName = String(params.last!)
-                    if let tweakChangeSet = (request as? GCDWebServerDataRequest)?.jsonObject as? [[String:Any]] {
-                        inMemoryStorage.addTweak(name: tweakName, changeSet: tweakChangeSet)
-                        print(inMemoryStorage.getAllTweaks())
+                    if let tweakSeq = (request as? GCDWebServerDataRequest)?.jsonObject as? [[String:Any]] {
+                        self.tweaksStorage.addTweak(name: tweakName, changeSet: tweakSeq)
+                        print(self.tweaksStorage.getAllTweaks())
+                        self.tweakologyEngine.tweak(changeSeq: tweakSeq)
                         let response = GCDWebServerResponse(statusCode: 204)
                         response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                         completionBlock(response)

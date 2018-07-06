@@ -10,41 +10,50 @@ import Foundation
 
 @available(iOS 10.0, *)
 public class TweakologyLayoutEngine {
+    
+    public static let sharedInstance = TweakologyLayoutEngine()
+    private var viewIndex: ViewIndex;
 
-    public init() {}
+    private init() {
+        self.viewIndex = [:]
+    }
 
-    public func tweak(viewIndex: inout ViewIndex, changeSeq: [[String: Any]]) {
+    public func updateViewIndex(viewIndex: ViewIndex) {
+        self.viewIndex = viewIndex
+    }
+
+    public func tweak(changeSeq: [[String: Any]]) {
         for change in changeSeq {
             switch change["operation"] as! String {
             case "insert":
                 print("Insert operation")
-                self.handleUIViewInsert(viewIndex: &viewIndex, change: change)
+                self.handleUIViewInsert(change: change)
             case "modify":
                 print("Modify operation")
-                self.handleUIViewModify(viewIndex: &viewIndex, change: change)
+                self.handleUIViewModify(change: change)
             default:
                 print("Unsupported operation")
             }
         }
     }
 
-    private func handleUIViewInsert(viewIndex: inout ViewIndex, change: [String: Any]) {
+    private func handleUIViewInsert(change: [String: Any]) {
         let viewConfig = dictVal(dict: change, key: "view")
         let superviewId = strVal(dict: viewConfig, key: "superview")
-        if let superview = viewIndex[superviewId] {
+        if let superview = self.viewIndex[superviewId] {
             let viewId = strVal(dict: viewConfig, key: "id")
             let viewType = strVal(dict: viewConfig, key: "type")
             let view = self.createUIViewObject(viewConfig: viewConfig)
             superview.view.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
-            self.setUIViewObjectConstraints(viewIndex: &viewIndex, viewConfig: viewConfig, view: view, modify: false)
-            viewIndex[viewId] = IndexedView(id: viewId, isTerminal: true, type: viewType, view: view)
+            self.setUIViewObjectConstraints(viewConfig: viewConfig, view: view, modify: false)
+            self.viewIndex[viewId] = IndexedView(id: viewId, isTerminal: true, type: viewType, view: view)
         }
     }
 
-    private func handleUIViewModify(viewIndex: inout ViewIndex, change: [String: Any]) {
+    private func handleUIViewModify(change: [String: Any]) {
         let viewConfig = dictVal(dict: change, key: "view")
         let viewId = strVal(dict: viewConfig, key: "id")
-        if let modifiedView = viewIndex[viewId]?.view {
+        if let modifiedView = self.viewIndex[viewId]?.view {
             if let props = dictValOpt(dict: viewConfig, key: "props") {
                 self.setViewProperties(view: modifiedView, propertiesConfig: props)
             }
@@ -52,8 +61,8 @@ public class TweakologyLayoutEngine {
                 self.setViewLayer(view: modifiedView, layerConfig: layer)
             }
             
-            self.setUIViewObjectConstraints(viewIndex: &viewIndex, viewConfig: viewConfig, view: modifiedView, modify: true)
-            self.setUIViewObjectFrame(viewIndex: &viewIndex, viewConfig: viewConfig, view: modifiedView)
+            self.setUIViewObjectConstraints(viewConfig: viewConfig, view: modifiedView, modify: true)
+            self.setUIViewObjectFrame(viewConfig: viewConfig, view: modifiedView)
         }
     }
 
@@ -96,6 +105,16 @@ public class TweakologyLayoutEngine {
                     view.setValue(CGFloat(valInt), forKey: key)
                 } else if let valBool = val as? Bool {
                     view.setValue(valBool, forKey: key)
+                } else if let valDict = val as? [String: Any] {
+                    if (view.value(forKey: key) as? UIColor) != nil {
+                        if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
+                            view.setValue(color, forKey: key)
+                        }
+                    } else if(CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
+                        if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
+                            view.setValue(color.cgColor, forKey: key)
+                        }
+                    }
                 }
             }
         }
@@ -114,10 +133,21 @@ public class TweakologyLayoutEngine {
     private func setUIButtonSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
         if let buttonView = view as? UIButton {
             if key == "title" {
-                buttonView.setTitle(value as? String, for: UIControlState.normal)
-                return true
-            } else if key == "titleColor", let color = toUIColor(colorValue: value as! String) {
-                buttonView.setTitleColor(color, for:  UIControlState.normal)
+                if let buttonTitle = value as? [String: Any] {
+                    for (titleKey, titleVal) in buttonTitle {
+                        if titleKey == "text" {
+                            buttonView.setTitle(titleVal as? String, for: UIControlState.normal)
+                        } else if titleKey == "textColor" {
+                            if let textColor = titleVal as? [String: Any],
+                                let color = toUIColor(colorValue: textColor["hexValue"] as! String)?.withAlphaComponent(textColor["alpha"] as! CGFloat) {
+                                buttonView.setTitleColor(color, for:  UIControlState.normal)
+                            } else if let textColor = titleVal as? String {
+                                let color = toUIColor(colorValue: textColor)
+                                buttonView.setTitleColor(color, for:  UIControlState.normal)
+                            }
+                        }
+                    }
+                }
                 return true
             }
         }
@@ -149,7 +179,7 @@ public class TweakologyLayoutEngine {
         }
     }
 
-    private func setUIViewObjectConstraints(viewIndex: inout ViewIndex, viewConfig: [String: Any], view: UIView, modify: Bool) {
+    private func setUIViewObjectConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
         if let constraints = viewConfig["constraints"] as? [String: String] {
             view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -172,7 +202,7 @@ public class TweakologyLayoutEngine {
                         layoutAttribute.constraint(equalToConstant: CGFloat(truncating: constant)).isActive = true
                     }
                 } else {
-                    if let secondView = self.viewWith(id: secondViewId, viewIndex: &viewIndex, view: view) {
+                    if let secondView = self.viewWith(id: secondViewId, view: view) {
                         if let layoutAttribute = view.value(forKey: attr) as? NSLayoutAnchor<NSLayoutXAxisAnchor> {
                             let relativeAnchor = secondView.value(forKey: secondViewAttribute) as! NSLayoutAnchor<NSLayoutXAxisAnchor>
                             if (modify) {
@@ -198,13 +228,13 @@ public class TweakologyLayoutEngine {
         }
     }
     
-    private func viewWith(id: String, viewIndex: inout ViewIndex, view: UIView) -> UIView? {
+    private func viewWith(id: String, view: UIView) -> UIView? {
         if id == "self" {
             return view;
         } else if id == "superview" {
             return view.superview;
         } else {
-            return viewIndex[id]?.view
+            return self.viewIndex[id]?.view
         }
     }
 
@@ -221,7 +251,7 @@ public class TweakologyLayoutEngine {
         return nil
     }
 
-    private func setUIViewObjectFrame(viewIndex: inout ViewIndex, viewConfig: [String: Any], view: UIView) {
+    private func setUIViewObjectFrame(viewConfig: [String: Any], view: UIView) {
         if let frameConfig = viewConfig["frame"] as? [String: String] {
             var x = view.frame.origin.x
             var y = view.frame.origin.y
@@ -241,7 +271,7 @@ public class TweakologyLayoutEngine {
                 var propVal = CGFloat(truncating: constant)
 
                 if !secondViewId.isEmpty {
-                    if let secondView = self.viewWith(id: secondViewId, viewIndex: &viewIndex, view: view) {
+                    if let secondView = self.viewWith(id: secondViewId, view: view) {
                         if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewAttribute) {
                             propVal += secondViewPropVal
                         }

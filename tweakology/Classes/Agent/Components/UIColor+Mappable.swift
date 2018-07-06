@@ -23,15 +23,24 @@ extension UIColor: StaticMappable {
 }
 
 func hexStringFromColor(cg: CGColor) -> String? {
-    if cg.numberOfComponents == 4, let components = cg.components {
-        let r = components[0]
-        let g = components[1]
-        let b = components[2]
-
-        return String(format: "#%02lX%02lX%02lX",
-                      lroundf(Float(r * 255)),
-                      lroundf(Float(g * 255)),
-                      lroundf(Float(b * 255))).lowercased()
+    var r, g, b: CGFloat
+    if let components = cg.components {
+        if cg.numberOfComponents == 4 {
+            r = components[0]
+            g = components[1]
+            b = components[2]
+        } else if cg.numberOfComponents == 2 {
+            r = components[0]
+            g = components[0]
+            b = components[0]
+        } else {
+            return nil;
+        }
+    } else {
+        return nil;
     }
-    return nil
+    return String(format: "#%02lX%02lX%02lX",
+                  lroundf(Float(r * 255)),
+                  lroundf(Float(g * 255)),
+                  lroundf(Float(b * 255))).lowercased()
 }

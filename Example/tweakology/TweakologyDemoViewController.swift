@@ -25,8 +25,13 @@ class TweakologyDemoViewController: UIViewController {
         if #available(iOS 10.0, *) {
             if self.viewIndex == nil {
                 self.viewIndex = self.inspectLayout()
-                let engine = TweakologyLayoutEngine()
-                engine.tweak(viewIndex: &self.viewIndex!, changeSeq: changeSeq)
+                let tweaksStorage = TweaksStorage.sharedInstance
+                let engine = TweakologyLayoutEngine.sharedInstance
+                engine.updateViewIndex(viewIndex: self.viewIndex!)
+                engine.tweak(changeSeq: changeSeq)
+                for (_, tweakSeq) in tweaksStorage.getAllTweaks() {
+                    engine.tweak(changeSeq: tweakSeq)
+                }
             }
         } else {
             // Fallback on earlier versions

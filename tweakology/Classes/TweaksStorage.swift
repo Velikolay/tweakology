@@ -8,9 +8,11 @@
 import Foundation
 
 public class TweaksStorage {
+    public static let sharedInstance = TweaksStorage()
+
     private var storage: [String: [[String: Any]]]
 
-    public init() {
+    private init() {
         storage = [:]
     }
 
