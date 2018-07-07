@@ -87,6 +87,7 @@ public class TweakologyAgent {
 
                     let response = GCDWebServerDataResponse(data: imageData!, contentType: "image/png")
                     response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
+                    response.setValue("no-cache, no-store, must-revalidate", forAdditionalHeader: "Cache-Control")
                     completionBlock(response)
                 }
             }
