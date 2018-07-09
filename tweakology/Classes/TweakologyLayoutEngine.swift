@@ -12,7 +12,7 @@ import Foundation
 public class TweakologyLayoutEngine {
     
     public static let sharedInstance = TweakologyLayoutEngine()
-    private var viewIndex: ViewIndex;
+    private var viewIndex: ViewIndex
 
     private init() {
         self.viewIndex = [:]
@@ -114,9 +114,9 @@ public class TweakologyLayoutEngine {
                         if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
                             view.setValue(color.cgColor, forKey: key)
                         }
-                    } else if (view.value(forKey: key) as? UIFont) != nil {
-                        let font = UIFont (name: valDict["fontName"] as! String, size: valDict["pointSize"] as! CGFloat)
-                        view.setValue(font, forKey: key);
+                    } else if (view.value(forKey: key) as? UIFont) != nil,
+                        let font = font(from: valDict) {
+                        view.setValue(font, forKey: key)
                     }
                 }
             }
@@ -148,6 +148,10 @@ public class TweakologyLayoutEngine {
                                 let color = toUIColor(colorValue: textColor)
                                 buttonView.setTitleColor(color, for:  UIControlState.normal)
                             }
+                        } else if titleKey == "font",
+                            let titleFont = titleVal as? [String: Any],
+                            let font = font(from: titleFont) {
+                            buttonView.titleLabel?.font = font
                         }
                     }
                 }
@@ -233,9 +237,9 @@ public class TweakologyLayoutEngine {
     
     private func viewWith(id: String, view: UIView) -> UIView? {
         if id == "self" {
-            return view;
+            return view
         } else if id == "superview" {
-            return view.superview;
+            return view.superview
         } else {
             return self.viewIndex[id]?.view
         }
@@ -255,30 +259,35 @@ public class TweakologyLayoutEngine {
     }
 
     private func setUIViewObjectFrame(viewConfig: [String: Any], view: UIView) {
-        if let frameConfig = viewConfig["frame"] as? [String: String] {
+        if let frameConfig = viewConfig["frame"] as? [String: Any] {
             var x = view.frame.origin.x
             var y = view.frame.origin.y
             var height = view.frame.height
             var width = view.frame.width
             
             for (attr, val) in frameConfig {
-                let tokens = parseExpression(expr: val)
-                let secondViewId = tokens[0]
-                var secondViewAttribute = tokens[1]
+                var propVal: CGFloat
+                if let expr = val as? String {
+                    let tokens = parseExpression(expr: expr)
+                    let secondViewId = tokens[0]
+                    var secondViewAttribute = tokens[1]
 
-                if secondViewAttribute.isEmpty {
-                    secondViewAttribute = attr
-                }
+                    if secondViewAttribute.isEmpty {
+                        secondViewAttribute = attr
+                    }
 
-                guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
-                var propVal = CGFloat(truncating: constant)
+                    guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
+                    propVal = CGFloat(truncating: constant)
 
-                if !secondViewId.isEmpty {
-                    if let secondView = self.viewWith(id: secondViewId, view: view) {
-                        if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewAttribute) {
-                            propVal += secondViewPropVal
+                    if !secondViewId.isEmpty {
+                        if let secondView = self.viewWith(id: secondViewId, view: view) {
+                            if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewAttribute) {
+                                propVal += secondViewPropVal
+                            }
                         }
                     }
+                } else {
+                    propVal = val as! CGFloat
                 }
 
                 if attr == "height" {
@@ -346,13 +355,13 @@ func parseExpression(expr: String) -> [String] {
 
 func stringClassFromString(_ className: String) -> AnyClass! {
     /// get namespace
-    _ = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
+    _ = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
     
     /// get 'anyClass' with classname and namespace
-    let cls: AnyClass = NSClassFromString("\(className)")!;
+    let cls: AnyClass = NSClassFromString("\(className)")!
     
     // return AnyClass!
-    return cls;
+    return cls
 }
 
 func toUIColor(colorValue: String) -> UIColor? {
@@ -373,6 +382,97 @@ func toUIColor(colorValue: String) -> UIColor? {
         return UIColor.red
     }
     return nil
+}
+
+@available(iOS 8.2, *)
+func font(from: [String: Any]) -> UIFont? {
+    var font = systemFont(from: from)
+    if font == nil {
+        font = UIFont(name: from["fontName"] as! String, size: from["pointSize"] as! CGFloat)
+    }
+    return font
+}
+
+@available(iOS 8.2, *)
+func systemFont(from: [String: Any]) -> UIFont? {
+    if let familyName = from["familyName"] as? String,
+        let fontStyle = from["fontStyle"] as? String,
+        let pointSize = from["pointSize"] as? CGFloat {
+        if familyName == "System", let weight = systemFontWeight(from: fontStyle) {
+            return UIFont.systemFont(ofSize: pointSize, weight: weight)
+        } else if familyName == "System Italic" {
+            return UIFont.italicSystemFont(ofSize: pointSize)
+        } else if familyName == "Text Style", let textStyle = textStyle(from: fontStyle) {
+            return UIFont.preferredFont(forTextStyle: textStyle)
+        }
+    }
+    return nil
+}
+
+func textStyle(from: String) -> UIFontTextStyle? {
+    switch from {
+        case "Body":
+            return UIFontTextStyle.body
+        case "Caption1":
+            return UIFontTextStyle.caption1
+        case "Caption2":
+            return UIFontTextStyle.caption2
+        case "Footnote":
+            return UIFontTextStyle.footnote
+        case "Headline":
+            return UIFontTextStyle.headline
+        case "Subheadline":
+            return UIFontTextStyle.subheadline
+        case "Title1":
+            if #available(iOS 9.0, *) {
+                return UIFontTextStyle.title1
+            }
+        case "Title2":
+            if #available(iOS 9.0, *) {
+                return UIFontTextStyle.title2
+            }
+        case "Title3":
+            if #available(iOS 9.0, *) {
+                return UIFontTextStyle.title3
+            }
+        case "Callout":
+            if #available(iOS 9.0, *) {
+                return UIFontTextStyle.callout
+            }
+        case "LargeTitle":
+            if #available(iOS 11.0, *) {
+                return UIFontTextStyle.largeTitle
+            }
+        default:
+            return nil
+    }
+    return nil
+}
+
+@available(iOS 8.2, *)
+func systemFontWeight(from: String) -> UIFont.Weight? {
+    switch from {
+        case "Bold":
+            return UIFont.Weight.bold
+        case "Semibold":
+            return UIFont.Weight.semibold
+        case "Medium":
+            return UIFont.Weight.medium
+        case "Light":
+            return UIFont.Weight.light
+        case "Thin":
+            return UIFont.Weight.thin
+        case "Heavy":
+            return UIFont.Weight.heavy
+        case "Black":
+            return UIFont.Weight.black
+        case "UltraLight":
+            return UIFont.Weight.ultraLight
+        case "Regular":
+            return UIFont.Weight.regular
+        default:
+            return nil
+    }
 }
 
 func colorFromHex(hexColor: String) -> UIColor {

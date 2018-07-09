@@ -44,7 +44,7 @@ public class TweakologyAgent {
                 var fontNames = [
                     "System": ["System-UltraLight", "System-Thin", "System-Light", "System-Regular", "System-Medium", "System-Semibold", "System-Bold", "System-Heavy", "System-Black"],
                     "System Italic": ["SystemItalic-Regular"],
-                    "Text Style": ["TextStyle-Body", "TextStyle-Callout", "TextStyle-Caption1", "TextStyle-Caption2", "TextStyle-Footnote", "TextStyle-Headline", "TextStyle-Subheadline", "TextStyle-Title1", "TextStyle-Title2", "TextStyle-Title3"]
+                    "Text Style": ["TextStyle-Body", "TextStyle-Callout", "TextStyle-Caption1", "TextStyle-Caption2", "TextStyle-Footnote", "TextStyle-Headline", "TextStyle-Subheadline", "TextStyle-LargeTitle", "TextStyle-Title1", "TextStyle-Title2", "TextStyle-Title3"]
                 ]
                 for familyName in UIFont.familyNames {
                     fontNames[familyName] = UIFont.fontNames(forFamilyName: familyName)
