@@ -54,7 +54,7 @@ public class TweakologyLayoutEngine {
         let viewConfig = dictVal(dict: change, key: "view")
         let viewId = strVal(dict: viewConfig, key: "id")
         if let modifiedView = self.viewIndex[viewId]?.view {
-            if let props = dictValOpt(dict: viewConfig, key: "props") {
+            if let props = dictValOpt(dict: viewConfig, key: "properties") {
                 self.setViewProperties(view: modifiedView, propertiesConfig: props)
             }
             if let layer = dictValOpt(dict: viewConfig, key: "layer") {
@@ -74,7 +74,7 @@ public class TweakologyLayoutEngine {
             instance.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
         }
         
-        if let props = dictValOpt(dict: viewConfig, key: "props") {
+        if let props = dictValOpt(dict: viewConfig, key: "properties") {
             self.setViewProperties(view: instance, propertiesConfig: props)
         }
         if let layer = dictValOpt(dict: viewConfig, key: "layer") {
@@ -114,6 +114,9 @@ public class TweakologyLayoutEngine {
                         if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
                             view.setValue(color.cgColor, forKey: key)
                         }
+                    } else if (view.value(forKey: key) as? UIFont) != nil {
+                        let font = UIFont (name: valDict["fontName"] as! String, size: valDict["pointSize"] as! CGFloat)
+                        view.setValue(font, forKey: key);
                     }
                 }
             }

@@ -16,7 +16,7 @@ let changeSeq: [[String: Any]] = [
             "superview": "MGQ3MDAyZD",
             "index": 2,
             "type": "UILabel",
-            "props" : [
+            "properties" : [
                 "text": "TWEAKED",
                 "textColor": "black",
                 "textAlignment": "center",
@@ -52,7 +52,7 @@ let changeSeq: [[String: Any]] = [
         "operation": "modify",
         "view": [
             "id": "MjdhMzRjYj",
-            "props": [
+            "properties": [
                 "clipsToBounds": true,
                 "title": [
                     "text": "tweaked button",
