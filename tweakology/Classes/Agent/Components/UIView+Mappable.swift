@@ -22,7 +22,10 @@ extension UIView: StaticMappable {
         if var mappableOverride = self as? MappableOverride {
             mappableOverride.mappingOverride(map: map)
         }
-
+        constraints.filter({ (constraint: NSLayoutConstraint) -> Bool in
+            (constraint.firstItem as? UIView) != nil && constraint.firstAttribute.rawValue <= 20 &&
+            ((constraint.secondItem as? UIView) == nil || constraint.secondAttribute.rawValue <= 20)
+        }) >>> map["constraints"]
         if !subviews.isEmpty {
             subviews >>> map["subviews"]
         }
