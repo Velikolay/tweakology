@@ -12,7 +12,7 @@ extension NSLayoutConstraint: StaticMappable {
     public static func objectForMapping(map: Map) -> BaseMappable? {
         return nil
     }
-    
+
     public func mapping(map: Map) {
         isActive >>> map["isActive"]
         constant >>> map["constant"]

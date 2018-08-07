@@ -186,6 +186,26 @@ public class TweakologyLayoutEngine {
         }
     }
 
+    private func setUIViewConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
+        if let constraints = viewConfig["constraints"] as? [[String: Any]] {
+            let constraintConfigs = constraints.map({ (config) -> ConstraintConfig? in
+                ConstraintConfig(JSON: config)
+            })
+            for constraintConfig in constraintConfigs {
+                if let uConstraintConfig = constraintConfig, let constraint = uConstraintConfig.toNSLayoutConstraint(view: view) {
+                    if uConstraintConfig.added {
+                        view.addConstraint(constraint)
+                    } else if view.constraints.count > uConstraintConfig.idx {
+                        let toModify = view.constraints[uConstraintConfig.idx]
+                        toModify.constant = constraint.constant
+                        toModify.isActive = constraint.isActive
+                        toModify.priority = constraint.priority
+                    }
+                }
+            }
+        }
+    }
+
     private func setUIViewObjectConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
         if let constraints = viewConfig["constraints"] as? [String: String] {
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -232,9 +252,11 @@ public class TweakologyLayoutEngine {
                     }
                 }
             }
+        } else {
+            self.setUIViewConstraints(viewConfig: viewConfig, view: view, modify: modify)
         }
     }
-    
+
     private func viewWith(id: String, view: UIView) -> UIView? {
         if id == "self" {
             return view
