@@ -8,31 +8,34 @@
 import UIKit
 import Foundation
 
-public typealias ViewIndex = [String: IndexedView]
+public typealias ViewIndex = [String: UIView]
 
 extension UIViewController: TweakologyLayoutInspectorProtocol {
     private func inspectLayout(view: UIView, viewIndex: inout ViewIndex) {
         let uid = view.uid!
+        view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
+            constraint
+        }
         //                let viewType = self.typeNameOf(object: view)
         //                print(viewType, "view frame:", view.frame)
         if let uiLabel = view as? UILabel {
-            viewIndex[uid] = IndexedView(id: uid, isTerminal: true, type: "UILabel", view: uiLabel)
+            viewIndex[uid] = uiLabel
             //                    print(viewType, "subview")
             //                    print(viewType, "constraints:", uiLabel.constraints)
             //                    print(viewType, "constraints:", uiLabel.superview!.constraints)
         } else if let uiButton = view as? UIButton {
-            viewIndex[uid] = IndexedView(id: uid, isTerminal: true, type: "UIButton", view: uiButton)
+            viewIndex[uid] = uiButton
             //                    print(viewType, "subview")
             //                    print(viewType, "constraints:", uiButton.constraints)
             //                    print(viewType, "constraints:", uiButton.superview!.constraints)
         } else if let uiImageView = view as? UIImageView {
-            viewIndex[uid] = IndexedView(id: uid, isTerminal: true, type: "UIImageView", view: uiImageView)
+            viewIndex[uid] = uiImageView
             //                    print(viewType, "subview")
             //                    print(viewType, "constraints:", uiButton.constraints)
             //                    print(viewType, "constraints:", uiButton.superview!.constraints)
         } else {
             // compound view
-            viewIndex[uid] = IndexedView(id: uid, isTerminal: false, type: "UIView", view: view)
+            viewIndex[uid] = view
             for subview in view.subviews {
                 inspectLayout(view: subview, viewIndex: &viewIndex)
             }

@@ -14,6 +14,7 @@ extension NSLayoutConstraint: StaticMappable {
     }
 
     public func mapping(map: Map) {
+        meta.added >>> map["meta.added"]
         isActive >>> map["isActive"]
         constant >>> map["constant"]
         multiplier >>> map["multiplier"]

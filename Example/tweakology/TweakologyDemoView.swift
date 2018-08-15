@@ -43,7 +43,7 @@ class TweakologyDemoView: UIView {
 
     func setConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 80).isActive = true

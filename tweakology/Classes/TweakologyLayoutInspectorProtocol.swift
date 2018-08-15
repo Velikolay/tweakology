@@ -7,13 +7,6 @@
 
 import UIKit
 
-public struct IndexedView {
-    var id: String
-    var isTerminal: Bool
-    var type: String
-    public var view: UIView
-}
-
 public protocol TweakologyLayoutInspectorProtocol {
-    func inspectLayout() -> [String: IndexedView]
+    func inspectLayout() -> [String: UIView]
 }

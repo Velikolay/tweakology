@@ -44,16 +44,19 @@ public class TweakologyLayoutEngine {
             let viewId = strVal(dict: viewConfig, key: "id")
             let viewType = strVal(dict: viewConfig, key: "type")
             let view = self.createUIViewObject(viewConfig: viewConfig)
-            superview.view.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
+            superview.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
             self.setUIViewObjectConstraints(viewConfig: viewConfig, view: view, modify: false)
-            self.viewIndex[viewId] = IndexedView(id: viewId, isTerminal: true, type: viewType, view: view)
+            view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
+                constraint
+            }
+            self.viewIndex[viewId] = view
         }
     }
 
     private func handleUIViewModify(change: [String: Any]) {
         let viewConfig = dictVal(dict: change, key: "view")
         let viewId = strVal(dict: viewConfig, key: "id")
-        if let modifiedView = self.viewIndex[viewId]?.view {
+        if let modifiedView = self.viewIndex[viewId] {
             if let props = dictValOpt(dict: viewConfig, key: "properties") {
                 self.setViewProperties(view: modifiedView, propertiesConfig: props)
             }
@@ -193,13 +196,13 @@ public class TweakologyLayoutEngine {
             })
             for constraintConfig in constraintConfigs {
                 if let uConstraintConfig = constraintConfig, let constraint = uConstraintConfig.toNSLayoutConstraint(view: view) {
-                    if uConstraintConfig.added {
-                        view.addConstraint(constraint)
-                    } else if view.constraints.count > uConstraintConfig.idx {
-                        let toModify = view.constraints[uConstraintConfig.idx]
+                    if uConstraintConfig.idx < view.constraintsState.count {
+                        let toModify = view.constraintsState[uConstraintConfig.idx]
                         toModify.constant = constraint.constant
                         toModify.isActive = constraint.isActive
                         toModify.priority = constraint.priority
+                    } else {
+                        view.constraintsState.append(constraint)
                     }
                 }
             }
@@ -263,7 +266,7 @@ public class TweakologyLayoutEngine {
         } else if id == "superview" {
             return view.superview
         } else {
-            return self.viewIndex[id]?.view
+            return self.viewIndex[id]
         }
     }
 

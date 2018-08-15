@@ -1,6 +1,6 @@
 //
 //  UIView+RenderImage.swift
-//  Pods-tweakology_Example
+//  tweakology
 //
 //  Created by Nikolay Ivanov on 4/1/18.
 //
@@ -19,6 +19,7 @@ func associatedObject<ValueType: AnyObject>(
                                  .OBJC_ASSOCIATION_RETAIN)
         return associated
 }
+
 func associateObject<ValueType: AnyObject>(
     base: AnyObject,
     key: UnsafePointer<UInt8>,

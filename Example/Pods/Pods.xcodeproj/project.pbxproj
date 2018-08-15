@@ -59,6 +59,8 @@
 		965D2AFD4838745615E442A537BF2DCB /* UIColor+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DE7AC2657F7CAD73B9232EE019DD6 /* UIColor+Mappable.swift */; };
 		9ED803A158FAC2A3129CA01F747B93DA /* UIViewController+TweakologyLayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37CFD9CE4F558DCE504363E35043B9 /* UIViewController+TweakologyLayoutInspector.swift */; };
 		A128DBCF691E0F4D2AC3EEA36F7BD562 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 195384E6AFC1255FD8D69DD4759E593A /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A280D23D21237B4300B6796D /* UIView+ConstraintsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280D23B21237A4A00B6796D /* UIView+ConstraintsState.swift */; };
+		A280D24121237BFA00B6796D /* NSLayoutConstraint+Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280D24021237BFA00B6796D /* NSLayoutConstraint+Meta.swift */; };
 		A2C2E72120FE626800A1A98A /* NSLayoutConstraint+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2E72020FE626700A1A98A /* NSLayoutConstraint+Mappable.swift */; };
 		A2EDD1162115E81D004B565F /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDD1152115E81D004B565F /* ConstraintConfig.swift */; };
 		A5BFC49ED41BC416BEBF4772517AB741 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C4750D02A212F3D2A49614F59BEED /* Map.swift */; };
@@ -227,6 +229,8 @@
 		9F3D6906D407A244B549C633DF2479FB /* UIFont+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+Mappable.swift"; sourceTree = "<group>"; };
 		9FA1F6DB12925B2D7F69210F2943CDA8 /* TweakologyAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyAgent.swift; sourceTree = "<group>"; };
 		A0077EA6488DDE75A9328244D8135037 /* CryptoHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoHash-dummy.m"; sourceTree = "<group>"; };
+		A280D23B21237A4A00B6796D /* UIView+ConstraintsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintsState.swift"; sourceTree = "<group>"; };
+		A280D24021237BFA00B6796D /* NSLayoutConstraint+Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Meta.swift"; sourceTree = "<group>"; };
 		A2C2E72020FE626700A1A98A /* NSLayoutConstraint+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Mappable.swift"; sourceTree = "<group>"; };
 		A2EDD1152115E81D004B565F /* ConstraintConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
 		A3AC966541CBD5743FBC2A6427300692 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -675,6 +679,8 @@
 				0D59709881AC196820B0B8A4FDCBE3CE /* TweaksStorage.swift */,
 				6DE3956D78BFBCAAAA2DF0FF406056C0 /* UIView+Identifier.swift */,
 				C2E6E1773FAF1A149F610A6FB301819B /* UIView+RenderImage.swift */,
+				A280D23B21237A4A00B6796D /* UIView+ConstraintsState.swift */,
+				A280D24021237BFA00B6796D /* NSLayoutConstraint+Meta.swift */,
 				0D37CFD9CE4F558DCE504363E35043B9 /* UIViewController+TweakologyLayoutInspector.swift */,
 				4BC1CDA40FE352EF58AEAA916C07066A /* Agent */,
 			);
@@ -851,6 +857,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					1252D2FE5A3F0266E8959BB670344352 = {
+						LastSwiftMigration = 0900;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -921,6 +932,7 @@
 				89F0BD651AED40B979BE4DE319A675E0 /* MappableOverrideProtocol.swift in Sources */,
 				D1A62C8E4A8515878F5C2920C96B01F1 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
 				262E4F394D171775CC15269FB4974169 /* Tests.m in Sources */,
+				A280D24121237BFA00B6796D /* NSLayoutConstraint+Meta.swift in Sources */,
 				F299CDFFDB371F3F29D34B1E5D346969 /* tweakology-dummy.m in Sources */,
 				1DEE28B20E3A37128685CAD0AFD73D45 /* TweakologyAgent.swift in Sources */,
 				A2C2E72120FE626800A1A98A /* NSLayoutConstraint+Mappable.swift in Sources */,
@@ -936,6 +948,7 @@
 				3C87144F6101B3DCB0E52ADE08E62BAA /* UIView+Mappable.swift in Sources */,
 				598542481F812B4577712805DCF4816D /* UIView+RenderImage.swift in Sources */,
 				9ED803A158FAC2A3129CA01F747B93DA /* UIViewController+TweakologyLayoutInspector.swift in Sources */,
+				A280D23D21237B4300B6796D /* UIView+ConstraintsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1057,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1062,6 +1076,7 @@
 				PRODUCT_NAME = GCDWebServer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1382,6 +1397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFDE75F0C8813C8E5F9959EDDA7EA1C0 /* GCDWebServer.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

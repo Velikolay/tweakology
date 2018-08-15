@@ -51,7 +51,19 @@ class AnchorConfig: Mappable {
     }
 }
 
+class MetadataConfig: Mappable {
+    var added: Bool!
+
+    required init?(map: Map) {
+    }
+
+    func mapping(map: Map) {
+        added <- map["added"]
+    }
+}
+
 class ConstraintConfig: Mappable {
+    var meta: MetadataConfig!
     var first: AnchorConfig!
     var second: AnchorConfig?
     var relation: AnyObject!
@@ -60,12 +72,12 @@ class ConstraintConfig: Mappable {
     var isActive: Bool!
     var priority: Float!
     var idx: Int!
-    var added: Bool!
 
     required init?(map: Map) {
     }
 
     func mapping(map: Map) {
+        meta <- map["meta"]
         first <- map["first"]
         second <- map["second"]
         relation <- map["relation"]
@@ -74,7 +86,6 @@ class ConstraintConfig: Mappable {
         isActive <- map["isActive"]
         priority <- map["priority"]
         idx <- map["idx"]
-        added <- map["added"]
     }
 
     public func toNSLayoutConstraint(view: UIView) -> NSLayoutConstraint? {
@@ -89,11 +100,12 @@ class ConstraintConfig: Mappable {
             let constraint = NSLayoutConstraint(item: fromView, attribute: fromAttribute, relatedBy: relatedBy, toItem: toView, attribute: toAttribute, multiplier: CGFloat(multiplier ?? 1), constant: CGFloat(constant ?? 0))
             constraint.isActive = isActive
             constraint.priority = UILayoutPriority(rawValue: priority)
+            constraint.meta = ConstraintMetadata(added: meta.added)
             return constraint
         }
         return nil
     }
-    
+
     private func attributeFromConfig(attrConfig: AnyObject?) -> NSLayoutAttribute? {
         if ((attrConfig as? String) != nil), let attr = attributes[attrConfig as! String] {
             return NSLayoutAttribute(rawValue: attr)

@@ -30,31 +30,31 @@ let changeSeq: [[String: Any]] = [
             ]
         ]
     ],
-    [
-        "operation": "modify",
-        "view": [
-            "id": "MGQ3MDAyZD",
-            "constraints": [
-                [
-                    "first": [
-                        "item": "N2MyOTZhNT",
-                        "attribute": "top"
-                    ],
-                    "second": [
-                        "item": "ZDZiNTY5ZW",
-                        "attribute": "bottom"
-                    ],
-                    "relation": "=",
-                    "constant": 20,
-                    "isActive": true,
-                    "priority": 1000,
-                    "added": true,
-                    "idx": 2
-                ]
-//                "topAnchor": "$(ZDZiNTY5ZW).bottomAnchor + 20"
-            ]
-        ]
-    ],
+//    [
+//        "operation": "modify",
+//        "view": [
+//            "id": "MGQ3MDAyZD",
+//            "constraints": [
+//                [
+//                    "first": [
+//                        "item": "N2MyOTZhNT",
+//                        "attribute": "top"
+//                    ],
+//                    "second": [
+//                        "item": "ZDZiNTY5ZW",
+//                        "attribute": "bottom"
+//                    ],
+//                    "relation": "=",
+//                    "constant": 20,
+//                    "isActive": true,
+//                    "priority": 1000,
+//                    "added": true,
+//                    "idx": 2
+//                ]
+////                "topAnchor": "$(ZDZiNTY5ZW).bottomAnchor + 20"
+//            ]
+//        ]
+//    ],
     [
         "operation": "modify",
         "view": [
