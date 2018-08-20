@@ -85,6 +85,9 @@ public class TweakologyAgent {
                         imageData = UIImagePNGRepresentation(image!)
                     }
 
+                    if imageData == nil {
+                        imageData = Data()
+                    }
                     let response = GCDWebServerDataResponse(data: imageData!, contentType: "image/png")
                     response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                     response.setValue("no-cache, no-store, must-revalidate", forAdditionalHeader: "Cache-Control")

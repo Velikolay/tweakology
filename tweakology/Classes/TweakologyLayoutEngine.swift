@@ -195,17 +195,20 @@ public class TweakologyLayoutEngine {
                 ConstraintConfig(JSON: config)
             })
             for constraintConfig in constraintConfigs {
-                if let uConstraintConfig = constraintConfig, let constraint = uConstraintConfig.toNSLayoutConstraint(view: view) {
+                if let uConstraintConfig = constraintConfig {
                     if uConstraintConfig.idx < view.constraintsState.count {
                         let toModify = view.constraintsState[uConstraintConfig.idx]
-                        toModify.constant = constraint.constant
-                        toModify.isActive = constraint.isActive
-                        toModify.priority = constraint.priority
+                        toModify.constant = CGFloat(uConstraintConfig.constant ?? 0)
+                        toModify.isActive = uConstraintConfig.isActive
+                        toModify.priority = UILayoutPriority(rawValue: uConstraintConfig.priority)
                     } else {
-                        view.constraintsState.append(constraint)
+                        if let constraint = uConstraintConfig.toNSLayoutConstraint(view: view) {
+                            view.constraintsState.append(constraint)
+                        }
                     }
                 }
             }
+            view.setNeedsUpdateConstraints()
         }
     }
 
