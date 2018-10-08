@@ -32,8 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'tweakology/Classes/**/*'
 
-  s.dependency 'GCDWebServer', '~> 3.0'  
+  s.dependency 'GCDWebServer', '~> 3.0'
   s.dependency 'ObjectMapper', '~> 3.1'
+  s.dependency 'SDWebImage', '~> 4.0'
   s.subspec 'CryptoHash' do |ss|
     ss.source_files = 'CryptoHash/**/*.{h,m}'
   end

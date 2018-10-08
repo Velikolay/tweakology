@@ -15,8 +15,13 @@ extension UIView: StaticMappable {
 
     public func mapping(map: Map) {
         String(describing:type(of: self)) >>> map["type"]
-        frame <- map["properties.frame"]
-        backgroundColor <- map["properties.backgroundColor"]
+        frame >>> map["properties.frame"]
+        if backgroundColor != nil {
+            backgroundColor >>> map["properties.backgroundColor"]
+        } else {
+            0 >>> map["properties.backgroundColor.alpha"]
+            "#ffffff" >>> map["properties.backgroundColor.hexValue"]
+        }
         hierarchyMetadata >>> map["hierarchyMetadata"]
         uid >>> map["uid"]
         if var mappableOverride = self as? MappableOverride {

@@ -14,12 +14,12 @@ let changeSeq: [[String: Any]] = [
         "view" : [
             "id": "ZDZiNTY5ZW",
             "superview": "MGQ3MDAyZD",
-            "index": 2,
+            "index": 3,
             "type": "UILabel",
             "properties" : [
                 "text": "TWEAKED",
                 "textColor": "black",
-                "textAlignment": "center",
+                "textAlignment": 1,
                 "backgroundColor": "red"
             ],
             "constraints": [

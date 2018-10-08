@@ -12,9 +12,10 @@ import UIKit
 class TweakologyDemoView: UIView {
     weak var delegate:TweakologyDemoViewController?
 
-    var label: UILabel = UILabel()
-    var button: UIButton = UIButton()
-    
+    var label = UILabel()
+    var button = UIButton()
+    var imageView = UIImageView(image: #imageLiteral(resourceName: "TestImages"))
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addCustomView()
@@ -35,10 +36,13 @@ class TweakologyDemoView: UIView {
         label.textColor = UIColor.black
         self.addSubview(label)
         
-        button.backgroundColor=UIColor.blue
+        button.backgroundColor = UIColor.blue
         button.setTitle("button", for: UIControlState.normal)
         button.addTarget(self, action: #selector(self.pressButton(_:)), for: UIControlEvents.touchUpInside)
         self.addSubview(button)
+        
+        imageView.image?.src = "TestImages"
+        self.addSubview(imageView)
     }
 
     func setConstraints() {
@@ -53,8 +57,14 @@ class TweakologyDemoView: UIView {
         button.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         button.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         button.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: button.bottomAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
-    
+
     @objc func pressButton(_ sender: UIButton) {
         self.delegate?.pressButton(sender)
     }

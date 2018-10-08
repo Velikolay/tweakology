@@ -29,7 +29,6 @@ extension UIView {
         guard let data = CryptoHash.sha1(hierarchyMetadata).data(using: String.Encoding.utf8) else {
             return nil
         }
-
         return String(data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)).prefix(10))
     }
 

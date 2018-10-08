@@ -16,6 +16,10 @@ extension UILabel: MappableOverride {
     public func mappingOverride(map: Map) {
         text <- map["properties.text"]
         textColor <- map["properties.textColor"]
+        textAlignment <- map["properties.textAlignment"]
         font <- map["properties.font"]
+        numberOfLines <- map["properties.numberOfLines"]
+        lineBreakMode <- map["properties.lineBreakMode"]
+        baselineAdjustment <- map["properties.baselineAdjustment"]
     }
 }

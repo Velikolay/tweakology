@@ -7,15 +7,23 @@
 
 import UIKit
 import Foundation
+import SDWebImage
+
+enum EngineMode {
+    case development
+    case production
+}
 
 @available(iOS 10.0, *)
 public class TweakologyLayoutEngine {
     
     public static let sharedInstance = TweakologyLayoutEngine()
     private var viewIndex: ViewIndex
+    private var mode: EngineMode
 
     private init() {
         self.viewIndex = [:]
+        self.mode = EngineMode.development
     }
 
     public func updateViewIndex(viewIndex: ViewIndex) {
@@ -42,7 +50,7 @@ public class TweakologyLayoutEngine {
         let superviewId = strVal(dict: viewConfig, key: "superview")
         if let superview = self.viewIndex[superviewId] {
             let viewId = strVal(dict: viewConfig, key: "id")
-            let viewType = strVal(dict: viewConfig, key: "type")
+            _ = strVal(dict: viewConfig, key: "type")
             let view = self.createUIViewObject(viewConfig: viewConfig)
             superview.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
             self.setUIViewObjectConstraints(viewConfig: viewConfig, view: view, modify: false)
@@ -89,7 +97,8 @@ public class TweakologyLayoutEngine {
     private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
         for (key, val) in propertiesConfig {
             if !self.setUILabelSpecificProperty(view: view, key: key, value: val),
-                !self.setUIButtonSpecificProperty(view: view, key: key, value: val) {
+                !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
+                !self.setUIImageViewSpecificProperties(view: view, key: key, value: val) {
                 if let valStr = val as? String {
                     if (view.value(forKey: key) as? UIColor) != nil {
                         if let color = toUIColor(colorValue: valStr) {
@@ -126,40 +135,98 @@ public class TweakologyLayoutEngine {
         }
     }
 
+    private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {
+        if let imageView = view as? UIImageView {
+            if let valueObj = value as? [String: Any] {
+                if key == "image", let src = valueObj["src"] as? String, !src.isEmpty {
+                    if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
+                        if (self.mode == EngineMode.production) {
+                            imageView.sd_setImage(with: url)
+                        } else {
+                            let data = try? Data(contentsOf: url)
+                            imageView.image = UIImage(data: data!)
+                            imageView.image?.src = src
+                        }
+                    } else {
+                        imageView.image = UIImage(named: src)
+                        imageView.image?.src = src
+                    }
+                    return true
+                } else if key == "highlightedImage", let src = valueObj["src"] as? String, !src.isEmpty {
+                    if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
+                        if (self.mode == EngineMode.production) {
+                            imageView.sd_setHighlightedImage(with: url)
+                        } else {
+                            let data = try? Data(contentsOf: url)
+                            imageView.highlightedImage = UIImage(data: data!)
+                            imageView.highlightedImage?.src = src
+                        }
+                    } else {
+                        imageView.highlightedImage = UIImage(named: src)
+                        imageView.highlightedImage?.src = src
+                    }
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
     private func setUILabelSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
         if let labelView = view as? UILabel {
-            if key == "textAlignment", let alignment = toNSTextAlignment(alignment: value as! String) {
-                labelView.textAlignment = alignment
-                return true
+            if key == "textAlignment" {
+                if let alignmentRaw = value as? Int,
+                    let alignment = NSTextAlignment(rawValue: alignmentRaw) {
+                    labelView.textAlignment = alignment
+                    return true
+                }
+            } else if key == "lineBreakMode" {
+                if let lineBreakRaw = value as? Int,
+                    let lineBreak = NSLineBreakMode(rawValue: lineBreakRaw) {
+                    labelView.lineBreakMode = lineBreak
+                    return true
+                }
             }
         }
         return false
     }
 
     private func setUIButtonSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
-        if let buttonView = view as? UIButton {
-            if key == "title" {
-                if let buttonTitle = value as? [String: Any] {
-                    for (titleKey, titleVal) in buttonTitle {
-                        if titleKey == "text" {
-                            buttonView.setTitle(titleVal as? String, for: UIControlState.normal)
-                        } else if titleKey == "textColor" {
-                            if let textColor = titleVal as? [String: Any],
-                                let color = toUIColor(colorValue: textColor["hexValue"] as! String)?.withAlphaComponent(textColor["alpha"] as! CGFloat) {
-                                buttonView.setTitleColor(color, for:  UIControlState.normal)
-                            } else if let textColor = titleVal as? String {
-                                let color = toUIColor(colorValue: textColor)
-                                buttonView.setTitleColor(color, for:  UIControlState.normal)
-                            }
-                        } else if titleKey == "font",
-                            let titleFont = titleVal as? [String: Any],
-                            let font = font(from: titleFont) {
-                            buttonView.titleLabel?.font = font
-                        }
+        if let buttonView = view as? UIButton,
+            key == "title",
+            let buttonTitle = value as? [String: Any] {
+            for (titleKey, titleVal) in buttonTitle {
+                if titleKey == "text" {
+                    buttonView.setTitle(titleVal as? String, for: UIControlState.normal)
+                } else if titleKey == "textAlignment" {
+                    if let alignmentRaw = titleVal as? Int,
+                        let alignment = NSTextAlignment(rawValue: alignmentRaw) {
+                        buttonView.titleLabel?.textAlignment = alignment
+                    }
+                } else if titleKey == "textColor" {
+                    if let textColor = titleVal as? [String: Any],
+                        let color = toUIColor(colorValue: textColor["hexValue"] as! String)?.withAlphaComponent(textColor["alpha"] as! CGFloat) {
+                        buttonView.setTitleColor(color, for:  UIControlState.normal)
+                    } else if let textColor = titleVal as? String {
+                        let color = toUIColor(colorValue: textColor)
+                        buttonView.setTitleColor(color, for:  UIControlState.normal)
+                    }
+                } else if titleKey == "font",
+                    let titleFont = titleVal as? [String: Any],
+                    let font = font(from: titleFont) {
+                    buttonView.titleLabel?.font = font
+                } else if titleKey == "lineBreakMode" {
+                    if let lineBreakRaw = titleVal as? Int,
+                        let lineBreak = NSLineBreakMode(rawValue: lineBreakRaw) {
+                        buttonView.titleLabel?.lineBreakMode = lineBreak
+                    }
+                } else if titleKey == "numberOfLines" {
+                    if let numberOfLines = titleVal as? Int {
+                        buttonView.titleLabel?.numberOfLines = numberOfLines
                     }
                 }
-                return true
             }
+            return true
         }
         return false
     }
@@ -209,6 +276,7 @@ public class TweakologyLayoutEngine {
                 }
             }
             view.setNeedsUpdateConstraints()
+            view.setNeedsLayout()
         }
     }
 
@@ -519,21 +587,6 @@ func colorFromHex(hexColor: String) -> UIColor {
         return .clear
     }
     return UIColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
-}
-
-func toNSTextAlignment(alignment: String) -> NSTextAlignment? {
-    if alignment == "center" {
-        return NSTextAlignment.center
-    } else if alignment == "left" {
-        return NSTextAlignment.left
-    } else if alignment == "right" {
-        return NSTextAlignment.right
-    } else if alignment == "justified" {
-        return NSTextAlignment.justified
-    } else if alignment == "natural" {
-        return NSTextAlignment.natural
-    }
-    return nil
 }
 
 func intVal(dict: [String: Any], key: String) -> Int {

@@ -3,13 +3,18 @@ PODS:
     - GCDWebServer/Core (= 3.4.2)
   - GCDWebServer/Core (3.4.2)
   - ObjectMapper (3.3.0)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
   - tweakology (0.1.0):
     - GCDWebServer (~> 3.0)
     - ObjectMapper (~> 3.1)
+    - SDWebImage (~> 4.0)
     - tweakology/CryptoHash (= 0.1.0)
   - tweakology/CryptoHash (0.1.0):
     - GCDWebServer (~> 3.0)
     - ObjectMapper (~> 3.1)
+    - SDWebImage (~> 4.0)
 
 DEPENDENCIES:
   - tweakology (from `../`)
@@ -21,8 +26,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  tweakology: acf7412ed24d93ce8b8faa84fbd3d310919c4f96
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  tweakology: 687b923d3bbcd967c2142d101e34424831a807dd
 
-PODFILE CHECKSUM: efe99896cf265f60246d25df138b8ce1b1aaaaa2
+PODFILE CHECKSUM: 8e649ccdd8e0a69998ad22802a15089d01913960
 
 COCOAPODS: 1.2.1

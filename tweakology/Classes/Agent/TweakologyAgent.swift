@@ -99,7 +99,7 @@ public class TweakologyAgent {
         webServer.addHandler(forMethod: "PUT", pathRegex: "/tweaks/[A-Za-z0-9_]+", request: GCDWebServerDataRequest.self) {
             (request: GCDWebServerRequest!, completionBlock: GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
-                if let window = UIApplication.shared.keyWindow {
+                if UIApplication.shared.keyWindow != nil {
                     let params = request.path.split(separator: "/")
                     let tweakName = String(params.last!)
                     if let tweakSeq = (request as? GCDWebServerDataRequest)?.jsonObject as? [[String:Any]] {

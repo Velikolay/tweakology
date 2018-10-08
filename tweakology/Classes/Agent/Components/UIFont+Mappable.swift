@@ -19,5 +19,4 @@ extension UIFont: StaticMappable {
         familyName >>> map["familyName"]
         fontDescriptor.symbolicTraits.rawValue >>> map["trait"]
     }
-
 }

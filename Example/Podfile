@@ -6,7 +6,6 @@ target 'tweakology_Example' do
   target 'tweakology_Tests' do
     inherit! :search_paths
 
-    
   end
 end
 

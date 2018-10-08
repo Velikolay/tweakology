@@ -15,10 +15,7 @@ extension UIColor: StaticMappable {
 
     public func mapping(map: Map) {
         cgColor.alpha >>> map["alpha"]
-        if let components = cgColor.components {
-            Array(components.prefix(cgColor.numberOfComponents - 1)) >>> map["components"]
-            hexStringFromColor(cg: cgColor) >>> map["hexValue"]
-        }
+        hexStringFromColor(cg: cgColor) >>> map["hexValue"]
     }
 }
 
