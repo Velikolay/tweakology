@@ -96,7 +96,8 @@ public class TweakologyLayoutEngine {
 
     private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
         for (key, val) in propertiesConfig {
-            if !self.setUILabelSpecificProperty(view: view, key: key, value: val),
+            if !self.setUIViewSpecificProperty(view: view, key: key, value: val),
+                !self.setUILabelSpecificProperty(view: view, key: key, value: val),
                 !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
                 !self.setUIImageViewSpecificProperties(view: view, key: key, value: val) {
                 if let valStr = val as? String {
@@ -133,6 +134,24 @@ public class TweakologyLayoutEngine {
                 }
             }
         }
+    }
+
+    private func setUIViewSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
+        if key == "contentMode" {
+            if let contentModeRaw = value as? Int,
+                let contentMode = UIViewContentMode(rawValue: contentModeRaw) {
+                view.contentMode = contentMode
+                return true
+            }
+        }
+        if key == "semanticContentAttribute" {
+            if let semanticRaw = value as? Int,
+                let semantic = UISemanticContentAttribute(rawValue: semanticRaw) {
+                view.semanticContentAttribute = semantic
+                return true
+            }
+        }
+        return false
     }
 
     private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {

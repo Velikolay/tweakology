@@ -22,6 +22,11 @@ extension UIView: StaticMappable {
             0 >>> map["properties.backgroundColor.alpha"]
             "#ffffff" >>> map["properties.backgroundColor.hexValue"]
         }
+        contentMode.rawValue >>> map["properties.contentMode"]
+        if #available(iOS 9.0, *) {
+            semanticContentAttribute.rawValue >>> map["properties.semanticContentAttribute"]
+        }
+
         hierarchyMetadata >>> map["hierarchyMetadata"]
         uid >>> map["uid"]
         if var mappableOverride = self as? MappableOverride {
