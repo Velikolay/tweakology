@@ -7,12 +7,12 @@
 
 import Foundation
 
-public class TweaksStorage {
+public class TweaksStorage: NSObject {
     public static let sharedInstance = TweaksStorage()
 
     private var storage: [String: [[String: Any]]]
 
-    private init() {
+    private override init() {
         storage = [:]
     }
 

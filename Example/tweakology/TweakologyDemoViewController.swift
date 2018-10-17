@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import tweakology
 
 class TweakologyDemoViewController: UIViewController {
-    var viewIndex: ViewIndex?
     var tweakologyView: TweakologyDemoView?
 
     override func viewDidLoad() {
@@ -20,21 +18,6 @@ class TweakologyDemoViewController: UIViewController {
             tweakologyView = TweakologyDemoView(frame: CGRect(x: 0, y: 30, width: screenSize.width, height: screenSize.height/2))
             tweakologyView!.delegate = self
             self.view.addSubview(tweakologyView!)
-        }
-
-        if #available(iOS 10.0, *) {
-            if self.viewIndex == nil {
-                self.viewIndex = self.inspectLayout()
-                let tweaksStorage = TweaksStorage.sharedInstance
-                let engine = TweakologyLayoutEngine.sharedInstance
-                engine.updateViewIndex(viewIndex: self.viewIndex!)
-                engine.tweak(changeSeq: changeSeq)
-                for (_, tweakSeq) in tweaksStorage.getAllTweaks() {
-                    engine.tweak(changeSeq: tweakSeq)
-                }
-            }
-        } else {
-            // Fallback on earlier versions
         }
     }
 

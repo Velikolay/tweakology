@@ -11,7 +11,7 @@ import Foundation
 public typealias ViewIndex = [String: UIView]
 
 extension UIViewController: TweakologyLayoutInspectorProtocol {
-    private func inspectLayout(view: UIView, viewIndex: inout ViewIndex) {
+    @nonobjc private func inspectLayout(view: UIView, viewIndex: inout ViewIndex) {
         let uid = view.uid!
         view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
             constraint

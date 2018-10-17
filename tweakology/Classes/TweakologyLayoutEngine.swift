@@ -15,18 +15,20 @@ enum EngineMode {
 }
 
 @available(iOS 10.0, *)
-public class TweakologyLayoutEngine {
-    
+public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
     private var viewIndex: ViewIndex
     private var mode: EngineMode
 
-    private init() {
+    private override init() {
+        for type in SwizzlingClassProvider.sharedInstance.uiViewControllerClasses {
+            type.swizzleViewDidLoad()
+        }
         self.viewIndex = [:]
         self.mode = EngineMode.development
     }
 
-    public func updateViewIndex(viewIndex: ViewIndex) {
+    public func update(viewIndex: ViewIndex) {
         self.viewIndex = viewIndex
     }
 
