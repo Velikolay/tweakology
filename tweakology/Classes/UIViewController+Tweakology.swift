@@ -10,15 +10,11 @@ import Foundation
 extension UIViewController {
 
     private static var swizzleViewDidLoadImplementation: Void {
-        // make sure this isn't a subclass
-//        guard self === UIViewController.self else { return }
-//        DispatchQueue.once(token: "viewDidLoad") {
         let originalSelector = #selector(self.viewDidLoad)
         let swizzledSelector = #selector(self.proj_viewDidLoadSwizzled)
         let originalMethod = class_getInstanceMethod(self, originalSelector)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
         method_exchangeImplementations(originalMethod!, swizzledMethod!)
-//        }
     }
 
     @objc func proj_viewDidLoadSwizzled() {

@@ -12,30 +12,17 @@ public typealias ViewIndex = [String: UIView]
 
 extension UIViewController: TweakologyLayoutInspectorProtocol {
     @nonobjc private func inspectLayout(view: UIView, viewIndex: inout ViewIndex) {
-        let uid = view.uid!
-        view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
-            constraint
+        if view.uid == nil, let generatedUid = view.generateUID() {
+            view.uid = UIViewIdentifier(value: generatedUid, kind: .generated)
         }
-        //                let viewType = self.typeNameOf(object: view)
-        //                print(viewType, "view frame:", view.frame)
-        if let uiLabel = view as? UILabel {
-            viewIndex[uid] = uiLabel
-            //                    print(viewType, "subview")
-            //                    print(viewType, "constraints:", uiLabel.constraints)
-            //                    print(viewType, "constraints:", uiLabel.superview!.constraints)
-        } else if let uiButton = view as? UIButton {
-            viewIndex[uid] = uiButton
-            //                    print(viewType, "subview")
-            //                    print(viewType, "constraints:", uiButton.constraints)
-            //                    print(viewType, "constraints:", uiButton.superview!.constraints)
-        } else if let uiImageView = view as? UIImageView {
-            viewIndex[uid] = uiImageView
-            //                    print(viewType, "subview")
-            //                    print(viewType, "constraints:", uiButton.constraints)
-            //                    print(viewType, "constraints:", uiButton.superview!.constraints)
-        } else {
-            // compound view
+        if let uid = view.uid?.value {
+            view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
+                constraint
+            }
             viewIndex[uid] = view
+            if let uiButton = view as? UIButton, let uiButtonLabel = uiButton.titleLabel {
+                inspectLayout(view: uiButtonLabel, viewIndex: &viewIndex)
+            }
             for subview in view.subviews {
                 inspectLayout(view: subview, viewIndex: &viewIndex)
             }

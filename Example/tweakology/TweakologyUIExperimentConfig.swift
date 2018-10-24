@@ -12,7 +12,7 @@ let changeSeq: [[String: Any]] = [
     [
         "operation": "insert",
         "view" : [
-            "id": "ZDZiNTY5ZW",
+            "id": "testLabel",
             "superview": "MGQ3MDAyZD",
             "index": 3,
             "type": "UILabel",
@@ -41,7 +41,7 @@ let changeSeq: [[String: Any]] = [
 //                        "attribute": "top"
 //                    ],
 //                    "second": [
-//                        "item": "ZDZiNTY5ZW",
+//                        "item": "testLabel",
 //                        "attribute": "bottom"
 //                    ],
 //                    "relation": "=",
@@ -51,7 +51,7 @@ let changeSeq: [[String: Any]] = [
 //                    "added": true,
 //                    "idx": 2
 //                ]
-////                "topAnchor": "$(ZDZiNTY5ZW).bottomAnchor + 20"
+////                "topAnchor": "$(testLabel).bottomAnchor + 20"
 //            ]
 //        ]
 //    ],

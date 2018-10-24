@@ -128,11 +128,11 @@ class ConstraintConfig: Mappable {
 
     private func viewItemFromUid(view: UIView, uid: String?) -> UIView? {
         if let uid = uid {
-            if view.uid == uid {
+            if view.uid?.value == uid {
                 return view
             } else {
                 for subview in view.subviews {
-                    if subview.uid == uid {
+                    if subview.uid?.value == uid {
                         return subview
                     }
                 }

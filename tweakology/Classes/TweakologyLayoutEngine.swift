@@ -80,9 +80,11 @@ public class TweakologyLayoutEngine: NSObject {
     }
 
     private func createUIViewObject(viewConfig: [String: Any]) -> UIView {
+        let viewId = strVal(dict: viewConfig, key: "id")
         let viewType = strVal(dict: viewConfig, key: "type")
         let myclass = stringClassFromString(viewType) as! UIView.Type
         let instance = myclass.init()
+        instance.uid = UIViewIdentifier(value: viewId, kind: .custom)
         if let frame = viewConfig["frame"] as? [String: Int] {
             instance.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
         }

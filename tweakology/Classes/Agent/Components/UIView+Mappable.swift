@@ -28,7 +28,9 @@ extension UIView: StaticMappable {
         }
 
         hierarchyMetadata >>> map["hierarchyMetadata"]
-        uid >>> map["uid"]
+        uid?.value >>> map["uid.value"]
+        uid?.kind >>> map["uid.kind"]
+
         if var mappableOverride = self as? MappableOverride {
             mappableOverride.mappingOverride(map: map)
         }

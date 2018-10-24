@@ -21,11 +21,11 @@ extension NSLayoutConstraint: StaticMappable {
         priority.rawValue >>> map["priority"]
         relation.rawValue >>> map["relation"]
 
-        (firstItem as! UIView).uid >>> map["first.item"]
+        (firstItem as! UIView).uid?.value >>> map["first.item"]
         firstAttribute.rawValue >>> map["first.attribute"]
 
         if let secondView = secondItem as? UIView {
-            secondView.uid >>> map["second.item"]
+            secondView.uid?.value >>> map["second.item"]
             secondAttribute.rawValue >>> map["second.attribute"]
         }
     }

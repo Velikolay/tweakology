@@ -93,11 +93,10 @@
 		9CEB86CCF3684E4436EBB00E7AE2223F /* SDWebImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = BDAAAA7F27F7DA67815BB1DFE4A7A6F0 /* SDWebImageCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A128DBCF691E0F4D2AC3EEA36F7BD562 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47AAF67A678807123E41DAB174C81F79 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A13B59E3361117575153D51A0A8A8EAE /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C9769452375742316B8131F5E4366250 /* SDWebImagePrefetcher.m */; };
+		A2B4EC6C2181164A003A49C4 /* UIWindow+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B4EC6B2181164A003A49C4 /* UIWindow+MappableOverride.swift */; };
 		A2E13EFC216F563500574814 /* UIImage+Tweakology.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E13EFB216F563500574814 /* UIImage+Tweakology.swift */; };
 		A2E13EFE216F634F00574814 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E13EFD216F634F00574814 /* UIImage+Mappable.swift */; };
 		A2E13F002173E2EE00574814 /* UIViewController+Tweakology.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E13EFF2173E2EE00574814 /* UIViewController+Tweakology.swift */; };
-		A2E13F0721748BA000574814 /* UIViewController+Tweakology.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E13F0621748BA000574814 /* UIViewController+Tweakology.h */; };
-		A2E13F0921748DFE00574814 /* UIViewController+Tweakology.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E13F0821748DFE00574814 /* UIViewController+Tweakology.m */; };
 		A2E13F0D217530E000574814 /* SwizzlingClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E13F0C217530E000574814 /* SwizzlingClassProvider.h */; };
 		A2E13F0F2175310900574814 /* SwizzlingClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E13F0E2175310900574814 /* SwizzlingClassProvider.m */; };
 		A2E13F11217539AC00574814 /* SwizzlingClassProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E13F10217539AC00574814 /* SwizzlingClassProvider.swift */; };
@@ -342,11 +341,10 @@
 		9CBCD4782E57A317CFF0567A4E876A99 /* GCDWebServerRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerRequest.m; path = GCDWebServer/Core/GCDWebServerRequest.m; sourceTree = "<group>"; };
 		A0077EA6488DDE75A9328244D8135037 /* CryptoHash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoHash-dummy.m"; sourceTree = "<group>"; };
 		A0A3C77E9D4E0695FD5EEDE96E4DA197 /* CGRect+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Mappable.swift"; sourceTree = "<group>"; };
+		A2B4EC6B2181164A003A49C4 /* UIWindow+MappableOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+MappableOverride.swift"; sourceTree = "<group>"; };
 		A2E13EFB216F563500574814 /* UIImage+Tweakology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Tweakology.swift"; sourceTree = "<group>"; };
 		A2E13EFD216F634F00574814 /* UIImage+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Mappable.swift"; sourceTree = "<group>"; };
 		A2E13EFF2173E2EE00574814 /* UIViewController+Tweakology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Tweakology.swift"; sourceTree = "<group>"; };
-		A2E13F0621748BA000574814 /* UIViewController+Tweakology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tweakology.h"; sourceTree = "<group>"; };
-		A2E13F0821748DFE00574814 /* UIViewController+Tweakology.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tweakology.m"; sourceTree = "<group>"; };
 		A2E13F0C217530E000574814 /* SwizzlingClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwizzlingClassProvider.h; sourceTree = "<group>"; };
 		A2E13F0E2175310900574814 /* SwizzlingClassProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwizzlingClassProvider.m; sourceTree = "<group>"; };
 		A2E13F10217539AC00574814 /* SwizzlingClassProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwizzlingClassProvider.swift; sourceTree = "<group>"; };
@@ -603,8 +601,6 @@
 				A2E13F10217539AC00574814 /* SwizzlingClassProvider.swift */,
 				A2E13F0C217530E000574814 /* SwizzlingClassProvider.h */,
 				A2E13F0E2175310900574814 /* SwizzlingClassProvider.m */,
-				A2E13F0621748BA000574814 /* UIViewController+Tweakology.h */,
-				A2E13F0821748DFE00574814 /* UIViewController+Tweakology.m */,
 				5BF8DDB55EE34C67345F14B39072A759 /* Agent */,
 				C7CF166492F6A2E85633076C2483AABE /* Types */,
 			);
@@ -814,6 +810,7 @@
 				1218A723AAAE300937DEB8B17EB145F5 /* UILabel+MappableOverride.swift */,
 				0A66BD4EDE10DA303C9190D15AF2147C /* UIButton+MappableOverride.swift */,
 				04FFC85772C559445125C357E560E886 /* UIImageView+MappableOverride.swift */,
+				A2B4EC6B2181164A003A49C4 /* UIWindow+MappableOverride.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1046,7 +1043,6 @@
 				8DBA5207AF613C2C531FBCF3D989DC65 /* CryptoHash-umbrella.h in Headers */,
 				1DB0E2C853E2BE390AA043AC73F7C135 /* CryptoHash.h in Headers */,
 				BF5FFBE9CECAC33106B2980D2CC42662 /* Pods-CryptoHash_Tests-umbrella.h in Headers */,
-				A2E13F0721748BA000574814 /* UIViewController+Tweakology.h in Headers */,
 				3C47B156DE4E76EE6EDF2287F3082233 /* tweakology-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1226,6 +1222,7 @@
 				A39EDBD6964FAA9B6D81A02EEFE9F9C5 /* NSLayoutConstraint+Meta.swift in Sources */,
 				33466B88B7AEEB0AFD25F596456093B3 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
 				4ACEBDEC464A28F963FED999C1385A8E /* Tests.m in Sources */,
+				A2B4EC6C2181164A003A49C4 /* UIWindow+MappableOverride.swift in Sources */,
 				E2998A761D47E9D72B4333F69562E604 /* tweakology-dummy.m in Sources */,
 				BFF699F7340395395F226AF438AEA100 /* TweakologyAgent.swift in Sources */,
 				7D4D07F691A9A6A5F76DB13E1D393659 /* TweakologyLayoutEngine.swift in Sources */,
@@ -1233,7 +1230,6 @@
 				A8E29AD823306D48899B8DD2AE69800A /* TweaksStorage.swift in Sources */,
 				E49891B9A38B356FEFD7F36D21CA9007 /* UIButton+MappableOverride.swift in Sources */,
 				F99FD2253D7854784919EC2DE8EAAA6C /* UIColor+Mappable.swift in Sources */,
-				A2E13F0921748DFE00574814 /* UIViewController+Tweakology.m in Sources */,
 				37EA503E0D9E7CEDA09C11531A4FC6B6 /* UIFont+Mappable.swift in Sources */,
 				A2E13EFC216F563500574814 /* UIImage+Tweakology.swift in Sources */,
 				A2E13F11217539AC00574814 /* SwizzlingClassProvider.swift in Sources */,

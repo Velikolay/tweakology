@@ -7,7 +7,39 @@
 
 import Foundation
 
+private var uidKey: UInt8 = 0
+
+enum UIViewIdentifierKind: Int {
+    case generated = 0
+    case custom
+}
+
+public struct UIViewIdentifier {
+    let value: String
+    let kind: UIViewIdentifierKind
+}
+
 extension UIView {
+
+    public var uid: UIViewIdentifier? {
+        get {
+            return objc_getAssociatedObject(self, &uidKey) as? UIViewIdentifier ?? nil
+        }
+        set {
+            objc_setAssociatedObject(self, &uidKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 
     var hierarchyMetadata: String {
         let className = String(describing:type(of: self))
@@ -25,21 +57,10 @@ extension UIView {
         }
     }
 
-    var uid: String? {
+    func generateUID() -> String? {
         guard let data = CryptoHash.sha1(hierarchyMetadata).data(using: String.Encoding.utf8) else {
             return nil
         }
         return String(data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)).prefix(10))
-    }
-
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
     }
 }
