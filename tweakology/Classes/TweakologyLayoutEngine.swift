@@ -83,19 +83,22 @@ public class TweakologyLayoutEngine: NSObject {
         let viewId = strVal(dict: viewConfig, key: "id")
         let viewType = strVal(dict: viewConfig, key: "type")
         let myclass = stringClassFromString(viewType) as! UIView.Type
-        let instance = myclass.init()
-        instance.uid = UIViewIdentifier(value: viewId, kind: .custom)
+        let view = myclass.init()
+        if let uiButton = view as? UIButton {
+            uiButton.titleLabel?.uid = UIViewIdentifier(value: String(format: "%@_label", viewId), kind: .custom)
+        }
+        view.uid = UIViewIdentifier(value: viewId, kind: .custom)
         if let frame = viewConfig["frame"] as? [String: Int] {
-            instance.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
+            view.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
         }
         
         if let props = dictValOpt(dict: viewConfig, key: "properties") {
-            self.setViewProperties(view: instance, propertiesConfig: props)
+            self.setViewProperties(view: view, propertiesConfig: props)
         }
         if let layer = dictValOpt(dict: viewConfig, key: "layer") {
-            self.setViewLayer(view: instance, layerConfig: layer)
+            self.setViewLayer(view: view, layerConfig: layer)
         }
-        return instance
+        return view
     }
 
     private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
@@ -105,7 +108,9 @@ public class TweakologyLayoutEngine: NSObject {
                 !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
                 !self.setUIImageViewSpecificProperties(view: view, key: key, value: val) {
                 if let valStr = val as? String {
-                    if (view.value(forKey: key) as? UIColor) != nil {
+                    if key == "backgroundColor" {
+                        view.backgroundColor = toUIColor(colorValue: valStr)
+                    } else if (view.value(forKey: key) as? UIColor) != nil {
                         if let color = toUIColor(colorValue: valStr) {
                             view.setValue(color, forKey: key)
                         }
@@ -123,11 +128,13 @@ public class TweakologyLayoutEngine: NSObject {
                 } else if let valBool = val as? Bool {
                     view.setValue(valBool, forKey: key)
                 } else if let valDict = val as? [String: Any] {
-                    if (view.value(forKey: key) as? UIColor) != nil {
+                    if key == "backgroundColor" {
+                        view.backgroundColor = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat)
+                    } else if (view.value(forKey: key) as? UIColor) != nil {
                         if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
                             view.setValue(color, forKey: key)
                         }
-                    } else if(CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
+                    } else if (CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
                         if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
                             view.setValue(color.cgColor, forKey: key)
                         }
