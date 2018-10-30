@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
   s.subspec 'CryptoHash' do |ss|
     ss.source_files = 'CryptoHash/**/*.{h,m}'
   end
-
+  s.resources  = "tweakology/**/*.xcassets"
   # s.resource_bundles = {
   #   'tweakology' => ['tweakology/Assets/*.png']
   # }

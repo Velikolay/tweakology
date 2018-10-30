@@ -30,6 +30,7 @@
       "~> 4.0"
     ]
   },
+  "resources": "tweakology/**/*.xcassets",
   "subspecs": [
     {
       "name": "CryptoHash",

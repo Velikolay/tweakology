@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SwizzlingClassProvider.h"
 #import "CryptoHash.h"
 #import "CryptoHash-umbrella.h"
 #import "Pods-CryptoHash_Tests-umbrella.h"

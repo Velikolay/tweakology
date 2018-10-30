@@ -165,6 +165,15 @@ public class TweakologyLayoutEngine: NSObject {
         return false
     }
 
+    private func findImage(named: String) -> UIImage? {
+        var image = UIImage(named: named)
+        if image == nil {
+            let bundle = Bundle(for: type(of: self))
+            image = UIImage(named: named, in: bundle, compatibleWith: nil)
+        }
+        return image
+    }
+    
     private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {
         if let imageView = view as? UIImageView {
             if let valueObj = value as? [String: Any] {
@@ -178,7 +187,7 @@ public class TweakologyLayoutEngine: NSObject {
                             imageView.image?.src = src
                         }
                     } else {
-                        imageView.image = UIImage(named: src)
+                        imageView.image = findImage(named: src)
                         imageView.image?.src = src
                     }
                     return true
@@ -192,7 +201,7 @@ public class TweakologyLayoutEngine: NSObject {
                             imageView.highlightedImage?.src = src
                         }
                     } else {
-                        imageView.highlightedImage = UIImage(named: src)
+                        imageView.highlightedImage = findImage(named: src)
                         imageView.highlightedImage?.src = src
                     }
                     return true
