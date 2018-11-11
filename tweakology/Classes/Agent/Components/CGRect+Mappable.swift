@@ -14,9 +14,9 @@ extension CGRect: StaticMappable {
     }
 
     public func mapping(map: Map) {
-        minX >>> map["minX"]
-        minY >>> map["minY"]
-        maxX >>> map["maxX"]
-        maxY >>> map["maxY"]
+        minX >>> map["x"]
+        minY >>> map["y"]
+        height >>> map["height"]
+        width >>> map["width"]
     }
 }

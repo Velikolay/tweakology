@@ -26,7 +26,7 @@ func getUIViewControllerClasses() -> [UIViewController.Type] {
         objc_getClassList(safeTypes, Int32(classCount))
         let subclasses = getSubclasses(classes: classes, classCount: classCount, parentClass: UIViewController.self)
         classesToSwizzle = getMainBundleClasses(classes: subclasses)
-        classes.deallocate(capacity: classCount)
+        classes.deallocate()
     }
     return classesToSwizzle
 }

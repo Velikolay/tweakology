@@ -39,21 +39,37 @@ public class TweakologyAgent {
         webServer.addHandler(forMethod: "GET", path: "/fonts", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
-//                UIFontDescriptorTraitBold
+                let sysTextFontName = ".SFUIText"
+                let sysDisplayFontName = ".SFUIDisplay"
 
-                var fontNames = [
-                    "System": ["System-UltraLight", "System-Thin", "System-Light", "System-Regular", "System-Medium", "System-Semibold", "System-Bold", "System-Heavy", "System-Black"],
-                    "System Italic": ["SystemItalic-Regular"],
-                    "Text Style": ["TextStyle-Body", "TextStyle-Callout", "TextStyle-Caption1", "TextStyle-Caption2", "TextStyle-Footnote", "TextStyle-Headline", "TextStyle-Subheadline", "TextStyle-LargeTitle", "TextStyle-Title1", "TextStyle-Title2", "TextStyle-Title3"]
+                let systemFonts = [
+                    "System": ["\(sysTextFontName)-UltraLight", "\(sysTextFontName)-Thin", "\(sysTextFontName)-Light", "\(sysTextFontName)", "\(sysTextFontName)-Medium", "\(sysTextFontName)-Semibold", "\(sysTextFontName)-Bold", "\(sysTextFontName)-Heavy", "\(sysTextFontName)-Black"],
+                    "System Italic": ["\(sysTextFontName)-Italic"],
                 ]
+
+                var customFonts: [String: [String]] = [:]
                 for familyName in UIFont.familyNames {
-                    fontNames[familyName] = UIFont.fontNames(forFamilyName: familyName)
+                    customFonts[familyName] = UIFont.fontNames(forFamilyName: familyName)
                 }
 
                 let fontsJson = [
-                    "names": fontNames,
-                    "families": ["System", "System Italic", "Text Style"] + UIFont.familyNames.sorted(by: { $0 < $1 }),
-                    "systemFont": UIFont.systemFont(ofSize: 17).familyName
+                    "custom": customFonts,
+                    "system": systemFonts,
+                    "preffered": [
+                        "Text Style": [
+                            "TextStyle-Body": [ "fontName": sysTextFontName, "pointSize": 17 ],
+                            "TextStyle-Callout": [ "fontName": sysTextFontName, "pointSize": 16 ],
+                            "TextStyle-Caption1": [ "fontName": sysTextFontName, "pointSize": 12 ],
+                            "TextStyle-Caption2": [ "fontName": sysTextFontName, "pointSize": 11 ],
+                            "TextStyle-Footnote": [ "fontName": sysTextFontName, "pointSize": 13 ],
+                            "TextStyle-Headline": [ "fontName": "\(sysTextFontName)-Semibold", "pointSize": 17],
+                            "TextStyle-Subheadline": [ "fontName": sysTextFontName, "pointSize": 15 ],
+                            "TextStyle-LargeTitle": [ "fontName": sysTextFontName, "pointSize": 28 ],
+                            "TextStyle-Title1": [ "fontName": sysDisplayFontName, "pointSize": 28 ],
+                            "TextStyle-Title2": [ "fontName": sysDisplayFontName, "pointSize": 22 ],
+                            "TextStyle-Title3": [ "fontName": sysDisplayFontName, "pointSize": 20 ],
+                        ]
+                    ]
                 ] as [String : Any]
                 let response = GCDWebServerDataResponse(jsonObject: fontsJson)
                 response?.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
