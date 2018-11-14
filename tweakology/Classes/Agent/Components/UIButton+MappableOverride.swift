@@ -14,6 +14,10 @@ extension UIButton: MappableOverride {
     }
 
     public func mappingOverride(map: Map) {
-        titleLabel >>> map["properties.title"]
+        let obj = Map(mappingType: .toJSON, JSON: [:])
+        titleLabel >>> obj["title"]
+        if let title = obj.JSON["title"] as? [String: Any], let titleProperties = title["properties"] {
+            titleProperties >>> map["properties.title"]
+        }
     }
 }
