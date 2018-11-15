@@ -37,8 +37,8 @@ class TweakologyDemoView: UIView {
         self.addSubview(label)
         
         button.backgroundColor = UIColor.blue
-        button.setTitle("button", for: UIControlState.normal)
-        button.addTarget(self, action: #selector(self.pressButton(_:)), for: UIControlEvents.touchUpInside)
+        button.setTitle("button", for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.pressButton(_:)), for: UIControl.Event.touchUpInside)
         self.addSubview(button)
         
         imageView.image?.src = "TestImages"

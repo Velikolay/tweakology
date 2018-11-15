@@ -27,8 +27,8 @@ class TweakologyDemoViewController: UIViewController {
         stackContainerView.backgroundColor = UIColor.cyan
         stackContainerView.addSubview(stackView)
 
-        stackView.alignment = UIStackViewAlignment.center
-        stackView.axis = UILayoutConstraintAxis.vertical
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.axis = NSLayoutConstraint.Axis.vertical
         for image in images {
             if let viewImage = image {
                 let imageView = UIImageView(image: viewImage)

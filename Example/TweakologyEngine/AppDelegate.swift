@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var tweakologyAgent: TweakologyAgent?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let tweaksStorage = TweaksStorage.sharedInstance;
         tweaksStorage.addTweak(name: "test", changeSet: changeSeq)
         tweakologyAgent = TweakologyAgent(

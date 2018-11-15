@@ -89,7 +89,7 @@ public class TweakologyAgent {
                         let start = DispatchTime.now() // <<<<<<<<<< Start time
 
                         view.nonRecursiveRender()
-                        imageData = UIImagePNGRepresentation(view.renderedImage)
+                        imageData = view.renderedImage.pngData()
 
                         let end = DispatchTime.now()   // <<<<<<<<<<   end time
                         let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
@@ -98,7 +98,7 @@ public class TweakologyAgent {
                         print("Time to evaluate problem: \(timeInterval) seconds")
                     } else {
                         let image = window.renderImage()
-                        imageData = UIImagePNGRepresentation(image!)
+                        imageData = image!.pngData()
                     }
 
                     if imageData == nil {

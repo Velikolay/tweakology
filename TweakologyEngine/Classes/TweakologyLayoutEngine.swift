@@ -150,7 +150,7 @@ public class TweakologyLayoutEngine: NSObject {
     private func setUIViewSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
         if key == "contentMode" {
             if let contentModeRaw = value as? Int,
-                let contentMode = UIViewContentMode(rawValue: contentModeRaw) {
+                let contentMode = UIView.ContentMode(rawValue: contentModeRaw) {
                 view.contentMode = contentMode
                 return true
             }
@@ -236,7 +236,7 @@ public class TweakologyLayoutEngine: NSObject {
             let buttonTitle = value as? [String: Any] {
             for (titleKey, titleVal) in buttonTitle {
                 if titleKey == "text" {
-                    buttonView.setTitle(titleVal as? String, for: UIControlState.normal)
+                    buttonView.setTitle(titleVal as? String, for: UIControl.State.normal)
                 } else if titleKey == "textAlignment" {
                     if let alignmentRaw = titleVal as? Int,
                         let alignment = NSTextAlignment(rawValue: alignmentRaw) {
@@ -245,10 +245,10 @@ public class TweakologyLayoutEngine: NSObject {
                 } else if titleKey == "textColor" {
                     if let textColor = titleVal as? [String: Any],
                         let color = toUIColor(colorValue: textColor["hexValue"] as! String)?.withAlphaComponent(textColor["alpha"] as! CGFloat) {
-                        buttonView.setTitleColor(color, for:  UIControlState.normal)
+                        buttonView.setTitleColor(color, for:  UIControl.State.normal)
                     } else if let textColor = titleVal as? String {
                         let color = toUIColor(colorValue: textColor)
-                        buttonView.setTitleColor(color, for:  UIControlState.normal)
+                        buttonView.setTitleColor(color, for:  UIControl.State.normal)
                     }
                 } else if titleKey == "font",
                     let titleFont = titleVal as? [String: Any],
@@ -544,39 +544,39 @@ func systemFont(from: [String: Any]) -> UIFont? {
     return nil
 }
 
-func textStyle(from: String) -> UIFontTextStyle? {
+func textStyle(from: String) -> UIFont.TextStyle? {
     switch from {
         case "Body":
-            return UIFontTextStyle.body
+            return UIFont.TextStyle.body
         case "Caption1":
-            return UIFontTextStyle.caption1
+            return UIFont.TextStyle.caption1
         case "Caption2":
-            return UIFontTextStyle.caption2
+            return UIFont.TextStyle.caption2
         case "Footnote":
-            return UIFontTextStyle.footnote
+            return UIFont.TextStyle.footnote
         case "Headline":
-            return UIFontTextStyle.headline
+            return UIFont.TextStyle.headline
         case "Subheadline":
-            return UIFontTextStyle.subheadline
+            return UIFont.TextStyle.subheadline
         case "Title1":
             if #available(iOS 9.0, *) {
-                return UIFontTextStyle.title1
+                return UIFont.TextStyle.title1
             }
         case "Title2":
             if #available(iOS 9.0, *) {
-                return UIFontTextStyle.title2
+                return UIFont.TextStyle.title2
             }
         case "Title3":
             if #available(iOS 9.0, *) {
-                return UIFontTextStyle.title3
+                return UIFont.TextStyle.title3
             }
         case "Callout":
             if #available(iOS 9.0, *) {
-                return UIFontTextStyle.callout
+                return UIFont.TextStyle.callout
             }
         case "LargeTitle":
             if #available(iOS 11.0, *) {
-                return UIFontTextStyle.largeTitle
+                return UIFont.TextStyle.largeTitle
             }
         default:
             return nil

@@ -106,21 +106,21 @@ class ConstraintConfig: Mappable {
         return nil
     }
 
-    private func attributeFromConfig(attrConfig: AnyObject?) -> NSLayoutAttribute? {
+    private func attributeFromConfig(attrConfig: AnyObject?) -> NSLayoutConstraint.Attribute? {
         if ((attrConfig as? String) != nil), let attr = attributes[attrConfig as! String] {
-            return NSLayoutAttribute(rawValue: attr)
+            return NSLayoutConstraint.Attribute(rawValue: attr)
         } else if let attr = attrConfig as? Int {
-            return NSLayoutAttribute(rawValue: attr)
+            return NSLayoutConstraint.Attribute(rawValue: attr)
         } else {
             return nil
         }
     }
     
-    private func relationFromConfig(relationConfig: AnyObject) -> NSLayoutRelation? {
+    private func relationFromConfig(relationConfig: AnyObject) -> NSLayoutConstraint.Relation? {
         if ((relationConfig as? String) != nil), let relation = relations[relationConfig as! String] {
-            return NSLayoutRelation(rawValue: relation)
+            return NSLayoutConstraint.Relation(rawValue: relation)
         } else if let relation = relationConfig as? Int {
-            return NSLayoutRelation(rawValue: relation)
+            return NSLayoutConstraint.Relation(rawValue: relation)
         } else {
             return nil
         }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TweakologyEngine'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Tweakology`s engine to update app layout from configuration at runtime'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,8 @@ Tweakology`s engine to update app layout from configuration at runtime
   s.author           = { 'Nikolay Ivanov' => 'velikolay@gmail.com' }
   s.source           = { :git => 'https://github.com/Velikolay/tweakology.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  
+  s.swift_version = '4.2'
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'TweakologyEngine/Classes/**/*'
