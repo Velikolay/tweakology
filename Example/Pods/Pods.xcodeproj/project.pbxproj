@@ -42,7 +42,7 @@
 		3C921BD50D36F706172DA4FE57C09C22 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F8104490862E5FE134A40A99CAA56AE9 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		413533251858BAAA36EB18688E0A2D6F /* TweakologyLayoutInspectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39276F7C44B8A850BF803DCEBB526A /* TweakologyLayoutInspectorProtocol.swift */; };
 		42089229CE59A673622DC55622A210BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0EE19F3B703CD25C2B0306266E986 /* Foundation.framework */; };
-		429C5B1CD7726EA2FC27E4E2C0602209 /* Pods-tweakology_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429C5B1CD7726EA2FC27E4E2C0602209 /* Pods-TweakologyEngine_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B72260A4445154BF042FF0F7BC602838 /* Pods-TweakologyEngine_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4524AF5B3B490384484C6178A086857B /* UILabel+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DB731DF244BDF83F47A944CBA9429D /* UILabel+MappableOverride.swift */; };
 		45C9F72E1787F3EE118003A4301B3D4F /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AB1DFEFC4E4C7A4C3C9A607B40EDA /* NSDecimalNumberTransform.swift */; };
 		486CB7C4F30FB104E2FED04CF87EA7C8 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 094CF00F6D8DA3F89277DC33BDE5DF4A /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,7 +75,7 @@
 		7A643BB6A29C5916FBF09E2593E790C7 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3348C07C57107394FF597D43853C62 /* Map.swift */; };
 		7D487B411D29674C98659CBE8BD515C7 /* GCDWebServerDataResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = D546543742CAEAE076F9698E2DEE04D0 /* GCDWebServerDataResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80C6D69C583984E3F759230E3D2051F1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D6706F08B7CAC5DE1D291F4ED0DDB0 /* CFNetwork.framework */; };
-		810A617BF09D83432C69A7B6AFD9EB56 /* tweakology-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C56202FCDE21DFB1D186F3EC1B597724 /* tweakology-dummy.m */; };
+		810A617BF09D83432C69A7B6AFD9EB56 /* TweakologyEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C56202FCDE21DFB1D186F3EC1B597724 /* TweakologyEngine-dummy.m */; };
 		8180DAB734E37AB2355A2CAC0F368E9A /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4A2969717E185BA3DF2858434B6E3 /* DictionaryTransform.swift */; };
 		81A06E97E1A56C3A3230EDF65D61E5FF /* GCDWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = A5430DCA4EB5200912C9376C3CC4C67D /* GCDWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81A83FA7514223037243A5A7DEC7CC9B /* UIImage+ForceDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E5F97AD56FEAC35540847E0C02BF54 /* UIImage+ForceDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,7 +93,7 @@
 		93DEA7D538540B6A7D2368776900C76C /* GCDWebServerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 8383021ABE293B335D205ED25DBE020A /* GCDWebServerConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9438270E134E84368CB0FA0CC2437421 /* GCDWebServerErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = D3B9BE30860F3BC111D10C95F165F663 /* GCDWebServerErrorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94EF5975C85479019C3CA88D48BD6EE4 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B5458B7C45B774195E739ABD1BC538A7 /* SDImageCache.m */; };
-		979DEBFEE2859685BBA69A3A219F1A95 /* Pods-tweakology_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		979DEBFEE2859685BBA69A3A219F1A95 /* Pods-TweakologyEngine_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31975B1861E722838C135240EA1BA7ED /* Pods-TweakologyEngine_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		988778C9B4E856B0E00C656632622FBB /* UIButton+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915AC94E2067447C6043EE4FC72D9AC1 /* UIButton+MappableOverride.swift */; };
 		98FC61C50D4346E435D1A92815F0E803 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D7DC5739F61A2A2F8509E833F23F0D /* ISO8601DateTransform.swift */; };
 		9B682A1F4CE4119E3EDAE1423C88B49B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B0EE19F3B703CD25C2B0306266E986 /* Foundation.framework */; };
@@ -119,7 +119,7 @@
 		B4022112CF3B03227FA9649C982B74AB /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FC6306A28CB8AD2FFD18DE3F43364703 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5CE4E2E5E4F032AF1D2CED5F06398BD /* UIView+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF346365549A0C69FD9A421F7691F9 /* UIView+Mappable.swift */; };
 		BC48CC45878F866519017619A3FD200B /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7920B7135701D2FF3F0F5282A8BAC73 /* UIImage+Mappable.swift */; };
-		C1545E1F60AAF8ADAB700F183AC9E9D3 /* Pods-tweakology_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */; };
+		C1545E1F60AAF8ADAB700F183AC9E9D3 /* Pods-TweakologyEngine_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-TweakologyEngine_Example-dummy.m */; };
 		C230652165D45DD90CA9EC69D06F7B57 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBCD4782E57A317CFF0567A4E876A99 /* GCDWebServerRequest.m */; };
 		C3B0A4B05E630D1C9AAF5F070FFFF89F /* SDImageCacheConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E89966E03E4674074266EC014B682EA2 /* SDImageCacheConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4531AF2AD528A458D2CAF2ADDDB49B5 /* GCDWebServer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7653B970DCA27AF32516277D951C19 /* GCDWebServer-dummy.m */; };
@@ -156,7 +156,7 @@
 		EDE9ED0322A4CE11DC164D8F77AB924D /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ADBD544D65572397AE5980F91F6592 /* DateTransform.swift */; };
 		EE0F564A06C2078538CA4AE6FA587948 /* UIView+ConstraintsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650860077D926D54F4ADF76F7C5CB91D /* UIView+ConstraintsState.swift */; };
 		EE41E4E144557727A945533EB4C34D5F /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47AAF67A678807123E41DAB174C81F79 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF4E272460667FD9EC8297C235329F56 /* tweakology-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A4B3BF1ECA3F5465D869D872B0C2B9 /* tweakology-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4E272460667FD9EC8297C235329F56 /* TweakologyEngine-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A4B3BF1ECA3F5465D869D872B0C2B9 /* TweakologyEngine-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF56FD245D20E1096D895B04D3E74380 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 405046311CCB40430067709EB8A6FEEE /* SDWebImageManager.m */; };
 		F27157C73A599C51B2D7ACDDB3ABA28D /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB8079F1FC3E949CA4DB8A393B16239 /* SDWebImage-dummy.m */; };
 		F376310EAA28C30BC8C1C3C6D7A3AE51 /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = CBCC5EACE709AF37041FFE7A3E58DD5F /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,7 +167,7 @@
 		F8EDD0996FC7E8387CBBD2B32C3B84AD /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EAAB0FCC904DE2F6DD5CBF2E44EAFB /* HexColorTransform.swift */; };
 		FBE55BFF1320CFCA5C6E3C0F097BD7EF /* SDWebImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F2C7BCD9315F6CCCEAD1B028797E3 /* SDWebImageCoder.m */; };
 		FD7DE841F467D4C17334A673FDBFC0C9 /* SDWebImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1214F534025983D71CE6B3BD63A491 /* SDWebImageGIFCoder.m */; };
-		FE25DF4C439C7551A7ECA09D25D9DDE7 /* Pods-tweakology_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */; };
+		FE25DF4C439C7551A7ECA09D25D9DDE7 /* Pods-TweakologyEngine_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223E165193A4F67BC8319480A2EB2B6 /* Pods-TweakologyEngine_Tests-dummy.m */; };
 		FECE60FCB8127731FF82110AE2BF1B46 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391DDCA4C6FC8EEF97DDC288AE0315C /* TransformOperators.swift */; };
 /* End PBXBuildFile section */
 
@@ -177,7 +177,7 @@
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 95EB735F17BFCEF9A1ADCAE1004338BF;
-			remoteInfo = tweakology;
+			remoteInfo = TweakologyEngine;
 		};
 		4FA399B5CF037CDD689A431B08FC5EFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -191,7 +191,7 @@
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D60AA5D3D7AB085DA1177BFF363C54C;
-			remoteInfo = "Pods-tweakology_Example";
+			remoteInfo = "Pods-TweakologyEngine_Example";
 		};
 		7605CC0302845A9AAA615CA4AF3CC88E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -236,88 +236,88 @@
 		039C784A58C92FE5141BE551180394C9 /* SDWebImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoderHelper.h; path = SDWebImage/SDWebImageCoderHelper.h; sourceTree = "<group>"; };
 		0511B474C02994DFB6296B13F38D3B8B /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataRequest.m; path = GCDWebServer/Requests/GCDWebServerDataRequest.m; sourceTree = "<group>"; };
 		06D6706F08B7CAC5DE1D291F4ED0DDB0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		07A598DDEC7C5730D0B20AD9ED2122E2 /* UIView+RenderImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+RenderImage.swift"; path = "tweakology/Classes/UIView+RenderImage.swift"; sourceTree = "<group>"; };
+		07A598DDEC7C5730D0B20AD9ED2122E2 /* UIView+RenderImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+RenderImage.swift"; path = "TweakologyEngine/Classes/UIView+RenderImage.swift"; sourceTree = "<group>"; };
 		086B075650C8C36DACABBD826CB51CA1 /* SDWebImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageFrame.h; path = SDWebImage/SDWebImageFrame.h; sourceTree = "<group>"; };
 		094CF00F6D8DA3F89277DC33BDE5DF4A /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		0FE9C6C9638176B76DDAD04FF7185CC6 /* SDWebImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageFrame.m; path = SDWebImage/SDWebImageFrame.m; sourceTree = "<group>"; };
 		11817AFCF344A2B6909FE7E22C556D93 /* GCDWebServer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCDWebServer-umbrella.h"; sourceTree = "<group>"; };
-		14C98E67F1F2E9DC84095723F89D8D80 /* Pods-tweakology_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		14C98E67F1F2E9DC84095723F89D8D80 /* Pods-TweakologyEngine_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweakologyEngine_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		17578FE3D2017AE62739A9D02352601E /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerHTTPStatusCodes.h; path = GCDWebServer/Core/GCDWebServerHTTPStatusCodes.h; sourceTree = "<group>"; };
 		1A808CAF73116A4CF8F55271EC73B032 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		1CA6A777442EAF268AB317E7F3241AE0 /* tweakology-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-prefix.pch"; sourceTree = "<group>"; };
+		1CA6A777442EAF268AB317E7F3241AE0 /* TweakologyEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TweakologyEngine-prefix.pch"; sourceTree = "<group>"; };
 		1DB266500B1C502B1DA87117F741B89C /* NSImage+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+WebCache.h"; path = "SDWebImage/NSImage+WebCache.h"; sourceTree = "<group>"; };
 		1DB7890C31D9689307539CBF44A49E65 /* SDImageCacheConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheConfig.m; path = SDWebImage/SDImageCacheConfig.m; sourceTree = "<group>"; };
 		1E3C1736E238B1DCEFA04D2DDF58D802 /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
 		1E4F919DF4F895DBC7EB74D75EACEC3B /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
-		1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-TweakologyEngine_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweakologyEngine_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1F13967FF3B59C0BA0A2519A324E0ED1 /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerPrivate.h; path = GCDWebServer/Core/GCDWebServerPrivate.h; sourceTree = "<group>"; };
-		1F39276F7C44B8A850BF803DCEBB526A /* TweakologyLayoutInspectorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyLayoutInspectorProtocol.swift; path = tweakology/Classes/TweakologyLayoutInspectorProtocol.swift; sourceTree = "<group>"; };
+		1F39276F7C44B8A850BF803DCEBB526A /* TweakologyLayoutInspectorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyLayoutInspectorProtocol.swift; path = TweakologyEngine/Classes/TweakologyLayoutInspectorProtocol.swift; sourceTree = "<group>"; };
 		218FAFBB83BA03A22740CCF0E30367F5 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
-		2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Tests-dummy.m"; sourceTree = "<group>"; };
+		2223E165193A4F67BC8319480A2EB2B6 /* Pods-TweakologyEngine_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweakologyEngine_Tests-dummy.m"; sourceTree = "<group>"; };
 		228389414ABE82939B9F7042351477D5 /* UIWindow+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIWindow+MappableOverride.swift"; sourceTree = "<group>"; };
-		22F751A4F82BCD7F33D72CF84C345CD3 /* tweakology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = tweakology.framework; path = tweakology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25DC7F40F294251A86CCEBBEA2742247 /* Pods-tweakology_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-frameworks.sh"; sourceTree = "<group>"; };
+		22F751A4F82BCD7F33D72CF84C345CD3 /* TweakologyEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TweakologyEngine.framework; path = TweakologyEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DC7F40F294251A86CCEBBEA2742247 /* Pods-TweakologyEngine_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweakologyEngine_Example-frameworks.sh"; sourceTree = "<group>"; };
 		25FAF28BA74EB303741AE497FD96A9BD /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
-		27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-TweakologyEngine_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweakologyEngine_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2929B82E33D167F3B2BD578F6D789EB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2940D32BC1C45822AB52ECBD1F3DEE00 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
 		294CFA46287BC9801927F206FCB15846 /* SDWebImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageTransition.m; path = SDWebImage/SDWebImageTransition.m; sourceTree = "<group>"; };
-		2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tweakology_Example-dummy.m"; sourceTree = "<group>"; };
+		2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-TweakologyEngine_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweakologyEngine_Example-dummy.m"; sourceTree = "<group>"; };
 		2CFCB1658628FB01AEF79A3DD5124FBC /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		2D097F089208F783F597356118EAFA82 /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/SDAnimatedImageRep.m; sourceTree = "<group>"; };
 		2D0D189AEA0296759B3D297289D91739 /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/SDWebImageTransition.h; sourceTree = "<group>"; };
 		2ED42179A9AD6EF36D14FFD7D9AF8F4C /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
 		2F59E1C075A438358F8D0900B06F6E2A /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
-		3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-TweakologyEngine_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweakologyEngine_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		308DBA635C609F5A8A6E73370B6C90E5 /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerErrorResponse.m; path = GCDWebServer/Responses/GCDWebServerErrorResponse.m; sourceTree = "<group>"; };
-		31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Tests-umbrella.h"; sourceTree = "<group>"; };
-		35D04AB9550DC2F8816085F01AE7317B /* Pods-tweakology_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tweakology_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		31975B1861E722838C135240EA1BA7ED /* Pods-TweakologyEngine_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TweakologyEngine_Tests-umbrella.h"; sourceTree = "<group>"; };
+		35D04AB9550DC2F8816085F01AE7317B /* Pods-TweakologyEngine_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweakologyEngine_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		3711749976DCC501FBD2CA128475DDD1 /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileRequest.h; path = GCDWebServer/Requests/GCDWebServerFileRequest.h; sourceTree = "<group>"; };
-		3A6BC95A8A8F390E24219988DD867CCC /* Pods_tweakology_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tweakology_Tests.framework; path = "Pods-tweakology_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6BC95A8A8F390E24219988DD867CCC /* Pods_TweakologyEngine_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TweakologyEngine_Tests.framework; path = "Pods-TweakologyEngine_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B24E7A000A4CA994B1AEDC79AC293A8 /* NSImage+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+WebCache.m"; path = "SDWebImage/NSImage+WebCache.m"; sourceTree = "<group>"; };
 		3BED180989F80C117427012166E58F62 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
-		3C23C95C7638F6E73839AF500DA4C937 /* Pods-tweakology_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tweakology_Tests.modulemap"; sourceTree = "<group>"; };
+		3C23C95C7638F6E73839AF500DA4C937 /* Pods-TweakologyEngine_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TweakologyEngine_Tests.modulemap"; sourceTree = "<group>"; };
 		3D18198B6914543C662DC8752E28F4DB /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
 		405046311CCB40430067709EB8A6FEEE /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
 		40A5ABF9EDC87EDD75D340C58AE658D7 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
-		40D6BB44CC65BD79B3AE4E1ACCAF5430 /* SwizzlingClassProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwizzlingClassProvider.swift; path = tweakology/Classes/SwizzlingClassProvider.swift; sourceTree = "<group>"; };
-		432F7D45C16EF5F750CED0C935CF6095 /* tweakology.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = tweakology.xcconfig; sourceTree = "<group>"; };
+		40D6BB44CC65BD79B3AE4E1ACCAF5430 /* SwizzlingClassProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwizzlingClassProvider.swift; path = TweakologyEngine/Classes/SwizzlingClassProvider.swift; sourceTree = "<group>"; };
+		432F7D45C16EF5F750CED0C935CF6095 /* TweakologyEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TweakologyEngine.xcconfig; sourceTree = "<group>"; };
 		45BC54A8D20B71B7407AC7317354547E /* Tests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		45D2868C093498937D327A33D29EEE7C /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		45EC7FE801E4CE7A1E0C6790776CB7A3 /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
 		47AAF67A678807123E41DAB174C81F79 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		47EAAB0FCC904DE2F6DD5CBF2E44EAFB /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
 		4827E2128C49C197EEC79A4CD950A27F /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/NSButton+WebCache.h"; sourceTree = "<group>"; };
-		48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-tweakology_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-TweakologyEngine_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TweakologyEngine_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4A0F45A2A3522B4044DABEABA84CDD23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BEAB088227E91F8AB3BE526CD0031BB /* CryptoHash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoHash-umbrella.h"; sourceTree = "<group>"; };
 		4D31FCAB6A1586CE7209E123E5D7733F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1490B68322F40F3E5D581DB61ECC6E /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
-		504A305385CBE0F3FA139198970C289C /* TweakologyLayoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyLayoutEngine.swift; path = tweakology/Classes/TweakologyLayoutEngine.swift; sourceTree = "<group>"; };
+		504A305385CBE0F3FA139198970C289C /* TweakologyLayoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyLayoutEngine.swift; path = TweakologyEngine/Classes/TweakologyLayoutEngine.swift; sourceTree = "<group>"; };
 		52B12DAB3F07B0A32ED2CB4468792F89 /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
 		52E84366B972B857A8A3F3B336E2F4F3 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		52F703944D0A42AF7A348B817EE87E7B /* GCDWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GCDWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56596E35D8AD9F2EA912E0D4C284B528 /* GCDWebServerConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerConnection.m; path = GCDWebServer/Core/GCDWebServerConnection.m; sourceTree = "<group>"; };
 		5698AEF91CB93B44D445BFFCB480290F /* MappableOverrideProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MappableOverrideProtocol.swift; sourceTree = "<group>"; };
 		56B49CC6DB4AE17B9A6A8026022EDA74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		593AAFF7D395326091A26EEAB4ABD603 /* SwizzlingClassProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwizzlingClassProvider.h; path = tweakology/Classes/SwizzlingClassProvider.h; sourceTree = "<group>"; };
+		593AAFF7D395326091A26EEAB4ABD603 /* SwizzlingClassProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwizzlingClassProvider.h; path = TweakologyEngine/Classes/SwizzlingClassProvider.h; sourceTree = "<group>"; };
 		5A31F8B12ED39FBCCE157BE294CA7577 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
 		5BB3DAF3A37A3D627B12F3F2685E8F0E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0EF47CD8693CDE1361CF408D672190 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
-		5DCA8C21E92B3423A25B67D7A16C4D4F /* tweakology.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = tweakology.modulemap; sourceTree = "<group>"; };
+		5DCA8C21E92B3423A25B67D7A16C4D4F /* TweakologyEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TweakologyEngine.modulemap; sourceTree = "<group>"; };
 		5F3B51CB05495DFF172C206FF2FAF0B6 /* UIImageView+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImageView+MappableOverride.swift"; sourceTree = "<group>"; };
 		5FC4A2969717E185BA3DF2858434B6E3 /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
 		61DB731DF244BDF83F47A944CBA9429D /* UILabel+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+MappableOverride.swift"; sourceTree = "<group>"; };
 		6416DBB203FEDCCCA11FFF50D2162CBA /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		64ADBD544D65572397AE5980F91F6592 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		64B0EE19F3B703CD25C2B0306266E986 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		650860077D926D54F4ADF76F7C5CB91D /* UIView+ConstraintsState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+ConstraintsState.swift"; path = "tweakology/Classes/UIView+ConstraintsState.swift"; sourceTree = "<group>"; };
+		650860077D926D54F4ADF76F7C5CB91D /* UIView+ConstraintsState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+ConstraintsState.swift"; path = "TweakologyEngine/Classes/UIView+ConstraintsState.swift"; sourceTree = "<group>"; };
 		65E78FE883A1E67272289BAB9D06106C /* SDWebImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCodersManager.h; path = SDWebImage/SDWebImageCodersManager.h; sourceTree = "<group>"; };
 		665F8C6A25330BA09B57C1ED4F8F0412 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		67A77164317C00356C51FDCD1FB98042 /* UIView+Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Identifier.swift"; path = "tweakology/Classes/UIView+Identifier.swift"; sourceTree = "<group>"; };
+		67A77164317C00356C51FDCD1FB98042 /* UIView+Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Identifier.swift"; path = "TweakologyEngine/Classes/UIView+Identifier.swift"; sourceTree = "<group>"; };
 		6CE4207AF2517EC122864C76A89F8C42 /* GCDWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GCDWebServer.framework; path = GCDWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7C16DB9577F70402834F48DA7AA709 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
-		70AFE7F058462417400176AB6BF90B1D /* SwizzlingClassProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SwizzlingClassProvider.m; path = tweakology/Classes/SwizzlingClassProvider.m; sourceTree = "<group>"; };
+		70AFE7F058462417400176AB6BF90B1D /* SwizzlingClassProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SwizzlingClassProvider.m; path = TweakologyEngine/Classes/SwizzlingClassProvider.m; sourceTree = "<group>"; };
 		71DAF1678B22B83C936E2E16A45EB2CD /* SDWebImageCoderHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoderHelper.m; path = SDWebImage/SDWebImageCoderHelper.m; sourceTree = "<group>"; };
 		72237CE9E17A708F7D4E7C6BB498E9D7 /* Pods-CryptoHash_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptoHash_Tests-umbrella.h"; sourceTree = "<group>"; };
 		7241338DF7B39326C2E4A821DF38DB13 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
@@ -328,11 +328,11 @@
 		782CB9334BDAEBFD85C5CB5D4960CF62 /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		78BD96411599A1659C67BB17BAB1AD0A /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/UIView+WebCache.m"; sourceTree = "<group>"; };
 		7A3348C07C57107394FF597D43853C62 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
-		7AFB3582B48A785A40A856A5A41C94A9 /* Pods-tweakology_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tweakology_Example.modulemap"; sourceTree = "<group>"; };
+		7AFB3582B48A785A40A856A5A41C94A9 /* Pods-TweakologyEngine_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TweakologyEngine_Example.modulemap"; sourceTree = "<group>"; };
 		7B6771055792F3E61906F3CDC8683126 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		7E0EF592BFFD7ADF3ECE8292B5151ED2 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		80844F48321BCE01C3FF7C4A8ED2DB80 /* CryptoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CryptoHash.h; sourceTree = "<group>"; };
-		816905DC9724370EB5BDBE477066C9A6 /* UIViewController+TweakologyLayoutInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+TweakologyLayoutInspector.swift"; path = "tweakology/Classes/UIViewController+TweakologyLayoutInspector.swift"; sourceTree = "<group>"; };
+		816905DC9724370EB5BDBE477066C9A6 /* UIViewController+TweakologyLayoutInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+TweakologyLayoutInspector.swift"; path = "TweakologyEngine/Classes/UIViewController+TweakologyLayoutInspector.swift"; sourceTree = "<group>"; };
 		81848CD7DE06BDBD48F7793E2BC4735A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		81D7DC5739F61A2A2F8509E833F23F0D /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		8383021ABE293B335D205ED25DBE020A /* GCDWebServerConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerConnection.h; path = GCDWebServer/Core/GCDWebServerConnection.h; sourceTree = "<group>"; };
@@ -347,10 +347,10 @@
 		8D19835AED36E20080DCD0F520772A85 /* TweakologyAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweakologyAgent.swift; sourceTree = "<group>"; };
 		8D50424382B390DAE3D69CD553F950AC /* GCDWebServerResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerResponse.m; path = GCDWebServer/Core/GCDWebServerResponse.m; sourceTree = "<group>"; };
 		8EE2362F1257B52AE126C4B6F9B707A2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		8FC9A42216669EDA199BE95FAD635677 /* Pods_tweakology_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tweakology_Example.framework; path = "Pods-tweakology_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC9A42216669EDA199BE95FAD635677 /* Pods_TweakologyEngine_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TweakologyEngine_Example.framework; path = "Pods-TweakologyEngine_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90029DB4CC71DA8E191EC187DE870060 /* CGRect+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Mappable.swift"; sourceTree = "<group>"; };
 		915AC94E2067447C6043EE4FC72D9AC1 /* UIButton+MappableOverride.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+MappableOverride.swift"; sourceTree = "<group>"; };
-		919BCE7471CC6629FCE0AAD8E7968839 /* tweakology.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = tweakology.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		919BCE7471CC6629FCE0AAD8E7968839 /* TweakologyEngine.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = TweakologyEngine.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9207A2937332633EEF90581DB20D451A /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		985316E6AD0DEE487E45ED25E574044C /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
@@ -367,24 +367,24 @@
 		A8E5F97AD56FEAC35540847E0C02BF54 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
 		AB1214F534025983D71CE6B3BD63A491 /* SDWebImageGIFCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageGIFCoder.m; path = SDWebImage/SDWebImageGIFCoder.m; sourceTree = "<group>"; };
 		AD7044D18C32A4EC7C3B1B601EF95024 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = GCDWebServer/Core/GCDWebServerFunctions.h; sourceTree = "<group>"; };
-		B1A4B3BF1ECA3F5465D869D872B0C2B9 /* tweakology-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tweakology-umbrella.h"; sourceTree = "<group>"; };
+		B1A4B3BF1ECA3F5465D869D872B0C2B9 /* TweakologyEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TweakologyEngine-umbrella.h"; sourceTree = "<group>"; };
 		B391DDCA4C6FC8EEF97DDC288AE0315C /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
 		B3F7041D8495869E679845CB24E24141 /* NSLayoutConstraint+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Mappable.swift"; sourceTree = "<group>"; };
 		B40134192665E93404FB5B8DC53C7C8C /* UIImage+Tweakology.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Tweakology.swift"; sourceTree = "<group>"; };
 		B5458B7C45B774195E739ABD1BC538A7 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
-		B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tweakology_Example-umbrella.h"; sourceTree = "<group>"; };
+		B72260A4445154BF042FF0F7BC602838 /* Pods-TweakologyEngine_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TweakologyEngine_Example-umbrella.h"; sourceTree = "<group>"; };
 		BB4479660497EA54228936CC783A2BF5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BC443789E4DB0934D4CA29CBAAA98E58 /* UIColor+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Mappable.swift"; sourceTree = "<group>"; };
-		BCE7A0DE02D8CD70296C26D14F18806C /* Pods-tweakology_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-tweakology_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Tests-resources.sh"; sourceTree = "<group>"; };
+		BCE7A0DE02D8CD70296C26D14F18806C /* Pods-TweakologyEngine_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweakologyEngine_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-TweakologyEngine_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweakologyEngine_Tests-resources.sh"; sourceTree = "<group>"; };
 		BDAAAA7F27F7DA67815BB1DFE4A7A6F0 /* SDWebImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoder.h; path = SDWebImage/SDWebImageCoder.h; sourceTree = "<group>"; };
 		BDFACB901ACC7809ABC46DF5E362F190 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.m; sourceTree = "<group>"; };
 		BEB878030238BD434AB98A74F04047EB /* GCDWebServer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCDWebServer-prefix.pch"; sourceTree = "<group>"; };
 		C23108A7F1D2C3C15CBBC94FDD8ADA2F /* UIFont+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+Mappable.swift"; sourceTree = "<group>"; };
 		C346BB9141D751E7840C3525CB29FD84 /* GCDWebServer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCDWebServer.xcconfig; sourceTree = "<group>"; };
 		C349F9D3A13A2DBC96EC413E4C715C67 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
-		C56202FCDE21DFB1D186F3EC1B597724 /* tweakology-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tweakology-dummy.m"; sourceTree = "<group>"; };
-		C5F58046A6C5FD85457158E807196C1A /* Pods-tweakology_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tweakology_Example-resources.sh"; sourceTree = "<group>"; };
+		C56202FCDE21DFB1D186F3EC1B597724 /* TweakologyEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TweakologyEngine-dummy.m"; sourceTree = "<group>"; };
+		C5F58046A6C5FD85457158E807196C1A /* Pods-TweakologyEngine_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweakologyEngine_Example-resources.sh"; sourceTree = "<group>"; };
 		C622BAF519717D886B6FD080FE9BC38B /* GCDWebServerRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerRequest.h; path = GCDWebServer/Core/GCDWebServerRequest.h; sourceTree = "<group>"; };
 		C7920B7135701D2FF3F0F5282A8BAC73 /* UIImage+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Mappable.swift"; sourceTree = "<group>"; };
 		C85DD15A23E6B98CC33B2DFF51254D2D /* Pods-CryptoHash_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CryptoHash_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -400,16 +400,16 @@
 		D51379A35B621D6249E745B6D78C128D /* CryptoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CryptoHash.m; sourceTree = "<group>"; };
 		D53A2F68FC73D279F30FFCE192536E26 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		D546543742CAEAE076F9698E2DEE04D0 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = GCDWebServer/Responses/GCDWebServerDataResponse.h; sourceTree = "<group>"; };
-		D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweaksStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweaksStorage.swift; path = tweakology/Classes/TweaksStorage.swift; sourceTree = "<group>"; };
+		D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweaksStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweaksStorage.swift; path = TweakologyEngine/Classes/TweaksStorage.swift; sourceTree = "<group>"; };
 		D7B2E0357E01575AB7ADE8D0C6C698A2 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		D7C2E88B9E9A1224D40DD754F5CDDFBD /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tweakology/Images.xcassets; sourceTree = "<group>"; };
-		D7D1BB4AD1120538B5D592B06D6D9718 /* NSLayoutConstraint+Meta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Meta.swift"; path = "tweakology/Classes/NSLayoutConstraint+Meta.swift"; sourceTree = "<group>"; };
+		D7C2E88B9E9A1224D40DD754F5CDDFBD /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TweakologyEngine/Images.xcassets; sourceTree = "<group>"; };
+		D7D1BB4AD1120538B5D592B06D6D9718 /* NSLayoutConstraint+Meta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Meta.swift"; path = "TweakologyEngine/Classes/NSLayoutConstraint+Meta.swift"; sourceTree = "<group>"; };
 		D903D6F9B78E7F1035FB65E4FBC7564E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		D9957FF329FD142830827DE21B0BA1DE /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerStreamedResponse.m; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
 		DBB709B39A906724D4F7EAEE3CE9D754 /* GCDWebServer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServer.m; path = GCDWebServer/Core/GCDWebServer.m; sourceTree = "<group>"; };
-		DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tweakology_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-TweakologyEngine_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweakologyEngine_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DFEF346365549A0C69FD9A421F7691F9 /* UIView+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Mappable.swift"; sourceTree = "<group>"; };
-		E0512AF6E95FE0CCAC9DB102488F3242 /* UIViewController+Tweakology.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Tweakology.swift"; path = "tweakology/Classes/UIViewController+Tweakology.swift"; sourceTree = "<group>"; };
+		E0512AF6E95FE0CCAC9DB102488F3242 /* UIViewController+Tweakology.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Tweakology.swift"; path = "TweakologyEngine/Classes/UIViewController+Tweakology.swift"; sourceTree = "<group>"; };
 		E07F6D8CF83B56A59848AFD6F439B4D0 /* SDWebImageGIFCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageGIFCoder.h; path = SDWebImage/SDWebImageGIFCoder.h; sourceTree = "<group>"; };
 		E11186668F779A9EF67213B4F9205F39 /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
 		E6CC1A457E5C994597E4E70C2941E3C3 /* GCDWebServerFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFunctions.m; path = GCDWebServer/Core/GCDWebServerFunctions.m; sourceTree = "<group>"; };
@@ -421,7 +421,7 @@
 		EBB8079F1FC3E949CA4DB8A393B16239 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		EC9785249FC3AE18DABE1A7A5B90D771 /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataResponse.m; path = GCDWebServer/Responses/GCDWebServerDataResponse.m; sourceTree = "<group>"; };
 		EE6E90FB4B72F3099AD9038EDEA5FBFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE7812DC772779AD6BE0E0B425CC690B /* Pods-tweakology_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tweakology_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE7812DC772779AD6BE0E0B425CC690B /* Pods-TweakologyEngine_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TweakologyEngine_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EF0BF57AC0A931516FABA9C0895C1CB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8104490862E5FE134A40A99CAA56AE9 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		F81647BAF71F87013253CBFE3A557154 /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.h; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 		130D5A1E1EE3D21BC951FF58C0A575E6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				957C18FAAF82BCF344E217319309EED9 /* tweakology */,
+				957C18FAAF82BCF344E217319309EED9 /* TweakologyEngine */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -529,25 +529,25 @@
 				A42B619FF1AA82E70A2F324859088181 /* Components */,
 			);
 			name = Agent;
-			path = tweakology/Classes/Agent;
+			path = TweakologyEngine/Classes/Agent;
 			sourceTree = "<group>";
 		};
-		1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-tweakology_Example */ = {
+		1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-TweakologyEngine_Example */ = {
 			isa = PBXGroup;
 			children = (
 				2929B82E33D167F3B2BD578F6D789EB5 /* Info.plist */,
-				7AFB3582B48A785A40A856A5A41C94A9 /* Pods-tweakology_Example.modulemap */,
-				EE7812DC772779AD6BE0E0B425CC690B /* Pods-tweakology_Example-acknowledgements.markdown */,
-				35D04AB9550DC2F8816085F01AE7317B /* Pods-tweakology_Example-acknowledgements.plist */,
-				2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-tweakology_Example-dummy.m */,
-				25DC7F40F294251A86CCEBBEA2742247 /* Pods-tweakology_Example-frameworks.sh */,
-				C5F58046A6C5FD85457158E807196C1A /* Pods-tweakology_Example-resources.sh */,
-				B72260A4445154BF042FF0F7BC602838 /* Pods-tweakology_Example-umbrella.h */,
-				DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */,
-				1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */,
+				7AFB3582B48A785A40A856A5A41C94A9 /* Pods-TweakologyEngine_Example.modulemap */,
+				EE7812DC772779AD6BE0E0B425CC690B /* Pods-TweakologyEngine_Example-acknowledgements.markdown */,
+				35D04AB9550DC2F8816085F01AE7317B /* Pods-TweakologyEngine_Example-acknowledgements.plist */,
+				2CF44A2FC5D1234AEFAC014D960BB041 /* Pods-TweakologyEngine_Example-dummy.m */,
+				25DC7F40F294251A86CCEBBEA2742247 /* Pods-TweakologyEngine_Example-frameworks.sh */,
+				C5F58046A6C5FD85457158E807196C1A /* Pods-TweakologyEngine_Example-resources.sh */,
+				B72260A4445154BF042FF0F7BC602838 /* Pods-TweakologyEngine_Example-umbrella.h */,
+				DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-TweakologyEngine_Example.debug.xcconfig */,
+				1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-TweakologyEngine_Example.release.xcconfig */,
 			);
-			name = "Pods-tweakology_Example";
-			path = "Target Support Files/Pods-tweakology_Example";
+			name = "Pods-TweakologyEngine_Example";
+			path = "Target Support Files/Pods-TweakologyEngine_Example";
 			sourceTree = "<group>";
 		};
 		1DC965A22B77DEC34A31FF70D3ACC4D6 /* ObjectMapper */ = {
@@ -611,10 +611,10 @@
 			children = (
 				6CE4207AF2517EC122864C76A89F8C42 /* GCDWebServer.framework */,
 				89859C4AA7890BE78EEA4F6A3EC2E377 /* ObjectMapper.framework */,
-				8FC9A42216669EDA199BE95FAD635677 /* Pods_tweakology_Example.framework */,
-				3A6BC95A8A8F390E24219988DD867CCC /* Pods_tweakology_Tests.framework */,
+				8FC9A42216669EDA199BE95FAD635677 /* Pods_TweakologyEngine_Example.framework */,
+				3A6BC95A8A8F390E24219988DD867CCC /* Pods_TweakologyEngine_Tests.framework */,
 				5BB3DAF3A37A3D627B12F3F2685E8F0E /* SDWebImage.framework */,
-				22F751A4F82BCD7F33D72CF84C345CD3 /* tweakology.framework */,
+				22F751A4F82BCD7F33D72CF84C345CD3 /* TweakologyEngine.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -634,7 +634,7 @@
 				B40134192665E93404FB5B8DC53C7C8C /* UIImage+Tweakology.swift */,
 			);
 			name = Extensions;
-			path = tweakology/Classes/Extensions;
+			path = TweakologyEngine/Classes/Extensions;
 			sourceTree = "<group>";
 		};
 		6318E02D0874EE3F3D22ABA629B58418 /* Pod */ = {
@@ -642,7 +642,7 @@
 			children = (
 				BB4479660497EA54228936CC783A2BF5 /* LICENSE */,
 				1A808CAF73116A4CF8F55271EC73B032 /* README.md */,
-				919BCE7471CC6629FCE0AAD8E7968839 /* tweakology.podspec */,
+				919BCE7471CC6629FCE0AAD8E7968839 /* TweakologyEngine.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -650,8 +650,8 @@
 		63BC2D69C108C42861E64245A61EFA29 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-tweakology_Example */,
-				E016F6E5C926F735F936FE124651017E /* Pods-tweakology_Tests */,
+				1BDFAA4FB52980826956AF47FBDD83D1 /* Pods-TweakologyEngine_Example */,
+				E016F6E5C926F735F936FE124651017E /* Pods-TweakologyEngine_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -702,14 +702,14 @@
 			isa = PBXGroup;
 			children = (
 				4A0F45A2A3522B4044DABEABA84CDD23 /* Info.plist */,
-				5DCA8C21E92B3423A25B67D7A16C4D4F /* tweakology.modulemap */,
-				432F7D45C16EF5F750CED0C935CF6095 /* tweakology.xcconfig */,
-				C56202FCDE21DFB1D186F3EC1B597724 /* tweakology-dummy.m */,
-				1CA6A777442EAF268AB317E7F3241AE0 /* tweakology-prefix.pch */,
-				B1A4B3BF1ECA3F5465D869D872B0C2B9 /* tweakology-umbrella.h */,
+				5DCA8C21E92B3423A25B67D7A16C4D4F /* TweakologyEngine.modulemap */,
+				432F7D45C16EF5F750CED0C935CF6095 /* TweakologyEngine.xcconfig */,
+				C56202FCDE21DFB1D186F3EC1B597724 /* TweakologyEngine-dummy.m */,
+				1CA6A777442EAF268AB317E7F3241AE0 /* TweakologyEngine-prefix.pch */,
+				B1A4B3BF1ECA3F5465D869D872B0C2B9 /* TweakologyEngine-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/tweakology";
+			path = "Example/Pods/Target Support Files/TweakologyEngine";
 			sourceTree = "<group>";
 		};
 		8F26FE7CD507F2502B6655DD015EA16D /* CryptoHash */ = {
@@ -756,7 +756,7 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		957C18FAAF82BCF344E217319309EED9 /* tweakology */ = {
+		957C18FAAF82BCF344E217319309EED9 /* TweakologyEngine */ = {
 			isa = PBXGroup;
 			children = (
 				D7D1BB4AD1120538B5D592B06D6D9718 /* NSLayoutConstraint+Meta.swift */,
@@ -779,7 +779,7 @@
 				888E1209FC60707029507DE45749502B /* Support Files */,
 				9E9D92141B4560955793979682D87820 /* Types */,
 			);
-			name = tweakology;
+			name = TweakologyEngine;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -799,7 +799,7 @@
 				2ED42179A9AD6EF36D14FFD7D9AF8F4C /* ConstraintConfig.swift */,
 			);
 			name = Types;
-			path = tweakology/Classes/Types;
+			path = TweakologyEngine/Classes/Types;
 			sourceTree = "<group>";
 		};
 		A42B619FF1AA82E70A2F324859088181 /* Components */ = {
@@ -918,22 +918,22 @@
 			path = CryptoHash/Example;
 			sourceTree = "<group>";
 		};
-		E016F6E5C926F735F936FE124651017E /* Pods-tweakology_Tests */ = {
+		E016F6E5C926F735F936FE124651017E /* Pods-TweakologyEngine_Tests */ = {
 			isa = PBXGroup;
 			children = (
 				56B49CC6DB4AE17B9A6A8026022EDA74 /* Info.plist */,
-				3C23C95C7638F6E73839AF500DA4C937 /* Pods-tweakology_Tests.modulemap */,
-				48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-tweakology_Tests-acknowledgements.markdown */,
-				14C98E67F1F2E9DC84095723F89D8D80 /* Pods-tweakology_Tests-acknowledgements.plist */,
-				2223E165193A4F67BC8319480A2EB2B6 /* Pods-tweakology_Tests-dummy.m */,
-				BCE7A0DE02D8CD70296C26D14F18806C /* Pods-tweakology_Tests-frameworks.sh */,
-				BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-tweakology_Tests-resources.sh */,
-				31975B1861E722838C135240EA1BA7ED /* Pods-tweakology_Tests-umbrella.h */,
-				27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */,
-				3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */,
+				3C23C95C7638F6E73839AF500DA4C937 /* Pods-TweakologyEngine_Tests.modulemap */,
+				48F033B9ACEB67F36B2247144AA7E6C6 /* Pods-TweakologyEngine_Tests-acknowledgements.markdown */,
+				14C98E67F1F2E9DC84095723F89D8D80 /* Pods-TweakologyEngine_Tests-acknowledgements.plist */,
+				2223E165193A4F67BC8319480A2EB2B6 /* Pods-TweakologyEngine_Tests-dummy.m */,
+				BCE7A0DE02D8CD70296C26D14F18806C /* Pods-TweakologyEngine_Tests-frameworks.sh */,
+				BD4FE1E9002A724F76EC0BDC62E06550 /* Pods-TweakologyEngine_Tests-resources.sh */,
+				31975B1861E722838C135240EA1BA7ED /* Pods-TweakologyEngine_Tests-umbrella.h */,
+				27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-TweakologyEngine_Tests.debug.xcconfig */,
+				3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-TweakologyEngine_Tests.release.xcconfig */,
 			);
-			name = "Pods-tweakology_Tests";
-			path = "Target Support Files/Pods-tweakology_Tests";
+			name = "Pods-TweakologyEngine_Tests";
+			path = "Target Support Files/Pods-TweakologyEngine_Tests";
 			sourceTree = "<group>";
 		};
 		E7CE33DFDFEA5E65D1B2B795C6018322 /* Support Files */ = {
@@ -1035,7 +1035,7 @@
 				710DD1BF2D3727537BAE48BCAB093002 /* CryptoHash.h in Headers */,
 				DAEBCDAE591A0FA9053A56483C2D30AD /* Pods-CryptoHash_Tests-umbrella.h in Headers */,
 				17CD34353A56F8682452F297149FBD2B /* SwizzlingClassProvider.h in Headers */,
-				EF4E272460667FD9EC8297C235329F56 /* tweakology-umbrella.h in Headers */,
+				EF4E272460667FD9EC8297C235329F56 /* TweakologyEngine-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1043,7 +1043,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979DEBFEE2859685BBA69A3A219F1A95 /* Pods-tweakology_Tests-umbrella.h in Headers */,
+				979DEBFEE2859685BBA69A3A219F1A95 /* Pods-TweakologyEngine_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,7 +1051,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429C5B1CD7726EA2FC27E4E2C0602209 /* Pods-tweakology_Example-umbrella.h in Headers */,
+				429C5B1CD7726EA2FC27E4E2C0602209 /* Pods-TweakologyEngine_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,9 +1081,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		06D9AC07E08933DA03325945AF7C9641 /* Pods-tweakology_Tests */ = {
+		06D9AC07E08933DA03325945AF7C9641 /* Pods-TweakologyEngine_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 693452CFB4EE6D3A7584603A86D582CF /* Build configuration list for PBXNativeTarget "Pods-tweakology_Tests" */;
+			buildConfigurationList = 693452CFB4EE6D3A7584603A86D582CF /* Build configuration list for PBXNativeTarget "Pods-TweakologyEngine_Tests" */;
 			buildPhases = (
 				7B033D89908CA22210F28A6804270671 /* Headers */,
 				2F370F95B39EBBEA7EE9B23459FF3702 /* Sources */,
@@ -1095,9 +1095,9 @@
 			dependencies = (
 				1D211309C486E161E33A4564CD477D4E /* PBXTargetDependency */,
 			);
-			name = "Pods-tweakology_Tests";
-			productName = "Pods-tweakology_Tests";
-			productReference = 3A6BC95A8A8F390E24219988DD867CCC /* Pods_tweakology_Tests.framework */;
+			name = "Pods-TweakologyEngine_Tests";
+			productName = "Pods-TweakologyEngine_Tests";
+			productReference = 3A6BC95A8A8F390E24219988DD867CCC /* Pods_TweakologyEngine_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		17645A2ECFF66EA47C1B7ABEE4EB9F9F /* GCDWebServer */ = {
@@ -1136,9 +1136,9 @@
 			productReference = 89859C4AA7890BE78EEA4F6A3EC2E377 /* ObjectMapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-tweakology_Example */ = {
+		8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-TweakologyEngine_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 978E02FA63543B84C578BF20BD027885 /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */;
+			buildConfigurationList = 978E02FA63543B84C578BF20BD027885 /* Build configuration list for PBXNativeTarget "Pods-TweakologyEngine_Example" */;
 			buildPhases = (
 				B5C9B288629119800839BFFB0223DE88 /* Headers */,
 				DEEC8FCEE68A0F1C70983F1C4D41AAB9 /* Sources */,
@@ -1153,14 +1153,14 @@
 				1B4D56AB0F429517631FA4B363C43F3B /* PBXTargetDependency */,
 				BB6A91DAC0348E06D8EF90E7E0753A14 /* PBXTargetDependency */,
 			);
-			name = "Pods-tweakology_Example";
-			productName = "Pods-tweakology_Example";
-			productReference = 8FC9A42216669EDA199BE95FAD635677 /* Pods_tweakology_Example.framework */;
+			name = "Pods-TweakologyEngine_Example";
+			productName = "Pods-TweakologyEngine_Example";
+			productReference = 8FC9A42216669EDA199BE95FAD635677 /* Pods_TweakologyEngine_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95EB735F17BFCEF9A1ADCAE1004338BF /* tweakology */ = {
+		95EB735F17BFCEF9A1ADCAE1004338BF /* TweakologyEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 039CED79BE669BCF70088678D5ED3FFD /* Build configuration list for PBXNativeTarget "tweakology" */;
+			buildConfigurationList = 039CED79BE669BCF70088678D5ED3FFD /* Build configuration list for PBXNativeTarget "TweakologyEngine" */;
 			buildPhases = (
 				6598CED4CBEF7C4F83230BFCDF0E2196 /* Headers */,
 				1038946ACFD6C008EB077A58E5D3B588 /* Sources */,
@@ -1174,9 +1174,9 @@
 				C1B9C87F63DE0FC738D16FCC155480F4 /* PBXTargetDependency */,
 				8E76292FFD485F080D403235DA2202E9 /* PBXTargetDependency */,
 			);
-			name = tweakology;
-			productName = tweakology;
-			productReference = 22F751A4F82BCD7F33D72CF84C345CD3 /* tweakology.framework */;
+			name = TweakologyEngine;
+			productName = TweakologyEngine;
+			productReference = 22F751A4F82BCD7F33D72CF84C345CD3 /* TweakologyEngine.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B7A88F411B6F8C7D03CE70D5EFD17EEF /* SDWebImage */ = {
@@ -1220,10 +1220,10 @@
 			targets = (
 				17645A2ECFF66EA47C1B7ABEE4EB9F9F /* GCDWebServer */,
 				555F434AEAF049D6FFA879E4EA258208 /* ObjectMapper */,
-				8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-tweakology_Example */,
-				06D9AC07E08933DA03325945AF7C9641 /* Pods-tweakology_Tests */,
+				8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-TweakologyEngine_Example */,
+				06D9AC07E08933DA03325945AF7C9641 /* Pods-TweakologyEngine_Tests */,
 				B7A88F411B6F8C7D03CE70D5EFD17EEF /* SDWebImage */,
-				95EB735F17BFCEF9A1ADCAE1004338BF /* tweakology */,
+				95EB735F17BFCEF9A1ADCAE1004338BF /* TweakologyEngine */,
 			);
 		};
 /* End PBXProject section */
@@ -1290,7 +1290,7 @@
 				284A07C450AC5E32748116112326AB13 /* SwizzlingClassProvider.m in Sources */,
 				2CDC5F90DACFBC58EA44CB7B09CBA217 /* SwizzlingClassProvider.swift in Sources */,
 				C46E9D646268E56579E0A98DDB22F294 /* Tests.m in Sources */,
-				810A617BF09D83432C69A7B6AFD9EB56 /* tweakology-dummy.m in Sources */,
+				810A617BF09D83432C69A7B6AFD9EB56 /* TweakologyEngine-dummy.m in Sources */,
 				CD208F2F9D44B1827DBA23AA517EF286 /* TweakologyAgent.swift in Sources */,
 				DAB22574CD5E8F3FDC4455258638B07C /* TweakologyLayoutEngine.swift in Sources */,
 				413533251858BAAA36EB18688E0A2D6F /* TweakologyLayoutInspectorProtocol.swift in Sources */,
@@ -1381,7 +1381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE25DF4C439C7551A7ECA09D25D9DDE7 /* Pods-tweakology_Tests-dummy.m in Sources */,
+				FE25DF4C439C7551A7ECA09D25D9DDE7 /* Pods-TweakologyEngine_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,7 +1389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1545E1F60AAF8ADAB700F183AC9E9D3 /* Pods-tweakology_Example-dummy.m in Sources */,
+				C1545E1F60AAF8ADAB700F183AC9E9D3 /* Pods-TweakologyEngine_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1425,8 +1425,8 @@
 		};
 		1D211309C486E161E33A4564CD477D4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-tweakology_Example";
-			target = 8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-tweakology_Example */;
+			name = "Pods-TweakologyEngine_Example";
+			target = 8D60AA5D3D7AB085DA1177BFF363C54C /* Pods-TweakologyEngine_Example */;
 			targetProxy = 5BBF19C4853D3D5EE82C8509BEB0F0A8 /* PBXContainerItemProxy */;
 		};
 		3A96FDD22D6A4DE60856B6BD5112B3E8 /* PBXTargetDependency */ = {
@@ -1443,8 +1443,8 @@
 		};
 		BB6A91DAC0348E06D8EF90E7E0753A14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = tweakology;
-			target = 95EB735F17BFCEF9A1ADCAE1004338BF /* tweakology */;
+			name = TweakologyEngine;
+			target = 95EB735F17BFCEF9A1ADCAE1004338BF /* TweakologyEngine */;
 			targetProxy = 4C47DA92BDD3714AA671C88B34A35272 /* PBXContainerItemProxy */;
 		};
 		C1B9C87F63DE0FC738D16FCC155480F4 /* PBXTargetDependency */ = {
@@ -1502,7 +1502,7 @@
 		};
 		444656541E7C43FCF4264200D2B460B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-tweakology_Tests.debug.xcconfig */;
+			baseConfigurationReference = 27F442EB7735E0FAC01DD97C5E20CCD8 /* Pods-TweakologyEngine_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1514,12 +1514,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweakologyEngine_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TweakologyEngine_Tests/Pods-TweakologyEngine_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1535,7 +1535,7 @@
 		};
 		563552138E3456F8417F36B1DDA24750 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 432F7D45C16EF5F750CED0C935CF6095 /* tweakology.xcconfig */;
+			baseConfigurationReference = 432F7D45C16EF5F750CED0C935CF6095 /* TweakologyEngine.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1546,14 +1546,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/tweakology/tweakology-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/tweakology/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TweakologyEngine/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/tweakology/tweakology.modulemap";
-				PRODUCT_MODULE_NAME = tweakology;
-				PRODUCT_NAME = tweakology;
+				MODULEMAP_FILE = "Target Support Files/TweakologyEngine/TweakologyEngine.modulemap";
+				PRODUCT_MODULE_NAME = TweakologyEngine;
+				PRODUCT_NAME = TweakologyEngine;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1727,7 +1727,7 @@
 		};
 		95BB637175FFE6F90EA8146210ACF97D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-tweakology_Tests.release.xcconfig */;
+			baseConfigurationReference = 3023234E0F7E0523FCC8F8FBA56C8918 /* Pods-TweakologyEngine_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1739,12 +1739,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweakologyEngine_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Tests/Pods-tweakology_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TweakologyEngine_Tests/Pods-TweakologyEngine_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1792,7 +1792,7 @@
 		};
 		BF7E7A18D9B8AE9171B42E9A08EA4F74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-tweakology_Example.debug.xcconfig */;
+			baseConfigurationReference = DC7CC1EEFECDD567A310D2BCD0D7655C /* Pods-TweakologyEngine_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1804,12 +1804,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweakologyEngine_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1919,7 +1919,7 @@
 		};
 		F9F8952CE2385A61A32AF6C52A45F9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-tweakology_Example.release.xcconfig */;
+			baseConfigurationReference = 1F05002EEAAB06AAAADAE452C6CDDEB8 /* Pods-TweakologyEngine_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1931,12 +1931,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tweakology_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweakologyEngine_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tweakology_Example/Pods-tweakology_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1953,7 +1953,7 @@
 		};
 		FA97D009AE5629FD760B992756CDAB3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 432F7D45C16EF5F750CED0C935CF6095 /* tweakology.xcconfig */;
+			baseConfigurationReference = 432F7D45C16EF5F750CED0C935CF6095 /* TweakologyEngine.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1964,14 +1964,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/tweakology/tweakology-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/tweakology/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TweakologyEngine/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/tweakology/tweakology.modulemap";
-				PRODUCT_MODULE_NAME = tweakology;
-				PRODUCT_NAME = tweakology;
+				MODULEMAP_FILE = "Target Support Files/TweakologyEngine/TweakologyEngine.modulemap";
+				PRODUCT_MODULE_NAME = TweakologyEngine;
+				PRODUCT_NAME = TweakologyEngine;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1985,7 +1985,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		039CED79BE669BCF70088678D5ED3FFD /* Build configuration list for PBXNativeTarget "tweakology" */ = {
+		039CED79BE669BCF70088678D5ED3FFD /* Build configuration list for PBXNativeTarget "TweakologyEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA97D009AE5629FD760B992756CDAB3F /* Debug */,
@@ -2003,7 +2003,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		693452CFB4EE6D3A7584603A86D582CF /* Build configuration list for PBXNativeTarget "Pods-tweakology_Tests" */ = {
+		693452CFB4EE6D3A7584603A86D582CF /* Build configuration list for PBXNativeTarget "Pods-TweakologyEngine_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				444656541E7C43FCF4264200D2B460B4 /* Debug */,
@@ -2012,7 +2012,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		978E02FA63543B84C578BF20BD027885 /* Build configuration list for PBXNativeTarget "Pods-tweakology_Example" */ = {
+		978E02FA63543B84C578BF20BD027885 /* Build configuration list for PBXNativeTarget "Pods-TweakologyEngine_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF7E7A18D9B8AE9171B42E9A08EA4F74 /* Debug */,

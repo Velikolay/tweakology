@@ -1,0 +1,6 @@
+framework module Pods_TweakologyEngine_Example {
+  umbrella header "Pods-TweakologyEngine_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

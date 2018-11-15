@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'tweakology_Example' do
-  pod 'tweakology', :path => '../'
+target 'TweakologyEngine_Example' do
+  pod 'TweakologyEngine', :path => '../'
 
-  target 'tweakology_Tests' do
+  target 'TweakologyEngine_Tests' do
     inherit! :search_paths
 
   end

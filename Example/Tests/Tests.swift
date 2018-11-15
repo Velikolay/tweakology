@@ -1,5 +1,5 @@
 import XCTest
-import tweakology
+import TweakologyEngine
 
 class Tests: XCTestCase {
     
