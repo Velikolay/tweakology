@@ -67,7 +67,7 @@ THE SOFTWARE.
 
 ## TweakologyEngine
 
-Copyright (c) 2018 Nikolay Ivanov <felinephonix@gmail.com>
+Copyright (c) 2018 Nikolay Ivanov <velikolay@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
