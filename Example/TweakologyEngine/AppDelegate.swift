@@ -17,11 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tweakologyAgent: TweakologyAgent?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let tweaksStorage = TweaksStorage.sharedInstance;
-        tweaksStorage.addTweak(name: "test", changeSet: changeSeq)
+        let storage = TweakologyStorage.sharedInstance;
+        storage.addTweak(name: "test", changeSet: changeSeq)
         tweakologyAgent = TweakologyAgent(
-            tweaksStorage: tweaksStorage,
-            tweakologyEngine: TweakologyLayoutEngine.sharedInstance)
+            name: "Example",
+            storage: storage,
+            engine: TweakologyLayoutEngine.sharedInstance)
         tweakologyAgent?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = TweakologyDemoViewController()

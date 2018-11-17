@@ -1,5 +1,5 @@
 //
-//  TweaksStorage.swift
+//  TweakologyStorage.swift
 //  tweakology
 //
 //  Created by Nikolay Ivanov on 6/27/18.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class TweaksStorage: NSObject {
-    public static let sharedInstance = TweaksStorage()
+public class TweakologyStorage: NSObject {
+    public static let sharedInstance = TweakologyStorage()
 
     private var storage: [String: [[String: Any]]]
 

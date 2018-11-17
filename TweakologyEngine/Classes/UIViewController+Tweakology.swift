@@ -23,7 +23,7 @@ extension UIViewController {
         print("viewDidLoad: \(viewControllerName)")
         if #available(iOS 10.0, *) {
             let viewIndex = self.inspectLayout()
-            let tweaksStorage = TweaksStorage.sharedInstance
+            let tweaksStorage = TweakologyStorage.sharedInstance
             let engine = TweakologyLayoutEngine.sharedInstance
             engine.update(viewIndex: viewIndex)
             for (_, tweakSeq) in tweaksStorage.getAllTweaks() {

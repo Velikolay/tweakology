@@ -30,7 +30,7 @@
 		2B6405FC4F3B26AA883630BA736528A4 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D50424382B390DAE3D69CD553F950AC /* GCDWebServerResponse.m */; };
 		2CDC5F90DACFBC58EA44CB7B09CBA217 /* SwizzlingClassProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6BB44CC65BD79B3AE4E1ACCAF5430 /* SwizzlingClassProvider.swift */; };
 		2CFB1B48127F716D5555B68F1A2DDA6C /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A70FB6F0A3CCBE62ADC344EDD54D46 /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2FC07920F57EB4BF9DA9F0319C503030 /* TweaksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweaksStorage.swift */; };
+		2FC07920F57EB4BF9DA9F0319C503030 /* TweakologyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweakologyStorage.swift */; };
 		303A61C880BBCAD820DBBBE2D1FC23B0 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2940D32BC1C45822AB52ECBD1F3DEE00 /* TransformType.swift */; };
 		32D3C4188DDE9C9235213CB86CBECF89 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE2362F1257B52AE126C4B6F9B707A2 /* MobileCoreServices.framework */; };
 		338ACCA6F8BC97BDE211D94F64434215 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163C3D7E74E242E73040CD2533D696D /* Mappable.swift */; };
@@ -400,7 +400,7 @@
 		D51379A35B621D6249E745B6D78C128D /* CryptoHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CryptoHash.m; sourceTree = "<group>"; };
 		D53A2F68FC73D279F30FFCE192536E26 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		D546543742CAEAE076F9698E2DEE04D0 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = GCDWebServer/Responses/GCDWebServerDataResponse.h; sourceTree = "<group>"; };
-		D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweaksStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweaksStorage.swift; path = TweakologyEngine/Classes/TweaksStorage.swift; sourceTree = "<group>"; };
+		D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweakologyStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyStorage.swift; path = TweakologyEngine/Classes/TweakologyStorage.swift; sourceTree = "<group>"; };
 		D7B2E0357E01575AB7ADE8D0C6C698A2 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		D7C2E88B9E9A1224D40DD754F5CDDFBD /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TweakologyEngine/Images.xcassets; sourceTree = "<group>"; };
 		D7D1BB4AD1120538B5D592B06D6D9718 /* NSLayoutConstraint+Meta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Meta.swift"; path = "TweakologyEngine/Classes/NSLayoutConstraint+Meta.swift"; sourceTree = "<group>"; };
@@ -760,7 +760,7 @@
 				40D6BB44CC65BD79B3AE4E1ACCAF5430 /* SwizzlingClassProvider.swift */,
 				504A305385CBE0F3FA139198970C289C /* TweakologyLayoutEngine.swift */,
 				1F39276F7C44B8A850BF803DCEBB526A /* TweakologyLayoutInspectorProtocol.swift */,
-				D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweaksStorage.swift */,
+				D5B5DA15CBC6CD3A08102E069C8F17C1 /* TweakologyStorage.swift */,
 				650860077D926D54F4ADF76F7C5CB91D /* UIView+ConstraintsState.swift */,
 				67A77164317C00356C51FDCD1FB98042 /* UIView+Identifier.swift */,
 				07A598DDEC7C5730D0B20AD9ED2122E2 /* UIView+RenderImage.swift */,
@@ -1292,7 +1292,7 @@
 				CD208F2F9D44B1827DBA23AA517EF286 /* TweakologyAgent.swift in Sources */,
 				DAB22574CD5E8F3FDC4455258638B07C /* TweakologyLayoutEngine.swift in Sources */,
 				413533251858BAAA36EB18688E0A2D6F /* TweakologyLayoutInspectorProtocol.swift in Sources */,
-				2FC07920F57EB4BF9DA9F0319C503030 /* TweaksStorage.swift in Sources */,
+				2FC07920F57EB4BF9DA9F0319C503030 /* TweakologyStorage.swift in Sources */,
 				988778C9B4E856B0E00C656632622FBB /* UIButton+MappableOverride.swift in Sources */,
 				606D8F4B979FD13C4876AFFF9FE29727 /* UIColor+Mappable.swift in Sources */,
 				E144C95BE40A15A8D7117379C6715A88 /* UIFont+Mappable.swift in Sources */,

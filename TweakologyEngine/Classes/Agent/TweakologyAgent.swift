@@ -12,12 +12,14 @@ import GCDWebServer
 @available(iOS 10.0, *)
 public class TweakologyAgent {
 
-    private var tweaksStorage: TweaksStorage
-    private var tweakologyEngine: TweakologyLayoutEngine
+    private let name: String
+    private let storage: TweakologyStorage
+    private let engine: TweakologyLayoutEngine
 
-    public init(tweaksStorage: TweaksStorage, tweakologyEngine: TweakologyLayoutEngine) {
-        self.tweaksStorage = tweaksStorage
-        self.tweakologyEngine = tweakologyEngine
+    public init(name: String, storage: TweakologyStorage, engine: TweakologyLayoutEngine) {
+        self.name = name
+        self.storage = storage
+        self.engine = engine
     }
 
     public func start() {
@@ -119,9 +121,9 @@ public class TweakologyAgent {
                     let params = request.path.split(separator: "/")
                     let tweakName = String(params.last!)
                     if let tweakSeq = (request as? GCDWebServerDataRequest)?.jsonObject as? [[String:Any]] {
-                        self.tweaksStorage.addTweak(name: tweakName, changeSet: tweakSeq)
-                        print(self.tweaksStorage.getAllTweaks())
-                        self.tweakologyEngine.tweak(changeSeq: tweakSeq)
+                        self.storage.addTweak(name: tweakName, changeSet: tweakSeq)
+                        print(self.storage.getAllTweaks())
+                        self.engine.tweak(changeSeq: tweakSeq)
                         let response = GCDWebServerResponse(statusCode: 204)
                         response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                         completionBlock(response)
@@ -147,7 +149,7 @@ public class TweakologyAgent {
                 completionBlock(response)
         }
 
-        webServer.start(withPort: 8080, bonjourName: "tweakology_agent")
+        webServer.start(withPort: 8080, bonjourName: "TweakologyAgent_\(self.name)")
         print("Visit \(String(describing: webServer.serverURL)) in your web browser")
     }
 
