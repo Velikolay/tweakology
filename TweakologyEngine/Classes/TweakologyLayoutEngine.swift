@@ -17,7 +17,7 @@ enum EngineMode {
 @available(iOS 10.0, *)
 public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
-    private var viewIndex: ViewIndex
+    public private(set) var viewIndex: ViewIndex
     private var mode: EngineMode
 
     private override init() {

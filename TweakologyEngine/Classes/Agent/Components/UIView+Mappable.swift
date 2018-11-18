@@ -27,7 +27,6 @@ extension UIView: StaticMappable {
             semanticContentAttribute.rawValue >>> map["properties.semanticContentAttribute"]
         }
 
-        hierarchyMetadata >>> map["hierarchyMetadata"]
         uid?.value >>> map["uid.value"]
         uid?.kind >>> map["uid.kind"]
 
