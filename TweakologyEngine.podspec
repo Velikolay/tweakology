@@ -27,10 +27,11 @@ Tweakology`s engine to update app layout from configuration at runtime
   s.author           = { 'Nikolay Ivanov' => 'velikolay@gmail.com' }
   s.source           = { :git => 'https://github.com/Velikolay/tweakology.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  
+
   s.swift_version = '4.2'
   s.ios.deployment_target = '8.0'
 
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.source_files = 'TweakologyEngine/Classes/**/*'
 
   s.dependency 'GCDWebServer', '~> 3.0'

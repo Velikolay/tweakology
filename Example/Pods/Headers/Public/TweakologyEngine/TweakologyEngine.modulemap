@@ -1,0 +1,6 @@
+module TweakologyEngine {
+  umbrella header "TweakologyEngine-umbrella.h"
+
+  export *
+  module * { export * }
+}

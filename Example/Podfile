@@ -1,7 +1,7 @@
-use_frameworks!
-
 target 'TweakologyEngine_Example' do
   pod 'TweakologyEngine', :path => '../'
+  pod 'SDWebImage', '4.4.2', :modular_headers => true
+  pod 'GCDWebServer', '3.4.2', :modular_headers => true
 
   target 'TweakologyEngine_Tests' do
     inherit! :search_paths

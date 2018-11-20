@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05A80A76965C8FD19DBF5E66 /* Pods_TweakologyEngine_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E46DB995601DDB2491AE2 /* Pods_TweakologyEngine_Tests.framework */; };
+		5CABE2194E005CADEC46A578 /* libPods-TweakologyEngine_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D512FD82D58BAF4C2B83B6 /* libPods-TweakologyEngine_Example.a */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* TweakologyDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* TweakologyDemoViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		615E889EC680F2845B0D2D74 /* Pods_TweakologyEngine_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60944201D0E2E9D30D3BB3B /* Pods_TweakologyEngine_Example.framework */; };
 		A2416B2020683536009B1636 /* TweakologyDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2416B1F20683536009B1636 /* TweakologyDemoView.swift */; };
 		A2FDDECF20683F8600A5E170 /* TweakologyUIExperimentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDDECE20683F8600A5E170 /* TweakologyUIExperimentConfig.swift */; };
+		B640A87B326E49D17E37E879 /* libPods-TweakologyEngine_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACFF169545A2D26EB78651 /* libPods-TweakologyEngine_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +41,14 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6138DA722BA2DC5CA4D6B621 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		70D512FD82D58BAF4C2B83B6 /* libPods-TweakologyEngine_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TweakologyEngine_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BF5A7CCFD0EC49AE3A9727 /* Pods-TweakologyEngine_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweakologyEngine_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweakologyEngine_Tests/Pods-TweakologyEngine_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		77EA9B39E1B60C58B5CAD0E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A2416B1F20683536009B1636 /* TweakologyDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakologyDemoView.swift; sourceTree = "<group>"; };
 		A2FDDECE20683F8600A5E170 /* TweakologyUIExperimentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakologyUIExperimentConfig.swift; sourceTree = "<group>"; };
 		AAF7FDB221AE11B2BA052E36 /* Pods-TweakologyEngine_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweakologyEngine_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B37E46DB995601DDB2491AE2 /* Pods_TweakologyEngine_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweakologyEngine_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4ACFF169545A2D26EB78651 /* libPods-TweakologyEngine_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TweakologyEngine_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3A9F3609220FF6EC6F7FB8 /* Pods-TweakologyEngine_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweakologyEngine_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F60944201D0E2E9D30D3BB3B /* Pods_TweakologyEngine_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweakologyEngine_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615E889EC680F2845B0D2D74 /* Pods_TweakologyEngine_Example.framework in Frameworks */,
+				5CABE2194E005CADEC46A578 /* libPods-TweakologyEngine_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05A80A76965C8FD19DBF5E66 /* Pods_TweakologyEngine_Tests.framework in Frameworks */,
+				B640A87B326E49D17E37E879 /* libPods-TweakologyEngine_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +156,8 @@
 		79BC5B68F0BDC299AAA3D9D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F60944201D0E2E9D30D3BB3B /* Pods_TweakologyEngine_Example.framework */,
-				B37E46DB995601DDB2491AE2 /* Pods_TweakologyEngine_Tests.framework */,
+				70D512FD82D58BAF4C2B83B6 /* libPods-TweakologyEngine_Example.a */,
+				B4ACFF169545A2D26EB78651 /* libPods-TweakologyEngine_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				CC0B3D78685506CDB1B904FD /* [CP] Embed Pods Frameworks */,
+				CC30FAA3047CAD3F4336DB99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,28 +299,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC0B3D78685506CDB1B904FD /* [CP] Embed Pods Frameworks */ = {
+		CC30FAA3047CAD3F4336DB99 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/TweakologyEngine/TweakologyEngine.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example-resources.sh",
+				"${PODS_ROOT}/../../TweakologyEngine/Images.xcassets",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweakologyEngine.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TweakologyEngine_Example/Pods-TweakologyEngine_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
