@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TweakologyStorage: NSObject {
+@objc public class TweakologyStorage: NSObject {
     public static let sharedInstance = TweakologyStorage()
 
     private var storage: [String: [[String: Any]]]

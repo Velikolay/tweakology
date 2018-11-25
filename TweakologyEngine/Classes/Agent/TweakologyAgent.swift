@@ -10,7 +10,7 @@ import GCDWebServer
 
 
 @available(iOS 10.0, *)
-public class TweakologyAgent {
+@objc public class TweakologyAgent: NSObject {
 
     private let name: String
     private let storage: TweakologyStorage
