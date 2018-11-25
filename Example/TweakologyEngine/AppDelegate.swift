@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let storage = TweakologyStorage.sharedInstance;
         storage.addTweak(name: "test", changeSet: changeSeq)
-        tweakologyAgent = TweakologyAgent(
-            name: "Example",
-            storage: storage,
-            engine: TweakologyLayoutEngine.sharedInstance)
+        tweakologyAgent = TweakologyAgent(name: "Example")
         tweakologyAgent?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = TweakologyDemoViewController()

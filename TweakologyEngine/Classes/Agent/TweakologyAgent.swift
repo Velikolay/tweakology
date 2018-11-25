@@ -16,10 +16,22 @@ public class TweakologyAgent {
     private let storage: TweakologyStorage
     private let engine: TweakologyLayoutEngine
 
-    public init(name: String, storage: TweakologyStorage, engine: TweakologyLayoutEngine) {
+    public init(name: String) {
         self.name = name
-        self.storage = storage
+        self.engine = TweakologyLayoutEngine.sharedInstance
+        self.storage = TweakologyStorage.sharedInstance
+    }
+
+    public init(name: String, engine: TweakologyLayoutEngine) {
+        self.name = name
         self.engine = engine
+        self.storage = TweakologyStorage.sharedInstance
+    }
+
+    public init(name: String, engine: TweakologyLayoutEngine, storage: TweakologyStorage) {
+        self.name = name
+        self.engine = engine
+        self.storage = storage
     }
 
     public func start() {

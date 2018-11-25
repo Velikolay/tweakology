@@ -26,9 +26,13 @@ extension UIView: StaticMappable {
         if #available(iOS 9.0, *) {
             semanticContentAttribute.rawValue >>> map["properties.semanticContentAttribute"]
         }
-
-        uid?.value >>> map["uid.value"]
-        uid?.kind >>> map["uid.kind"]
+        if String(describing:type(of: self)) == "UIWindow" {
+            generateUID() >>> map["uid.value"]
+            UIViewIdentifierKind.generated >>> map["uid.kind"]
+        } else {
+            uid?.value >>> map["uid.value"]
+            uid?.kind >>> map["uid.kind"]
+        }
 
         if var mappableOverride = self as? MappableOverride {
             mappableOverride.mappingOverride(map: map)
