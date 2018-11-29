@@ -29,12 +29,19 @@ pod 'GCDWebServer', '3.4.2', :modular_headers => true
 Initialize the tweakology agent in your AppDelegate
 
 ```swift
+import TweakologyEngine
+
+...
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
 var tweakologyAgent: TweakologyAgent?
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ...
     tweakologyAgent = TweakologyAgent(name: "MyApp")
-    tweakologyAgent.start()
+    tweakologyAgent!.start()
     ...
 }
 ```
