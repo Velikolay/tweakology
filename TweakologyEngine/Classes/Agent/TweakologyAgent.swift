@@ -101,7 +101,7 @@ import GCDWebServer
                     if let view = self.engine.viewIndex[viewId] {
                         let start = DispatchTime.now() // <<<<<<<<<< Start time
                         view.nonRecursiveRender()
-                        imageData = view.renderedImage.pngData()
+                        imageData = UIImagePNGRepresentation(view.renderedImage)
 
                         let end = DispatchTime.now()   // <<<<<<<<<<   end time
                         let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
@@ -110,7 +110,7 @@ import GCDWebServer
                         print("Time to evaluate problem: \(timeInterval) seconds")
                     } else {
                         let image = window.renderImage()
-                        imageData = image!.pngData()
+                        imageData = UIImagePNGRepresentation(image!)
                     }
 
                     if imageData == nil {

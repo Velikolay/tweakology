@@ -1,6 +1,6 @@
 {
   "name": "TweakologyEngine",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "summary": "Tweakology`s engine to update app layout from configuration at runtime",
   "description": "Tweakology`s engine to update app layout from configuration at runtime",
   "homepage": "https://github.com/Velikolay/tweakology",
@@ -13,9 +13,9 @@
   },
   "source": {
     "git": "https://github.com/Velikolay/tweakology.git",
-    "tag": "0.1.2"
+    "tag": "0.1.6"
   },
-  "swift_version": "4.2",
+  "swift_version": "4.0",
   "platforms": {
     "ios": "8.0"
   },

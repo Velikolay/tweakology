@@ -1451,34 +1451,6 @@
 			};
 			name = Debug;
 		};
-		0FAB47F35226A7D342CE9FE2A6A41FAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A31D90ED171E10465F7DC4C91E431591 /* TweakologyEngine.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/TweakologyEngine/TweakologyEngine.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = TweakologyEngine;
-				PRODUCT_NAME = TweakologyEngine;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		11F51A71E2BD210359085A572A68C20B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2457CCA3B495E01801B74D941457511F /* GCDWebServer.xcconfig */;
@@ -1499,32 +1471,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2B9C50EB421A7D1C717B636855D35AC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A31D90ED171E10465F7DC4C91E431591 /* TweakologyEngine.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/TweakologyEngine/TweakologyEngine.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = TweakologyEngine;
-				PRODUCT_NAME = TweakologyEngine;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1667,6 +1613,34 @@
 			};
 			name = Debug;
 		};
+		65CFBBF6ACE5C62A3B8463CC0A9ED67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A31D90ED171E10465F7DC4C91E431591 /* TweakologyEngine.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/TweakologyEngine/TweakologyEngine.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = TweakologyEngine;
+				PRODUCT_NAME = TweakologyEngine;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		735FB436BB52D94BA225E376ECE85405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2457CCA3B495E01801B74D941457511F /* GCDWebServer.xcconfig */;
@@ -1692,6 +1666,32 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		9FD03F49A3951D481806A968F166175A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A31D90ED171E10465F7DC4C91E431591 /* TweakologyEngine.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/TweakologyEngine/TweakologyEngine-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/TweakologyEngine/TweakologyEngine.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = TweakologyEngine;
+				PRODUCT_NAME = TweakologyEngine;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		BD2F89CFCD5BDFABA3B0D4EC7ADEA5E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1906,8 +1906,8 @@
 		AD32145143B851BBCDE2F2F3204F378B /* Build configuration list for PBXNativeTarget "TweakologyEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B9C50EB421A7D1C717B636855D35AC1 /* Debug */,
-				0FAB47F35226A7D342CE9FE2A6A41FAE /* Release */,
+				9FD03F49A3951D481806A968F166175A /* Debug */,
+				65CFBBF6ACE5C62A3B8463CC0A9ED67A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
