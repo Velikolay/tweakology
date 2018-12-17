@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TweakologyEngine'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Tweakology`s engine to update app layout from configuration at runtime'
 
 # This description is used to generate tags and improve search results.
