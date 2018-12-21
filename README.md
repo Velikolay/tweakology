@@ -26,6 +26,11 @@ pod 'GCDWebServer', '3.4.2', :modular_headers => true
 
 ### Swift
 
+Import the TweakologyEngine module
+```swift
+import TweakologyEngine
+```
+
 Initialize the tweakology agent in your AppDelegate
 
 ```swift
@@ -34,13 +39,33 @@ var tweakologyAgent: TweakologyAgent?
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ...
     tweakologyAgent = TweakologyAgent(name: "MyApp")
-    tweakologyAgent.start()
+    tweakologyAgent?.start()
     ...
 }
 ```
 
 ### ObjectiveC
-TODO
+
+Import the TweakologyEngine module
+```objective-c
+@import TweakologyEngine;
+```
+
+Initialize the tweakology agent in your AppDelegate
+
+```objective-c
+@implementation MyAppDelegate {
+    TweakologyAgent *_agent;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+     ...
+     _agent = [[TweakologyAgent alloc] initWithName:@"MyApp"];
+    [_agent start];
+    ...
+}
+```
 
 ## Author
 

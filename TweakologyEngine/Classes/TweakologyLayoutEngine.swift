@@ -16,8 +16,8 @@ enum EngineMode {
 
 @available(iOS 10.0, *)
 @objc public class TweakologyLayoutEngine: NSObject {
-    public static let sharedInstance = TweakologyLayoutEngine()
-    public private(set) var viewIndex: ViewIndex
+    @objc public static let sharedInstance = TweakologyLayoutEngine()
+    private(set) var viewIndex: ViewIndex
     private var mode: EngineMode
 
     private override init() {
@@ -28,11 +28,7 @@ enum EngineMode {
         self.mode = EngineMode.development
     }
 
-    public func update(viewIndex: ViewIndex) {
-        self.viewIndex = viewIndex
-    }
-
-    public func tweak(changeSeq: [[String: Any]]) {
+    @objc public func tweak(changeSeq: [[String: Any]]) {
         for change in changeSeq {
             switch change["operation"] as! String {
             case "insert":
@@ -45,6 +41,10 @@ enum EngineMode {
                 print("Unsupported operation")
             }
         }
+    }
+
+    func update(viewIndex: ViewIndex) {
+        self.viewIndex = viewIndex
     }
 
     private func handleUIViewInsert(change: [String: Any]) {

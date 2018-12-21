@@ -16,25 +16,25 @@ import GCDWebServer
     private let storage: TweakologyStorage
     private let engine: TweakologyLayoutEngine
 
-    public init(name: String) {
+    @objc public init(name: String) {
         self.name = name
         self.engine = TweakologyLayoutEngine.sharedInstance
         self.storage = TweakologyStorage.sharedInstance
     }
 
-    public init(name: String, engine: TweakologyLayoutEngine) {
+    @objc public init(name: String, engine: TweakologyLayoutEngine) {
         self.name = name
         self.engine = engine
         self.storage = TweakologyStorage.sharedInstance
     }
 
-    public init(name: String, engine: TweakologyLayoutEngine, storage: TweakologyStorage) {
+    @objc public init(name: String, engine: TweakologyLayoutEngine, storage: TweakologyStorage) {
         self.name = name
         self.engine = engine
         self.storage = storage
     }
 
-    public func start() {
+    @objc public func start() {
 
         let webServer = GCDWebServer()
 
