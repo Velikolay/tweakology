@@ -6,12 +6,12 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - TweakologyEngine (0.1.2):
+  - TweakologyEngine (0.1.6):
     - GCDWebServer (~> 3.0)
     - ObjectMapper (~> 3.1)
     - SDWebImage (~> 4.0)
-    - TweakologyEngine/CryptoHash (= 0.1.2)
-  - TweakologyEngine/CryptoHash (0.1.2):
+    - TweakologyEngine/CryptoHash (= 0.1.6)
+  - TweakologyEngine/CryptoHash (0.1.6):
     - GCDWebServer (~> 3.0)
     - ObjectMapper (~> 3.1)
     - SDWebImage (~> 4.0)
@@ -35,7 +35,7 @@ SPEC CHECKSUMS:
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  TweakologyEngine: f90dfc6080488ffa13700ccc2e6f934dafde16c2
+  TweakologyEngine: 3a2641effc2ccafebf51b0e12f2bffc2aeebfbb9
 
 PODFILE CHECKSUM: 46145be5daa6dd623ca72a075af8ca0594edc9d3
 

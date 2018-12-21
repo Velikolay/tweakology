@@ -16,25 +16,25 @@ import GCDWebServer
     private let storage: TweakologyStorage
     private let engine: TweakologyLayoutEngine
 
-    public init(name: String) {
+    @objc public init(name: String) {
         self.name = name
         self.engine = TweakologyLayoutEngine.sharedInstance
         self.storage = TweakologyStorage.sharedInstance
     }
 
-    public init(name: String, engine: TweakologyLayoutEngine) {
+    @objc public init(name: String, engine: TweakologyLayoutEngine) {
         self.name = name
         self.engine = engine
         self.storage = TweakologyStorage.sharedInstance
     }
 
-    public init(name: String, engine: TweakologyLayoutEngine, storage: TweakologyStorage) {
+    @objc public init(name: String, engine: TweakologyLayoutEngine, storage: TweakologyStorage) {
         self.name = name
         self.engine = engine
         self.storage = storage
     }
 
-    public func start() {
+    @objc public func start() {
 
         let webServer = GCDWebServer()
 
@@ -101,7 +101,7 @@ import GCDWebServer
                     if let view = self.engine.viewIndex[viewId] {
                         let start = DispatchTime.now() // <<<<<<<<<< Start time
                         view.nonRecursiveRender()
-                        imageData = view.renderedImage.pngData()
+                        imageData = UIImagePNGRepresentation(view.renderedImage)
 
                         let end = DispatchTime.now()   // <<<<<<<<<<   end time
                         let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
@@ -110,7 +110,7 @@ import GCDWebServer
                         print("Time to evaluate problem: \(timeInterval) seconds")
                     } else {
                         let image = window.renderImage()
-                        imageData = image!.pngData()
+                        imageData = UIImagePNGRepresentation(image!)
                     }
 
                     if imageData == nil {

@@ -8,7 +8,7 @@
 import Foundation
 
 @objc public class TweakologyStorage: NSObject {
-    public static let sharedInstance = TweakologyStorage()
+    @objc public static let sharedInstance = TweakologyStorage()
 
     private var storage: [String: [[String: Any]]]
 
@@ -16,17 +16,15 @@ import Foundation
         storage = [:]
     }
 
-    public func addTweak(name: String, changeSet: [[String: Any]]) {
+    @objc public func addTweak(name: String, changeSet: [[String: Any]]) {
         storage[name] = changeSet
     }
     
-    public func getTweak(name: String) -> [[String: Any]]? {
+    @objc public func getTweak(name: String) -> [[String: Any]]? {
         return storage[name]
     }
     
-    public func getAllTweaks() -> [String: [[String: Any]]] {
+    @objc public func getAllTweaks() -> [String: [[String: Any]]] {
         return storage
     }
 }
-
-
