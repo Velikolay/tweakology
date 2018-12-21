@@ -24,37 +24,33 @@ pod 'GCDWebServer', '3.4.2', :modular_headers => true
 
 ## Usage
 
+Initializing the TweakologyAgent in your AppDelegate will let you apply existing tweak configurations as well as creating new tweaks with the help of the Tweakology App. For production usecases only initialize the TweakologyEngine and keep the TweakologyAgent disabled.
+
 ### Swift
 
-Import the TweakologyEngine module
 ```swift
 import TweakologyEngine
-```
 
-Initialize the tweakology agent in your AppDelegate
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-```swift
-var tweakologyAgent: TweakologyAgent?
+  var tweakologyAgent: TweakologyAgent?
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ...
     tweakologyAgent = TweakologyAgent(name: "MyApp")
     tweakologyAgent?.start()
     ...
+  }
 }
 ```
 
 ### ObjectiveC
 
-Import the TweakologyEngine module
 ```objective-c
 @import TweakologyEngine;
-```
 
-Initialize the tweakology agent in your AppDelegate
-
-```objective-c
-@implementation MyAppDelegate {
+@implementation AppDelegate {
     TweakologyAgent *_agent;
 }
 
