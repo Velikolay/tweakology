@@ -23,7 +23,7 @@ extension UIViewController {
     
     private var swizzledSuperclass: UIViewController.Type? {
         get {
-            return objc_getAssociatedObject(self, &swizzledSuperClassKey) as? UIViewController.Type ?? nil
+            return objc_getAssociatedObject(self, &swizzledSuperClassKey) as? UIViewController.Type
         }
         set {
             objc_setAssociatedObject(self, &swizzledSuperClassKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

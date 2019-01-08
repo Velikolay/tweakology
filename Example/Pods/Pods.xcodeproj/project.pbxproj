@@ -110,6 +110,7 @@
 		9B555046476B3D56042A9ED6774CF08E /* Pods-CryptoHash_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC78EA2BD57CB1C91D0B7F9F64D388A /* Pods-CryptoHash_Tests-dummy.m */; };
 		9C1492F44A19BDC35959C11A5F13490A /* TweakologyEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF50AB071E8A12512561FCBC698263D4 /* TweakologyEngine-dummy.m */; };
 		9FFC5BD7E969C34C75DC43B4F477B181 /* GCDWebServerFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 67D37DE15AB5C1B03C101CEBC1E504ED /* GCDWebServerFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A2983BEA21DBED4A0031EC2D /* UIView+Tweakology.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2983BE921DBED4A0031EC2D /* UIView+Tweakology.swift */; };
 		A34122F5BD17E5EC7E6B9A39776AD96A /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = A900F8EF50EB684E107DA719F91E1F96 /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A35297413837391FE25ACD571134E19D /* SDWebImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 570F03C0C1216697E1451A6E043B6F7F /* SDWebImageGIFCoder.m */; };
 		A36ED64E084F6EF5D5127D5AFB9BE7B6 /* UIViewController+TweakologyLayoutInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FDC5F4A1D2ABF955C4A0EB4800459 /* UIViewController+TweakologyLayoutInspector.swift */; };
@@ -341,6 +342,7 @@
 		A04B238DDF1F3A3F53E63B6BEDB48640 /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataResponse.m; path = GCDWebServer/Responses/GCDWebServerDataResponse.m; sourceTree = "<group>"; };
 		A0A4E5122353448C156AB20448696356 /* SDWebImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoder.m; path = SDWebImage/SDWebImageCoder.m; sourceTree = "<group>"; };
 		A154D9B0CEDE46A032E9E8DD888FDA55 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = GCDWebServer/Responses/GCDWebServerDataResponse.h; sourceTree = "<group>"; };
+		A2983BE921DBED4A0031EC2D /* UIView+Tweakology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tweakology.swift"; sourceTree = "<group>"; };
 		A31D90ED171E10465F7DC4C91E431591 /* TweakologyEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TweakologyEngine.xcconfig; sourceTree = "<group>"; };
 		A426B5D956244B41F289ADB3FF56542F /* SDWebImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCodersManager.m; path = SDWebImage/SDWebImageCodersManager.m; sourceTree = "<group>"; };
 		A5911994FE3D9AB7BA3D86D9B4FBB050 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				852C3C88609341F72F4576A4FDA170F4 /* UIView+ConstraintsState.swift */,
 				24EA5074D9371E61789BA74618E699E3 /* UIView+Identifier.swift */,
 				49C8CDF01B8AB7E3990B80A4634A974B /* UIView+RenderImage.swift */,
+				A2983BE921DBED4A0031EC2D /* UIView+Tweakology.swift */,
 				29EC70DF54D4551FD7C0F3717436885E /* UIViewController+Tweakology.swift */,
 				813FDC5F4A1D2ABF955C4A0EB4800459 /* UIViewController+TweakologyLayoutInspector.swift */,
 				F79E1E2938D14889E81F084E4CCA1FC1 /* Agent */,
@@ -1361,6 +1364,7 @@
 				1C51E2C238E4D15A5760956CAB305611 /* UIViewController+Tweakology.swift in Sources */,
 				A36ED64E084F6EF5D5127D5AFB9BE7B6 /* UIViewController+TweakologyLayoutInspector.swift in Sources */,
 				84B5AFA6C89BB0D0DF9F9EA06419FA03 /* UIWindow+MappableOverride.swift in Sources */,
+				A2983BEA21DBED4A0031EC2D /* UIView+Tweakology.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

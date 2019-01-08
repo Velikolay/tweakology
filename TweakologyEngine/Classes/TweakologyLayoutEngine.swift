@@ -21,8 +21,11 @@ enum EngineMode {
     private var mode: EngineMode
 
     private override init() {
-        for vcClass in SwizzlingClassProvider.sharedInstance.uiViewControllerClasses {
-            vcClass.swizzleViewDidLoad()
+//        for vcClass in SwizzlingClassProvider.sharedInstance.uiViewControllerClasses {
+//            vcClass.swizzleViewDidLoad()
+//        }
+        for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
+            viewClass.swizzleDidAddSubview()
         }
         self.viewIndex = [:]
         self.mode = EngineMode.development
