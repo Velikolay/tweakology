@@ -10,11 +10,11 @@ import Foundation
 public class SwizzlingClassProvider {
     public static let sharedInstance = SwizzlingClassProvider()
 
-    public var uiViewControllerClasses: [UIViewController.Type]
+//    public var uiViewControllerClasses: [UIViewController.Type]
     public var uiViewClasses: [UIView.Type]
 
     private init() {
-        self.uiViewControllerClasses = getClasses(mainBundleOnly: true)
+//        self.uiViewControllerClasses = getClasses(mainBundleOnly: true)
         self.uiViewClasses = getClasses(mainBundleOnly: false)
     }
 }

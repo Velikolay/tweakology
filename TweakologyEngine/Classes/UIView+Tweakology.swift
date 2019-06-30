@@ -11,7 +11,7 @@ private var originalDidAddSubviewGlobalTableKey: UInt8 = 0
 private var swizzledSuperClassKey: UInt8 = 0
 
 extension UIView {
-
+    
     private static var originalDidAddSubviewGlobalTable: [String: IMP] {
         get {
             return objc_getAssociatedObject(self, &originalDidAddSubviewGlobalTableKey) as? [String: IMP] ?? [:]
@@ -20,7 +20,7 @@ extension UIView {
             objc_setAssociatedObject(self, &originalDidAddSubviewGlobalTableKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-
+    
     private var swizzledSuperclass: UIView.Type? {
         get {
             return objc_getAssociatedObject(self, &swizzledSuperClassKey) as? UIView.Type
@@ -29,10 +29,10 @@ extension UIView {
             objc_setAssociatedObject(self, &swizzledSuperClassKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-
+    
     @objc func proj_didAddSubviewSwizzled(_ view: UIView) {
         typealias MyCFunction = @convention(c) (AnyObject, Selector, AnyObject) -> Void
-
+        
         if let originalImp = self.selectOriginalImp() {
             let originalFunc: MyCFunction? = unsafeBitCast(originalImp, to: MyCFunction.self)
             if let originalFunc = originalFunc {
@@ -44,7 +44,7 @@ extension UIView {
             assignUid(view)
         }
     }
-
+    
     private func assignUid(_ view: UIView) {
         if view.uid == nil, let generatedUid = view.generateUID() {
             view.uid = UIViewIdentifier(value: generatedUid, kind: .generated)
@@ -56,7 +56,7 @@ extension UIView {
         //            constraint
         //        }
     }
-
+    
     func selectOriginalImp() -> IMP? {
         let selfClass = type(of: self)
         let currClass = self.swizzledSuperclass ?? selfClass
@@ -68,13 +68,13 @@ extension UIView {
         }
         return UIView.originalDidAddSubviewGlobalTable[className]
     }
-
+    
     private static var swizzleDidAddSubviewImp: Void {
         let originalSelector = #selector(didAddSubview)
         let originalMethod = class_getInstanceMethod(self, originalSelector)
         let swizzledSelector = #selector(proj_didAddSubviewSwizzled)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
-
+        
         if let originalMethod = originalMethod, let swizzledMethod = swizzledMethod {
             let className = String(describing: self)
             let didAddOriginalMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
@@ -88,7 +88,7 @@ extension UIView {
             }
         }
     }
-
+    
     private static func findNextSuperclassWithOriginalImp(subclass: AnyClass) -> UIView.Type? {
         if let superclass = class_getSuperclass(subclass) as? UIView.Type {
             let superclassName = String(describing: superclass)
@@ -97,7 +97,7 @@ extension UIView {
         }
         return nil
     }
-
+    
     private static func findNextSuperclassOriginalImp(subclass: AnyClass) -> IMP? {
         if let superclass = findNextSuperclassWithOriginalImp(subclass: subclass) {
             let superclassName = String(describing: superclass)
@@ -105,7 +105,7 @@ extension UIView {
         }
         return nil
     }
-
+    
     public static func swizzleDidAddSubview() {
         _ = self.swizzleDidAddSubviewImp
     }
