@@ -1,6 +1,6 @@
 //
 //  UIView+RenderImage.swift
-//  tweakology
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 4/1/18.
 //

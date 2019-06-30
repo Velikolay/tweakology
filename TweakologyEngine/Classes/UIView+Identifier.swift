@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  tweakology
+//  UIView+Identifier.swift
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 4/22/18.
 //
@@ -42,7 +42,7 @@ extension UIView {
     }
 
     var hierarchyMetadata: String {
-        let className = String(describing:type(of: self))
+        let className = String(describing: type(of: self))
         let parentVCClassName = (self.parentViewController != nil) ? String(describing:type(of: self.parentViewController!)): "none"
         if let parent = self.superview {
             let viewIndex = parent.subviews.index(of: self)

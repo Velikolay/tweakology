@@ -1,21 +1,19 @@
 //
-//  CGRect+Mappable.swift
+//  CGSize+Mappable
 //  TweakologyEngine
 //
-//  Created by Nikolay Ivanov on 4/17/18.
+//  Created by Nikolay Ivanov on 20.01.19.
 //
 
 import Foundation
 import ObjectMapper
 
-extension CGRect: StaticMappable {
+extension CGSize: StaticMappable {
     public static func objectForMapping(map: Map) -> BaseMappable? {
         return nil
     }
 
     public func mapping(map: Map) {
-        minX >>> map["x"]
-        minY >>> map["y"]
         width >>> map["width"]
         height >>> map["height"]
     }

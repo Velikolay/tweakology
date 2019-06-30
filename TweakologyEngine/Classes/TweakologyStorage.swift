@@ -1,6 +1,6 @@
 //
 //  TweakologyStorage.swift
-//  tweakology
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 6/27/18.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 @objc public class TweakologyStorage: NSObject {
-    @objc public static let sharedInstance = TweakologyStorage()
+    public static let sharedInstance = TweakologyStorage()
 
     private var storage: [String: [[String: Any]]]
 
@@ -16,15 +16,15 @@ import Foundation
         storage = [:]
     }
 
-    @objc public func addTweak(name: String, changeSet: [[String: Any]]) {
+    public func addTweak(name: String, changeSet: [[String: Any]]) {
         storage[name] = changeSet
     }
-    
-    @objc public func getTweak(name: String) -> [[String: Any]]? {
+
+    public func getTweak(name: String) -> [[String: Any]]? {
         return storage[name]
     }
-    
-    @objc public func getAllTweaks() -> [String: [[String: Any]]] {
+
+    public func getAllTweaks() -> [String: [[String: Any]]] {
         return storage
     }
 }

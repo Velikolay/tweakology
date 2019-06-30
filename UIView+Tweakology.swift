@@ -32,7 +32,7 @@ extension UIView {
 
     @objc func proj_didAddSubviewSwizzled(_ view: UIView) {
         typealias MyCFunction = @convention(c) (AnyObject, Selector, AnyObject) -> Void
-        
+
         if let originalImp = self.selectOriginalImp() {
             let originalFunc: MyCFunction? = unsafeBitCast(originalImp, to: MyCFunction.self)
             if let originalFunc = originalFunc {
@@ -48,12 +48,13 @@ extension UIView {
     private func assignUid(_ view: UIView) {
         if view.uid == nil, let generatedUid = view.generateUID() {
             view.uid = UIViewIdentifier(value: generatedUid, kind: .generated)
-            print(view.uid?.value)
+            if #available(iOS 10.0, *) {
+                TweakologyLayoutEngine.sharedInstance.viewIndex[view.uid!.value] = view
+            }
         }
-        view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
-            constraint
-        }
-        //            viewIndex[uid] = view
+        //        view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
+        //            constraint
+        //        }
     }
 
     func selectOriginalImp() -> IMP? {
@@ -73,7 +74,7 @@ extension UIView {
         let originalMethod = class_getInstanceMethod(self, originalSelector)
         let swizzledSelector = #selector(proj_didAddSubviewSwizzled)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
-        
+
         if let originalMethod = originalMethod, let swizzledMethod = swizzledMethod {
             let className = String(describing: self)
             let didAddOriginalMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
@@ -109,4 +110,3 @@ extension UIView {
         _ = self.swizzleDidAddSubviewImp
     }
 }
-

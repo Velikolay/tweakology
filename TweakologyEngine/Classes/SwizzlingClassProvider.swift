@@ -1,6 +1,6 @@
 //
 //  SwizzlingClassProvider.swift
-//  tweakology
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 10/16/18.
 //
@@ -9,10 +9,10 @@ import Foundation
 
 public class SwizzlingClassProvider {
     public static let sharedInstance = SwizzlingClassProvider()
-    
+
     public var uiViewControllerClasses: [UIViewController.Type]
     public var uiViewClasses: [UIView.Type]
-    
+
     private init() {
         self.uiViewControllerClasses = getClasses(mainBundleOnly: true)
         self.uiViewClasses = getClasses(mainBundleOnly: false)
@@ -38,13 +38,13 @@ func getClasses<T>(mainBundleOnly: Bool) -> [T.Type] {
 func getClassesOfType<T>(classes: UnsafeMutablePointer<AnyClass>, classCount: Int, parentClass: T.Type) -> [T.Type] {
     var results: [T.Type] = [T.self]
     for index in 0 ..< classCount {
-        var superclass: AnyClass? = class_getSuperclass(classes[index])
-        while((superclass != nil) && superclass != parentClass)
+        var currClass: AnyClass? = class_getSuperclass(classes[index])
+        while((currClass != nil) && currClass != parentClass)
         {
-            superclass = class_getSuperclass(superclass);
+            currClass = class_getSuperclass(currClass);
         }
-        
-        if (superclass as? T.Type) != nil {
+
+        if (currClass as? T.Type) != nil {
             if let nonNullClass = classes[index] as? T.Type {
                 results.append(nonNullClass)
             }

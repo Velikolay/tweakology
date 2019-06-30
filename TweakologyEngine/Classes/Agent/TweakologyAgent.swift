@@ -1,6 +1,6 @@
 //
 //  TweakologyAgent.swift
-//  GCDWebServer
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 4/13/18.
 //
@@ -49,7 +49,7 @@ import GCDWebServer
                 }
             }
         }
-        
+
         webServer.addHandler(forMethod: "GET", path: "/fonts", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
@@ -84,7 +84,7 @@ import GCDWebServer
                             "TextStyle-Title3": [ "fontName": sysDisplayFontName, "pointSize": 20 ],
                         ]
                     ]
-                ] as [String : Any]
+                    ] as [String : Any]
                 let response = GCDWebServerDataResponse(jsonObject: fontsJson)
                 response?.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                 completionBlock(response)
@@ -152,11 +152,11 @@ import GCDWebServer
 
         webServer.addHandler(forMethod: "OPTIONS", pathRegex: "/tweaks/[A-Za-z0-9_]+", request: GCDWebServerRequest.self) {
             (request: GCDWebServerRequest!, completionBlock: GCDWebServerCompletionBlock!) -> Void in
-                let response = GCDWebServerResponse(statusCode: 200)
-                response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
-                response.setValue("PUT", forAdditionalHeader: "Access-Control-Allow-Methods")
-                response.setValue("Content-Type", forAdditionalHeader: "Access-Control-Allow-Headers")
-                completionBlock(response)
+            let response = GCDWebServerResponse(statusCode: 200)
+            response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
+            response.setValue("PUT", forAdditionalHeader: "Access-Control-Allow-Methods")
+            response.setValue("Content-Type", forAdditionalHeader: "Access-Control-Allow-Headers")
+            completionBlock(response)
         }
 
         webServer.start(withPort: 8080, bonjourName: "TweakologyAgent_\(self.name)")

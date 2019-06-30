@@ -1,6 +1,6 @@
 //
 //  TweakologyLayoutEngine.swift
-//  Pods-tweakology_Example
+//  TweakologyEngine
 //
 //  Created by Nikolay Ivanov on 3/25/18.
 //
@@ -16,14 +16,11 @@ enum EngineMode {
 
 @available(iOS 10.0, *)
 @objc public class TweakologyLayoutEngine: NSObject {
-    @objc public static let sharedInstance = TweakologyLayoutEngine()
-    private(set) var viewIndex: ViewIndex
+    public static let sharedInstance = TweakologyLayoutEngine()
+    internal var viewIndex: ViewIndex
     private var mode: EngineMode
 
     private override init() {
-//        for vcClass in SwizzlingClassProvider.sharedInstance.uiViewControllerClasses {
-//            vcClass.swizzleViewDidLoad()
-//        }
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
             viewClass.swizzleDidAddSubview()
         }
@@ -31,7 +28,11 @@ enum EngineMode {
         self.mode = EngineMode.development
     }
 
-    @objc public func tweak(changeSeq: [[String: Any]]) {
+    public func update(viewIndex: ViewIndex) {
+        self.viewIndex = viewIndex
+    }
+
+    public func tweak(changeSeq: [[String: Any]]) {
         for change in changeSeq {
             switch change["operation"] as! String {
             case "insert":
@@ -44,10 +45,6 @@ enum EngineMode {
                 print("Unsupported operation")
             }
         }
-    }
-
-    func update(viewIndex: ViewIndex) {
-        self.viewIndex = viewIndex
     }
 
     private func handleUIViewInsert(change: [String: Any]) {
@@ -76,7 +73,7 @@ enum EngineMode {
             if let layer = dictValOpt(dict: viewConfig, key: "layer") {
                 self.setViewLayer(view: modifiedView, layerConfig: layer)
             }
-            
+
             self.setUIViewObjectConstraints(viewConfig: viewConfig, view: modifiedView, modify: true)
             self.setUIViewObjectFrame(viewConfig: viewConfig, view: modifiedView)
         }
@@ -94,7 +91,7 @@ enum EngineMode {
         if let frame = viewConfig["frame"] as? [String: Int] {
             view.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
         }
-        
+
         if let props = dictValOpt(dict: viewConfig, key: "properties") {
             self.setViewProperties(view: view, propertiesConfig: props)
         }
@@ -176,7 +173,7 @@ enum EngineMode {
         }
         return image
     }
-    
+
     private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {
         if let imageView = view as? UIImageView {
             if let valueObj = value as? [String: Any] {
@@ -448,7 +445,7 @@ func parseExpression(expr: String) -> [String] {
         let viewMatcher = "self|superview|[A-Za-z0-9+/=]+"
         let secondViewOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\) ([+-]) ([1-9][0-9]*)$")
         let secondViewOffsetResults = secondViewOffsetRegex.matches(in: expr,
-                                                                        range: NSRange(expr.startIndex..., in: expr))
+                                                                    range: NSRange(expr.startIndex..., in: expr))
         if secondViewOffsetResults.count > 0 {
             let sign = String(expr[Range(secondViewOffsetResults[0].range(at: 2), in: expr)!])
             var constant = String(expr[Range(secondViewOffsetResults[0].range(at: 3), in: expr)!])
@@ -457,10 +454,10 @@ func parseExpression(expr: String) -> [String] {
             }
             return [String(expr[Range(secondViewOffsetResults[0].range(at: 1), in: expr)!]), "", constant]
         }
-        
+
         let secondViewAnchorOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)\\.([A-z]+) ([+-]) ([1-9][0-9]*)$")
         let secondViewAnchorOffsetResults = secondViewAnchorOffsetRegex.matches(in: expr,
-                                                                                    range: NSRange(expr.startIndex..., in: expr))
+                                                                                range: NSRange(expr.startIndex..., in: expr))
         if secondViewAnchorOffsetResults.count > 0 {
             let sign = String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 3), in: expr)!])
             var constant = String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 4), in: expr)!])
@@ -469,17 +466,17 @@ func parseExpression(expr: String) -> [String] {
             }
             return [String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 1), in: expr)!]), String(expr[Range(secondViewAnchorOffsetResults[0].range(at: 2), in: expr)!]), constant]
         }
-        
+
         let secondViewNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)$")
         let secondViewNoOffsetResult = secondViewNoOffsetRegex.matches(in: expr,
-                                                                           range: NSRange(expr.startIndex..., in: expr))
+                                                                       range: NSRange(expr.startIndex..., in: expr))
         if secondViewNoOffsetResult.count > 0 {
             return [String(expr[Range(secondViewNoOffsetResult[0].range(at: 1), in: expr)!]), "", "0"]
         }
-        
+
         let secondViewAnchorNoOffsetRegex = try NSRegularExpression(pattern: "^\\$\\((\(viewMatcher))\\)\\.([A-z]+)$")
         let secondViewAnchorNoOffsetResult = secondViewAnchorNoOffsetRegex.matches(in: expr,
-                                                                                       range: NSRange(expr.startIndex..., in: expr))
+                                                                                   range: NSRange(expr.startIndex..., in: expr))
         if secondViewAnchorNoOffsetResult.count > 0 {
             return [String(expr[Range(secondViewAnchorNoOffsetResult[0].range(at: 1), in: expr)!]), String(expr[Range(secondViewAnchorNoOffsetResult[0].range(at: 2), in: expr)!]), "0"]
         }
@@ -494,10 +491,10 @@ func parseExpression(expr: String) -> [String] {
 func stringClassFromString(_ className: String) -> AnyClass! {
     /// get namespace
     _ = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-    
+
     /// get 'anyClass' with classname and namespace
     let cls: AnyClass = NSClassFromString("\(className)")!
-    
+
     // return AnyClass!
     return cls
 }
@@ -619,14 +616,14 @@ func colorFromHex(hexColor: String) -> UIColor {
     Scanner(string: hex).scanHexInt32(&int)
     let a, r, g, b: UInt32
     switch hex.characters.count {
-    case 3: // RGB (12-bit)
-        (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-    case 6: // RGB (24-bit)
-        (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-    case 8: // ARGB (32-bit)
-        (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-    default:
-        return .clear
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            return .clear
     }
     return UIColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
 }
