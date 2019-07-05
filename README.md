@@ -47,6 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ### ObjectiveC
 
+If your Objective C project has no Swift support, please make sure you enable it. To do so add any .swift file to the project. XCode will likely ask you to add bridging header - e.g. MyApp-Bridging-Header.h, if not please do so manually. Then in the build settings of your app target set:
+1. Define Modules - 'Yes'
+2. Always Embed Swift Standard Libraries - 'Yes'
+3. Install Objective-C compatibility header - 'Yes'
+4. Objective C Bridging Header - 'MyApp-Bridging-Header.h'
+
 ```objective-c
 @import TweakologyEngine;
 
