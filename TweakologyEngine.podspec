@@ -41,6 +41,11 @@ Tweakology`s engine to update app layout from configuration at runtime
     ss.source_files = 'CryptoHash/**/*.{h,m}'
     ss.exclude_files = 'CryptoHash/Example/build/**/*'
   end
+  s.subspec 'LiquidKit' do |ss|
+      ss.source_files = 'TweakologyLiquidKit/Sources/LiquidKit/*.{h,m,swift}'
+      
+      ss.dependency 'STRFTimeFormatter'
+  end
   s.resources  = "TweakologyEngine/**/*.xcassets"
   # s.resource_bundles = {
   #   'TweakologyEngine' => ['TweakologyEngine/Assets/*.png']

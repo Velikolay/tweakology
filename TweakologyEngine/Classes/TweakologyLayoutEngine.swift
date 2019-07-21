@@ -17,14 +17,22 @@ enum EngineMode {
 @available(iOS 10.0, *)
 @objc public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
-    internal var viewIndex: ViewIndex
     private var mode: EngineMode
+    private var attributeManager: AttriubteManager
+    internal var viewIndex: ViewIndex
 
     private override init() {
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
             viewClass.swizzleDidAddSubview()
         }
         self.viewIndex = [:]
+        self.attributeManager = AttriubteManager(expressionProcessor: LiquidExpressionProcessor(), contextStore: InMemoryContextStore())
+//        let flip = "{% if click %}false{% else %}true{% endif %}"
+//        let flipExpr = AttributeExpression(attributeName: "click", expression: flip, valueType: AttributeType.boolean, defaultValue: nil)
+//        self.attributeManager.update(expression: flipExpr)
+//        print(self.attributeManager.get(name: flipExpr.attributeName) as! Bool)
+//        self.attributeManager.update(expression: flipExpr)
+//        print(self.attributeManager.get(name: flipExpr.attributeName) as! Bool)
         self.mode = EngineMode.development
     }
 
@@ -297,8 +305,8 @@ enum EngineMode {
 
     private func setUIViewConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
         if let constraints = viewConfig["constraints"] as? [[String: Any]] {
-            let constraintConfigs = constraints.map({ (config) -> ConstraintConfig? in
-                ConstraintConfig(JSON: config)
+            let constraintConfigs = constraints.map({ (config) -> ConstraintDTO? in
+                ConstraintDTO(JSON: config)
             })
             for constraintConfig in constraintConfigs {
                 if let uConstraintConfig = constraintConfig {
@@ -613,7 +621,7 @@ func systemFontWeight(from: String) -> UIFont.Weight? {
 func colorFromHex(hexColor: String) -> UIColor {
     let hex = hexColor.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
     var int = UInt32()
-    Scanner(string: hex).scanHexInt32(&int)
+    Foundation.Scanner(string: hex).scanHexInt32(&int)
     let a, r, g, b: UInt32
     switch hex.count {
         case 3: // RGB (12-bit)

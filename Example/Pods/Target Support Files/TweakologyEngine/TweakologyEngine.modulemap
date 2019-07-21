@@ -1,4 +1,4 @@
-framework module TweakologyEngine {
+module TweakologyEngine {
   umbrella header "TweakologyEngine-umbrella.h"
 
   export *

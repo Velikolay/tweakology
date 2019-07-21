@@ -1,5 +1,5 @@
 //
-//  ConstraintConfig.swift
+//  ConstraintDTO.swift
 //  tweakology
 //
 //  Created by Nikolay Ivanov on 8/4/18.
@@ -38,7 +38,7 @@ let attributes = [
     "centerYWithinMargins": 20
 ]
 
-class AnchorConfig: Mappable {
+class AnchorDTO: Mappable {
     var item: String!
     var attribute: AnyObject!
 
@@ -51,7 +51,7 @@ class AnchorConfig: Mappable {
     }
 }
 
-class MetadataConfig: Mappable {
+class MetadataDTO: Mappable {
     var added: Bool!
 
     required init?(map: Map) {
@@ -62,10 +62,10 @@ class MetadataConfig: Mappable {
     }
 }
 
-class ConstraintConfig: Mappable {
-    var meta: MetadataConfig!
-    var first: AnchorConfig!
-    var second: AnchorConfig?
+class ConstraintDTO: Mappable {
+    var meta: MetadataDTO!
+    var first: AnchorDTO!
+    var second: AnchorDTO?
     var relation: AnyObject!
     var constant: Float?
     var multiplier: Float?
@@ -93,10 +93,10 @@ class ConstraintConfig: Mappable {
         let toView = viewItemFromUid(view: view, uid: second?.item)
         
         if let fromView = fromView,
-            let fromAttribute = attributeFromConfig(attrConfig: first.attribute)
+            let fromAttribute = attributeFromDTO(attrConfig: first.attribute)
         {
-            let relatedBy = relationFromConfig(relationConfig: relation) ?? .equal
-            let toAttribute = attributeFromConfig(attrConfig: second?.attribute) ?? .notAnAttribute
+            let relatedBy = relationFromDTO(relationConfig: relation) ?? .equal
+            let toAttribute = attributeFromDTO(attrConfig: second?.attribute) ?? .notAnAttribute
             let constraint = NSLayoutConstraint(item: fromView, attribute: fromAttribute, relatedBy: relatedBy, toItem: toView, attribute: toAttribute, multiplier: CGFloat(multiplier ?? 1), constant: CGFloat(constant ?? 0))
             constraint.isActive = isActive
             constraint.priority = UILayoutPriority(rawValue: priority)
@@ -106,7 +106,7 @@ class ConstraintConfig: Mappable {
         return nil
     }
 
-    private func attributeFromConfig(attrConfig: AnyObject?) -> NSLayoutConstraint.Attribute? {
+    private func attributeFromDTO(attrConfig: AnyObject?) -> NSLayoutConstraint.Attribute? {
         if ((attrConfig as? String) != nil), let attr = attributes[attrConfig as! String] {
             return NSLayoutConstraint.Attribute(rawValue: attr)
         } else if let attr = attrConfig as? Int {
@@ -116,7 +116,7 @@ class ConstraintConfig: Mappable {
         }
     }
     
-    private func relationFromConfig(relationConfig: AnyObject) -> NSLayoutConstraint.Relation? {
+    private func relationFromDTO(relationConfig: AnyObject) -> NSLayoutConstraint.Relation? {
         if ((relationConfig as? String) != nil), let relation = relations[relationConfig as! String] {
             return NSLayoutConstraint.Relation(rawValue: relation)
         } else if let relation = relationConfig as? Int {

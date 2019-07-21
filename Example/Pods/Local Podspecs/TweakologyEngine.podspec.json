@@ -1,6 +1,6 @@
 {
   "name": "TweakologyEngine",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "summary": "Tweakology`s engine to update app layout from configuration at runtime",
   "description": "Tweakology`s engine to update app layout from configuration at runtime",
   "homepage": "https://github.com/Velikolay/tweakology",
@@ -13,9 +13,9 @@
   },
   "source": {
     "git": "https://github.com/Velikolay/tweakology.git",
-    "tag": "0.1.6"
+    "tag": "0.1.8"
   },
-  "swift_version": "4.0",
+  "swift_versions": "4.2",
   "platforms": {
     "ios": "8.0"
   },
@@ -28,7 +28,7 @@
       "~> 3.0"
     ],
     "ObjectMapper": [
-      "~> 3.1"
+      "~> 3.4.1"
     ],
     "SDWebImage": [
       "~> 4.0"
@@ -38,7 +38,18 @@
   "subspecs": [
     {
       "name": "CryptoHash",
-      "source_files": "CryptoHash/**/*.{h,m}"
+      "source_files": "CryptoHash/**/*.{h,m}",
+      "exclude_files": "CryptoHash/Example/build/**/*"
+    },
+    {
+      "name": "LiquidKit",
+      "source_files": "TweakologyLiquidKit/Sources/LiquidKit/*.{h,m,swift}",
+      "dependencies": {
+        "STRFTimeFormatter": [
+
+        ]
+      }
     }
-  ]
+  ],
+  "swift_version": "4.2"
 }

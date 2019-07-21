@@ -10,7 +10,7 @@ import UIKit
 import TweakologyEngine
 
 @available(iOS 10.0, *)
-@UIApplicationMain
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
