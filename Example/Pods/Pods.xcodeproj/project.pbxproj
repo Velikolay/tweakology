@@ -101,7 +101,6 @@
 		8E3E8B373D5FE6A767D19C14CEF04DFF /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDE0A1D128A6505F1AC67F04B00C34 /* NSDecimalNumberTransform.swift */; };
 		8EE21EA0AFAC2BFF52D4F0BFE8129778 /* Pods-TweakologyEngine_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 276DF80B5307C16E6ABFDCD6BD7DF1F8 /* Pods-TweakologyEngine_Example-dummy.m */; };
 		8F8A93B052B250ED6E7419565B13CBBD /* SDWebImageCodersManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9EF790F6B4EB5BD3ACC6A19425BC50 /* SDWebImageCodersManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		904C2F9D9096FC8323B1DF43B0CC59B3 /* AttributeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74669DCC129BAE83F4964B3D14FE0859 /* AttributeManager.swift */; };
 		90E0A889CBCC053459CC40DB0E0C162A /* SDWebImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0546DA2A4847AA4388DAF54951F849B6 /* SDWebImageGIFCoder.m */; };
 		933236BFE07CEAA45B9409E69F9E8E17 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82C580B54AE3E87AD562CB369117394 /* UIImage+Mappable.swift */; };
 		946224A84C38A150FE6DEAE395514015 /* CryptoHash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EBE8580AA0C02E4DC9936FC19F7B8D /* CryptoHash-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -117,13 +116,16 @@
 		9F5BE5AEFA3EA5401E3BD8186BBBA0CC /* UIScrollView+MappableOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF94FB7B266FB91CC0A43A9FF2045D /* UIScrollView+MappableOverride.swift */; };
 		A0452AB126828227870DE92165F2A00D /* TweakologyAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AB92918E1F6E2C82981472C2FD4F14 /* TweakologyAgent.swift */; };
 		A0FA9C0B8157E8A54C45B9273CF90A19 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 20850B1489F6F656306142EB58BB9B14 /* GCDWebServerErrorResponse.m */; };
-		A217658F22E4B13600765722 /* ContextStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217658E22E4B13600765722 /* ContextStoreProtocol.swift */; };
-		A217659122E4B18A00765722 /* InMemoryContextStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659022E4B18A00765722 /* InMemoryContextStore.swift */; };
+		A217658F22E4B13600765722 /* AttributeStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217658E22E4B13600765722 /* AttributeStoreProtocol.swift */; };
+		A217659122E4B18A00765722 /* InMemoryAttributeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659022E4B18A00765722 /* InMemoryAttributeStore.swift */; };
 		A217659322E4B20A00765722 /* ExpressionProcessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659222E4B20A00765722 /* ExpressionProcessorProtocol.swift */; };
 		A217659522E4B2D900765722 /* LiquidExpressionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659422E4B2D900765722 /* LiquidExpressionProcessor.swift */; };
 		A217659722E4B62100765722 /* AttributeExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659622E4B62100765722 /* AttributeExpression.swift */; };
 		A217659922E5189D00765722 /* AttributeExpressionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217659822E5189D00765722 /* AttributeExpressionDTO.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A190435ED643A275B88E25547FB97D /* CodableTransform.swift */; };
+		A2BF201822EB8054000ABCE4 /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BF201722EB8054000ABCE4 /* ActionProtocol.swift */; };
+		A2BF201A22EB8222000ABCE4 /* UpdateAttributeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BF201922EB8222000ABCE4 /* UpdateAttributeAction.swift */; };
+		A2BF201C22EB82EB000ABCE4 /* UpdateAttributeWithRerenderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BF201B22EB82EB000ABCE4 /* UpdateAttributeWithRerenderAction.swift */; };
 		A78EDE0111467E2BAF72AAD51A10916D /* SDWebImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BF851FD463DA39AE3B1D33248B155B /* SDWebImageCoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A912CF7530612DB53F5F64C3BE54E80D /* UIFont+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B932D6347D7AA1D7C0DEAFCB68D10 /* UIFont+Mappable.swift */; };
 		A917F590FF0A42CACD1C9BCCF5C4904B /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8663893AD8F5B9A1DEE3507604887 /* Parser.swift */; };
@@ -358,7 +360,6 @@
 		70AFEB6BC1F229CB419568DB5A468520 /* TweakologyLayoutEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyLayoutEngine.swift; path = TweakologyEngine/Classes/TweakologyLayoutEngine.swift; sourceTree = "<group>"; };
 		711F0023D24DBCA4F9EF77EA944C3C3D /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TweakologyEngine/Images.xcassets; sourceTree = "<group>"; };
 		7303EFDD46023D9B4536F781CDE9902C /* Pods-TweakologyEngine_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TweakologyEngine_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		74669DCC129BAE83F4964B3D14FE0859 /* AttributeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttributeManager.swift; sourceTree = "<group>"; };
 		77BD94D75CFE72888F4B8BC6257BA780 /* libPods-TweakologyEngine_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TweakologyEngine_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AB4ED4FDD06D119F9962FFA9E5AD32 /* TweakologyStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TweakologyStorage.swift; path = TweakologyEngine/Classes/TweakologyStorage.swift; sourceTree = "<group>"; };
 		79B3F755AEB7AB39101DAAEB66335E8A /* Pods-TweakologyEngine_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweakologyEngine_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -388,13 +389,16 @@
 		9E233379DAD1F8CA483DAEA47995FD4C /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		A00C249FF8E3DCB6563F3332A0E7816F /* STRFTimeFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STRFTimeFormatter-dummy.m"; sourceTree = "<group>"; };
 		A04537EF0EEF59C4CE4A3ADD77C8CED4 /* Pods-TweakologyEngine_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweakologyEngine_Tests-dummy.m"; sourceTree = "<group>"; };
-		A217658E22E4B13600765722 /* ContextStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextStoreProtocol.swift; sourceTree = "<group>"; };
-		A217659022E4B18A00765722 /* InMemoryContextStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryContextStore.swift; sourceTree = "<group>"; };
+		A217658E22E4B13600765722 /* AttributeStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeStoreProtocol.swift; sourceTree = "<group>"; };
+		A217659022E4B18A00765722 /* InMemoryAttributeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAttributeStore.swift; sourceTree = "<group>"; };
 		A217659222E4B20A00765722 /* ExpressionProcessorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionProcessorProtocol.swift; sourceTree = "<group>"; };
 		A217659422E4B2D900765722 /* LiquidExpressionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidExpressionProcessor.swift; sourceTree = "<group>"; };
 		A217659622E4B62100765722 /* AttributeExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeExpression.swift; sourceTree = "<group>"; };
 		A217659822E5189D00765722 /* AttributeExpressionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeExpressionDTO.swift; sourceTree = "<group>"; };
 		A2A87B0AB2049C485003870EA3139B3A /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		A2BF201722EB8054000ABCE4 /* ActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
+		A2BF201922EB8222000ABCE4 /* UpdateAttributeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeAction.swift; sourceTree = "<group>"; };
+		A2BF201B22EB82EB000ABCE4 /* UpdateAttributeWithRerenderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeWithRerenderAction.swift; sourceTree = "<group>"; };
 		A2EF1E84F8ED21F2C55A889A50304AA6 /* CGRect+Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Mappable.swift"; sourceTree = "<group>"; };
 		A347FE414B8F10D98BD55265189B0BBD /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = TweakologyLiquidKit/Sources/LiquidKit/Filter.swift; sourceTree = "<group>"; };
 		A6C65BFD3273AA9514E6131C09DF9A1C /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
@@ -770,7 +774,9 @@
 				8C4FBE957051A2D35832DDDAA8220AFA /* TweakologyLayoutInspectorProtocol.swift */,
 				78AB4ED4FDD06D119F9962FFA9E5AD32 /* TweakologyStorage.swift */,
 				44A6628643694FDA5D5D42ED4EF8A031 /* UIApplicationWithTweakology.swift */,
+				A2BF201622EB7D43000ABCE4 /* Actions */,
 				A217658D22E4AF6B00765722 /* Attributes */,
+				A2BF201D22EB8987000ABCE4 /* ExpressionProcessors */,
 				91281C652583F266F3115B9C852CDE1A /* Extensions */,
 				6884DE048EAD1C033D82889F031137B4 /* Types */,
 				A61D85D37FB31A0D46244FAA06092709 /* Agent */,
@@ -900,14 +906,32 @@
 			isa = PBXGroup;
 			children = (
 				A217659622E4B62100765722 /* AttributeExpression.swift */,
-				74669DCC129BAE83F4964B3D14FE0859 /* AttributeManager.swift */,
-				A217658E22E4B13600765722 /* ContextStoreProtocol.swift */,
-				A217659022E4B18A00765722 /* InMemoryContextStore.swift */,
-				A217659222E4B20A00765722 /* ExpressionProcessorProtocol.swift */,
-				A217659422E4B2D900765722 /* LiquidExpressionProcessor.swift */,
+				A217658E22E4B13600765722 /* AttributeStoreProtocol.swift */,
+				A217659022E4B18A00765722 /* InMemoryAttributeStore.swift */,
 			);
 			name = Attributes;
 			path = TweakologyEngine/Classes/Attributes;
+			sourceTree = "<group>";
+		};
+		A2BF201622EB7D43000ABCE4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				A2BF201722EB8054000ABCE4 /* ActionProtocol.swift */,
+				A2BF201922EB8222000ABCE4 /* UpdateAttributeAction.swift */,
+				A2BF201B22EB82EB000ABCE4 /* UpdateAttributeWithRerenderAction.swift */,
+			);
+			name = Actions;
+			path = TweakologyEngine/Classes/Actions;
+			sourceTree = "<group>";
+		};
+		A2BF201D22EB8987000ABCE4 /* ExpressionProcessors */ = {
+			isa = PBXGroup;
+			children = (
+				A217659222E4B20A00765722 /* ExpressionProcessorProtocol.swift */,
+				A217659422E4B2D900765722 /* LiquidExpressionProcessor.swift */,
+			);
+			name = ExpressionProcessors;
+			path = TweakologyEngine/Classes/ExpressionProcessors;
 			sourceTree = "<group>";
 		};
 		A61D85D37FB31A0D46244FAA06092709 /* Agent */ = {
@@ -1400,18 +1424,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A217659922E5189D00765722 /* AttributeExpressionDTO.swift in Sources */,
-				904C2F9D9096FC8323B1DF43B0CC59B3 /* AttributeManager.swift in Sources */,
 				B76EAA210119E62639C9ADC37CB357FD /* CGPoint+Mappable.swift in Sources */,
 				D90A1C50A8AB9567344D9792D18318D2 /* CGRect+Mappable.swift in Sources */,
 				9A13DB2DC48155675E591CBC84E8386C /* CGSize+Mappable.swift in Sources */,
 				7436D567534628826350E622A0DC31A2 /* ConstraintDTO.swift in Sources */,
 				76EA2C50F341A1806738E345DBA4D84C /* Context.swift in Sources */,
 				7742F9F338C1B223D4E3E6917AC79474 /* CryptoHash-dummy.m in Sources */,
+				A2BF201A22EB8222000ABCE4 /* UpdateAttributeAction.swift in Sources */,
 				3347BE4C598ACE69813E96BADC97D1A0 /* CryptoHash.m in Sources */,
 				028B0E4401BBFD1AC92A7221CE577408 /* Double+Extensions.swift in Sources */,
 				C3FBF4612D6BAAB2C16BB1CF9C22F824 /* Error.swift in Sources */,
 				E218EF3913DD3FE85D6050C70FDAF603 /* Filter.swift in Sources */,
 				4CB0B94D84FBAB868B3EDC84B90CB3B0 /* Lexer.swift in Sources */,
+				A2BF201C22EB82EB000ABCE4 /* UpdateAttributeWithRerenderAction.swift in Sources */,
 				213D5A924448BE3A6B9217EC8ACA600F /* MappableOverrideProtocol.swift in Sources */,
 				FC71AA42EF574866B25C78C842CBFB7F /* NSLayoutConstraint+Mappable.swift in Sources */,
 				5A428214BFF56BB2A2975D9C7FF61E46 /* NSLayoutConstraint+Metadata.swift in Sources */,
@@ -1440,12 +1465,13 @@
 				77B74AF39C52A67F0CCF902F4F08415D /* UIImage+Tweakology.swift in Sources */,
 				2EABADFFCB30D1204D568E46CD647A06 /* UIImageView+MappableOverride.swift in Sources */,
 				B4350CB6F316762F443FADA4B0B01B3E /* UILabel+MappableOverride.swift in Sources */,
-				A217658F22E4B13600765722 /* ContextStoreProtocol.swift in Sources */,
+				A217658F22E4B13600765722 /* AttributeStoreProtocol.swift in Sources */,
 				9F5BE5AEFA3EA5401E3BD8186BBBA0CC /* UIScrollView+MappableOverride.swift in Sources */,
 				6B7EB8B32BA2593C764F34DA468DF8BD /* UIView+ConstraintsState.swift in Sources */,
-				A217659122E4B18A00765722 /* InMemoryContextStore.swift in Sources */,
+				A217659122E4B18A00765722 /* InMemoryAttributeStore.swift in Sources */,
 				1AB2063D5FCB332D64620410A4D8CC17 /* UIView+Identifier.swift in Sources */,
 				58554F704A8764A7B040E013956463D0 /* UIView+Mappable.swift in Sources */,
+				A2BF201822EB8054000ABCE4 /* ActionProtocol.swift in Sources */,
 				06541F5DFD8D32588743D46ECE7C9B2C /* UIView+RenderImage.swift in Sources */,
 				5F1582086EEE7F2CEDE6622215C6CCC5 /* UIView+Tweakology.swift in Sources */,
 				02D68E51A863B6A1756140AED7287CDE /* UIViewController+TweakologyLayoutInspector.swift in Sources */,

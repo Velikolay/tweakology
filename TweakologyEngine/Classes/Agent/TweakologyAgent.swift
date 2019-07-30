@@ -132,7 +132,6 @@ import GCDWebServer
                     let tweakName = String(params.last!)
                     if let tweakSeq = (request as? GCDWebServerDataRequest)?.jsonObject as? [[String:Any]] {
                         self.storage.addTweak(name: tweakName, changeSet: tweakSeq)
-                        print(self.storage.getAllTweaks())
                         self.engine.tweak(changeSeq: tweakSeq)
                         let response = GCDWebServerResponse(statusCode: 204)
                         response.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")

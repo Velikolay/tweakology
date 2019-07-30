@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ContextStore {
+protocol AttributeStore {
     func set(key: String, value: Any)
     func get(key: String) -> Any?
     func getAll() -> [String: Any]

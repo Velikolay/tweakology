@@ -7,7 +7,9 @@
 
 import Foundation
 
-class InMemoryContextStore: ContextStore {
+class InMemoryAttributeStore: AttributeStore {
+    static let sharedInstance = InMemoryAttributeStore()
+
     private var context: [String: Any] = [:]
     
     func set(key: String, value: Any) {

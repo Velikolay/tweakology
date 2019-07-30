@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ExpressionProcessor {
-    func process(expression: AttributeExpression, context: [String: Any]) -> String?
+    func process(expression: String, context: [String: Any]) -> String?
 }

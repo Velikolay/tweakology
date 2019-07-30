@@ -17,16 +17,20 @@ enum EngineMode {
 @available(iOS 10.0, *)
 @objc public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
-    private var mode: EngineMode
-    private var attributeManager: AttriubteManager
+
     internal var viewIndex: ViewIndex
+
+    private var mode: EngineMode
+    private let expressionProcessor: ExpressionProcessor
+    private let attributeStore: AttributeStore
 
     private override init() {
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
             viewClass.swizzleDidAddSubview()
         }
+        self.attributeStore = InMemoryAttributeStore.sharedInstance
+        self.expressionProcessor = LiquidExpressionProcessor()
         self.viewIndex = [:]
-        self.attributeManager = AttriubteManager(expressionProcessor: LiquidExpressionProcessor(), contextStore: InMemoryContextStore())
 //        let flip = "{% if click %}false{% else %}true{% endif %}"
 //        let flipExpr = AttributeExpression(attributeName: "click", expression: flip, valueType: AttributeType.boolean, defaultValue: nil)
 //        self.attributeManager.update(expression: flipExpr)
@@ -111,6 +115,7 @@ enum EngineMode {
 
     private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
         for (key, val) in propertiesConfig {
+            let val = self.resolve(value: val)
             if !self.setUIViewSpecificProperty(view: view, key: key, value: val),
                 !self.setUILabelSpecificProperty(view: view, key: key, value: val),
                 !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
@@ -185,7 +190,7 @@ enum EngineMode {
     private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {
         if let imageView = view as? UIImageView {
             if let valueObj = value as? [String: Any] {
-                if key == "image", let src = valueObj["src"] as? String, !src.isEmpty {
+                if key == "image", let src = resolve(value: valueObj["src"]) as? String, !src.isEmpty {
                     if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
                         if (self.mode == EngineMode.production) {
                             imageView.sd_setImage(with: url)
@@ -199,7 +204,7 @@ enum EngineMode {
                         imageView.image?.src = src
                     }
                     return true
-                } else if key == "highlightedImage", let src = valueObj["src"] as? String, !src.isEmpty {
+                } else if key == "highlightedImage", let src = resolve(value: valueObj["src"]) as? String, !src.isEmpty {
                     if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
                         if (self.mode == EngineMode.production) {
                             imageView.sd_setHighlightedImage(with: url)
@@ -243,6 +248,7 @@ enum EngineMode {
             key == "title",
             let buttonTitle = value as? [String: Any] {
             for (titleKey, titleVal) in buttonTitle {
+                let titleVal = self.resolve(value: titleVal)
                 if titleKey == "text" {
                     buttonView.setTitle(titleVal as? String, for: UIControl.State.normal)
                 } else if titleKey == "textAlignment" {
@@ -281,6 +287,7 @@ enum EngineMode {
     private func setViewLayer(view: UIView, layerConfig: [String: Any]) {
         let layer = view.layer
         for (key, val) in layerConfig {
+            let val = self.resolve(value: val)
             if let valStr = val as? String {
                 if (layer.value(forKey: key) as? UIColor) != nil {
                     if let color = toUIColor(colorValue: valStr) {
@@ -445,6 +452,28 @@ enum EngineMode {
             }
             view.frame = CGRect(x: x, y: y, width: width, height: height)
         }
+    }
+    
+    private func resolve(value: Any?) -> Any? {
+        if let value = value {
+            return self.resolve(value: value)
+        }
+        return value
+    }
+    
+    private func resolve(value: Any) -> Any {
+        if let str = value as? String {
+            return self.stringToAttributeValue(str: str)
+        }
+        return value
+    }
+    
+    private func stringToAttributeValue(str: String) -> Any {
+        let pattern = "^\\s*\\{\\{\\s*([a-zA-Z0-9._-]+)\\s*\\}\\}\\s*$"
+        guard let regex = try? NSRegularExpression(pattern: pattern) else { return str }
+        guard let match = regex.firstMatch(in: str, options: [], range: NSRange(str.startIndex..., in: str)) else { return str }
+        let attributeName = String(str[Range(match.range(at: 1), in: str)!])
+        return self.attributeStore.get(key: attributeName) ?? str
     }
 }
 
