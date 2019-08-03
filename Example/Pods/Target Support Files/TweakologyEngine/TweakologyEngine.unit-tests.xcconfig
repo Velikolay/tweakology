@@ -1,0 +1,16 @@
+DEFINES_MODULE = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/TweakologyEngine" "${PODS_ROOT}/Headers/Public"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GCDWebServer" "${PODS_CONFIGURATION_BUILD_DIR}/Nimble" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/STRFTimeFormatter" "${PODS_CONFIGURATION_BUILD_DIR}/TweakologyEngine"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Nimble/Nimble.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/TweakologyEngine/TweakologyEngine.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/GCDWebServer/GCDWebServer.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/SDWebImage/SDWebImage.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/STRFTimeFormatter/STRFTimeFormatter.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"GCDWebServer" -l"Nimble" -l"ObjectMapper" -l"SDWebImage" -l"STRFTimeFormatter" -l"TweakologyEngine" -l"z" -framework "CFNetwork" -framework "ImageIO" -framework "MobileCoreServices" -weak_framework "XCTest"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Nimble/Nimble.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/TweakologyEngine/TweakologyEngine.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/GCDWebServer/GCDWebServer.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/SDWebImage/SDWebImage.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/STRFTimeFormatter/STRFTimeFormatter.modulemap"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/../..
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Nimble" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/TweakologyEngine"

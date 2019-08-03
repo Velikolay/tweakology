@@ -29,7 +29,7 @@ Tweakology`s engine to update app layout from configuration at runtime
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version = '4.2'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.source_files = 'TweakologyEngine/Classes/**/*'
@@ -43,10 +43,14 @@ Tweakology`s engine to update app layout from configuration at runtime
   end
   s.subspec 'LiquidKit' do |ss|
       ss.source_files = 'TweakologyLiquidKit/Sources/LiquidKit/*.{h,m,swift}'
-      
       ss.dependency 'STRFTimeFormatter'
   end
   s.resources  = "TweakologyEngine/**/*.xcassets"
+
+  s.test_spec 'Tests' do |ts|
+      ts.source_files = 'TweakologyEngine/Tests/**/*'
+      ts.dependency 'Nimble', '~> 8.0'
+  end
   # s.resource_bundles = {
   #   'TweakologyEngine' => ['TweakologyEngine/Assets/*.png']
   # }

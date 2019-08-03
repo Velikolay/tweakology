@@ -17,7 +17,7 @@
   },
   "swift_versions": "4.2",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES"
@@ -35,6 +35,18 @@
     ]
   },
   "resources": "TweakologyEngine/**/*.xcassets",
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "TweakologyEngine/Tests/**/*",
+      "dependencies": {
+        "Nimble": [
+          "~> 8.0"
+        ]
+      }
+    }
+  ],
   "subspecs": [
     {
       "name": "CryptoHash",
