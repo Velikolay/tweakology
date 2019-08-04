@@ -9,8 +9,12 @@ import Foundation
 
 class InMemoryAttributeStore: AttributeStore {
     static let sharedInstance = InMemoryAttributeStore()
-
-    private var context: [String: Any] = [:]
+    
+    private var context: [String: Any]
+    
+    init() {
+        context = [:]
+    }
     
     func set(key: String, value: Any) {
         self.context[key] = value

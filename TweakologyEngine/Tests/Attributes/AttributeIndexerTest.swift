@@ -7,11 +7,12 @@
 //
 
 import XCTest
-import TweakologyEngine
+@testable import TweakologyEngine
 import Nimble
 
 class AttributeIndexerTest: XCTestCase {
     var indexer: AttributeIndexer!
+    
     override func setUp() {
         super.setUp()
         self.indexer = AttributeIndexer()

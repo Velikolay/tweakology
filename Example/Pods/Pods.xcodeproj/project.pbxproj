@@ -169,6 +169,8 @@
 		9E65A7873888E3940C8EC079A03B1154 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73073704BCD9E51120DA8791DF841086 /* NSData+ImageContentType.m */; };
 		9FEDF515635066EE8F67E777FDD6D884 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2AA39B15B9FCB5E9B86CA584AC7384 /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A0FA9C0B8157E8A54C45B9273CF90A19 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5982B6EA640CFF042CBA92BDCC169CD4 /* GCDWebServerErrorResponse.m */; };
+		A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */; };
+		A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EA4DE138E6C2280D639A8E07CC90F /* CodableTransform.swift */; };
 		A6262E2E63456B9A2C0C99B5625D0DF7 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D7D600C23B294E806751DAC8596DA /* UIImage+Mappable.swift */; };
 		A64DD787D2AF025D5D7ACC306FB0F97F /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F9C498A2EA523BD770C8DD4D41292 /* MappableOverrideProtocol.swift */; };
@@ -538,6 +540,8 @@
 		A04537EF0EEF59C4CE4A3ADD77C8CED4 /* Pods-TweakologyEngine_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweakologyEngine_Tests-dummy.m"; sourceTree = "<group>"; };
 		A168C5033834FA03C840D010EEBFD46C /* ElementsEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementsEqual.swift; path = Sources/Nimble/Matchers/ElementsEqual.swift; sourceTree = "<group>"; };
 		A1E7ADEC4F5E43FC8099625CCE308E9D /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = GCDWebServer/Core/GCDWebServerFunctions.h; sourceTree = "<group>"; };
+		A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeActionTest.swift; sourceTree = "<group>"; };
+		A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeWithRerenderActionTest.swift; sourceTree = "<group>"; };
 		A2C9B1A4E8D4054FE0508699F80D8D56 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		A38A39644DA2DE3A871D3C358701F2BE /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = TweakologyLiquidKit/Sources/LiquidKit/Tag.swift; sourceTree = "<group>"; };
 		A473C0FB016ED50245618D69DECA88C5 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
@@ -592,7 +596,7 @@
 		CF9AEE3733F0EF1030FDDF9A37F6298E /* libTweakologyEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTweakologyEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0789D2C7E791AADAF736C6CE7778FE1 /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
 		D1F801B2C6DBC147D3F463CBEE9FA3E3 /* GCDWebServerDataRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataRequest.h; path = GCDWebServer/Requests/GCDWebServerDataRequest.h; sourceTree = "<group>"; };
-		D25EB0CC3DBE5089CCA2053F1AD9E51F /* AttributeIndexerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributeIndexerTest.swift; path = TweakologyEngine/Tests/AttributeIndexerTest.swift; sourceTree = "<group>"; };
+		D25EB0CC3DBE5089CCA2053F1AD9E51F /* AttributeIndexerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttributeIndexerTest.swift; sourceTree = "<group>"; };
 		D35D5178F40DF0444E81192D104745EA /* TweakologyEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TweakologyEngine-prefix.pch"; sourceTree = "<group>"; };
 		D3E908CE676F759DA91B1F01E9105FD6 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		D470A7AB91E8045CB08414A7D92A2477 /* CryptoHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CryptoHash.h; sourceTree = "<group>"; };
@@ -1218,6 +1222,23 @@
 			path = "Target Support Files/Pods-TweakologyEngine_Example";
 			sourceTree = "<group>";
 		};
+		A22351F522F72D3600489F9C /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				D25EB0CC3DBE5089CCA2053F1AD9E51F /* AttributeIndexerTest.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		A22351F622F72E1000489F9C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */,
+				A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		A7E3E65EEF6006B35A18CD7B071556E4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1340,9 +1361,11 @@
 		EF12457A68B2E8EDAC03C531B33FD6DE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D25EB0CC3DBE5089CCA2053F1AD9E51F /* AttributeIndexerTest.swift */,
+				A22351F622F72E1000489F9C /* Actions */,
+				A22351F522F72D3600489F9C /* Attributes */,
 			);
 			name = Tests;
+			path = TweakologyEngine/Tests;
 			sourceTree = "<group>";
 		};
 		F198CC682E7493C26571BD290EC86ED9 /* CryptoHash */ = {
@@ -1895,6 +1918,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				217961F3463320505EA234D93EE60B15 /* AttributeIndexerTest.swift in Sources */,
+				A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */,
+				A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

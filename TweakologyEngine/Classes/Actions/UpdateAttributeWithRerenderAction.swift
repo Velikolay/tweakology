@@ -10,17 +10,29 @@ import Foundation
 @available(iOS 10.0, *)
 class UpdateAttributeWithRerenderAction: UpdateAttributeAction {
     private var tweakologyLayoutEngine: TweakologyLayoutEngine
-    private var tweakologyStorage: TweakologyStorage
+    private var attributeIndexer: AttributeIndexer
 
-    init(tweakologyLayoutEngine: TweakologyLayoutEngine, tweakologyStorage: TweakologyStorage, contextStore: AttributeStore, expressionProcessor: ExpressionProcessor, attributeExpression: AttributeExpression) {
+    init(
+        tweakologyLayoutEngine: TweakologyLayoutEngine,
+        attributeIndexer: AttributeIndexer,
+        attributeStore: AttributeStore,
+        expressionProcessor: ExpressionProcessor,
+        attributeExpression: AttributeExpression
+    ) {
         self.tweakologyLayoutEngine = tweakologyLayoutEngine
-        self.tweakologyStorage = tweakologyStorage
-        super.init(contextStore: contextStore, expressionProcessor: expressionProcessor, attributeExpression: attributeExpression)
+        self.attributeIndexer = attributeIndexer
+        super.init(attributeStore: attributeStore, expressionProcessor: expressionProcessor, attributeExpression: attributeExpression)
     }
     
     override func execute() {
         super.execute()
-        let changeSeq: [[String: Any]] = []
-        let tweaks = self.tweakologyStorage.getAllTweaks()
+        if let changeSeq = self.attributeIndexer.getIndex()[self.attributeExpression.attributeName]?.map({
+            [
+                "operation": "modify",
+                "view": $0
+            ]
+        }) {
+            self.tweakologyLayoutEngine.tweak(changeSeq: changeSeq)
+        }
     }
 }

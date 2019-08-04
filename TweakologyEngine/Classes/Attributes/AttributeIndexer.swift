@@ -7,19 +7,20 @@
 
 import Foundation
 
-public class AttributeIndexer {
+class AttributeIndexer {
+    static let sharedInstance = AttributeIndexer()
     // attr: [view(id,properties,layer)]
     private var index: [String: [[String: Any]]]
     
-    public init() {
+    init() {
         self.index = [:]
     }
     
-    public func getIndex() -> [String: [[String: Any]]] {
+    func getIndex() -> [String: [[String: Any]]] {
         return index
     }
     
-    public func index(change: [String: Any]) {
+    func index(change: [String: Any]) {
         if let viewConfig = change["view"] as? [String: Any], let viewId = viewConfig["id"] as? String {
             for changeSection in ["properties", "layer"] {
                 if let dict = viewConfig[changeSection] as? [String: Any] {

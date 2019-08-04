@@ -21,7 +21,7 @@ struct AttributeExpression {
     var valueType: AttributeType
     var defaultValue: Any
     
-    init(attributeName: String, expression: String, valueType: AttributeType, defaultValue: Any? = nil) {
+    public init(attributeName: String, expression: String, valueType: AttributeType, defaultValue: Any? = nil) {
         self.attributeName = attributeName
         self.expression = expression
         self.valueType = valueType

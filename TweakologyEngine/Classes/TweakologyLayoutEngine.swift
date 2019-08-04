@@ -23,11 +23,13 @@ enum EngineMode {
     private var mode: EngineMode
     private let expressionProcessor: ExpressionProcessor
     private let attributeStore: AttributeStore
+    private let attributeIndexer: AttributeIndexer
 
-    private override init() {
+    override init() {
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
             viewClass.swizzleDidAddSubview()
         }
+        self.attributeIndexer = AttributeIndexer.sharedInstance
         self.attributeStore = InMemoryAttributeStore.sharedInstance
         self.expressionProcessor = LiquidExpressionProcessor()
         self.viewIndex = [:]
