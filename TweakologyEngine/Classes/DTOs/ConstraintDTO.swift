@@ -88,7 +88,7 @@ class ConstraintDTO: Mappable {
         idx <- map["idx"]
     }
 
-    public func toNSLayoutConstraint(view: UIView) -> NSLayoutConstraint? {
+    func toNSLayoutConstraint(view: UIView) -> NSLayoutConstraint? {
         let fromView = viewItemFromUid(view: view, uid: first.item)
         let toView = viewItemFromUid(view: view, uid: second?.item)
         

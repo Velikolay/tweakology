@@ -24,8 +24,12 @@ class AttributeExpressionDTO: Mappable {
         defaultValue <- map["defaultValue"]
     }
     
-    public func toAttributeExpression() -> AttributeExpression? {
-        if let valueType = AttributeType(rawValue: self.valueType) {
+    func toAttributeExpression() -> AttributeExpression? {
+        if
+            self.attributeName != nil,
+            self.expression != nil,
+            self.valueType != nil,
+            let valueType = AttributeType(rawValue: self.valueType) {
             return AttributeExpression(attributeName: self.attributeName, expression: self.expression, valueType: valueType, defaultValue: self.defaultValue)
         }
         return nil

@@ -13,6 +13,6 @@ class LiquidExpressionProcessor: ExpressionProcessor {
         let tokens = lexer.tokenize()
         let parser = Parser(tokens: tokens, context: Context(dictionary: context))
         let exprValues = parser.parse()
-        return exprValues.count > 0 ? exprValues[0] : nil
+        return exprValues.joined(separator: "")
     }
 }

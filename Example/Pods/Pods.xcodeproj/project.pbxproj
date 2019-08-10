@@ -171,6 +171,12 @@
 		A0FA9C0B8157E8A54C45B9273CF90A19 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5982B6EA640CFF042CBA92BDCC169CD4 /* GCDWebServerErrorResponse.m */; };
 		A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */; };
 		A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */; };
+		A22351FC22FA2B1700489F9C /* HTTPRequestAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351FB22FA2B1700489F9C /* HTTPRequestAction.swift */; };
+		A223520022FC76BF00489F9C /* HTTPRequestActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22351FF22FC76BF00489F9C /* HTTPRequestActionTest.swift */; };
+		A223520222FE047700489F9C /* ActionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520122FE047700489F9C /* ActionDTO.swift */; };
+		A223520422FE0A9E00489F9C /* ActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520322FE0A9E00489F9C /* ActionFactory.swift */; };
+		A223520722FF221F00489F9C /* ActionDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520622FF221F00489F9C /* ActionDTOTest.swift */; };
+		A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EA4DE138E6C2280D639A8E07CC90F /* CodableTransform.swift */; };
 		A6262E2E63456B9A2C0C99B5625D0DF7 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D7D600C23B294E806751DAC8596DA /* UIImage+Mappable.swift */; };
 		A64DD787D2AF025D5D7ACC306FB0F97F /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F9C498A2EA523BD770C8DD4D41292 /* MappableOverrideProtocol.swift */; };
@@ -542,6 +548,12 @@
 		A1E7ADEC4F5E43FC8099625CCE308E9D /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = GCDWebServer/Core/GCDWebServerFunctions.h; sourceTree = "<group>"; };
 		A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeActionTest.swift; sourceTree = "<group>"; };
 		A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAttributeWithRerenderActionTest.swift; sourceTree = "<group>"; };
+		A22351FB22FA2B1700489F9C /* HTTPRequestAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestAction.swift; sourceTree = "<group>"; };
+		A22351FF22FC76BF00489F9C /* HTTPRequestActionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestActionTest.swift; sourceTree = "<group>"; };
+		A223520122FE047700489F9C /* ActionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDTO.swift; sourceTree = "<group>"; };
+		A223520322FE0A9E00489F9C /* ActionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFactory.swift; sourceTree = "<group>"; };
+		A223520622FF221F00489F9C /* ActionDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDTOTest.swift; sourceTree = "<group>"; };
+		A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeExpressionDTOTest.swift; sourceTree = "<group>"; };
 		A2C9B1A4E8D4054FE0508699F80D8D56 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		A38A39644DA2DE3A871D3C358701F2BE /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = TweakologyLiquidKit/Sources/LiquidKit/Tag.swift; sourceTree = "<group>"; };
 		A473C0FB016ED50245618D69DECA88C5 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
@@ -877,9 +889,11 @@
 		505C470789FD262C0A09EB29758CB009 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				A223520322FE0A9E00489F9C /* ActionFactory.swift */,
 				E1893C768C0466D1ACA2869640E1B148 /* ActionProtocol.swift */,
 				7095E8BFBB5FB10D75870C7D3EFE01F6 /* UpdateAttributeAction.swift */,
 				6B7CD45DE54694E1B124460AAC6ED064 /* UpdateAttributeWithRerenderAction.swift */,
+				A22351FB22FA2B1700489F9C /* HTTPRequestAction.swift */,
 			);
 			name = Actions;
 			path = TweakologyEngine/Classes/Actions;
@@ -1036,14 +1050,15 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		61AD97A16250F3407FBEBDD5C5B0175B /* Types */ = {
+		61AD97A16250F3407FBEBDD5C5B0175B /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				A223520122FE047700489F9C /* ActionDTO.swift */,
 				5F12FB063967667C560011A6D5F3A86B /* AttributeExpressionDTO.swift */,
 				FBB952CD7F2A22648BF840DFF690C21F /* ConstraintDTO.swift */,
 			);
-			name = Types;
-			path = TweakologyEngine/Classes/Types;
+			name = DTOs;
+			path = TweakologyEngine/Classes/DTOs;
 			sourceTree = "<group>";
 		};
 		6E4061CA00302BED46B8514D19D64A27 /* LiquidKit */ = {
@@ -1087,6 +1102,7 @@
 				708768488938048802FD5016AF24EF44 /* Agent */,
 				0178E6E6E87A41909CF588DE61F977C4 /* Attributes */,
 				F245F2062D44B1C606FB1593AA62AB4F /* CryptoHash */,
+				61AD97A16250F3407FBEBDD5C5B0175B /* DTOs */,
 				134775BBD0E0812259FFAE18F6C7E514 /* ExpressionProcessors */,
 				301E4847E31BFC4102BC7FCB2C8C7B98 /* Extensions */,
 				6E4061CA00302BED46B8514D19D64A27 /* LiquidKit */,
@@ -1094,7 +1110,6 @@
 				360B933B1DAD8FBCC49ED936497A6B81 /* Resources */,
 				876C2C21F8531BC657AEF834AA7D37EB /* Support Files */,
 				EF12457A68B2E8EDAC03C531B33FD6DE /* Tests */,
-				61AD97A16250F3407FBEBDD5C5B0175B /* Types */,
 			);
 			name = TweakologyEngine;
 			path = ../..;
@@ -1235,8 +1250,18 @@
 			children = (
 				A22351F722F72E7800489F9C /* UpdateAttributeActionTest.swift */,
 				A22351F922F7712E00489F9C /* UpdateAttributeWithRerenderActionTest.swift */,
+				A22351FF22FC76BF00489F9C /* HTTPRequestActionTest.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		A223520522FF21D500489F9C /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				A223520622FF221F00489F9C /* ActionDTOTest.swift */,
+				A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		A7E3E65EEF6006B35A18CD7B071556E4 /* Support Files */ = {
@@ -1363,6 +1388,7 @@
 			children = (
 				A22351F622F72E1000489F9C /* Actions */,
 				A22351F522F72D3600489F9C /* Attributes */,
+				A223520522FF21D500489F9C /* DTOs */,
 			);
 			name = Tests;
 			path = TweakologyEngine/Tests;
@@ -1918,8 +1944,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				217961F3463320505EA234D93EE60B15 /* AttributeIndexerTest.swift in Sources */,
+				A223520022FC76BF00489F9C /* HTTPRequestActionTest.swift in Sources */,
 				A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */,
 				A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */,
+				A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */,
+				A223520722FF221F00489F9C /* ActionDTOTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1976,6 +2005,7 @@
 				82A2ACDD24137518F4FBB1C27304EA26 /* Double+Extensions.swift in Sources */,
 				D544FAE2C6722D8F3FF1A03E18DD400F /* Error.swift in Sources */,
 				A8165BDED454B95456C53DDA38BE31FC /* ExpressionProcessorProtocol.swift in Sources */,
+				A223520422FE0A9E00489F9C /* ActionFactory.swift in Sources */,
 				F9AB8FB1629264333A38093892F3398A /* Filter.swift in Sources */,
 				81BF103BCDB0B7F0D1B065165E832DF0 /* InMemoryAttributeStore.swift in Sources */,
 				0C3C3F80866545E6480D8F70B3430C4D /* Lexer.swift in Sources */,
@@ -1989,6 +2019,7 @@
 				18A0B210EF77F622DB9B51A751A33033 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
 				25986CDFAF8A2E052D501FD664BB30B5 /* String+Extensions.swift in Sources */,
 				F3A8229F08845DB6B8C87A06A17C89E9 /* SwizzlingClassProvider.swift in Sources */,
+				A22351FC22FA2B1700489F9C /* HTTPRequestAction.swift in Sources */,
 				2AB069DA791AF96B336CA132265AF69A /* Tag.swift in Sources */,
 				83BD532C6924112F8BDD0D9A1E7ABE1B /* Tests.m in Sources */,
 				27FC9C4B76E1373AD14DC476586F5247 /* Token.swift in Sources */,
@@ -1999,6 +2030,7 @@
 				80DDF451D8CC072F969AEF24E4A9A36B /* TweakologyStorage.swift in Sources */,
 				E801E40C6CCD29A5AA5F96A56D50B775 /* UIApplicationWithTweakology.swift in Sources */,
 				C822FD713368299C0208C0EE75571964 /* UIButton+MappableOverride.swift in Sources */,
+				A223520222FE047700489F9C /* ActionDTO.swift in Sources */,
 				8209CC7440CA4B71343BBD1CDC151584 /* UIColor+Mappable.swift in Sources */,
 				93D4C98A75B910B7EF778B3D7B34C825 /* UIFont+Mappable.swift in Sources */,
 				A6262E2E63456B9A2C0C99B5625D0DF7 /* UIImage+Mappable.swift in Sources */,
