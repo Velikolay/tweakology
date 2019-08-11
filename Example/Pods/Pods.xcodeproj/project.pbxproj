@@ -177,6 +177,8 @@
 		A223520422FE0A9E00489F9C /* ActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520322FE0A9E00489F9C /* ActionFactory.swift */; };
 		A223520722FF221F00489F9C /* ActionDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520622FF221F00489F9C /* ActionDTOTest.swift */; };
 		A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */; };
+		A223520C2300181700489F9C /* AttributeStore+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520B2300181700489F9C /* AttributeStore+Mappable.swift */; };
+		A223521123001D8E00489F9C /* AttributeStore+MappableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223521023001D8E00489F9C /* AttributeStore+MappableTest.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EA4DE138E6C2280D639A8E07CC90F /* CodableTransform.swift */; };
 		A6262E2E63456B9A2C0C99B5625D0DF7 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D7D600C23B294E806751DAC8596DA /* UIImage+Mappable.swift */; };
 		A64DD787D2AF025D5D7ACC306FB0F97F /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F9C498A2EA523BD770C8DD4D41292 /* MappableOverrideProtocol.swift */; };
@@ -554,6 +556,8 @@
 		A223520322FE0A9E00489F9C /* ActionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFactory.swift; sourceTree = "<group>"; };
 		A223520622FF221F00489F9C /* ActionDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDTOTest.swift; sourceTree = "<group>"; };
 		A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeExpressionDTOTest.swift; sourceTree = "<group>"; };
+		A223520B2300181700489F9C /* AttributeStore+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeStore+Mappable.swift"; sourceTree = "<group>"; };
+		A223521023001D8E00489F9C /* AttributeStore+MappableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeStore+MappableTest.swift"; sourceTree = "<group>"; };
 		A2C9B1A4E8D4054FE0508699F80D8D56 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		A38A39644DA2DE3A871D3C358701F2BE /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = TweakologyLiquidKit/Sources/LiquidKit/Tag.swift; sourceTree = "<group>"; };
 		A473C0FB016ED50245618D69DECA88C5 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
@@ -805,6 +809,7 @@
 		157512E1AC04AD6CB8820C752871BF14 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A223520A230017EB00489F9C /* Attributes */,
 				F8586913FF9095E1C3BA5D57F15B21CC /* CGPoint+Mappable.swift */,
 				95DE784A34D1C1D07D542DAFF97AB7B6 /* CGRect+Mappable.swift */,
 				9311DD195B13BB623826FA573E7010D4 /* CGSize+Mappable.swift */,
@@ -1264,6 +1269,38 @@
 			path = DTOs;
 			sourceTree = "<group>";
 		};
+		A223520A230017EB00489F9C /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				A223520B2300181700489F9C /* AttributeStore+Mappable.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		A223520D23001D3D00489F9C /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				A223520E23001D4D00489F9C /* Components */,
+			);
+			path = Agent;
+			sourceTree = "<group>";
+		};
+		A223520E23001D4D00489F9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A223520F23001D5B00489F9C /* Attributes */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A223520F23001D5B00489F9C /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				A223521023001D8E00489F9C /* AttributeStore+MappableTest.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
 		A7E3E65EEF6006B35A18CD7B071556E4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1423,7 @@
 		EF12457A68B2E8EDAC03C531B33FD6DE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A223520D23001D3D00489F9C /* Agent */,
 				A22351F622F72E1000489F9C /* Actions */,
 				A22351F522F72D3600489F9C /* Attributes */,
 				A223520522FF21D500489F9C /* DTOs */,
@@ -1948,6 +1986,7 @@
 				A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */,
 				A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */,
 				A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */,
+				A223521123001D8E00489F9C /* AttributeStore+MappableTest.swift in Sources */,
 				A223520722FF221F00489F9C /* ActionDTOTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2016,6 +2055,7 @@
 				A6FEC5E36631E910E9F03FA32301CD28 /* NSRegularExpression+Additions.swift in Sources */,
 				9658256248D550396905842F395C98D9 /* Operator.swift in Sources */,
 				8D9E194BA9AE6AEDD39AC324CC83CBB8 /* Parser.swift in Sources */,
+				A223520C2300181700489F9C /* AttributeStore+Mappable.swift in Sources */,
 				18A0B210EF77F622DB9B51A751A33033 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
 				25986CDFAF8A2E052D501FD664BB30B5 /* String+Extensions.swift in Sources */,
 				F3A8229F08845DB6B8C87A06A17C89E9 /* SwizzlingClassProvider.swift in Sources */,

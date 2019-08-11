@@ -33,12 +33,6 @@ enum EngineMode {
         self.attributeStore = InMemoryAttributeStore.sharedInstance
         self.expressionProcessor = LiquidExpressionProcessor()
         self.viewIndex = [:]
-//        let flip = "{% if click %}false{% else %}true{% endif %}"
-//        let flipExpr = AttributeExpression(attributeName: "click", expression: flip, valueType: AttributeType.boolean, defaultValue: nil)
-//        self.attributeManager.update(expression: flipExpr)
-//        print(self.attributeManager.get(name: flipExpr.attributeName) as! Bool)
-//        self.attributeManager.update(expression: flipExpr)
-//        print(self.attributeManager.get(name: flipExpr.attributeName) as! Bool)
         self.mode = EngineMode.development
     }
 
