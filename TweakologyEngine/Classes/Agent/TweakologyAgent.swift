@@ -60,16 +60,29 @@ import GCDWebServer
             }
         }
 
-        webServer.addHandler(forMethod: "GET", path: "/fonts", request: GCDWebServerRequest.self) {
+        webServer.addHandler(forMethod: "GET", path: "/system", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
+                let eventsJson = [
+                    [ "name": "TouchUpInside", "value": UIControl.Event.touchUpInside.rawValue],
+                    [ "name": "TouchUpOutside", "value": UIControl.Event.touchUpOutside.rawValue],
+                    [ "name": "TouchDragInside", "value": UIControl.Event.touchDragInside.rawValue],
+                    [ "name": "TouchDragOutside", "value": UIControl.Event.touchDragOutside.rawValue],
+                    [ "name": "TouchDragEnter", "value": UIControl.Event.touchDragEnter.rawValue],
+                    [ "name": "TouchDragExit", "value": UIControl.Event.touchDragExit.rawValue],
+                    [ "name": "TouchDownRepeat", "value": UIControl.Event.touchDownRepeat.rawValue],
+                    [ "name": "TouchDown", "value": UIControl.Event.touchDown.rawValue],
+                    [ "name": "TouchCancel", "value": UIControl.Event.touchCancel.rawValue],
+                    [ "name": "ValueChanged", "value": UIControl.Event.valueChanged.rawValue],
+                ]
+
                 let sysTextFontName = ".SFUIText"
                 let sysDisplayFontName = ".SFUIDisplay"
 
                 let systemFonts = [
                     "System": ["\(sysTextFontName)-UltraLight", "\(sysTextFontName)-Thin", "\(sysTextFontName)-Light", "\(sysTextFontName)", "\(sysTextFontName)-Medium", "\(sysTextFontName)-Semibold", "\(sysTextFontName)-Bold", "\(sysTextFontName)-Heavy", "\(sysTextFontName)-Black"],
                     "System Italic": ["\(sysTextFontName)-Italic"],
-                ]
+                    ]
 
                 var customFonts: [String: [String]] = [:]
                 for familyName in UIFont.familyNames {
@@ -94,8 +107,12 @@ import GCDWebServer
                             "TextStyle-Title3": [ "fontName": sysDisplayFontName, "pointSize": 20 ],
                         ]
                     ]
-                    ] as [String : Any]
-                let response = GCDWebServerDataResponse(jsonObject: fontsJson)
+                ] as [String : Any]
+
+                let response = GCDWebServerDataResponse(jsonObject: [
+                    "fonts": fontsJson,
+                    "events": eventsJson,
+                ])
                 response?.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                 completionBlock(response)
             }

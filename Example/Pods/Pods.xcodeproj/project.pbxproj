@@ -179,6 +179,8 @@
 		A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */; };
 		A223520C2300181700489F9C /* AttributeStore+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223520B2300181700489F9C /* AttributeStore+Mappable.swift */; };
 		A223521123001D8E00489F9C /* AttributeStore+MappableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223521023001D8E00489F9C /* AttributeStore+MappableTest.swift */; };
+		A22352182309934000489F9C /* UIControl+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22352172309934000489F9C /* UIControl+Mappable.swift */; };
+		A223521A2309978000489F9C /* UIControl+MappableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22352192309978000489F9C /* UIControl+MappableTest.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7EA4DE138E6C2280D639A8E07CC90F /* CodableTransform.swift */; };
 		A6262E2E63456B9A2C0C99B5625D0DF7 /* UIImage+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D7D600C23B294E806751DAC8596DA /* UIImage+Mappable.swift */; };
 		A64DD787D2AF025D5D7ACC306FB0F97F /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F9C498A2EA523BD770C8DD4D41292 /* MappableOverrideProtocol.swift */; };
@@ -558,6 +560,8 @@
 		A223520822FF30AF00489F9C /* AttributeExpressionDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeExpressionDTOTest.swift; sourceTree = "<group>"; };
 		A223520B2300181700489F9C /* AttributeStore+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeStore+Mappable.swift"; sourceTree = "<group>"; };
 		A223521023001D8E00489F9C /* AttributeStore+MappableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeStore+MappableTest.swift"; sourceTree = "<group>"; };
+		A22352172309934000489F9C /* UIControl+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Mappable.swift"; sourceTree = "<group>"; };
+		A22352192309978000489F9C /* UIControl+MappableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+MappableTest.swift"; sourceTree = "<group>"; };
 		A2C9B1A4E8D4054FE0508699F80D8D56 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		A38A39644DA2DE3A871D3C358701F2BE /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = TweakologyLiquidKit/Sources/LiquidKit/Tag.swift; sourceTree = "<group>"; };
 		A473C0FB016ED50245618D69DECA88C5 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
@@ -824,6 +828,7 @@
 				64893B8033C55B3416B9E806628100CD /* UIScrollView+MappableOverride.swift */,
 				5F51045742D0146A7AC439EE20C37EEF /* UIView+Mappable.swift */,
 				5502854554C05B54250D1BDD3FBB7954 /* UIWindow+MappableOverride.swift */,
+				A22352172309934000489F9C /* UIControl+Mappable.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1289,6 +1294,7 @@
 			isa = PBXGroup;
 			children = (
 				A223520F23001D5B00489F9C /* Attributes */,
+				A22352192309978000489F9C /* UIControl+MappableTest.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1984,6 +1990,7 @@
 				217961F3463320505EA234D93EE60B15 /* AttributeIndexerTest.swift in Sources */,
 				A223520022FC76BF00489F9C /* HTTPRequestActionTest.swift in Sources */,
 				A22351FA22F7712F00489F9C /* UpdateAttributeWithRerenderActionTest.swift in Sources */,
+				A223521A2309978000489F9C /* UIControl+MappableTest.swift in Sources */,
 				A22351F822F72E7800489F9C /* UpdateAttributeActionTest.swift in Sources */,
 				A223520922FF30AF00489F9C /* AttributeExpressionDTOTest.swift in Sources */,
 				A223521123001D8E00489F9C /* AttributeStore+MappableTest.swift in Sources */,
@@ -2033,6 +2040,7 @@
 				CF7CC6680669DAAA85B9DD9DE64F0183 /* AttributeExpression.swift in Sources */,
 				EF49182FFA46202619C185EB4A0C0AD1 /* AttributeExpressionDTO.swift in Sources */,
 				74BBC91A484B11A6E772762522A15904 /* AttributeIndexer.swift in Sources */,
+				A22352182309934000489F9C /* UIControl+Mappable.swift in Sources */,
 				A6AEBB03C69E756152EC156BF8C5CB9D /* AttributeStoreProtocol.swift in Sources */,
 				B4B9BAAF84FD42A353533A2989A560C3 /* CGPoint+Mappable.swift in Sources */,
 				64CE587FDC24377BBA59FBE0FE24398F /* CGRect+Mappable.swift in Sources */,
