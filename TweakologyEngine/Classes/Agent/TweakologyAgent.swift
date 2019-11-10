@@ -50,11 +50,13 @@ import GCDWebServer
             }
         }
         
-        webServer.addHandler(forMethod: "GET", path: "/attributes", request: GCDWebServerRequest.self) {
+        webServer.addHandler(forMethod: "GET", path: "/runtime", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
                 let attributeStoreJson = InMemoryAttributeStore.sharedInstance.toJSON()
-                let response = GCDWebServerDataResponse(jsonObject: attributeStoreJson)
+                let response = GCDWebServerDataResponse(jsonObject: [
+                    "attributes": attributeStoreJson
+                ])
                 response?.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                 completionBlock(response)
             }
