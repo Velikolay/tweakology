@@ -78,12 +78,10 @@ import GCDWebServer
                     [ "name": "ValueChanged", "value": UIControl.Event.valueChanged.rawValue],
                 ]
 
-                let sysTextFontName = ".SFUIText"
-                let sysDisplayFontName = ".SFUIDisplay"
-
+                let sysFontName = ".SFUI"
                 let systemFonts = [
-                    "System": ["\(sysTextFontName)-UltraLight", "\(sysTextFontName)-Thin", "\(sysTextFontName)-Light", "\(sysTextFontName)", "\(sysTextFontName)-Medium", "\(sysTextFontName)-Semibold", "\(sysTextFontName)-Bold", "\(sysTextFontName)-Heavy", "\(sysTextFontName)-Black"],
-                    "System Italic": ["\(sysTextFontName)-Italic"],
+                    "System": ["\(sysFontName)-UltraLight", "\(sysFontName)-Thin", "\(sysFontName)-Light", "\(sysFontName)-Regular", "\(sysFontName)-Medium", "\(sysFontName)-Semibold", "\(sysFontName)-Bold", "\(sysFontName)-Heavy", "\(sysFontName)-Black"],
+                    "System Italic": ["\(sysFontName)-RegularItalic"],
                     ]
 
                 var customFonts: [String: [String]] = [:]
@@ -96,17 +94,17 @@ import GCDWebServer
                     "system": systemFonts,
                     "preffered": [
                         "Text Style": [
-                            "TextStyle-Body": [ "fontName": sysTextFontName, "pointSize": 17 ],
-                            "TextStyle-Callout": [ "fontName": sysTextFontName, "pointSize": 16 ],
-                            "TextStyle-Caption1": [ "fontName": sysTextFontName, "pointSize": 12 ],
-                            "TextStyle-Caption2": [ "fontName": sysTextFontName, "pointSize": 11 ],
-                            "TextStyle-Footnote": [ "fontName": sysTextFontName, "pointSize": 13 ],
-                            "TextStyle-Headline": [ "fontName": "\(sysTextFontName)-Semibold", "pointSize": 17],
-                            "TextStyle-Subheadline": [ "fontName": sysTextFontName, "pointSize": 15 ],
-                            "TextStyle-LargeTitle": [ "fontName": sysTextFontName, "pointSize": 28 ],
-                            "TextStyle-Title1": [ "fontName": sysDisplayFontName, "pointSize": 28 ],
-                            "TextStyle-Title2": [ "fontName": sysDisplayFontName, "pointSize": 22 ],
-                            "TextStyle-Title3": [ "fontName": sysDisplayFontName, "pointSize": 20 ],
+                            "TextStyle-Body": [ "fontName": "\(sysFontName)-Regular", "pointSize": 17 ],
+                            "TextStyle-Callout": [ "fontName": "\(sysFontName)-Regular", "pointSize": 16 ],
+                            "TextStyle-Caption1": [ "fontName": "\(sysFontName)-Regular", "pointSize": 12 ],
+                            "TextStyle-Caption2": [ "fontName": "\(sysFontName)-Regular", "pointSize": 11 ],
+                            "TextStyle-Footnote": [ "fontName": "\(sysFontName)-Regular", "pointSize": 13 ],
+                            "TextStyle-Headline": [ "fontName": "\(sysFontName)-Semibold", "pointSize": 17],
+                            "TextStyle-Subheadline": [ "fontName": "\(sysFontName)-Regular", "pointSize": 15 ],
+                            "TextStyle-LargeTitle": [ "fontName": "\(sysFontName)-Regular", "pointSize": 28 ],
+                            "TextStyle-Title1": [ "fontName": "\(sysFontName)-Regular", "pointSize": 28 ],
+                            "TextStyle-Title2": [ "fontName": "\(sysFontName)-Regular", "pointSize": 22 ],
+                            "TextStyle-Title3": [ "fontName": "\(sysFontName)-Regular", "pointSize": 20 ],
                         ]
                     ]
                 ] as [String : Any]
