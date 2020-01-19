@@ -35,7 +35,7 @@ class AttributeExpressionDTOTest: XCTestCase {
             "attributeName": "TestAttr",
             "expression": "{{ TestAttr | capitalize }}",
             "valueType": "integer"
-            ])
+        ])
         
         expect(attributeExpressionDTO?.toAttributeExpression()).toNot(beNil())
     }

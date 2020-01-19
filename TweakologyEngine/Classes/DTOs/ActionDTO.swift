@@ -10,6 +10,7 @@ import ObjectMapper
 
 @available(iOS 10.0, *)
 class ActionDTO: Mappable {
+    var id: String!
     var actionType: String!
     var args: [String: Any]!
     
@@ -17,23 +18,21 @@ class ActionDTO: Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"]
         actionType <- map["type"]
         args <- map["args"]
     }
     
     func toAction(actionFactory: ActionFactory) -> Action? {
-        if args != nil {
-            if self.actionType == "UpdateAttribute",
+        if id != nil, args != nil {
+            if self.actionType == "AttributeExpression",
                 let attributeExpression = AttributeExpressionDTO(JSON: args)?.toAttributeExpression() {
-                return actionFactory.getUpdateAttributeAction(attributeExpression: attributeExpression)
+                let rerender = args["rerender"] as? Bool ?? false
+                return actionFactory.getAttributeExpressionAction(id: id, attributeExpression: attributeExpression, rerender: rerender)
             }
-            if self.actionType == "UpdateAttributeWithRerender",
-                let attributeExpression = AttributeExpressionDTO(JSON: args)?.toAttributeExpression() {
-                return actionFactory.getUpdateAttributeWithRerenderAction(attributeExpression: attributeExpression)
-            }
-            if self.actionType == "HTTPRequestAction",
+            if self.actionType == "HTTPRequest",
                 let urlExpression = args["urlExpression"] as? String {
-                return actionFactory.getHTTPRequestAction(urlExpression: urlExpression, attributeName: args["attributeName"] as? String)
+                return actionFactory.getHTTPRequestAction(id: id, urlExpression: urlExpression, attributeName: args["attributeName"] as? String)
             }
         }
         return nil

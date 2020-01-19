@@ -19,6 +19,8 @@ enum EngineMode {
     public static let sharedInstance = TweakologyLayoutEngine()
 
     internal var viewIndex: ViewIndex
+    internal var actionIndex: [String: Action]
+    internal var eventHandlerIndex: [String: EventHandler]
 
     private var mode: EngineMode
     private let expressionProcessor: ExpressionProcessor
@@ -33,6 +35,8 @@ enum EngineMode {
         self.attributeStore = InMemoryAttributeStore.sharedInstance
         self.expressionProcessor = LiquidExpressionProcessor()
         self.viewIndex = [:]
+        self.actionIndex = [:]
+        self.eventHandlerIndex = [:]
         self.mode = EngineMode.development
     }
 

@@ -37,15 +37,11 @@ class ActionFactory {
         self.httpClient = httpClient
     }
     
-    func getUpdateAttributeAction(attributeExpression: AttributeExpression) -> Action {
-        return UpdateAttributeAction(attributeStore: self.attributeStore, expressionProcessor: self.expressionProcessor, attributeExpression: attributeExpression)
+    func getAttributeExpressionAction(id: String, attributeExpression: AttributeExpression, rerender: Bool) -> Action {
+        return AttributeExpressionAction(id: id, attributeExpression: attributeExpression, rerender: rerender, attributeStore: self.attributeStore, expressionProcessor: self.expressionProcessor, tweakologyLayoutEngine: self.tweakologyLayoutEngine, attributeIndexer: self.attributeIndexer)
     }
     
-    func getUpdateAttributeWithRerenderAction(attributeExpression: AttributeExpression) -> Action {
-        return UpdateAttributeWithRerenderAction(tweakologyLayoutEngine: self.tweakologyLayoutEngine, attributeIndexer: self.attributeIndexer, attributeStore: self.attributeStore, expressionProcessor: self.expressionProcessor, attributeExpression: attributeExpression)
-    }
-    
-    func getHTTPRequestAction(urlExpression: String, attributeName: String?) -> Action {
-        return HTTPRequestAction(httpClient: self.httpClient, attributeStore: self.attributeStore, expressionProcessor: self.expressionProcessor, urlExpression: urlExpression, attributeName: attributeName)
+    func getHTTPRequestAction(id: String, urlExpression: String, attributeName: String?) -> Action {
+        return HTTPRequestAction(id: id, urlExpression: urlExpression, attributeName: attributeName, httpClient: self.httpClient, attributeStore: self.attributeStore, expressionProcessor: self.expressionProcessor)
     }
 }

@@ -33,19 +33,26 @@ class URLSessionAsyncHTTPClient: AsyncHTTPClient {
     }
 }
 
+@available(iOS 10.0, *)
 class HTTPRequestAction: Action {
+    private var id: String
+    private var urlExpression: String
+    private var attributeName: String?
     private var httpClient: AsyncHTTPClient
     private var attributeStore: AttributeStore
     private var expressionProcessor: ExpressionProcessor
-    private var urlExpression: String
-    private var attributeName: String?
     
-    init(httpClient: AsyncHTTPClient, attributeStore: AttributeStore, expressionProcessor: ExpressionProcessor, urlExpression: String, attributeName: String?) {
+    init(id: String, urlExpression: String, attributeName: String?, httpClient: AsyncHTTPClient, attributeStore: AttributeStore, expressionProcessor: ExpressionProcessor) {
+        self.id = id
+        self.urlExpression = urlExpression
+        self.attributeName = attributeName
         self.httpClient = httpClient
         self.attributeStore = attributeStore
         self.expressionProcessor = expressionProcessor
-        self.urlExpression = urlExpression
-        self.attributeName = attributeName
+    }
+    
+    func getId() -> String {
+        return id
     }
     
     func execute() {
@@ -65,5 +72,16 @@ class HTTPRequestAction: Action {
                 }
             }
         }
+    }
+    
+    func toDTO() -> ActionDTO {
+        return ActionDTO(JSON: [
+            "id": id,
+            "type": "HTTPRequest",
+            "args": [
+                "attributeName": attributeName,
+                "urlExpression": urlExpression
+            ]
+        ])!
     }
 }

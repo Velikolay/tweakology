@@ -28,9 +28,27 @@ class ActionDTOTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testUpdateAttributeAction() {
+    func testAttributeExpressionAction() {
         let actionDTO = ActionDTO(JSON: [
-            "type": "UpdateAttribute",
+            "id": "id",
+            "type": "AttributeExpression",
+            "args": [
+                "rerender": true,
+                "attributeName": "TestAttr",
+                "expression": "{{ TestAttr | capitalize }}",
+                "valueType": "integer",
+                "defaultValue": 0
+            ]
+        ])
+        
+        let action = actionDTO?.toAction(actionFactory: self.actionFactory)
+        expect(action as? AttributeExpressionAction).toNot(beNil())
+    }
+    
+    func testAttributeExpressionActionWithoutRerender() {
+        let actionDTO = ActionDTO(JSON: [
+            "id": "id",
+            "type": "AttributeExpression",
             "args": [
                 "attributeName": "TestAttr",
                 "expression": "{{ TestAttr | capitalize }}",
@@ -40,27 +58,28 @@ class ActionDTOTest: XCTestCase {
         ])
         
         let action = actionDTO?.toAction(actionFactory: self.actionFactory)
-        expect(action as? UpdateAttributeAction).toNot(beNil())
+        expect(action as? AttributeExpressionAction).toNot(beNil())
     }
     
-    func testUpdateAttributeActionEmptyJson() {
+    func testAttributeExpressionActionEmptyJson() {
         let actionDTO = ActionDTO(JSON: [:])
         let action = actionDTO?.toAction(actionFactory: self.actionFactory)
-        expect(action as? UpdateAttributeAction).to(beNil())
+        expect(action as? AttributeExpressionAction).to(beNil())
     }
     
-    func testUpdateAttributeActionNoArgs() {
+    func testAttributeExpressionActionNoArgs() {
         let actionDTO = ActionDTO(JSON: [
-            "type": "UpdateAttribute"
+            "id": "id",
+            "type": "AttributeExpression"
         ])
         
         let action = actionDTO?.toAction(actionFactory: self.actionFactory)
-        expect(action as? UpdateAttributeAction).to(beNil())
+        expect(action as? AttributeExpressionAction).to(beNil())
     }
     
-    func testUpdateAttributeWithRerenderAction() {
+    func testAttributeExpressionActionNoId() {
         let actionDTO = ActionDTO(JSON: [
-            "type": "UpdateAttributeWithRerender",
+            "type": "AttributeExpression",
             "args": [
                 "attributeName": "TestAttr",
                 "expression": "{{ TestAttr | capitalize }}",
@@ -70,21 +89,13 @@ class ActionDTOTest: XCTestCase {
         ])
         
         let action = actionDTO?.toAction(actionFactory: self.actionFactory)
-        expect(action as? UpdateAttributeWithRerenderAction).toNot(beNil())
-    }
-    
-    func testUpdateAttributeWithRerenderActionNoArgs() {
-        let actionDTO = ActionDTO(JSON: [
-            "type": "UpdateAttributeWithRerender"
-        ])
-        
-        let action = actionDTO?.toAction(actionFactory: self.actionFactory)
-        expect(action as? UpdateAttributeWithRerenderAction).to(beNil())
+        expect(action as? AttributeExpressionAction).to(beNil())
     }
     
     func testHTTPRequestAction() {
         let actionDTO = ActionDTO(JSON: [
-            "type": "HTTPRequestAction",
+            "id": "id",
+            "type": "HTTPRequest",
             "args": [
                 "attributeName": "TestAttr",
                 "urlExpression": "https://domain.com",
@@ -97,10 +108,24 @@ class ActionDTOTest: XCTestCase {
     
     func testHTTPRequestActionNoArgs() {
         let actionDTO = ActionDTO(JSON: [
-            "type": "HTTPRequestAction"
+            "id": "id",
+            "type": "HTTPRequest"
         ])
         
         let action = actionDTO?.toAction(actionFactory: self.actionFactory)
         expect(action as? HTTPRequestAction).to(beNil())
+    }
+    
+    func testHTTPRequestActionNoId() {
+        let actionDTO = ActionDTO(JSON: [
+            "type": "HTTPRequest",
+            "args": [
+                "attributeName": "TestAttr",
+                "urlExpression": "https://domain.com",
+            ]
+        ])
+        
+        let action = actionDTO?.toAction(actionFactory: self.actionFactory)
+        expect(action as? AttributeExpressionAction).to(beNil())
     }
 }

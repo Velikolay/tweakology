@@ -53,9 +53,14 @@ import GCDWebServer
         webServer.addHandler(forMethod: "GET", path: "/runtime", request: GCDWebServerRequest.self) {
             (request : GCDWebServerRequest!, completionBlock : GCDWebServerCompletionBlock!) -> Void in
             DispatchQueue.main.async {
-                let attributeStoreJson = InMemoryAttributeStore.sharedInstance.toJSON()
                 let response = GCDWebServerDataResponse(jsonObject: [
-                    "attributes": attributeStoreJson
+                    "attributes": InMemoryAttributeStore.sharedInstance.toJSON(),
+                    "actions": TweakologyLayoutEngine.sharedInstance.actionIndex.mapValues({ (action) -> [String: Any] in
+                        action.toDTO().toJSON()
+                    }),
+                    "eventHandlers": TweakologyLayoutEngine.sharedInstance.eventHandlerIndex.mapValues({ (eventHandler) -> [String: Any] in
+                        eventHandler.toDTO().toJSON()
+                    })
                 ])
                 response?.setValue("*", forAdditionalHeader: "Access-Control-Allow-Origin")
                 completionBlock(response)
