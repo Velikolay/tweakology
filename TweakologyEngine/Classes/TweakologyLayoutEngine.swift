@@ -40,27 +40,58 @@ enum EngineMode {
         self.mode = EngineMode.development
     }
 
-    public func update(viewIndex: ViewIndex) {
-        self.viewIndex = viewIndex
+    public func tweak(changeSeq: [[String: Any]]) {
+        self.handleChanges(changeSeq: changeSeq, resource: "action", insertFunc: self.handleActionInsert, modifyFunc: self.handleActionModify)
+        self.handleChanges(changeSeq: changeSeq, resource: "eventHandler", insertFunc: self.handleEventHandlerInsert, modifyFunc: self.handleEventHandlerModify)
+        self.handleChanges(changeSeq: changeSeq, resource: "view", insertFunc: self.handleUIViewInsert, modifyFunc: self.handleUIViewModify)
     }
 
-    public func tweak(changeSeq: [[String: Any]]) {
-        for change in changeSeq {
+    private func handleChanges(changeSeq: [[String: Any]], resource: String, insertFunc: ([String: Any]) -> Void, modifyFunc: ([String: Any]) -> Void) {
+        let changes = changeSeq.filter { (change) -> Bool in
+            change[resource] != nil
+        }
+        for change in changes {
+            let config = dictVal(dict: change, key: resource)
             switch change["operation"] as! String {
             case "insert":
-                print("Insert operation")
-                self.handleUIViewInsert(change: change)
+                print("Operation: Insert \(resource)")
+                insertFunc(config)
             case "modify":
-                print("Modify operation")
-                self.handleUIViewModify(change: change)
+                print("Operation: Modify \(resource)")
+                modifyFunc(config)
             default:
                 print("Unsupported operation")
             }
         }
     }
 
-    private func handleUIViewInsert(change: [String: Any]) {
-        let viewConfig = dictVal(dict: change, key: "view")
+    private func handleActionInsert(_ actionConfig: [String: Any]) {
+        if let action = ActionDTO(JSON: actionConfig)?.toAction(actionFactory: ActionFactory.sharedInstance),
+            self.actionIndex[action.getId()] != nil {
+            self.actionIndex[action.getId()] = action
+        }
+    }
+
+    private func handleActionModify(_ actionConfig: [String: Any]) {
+        if let action = ActionDTO(JSON: actionConfig)?.toAction(actionFactory: ActionFactory.sharedInstance) {
+            self.actionIndex[action.getId()] = action
+        }
+    }
+
+    private func handleEventHandlerInsert(_ eventHandlerConfig: [String: Any]) {
+        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(actionIndex: self.actionIndex),
+            self.eventHandlerIndex[eventHandler.getId()] != nil {
+            self.eventHandlerIndex[eventHandler.getId()] = eventHandler
+        }
+    }
+
+    private func handleEventHandlerModify(_ eventHandlerConfig: [String: Any]) {
+        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(actionIndex: self.actionIndex) {
+            self.eventHandlerIndex[eventHandler.getId()] = eventHandler
+        }
+    }
+
+    private func handleUIViewInsert(_ viewConfig: [String: Any]) {
         let superviewId = strVal(dict: viewConfig, key: "superview")
         if let superview = self.viewIndex[superviewId] {
             let viewId = strVal(dict: viewConfig, key: "id")
@@ -75,8 +106,7 @@ enum EngineMode {
         }
     }
 
-    private func handleUIViewModify(change: [String: Any]) {
-        let viewConfig = dictVal(dict: change, key: "view")
+    private func handleUIViewModify(_ viewConfig: [String: Any]) {
         let viewId = strVal(dict: viewConfig, key: "id")
         if let modifiedView = self.viewIndex[viewId] {
             if let props = dictValOpt(dict: viewConfig, key: "properties") {
@@ -116,7 +146,8 @@ enum EngineMode {
     private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
         for (key, val) in propertiesConfig {
             let val = self.resolve(value: val)
-            if !self.setUIViewSpecificProperty(view: view, key: key, value: val),
+            if !self.setUIViewEventHandlers(view: view, key: key, value: val),
+                !self.setUIViewSpecificProperty(view: view, key: key, value: val),
                 !self.setUILabelSpecificProperty(view: view, key: key, value: val),
                 !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
                 !self.setUIImageViewSpecificProperties(view: view, key: key, value: val) {
@@ -156,6 +187,38 @@ enum EngineMode {
                         view.setValue(font, forKey: key)
                     }
                 }
+            }
+        }
+    }
+
+    private func setUIViewEventHandlers(view: UIView, key: String, value: Any) -> Bool {
+        if key == "eventHandlers",
+            let eventHandlers = value as? [String],
+            let control = view as? UIControl {
+            manipulateTargets(manipFunc: control.removeTarget(_:action:for:), eventHandlers: control.eventHandlers)
+            manipulateTargets(manipFunc: control.addTarget(_:action:for:), eventHandlers: eventHandlers)
+            control.eventHandlers = eventHandlers
+            return true
+        }
+        return false
+    }
+
+    private func manipulateTargets(manipFunc: (_ target: Any?,_ action: Selector,_ for: UIControl.Event) -> Void, eventHandlers: [String]) {
+        let events = eventHandlers.flatMap { (id) -> [Event] in
+            self.eventHandlerIndex[id]?.getEvents() ?? []
+        }.filter { (event) -> Bool in
+            event.control != nil
+        }
+        
+        for event in events {
+            manipFunc(self, Selector("handle\(event.name)"), event.control!)
+        }
+    }
+
+    @objc private func handleTouchUpInside(_ sender: UIControl) {
+        for id in sender.eventHandlers {
+            if let eventHandler = TweakologyLayoutEngine.sharedInstance.eventHandlerIndex[id] {
+                eventHandler.handle(event: "TouchUpInside")
             }
         }
     }

@@ -174,7 +174,9 @@
 		A0FA9C0B8157E8A54C45B9273CF90A19 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A191910E3C4D3AD040613F2D2FB33C /* GCDWebServerErrorResponse.m */; };
 		A134781AA9AD7D5D2EDB80B3D68ABD37 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E063CE44266A8B70C0F5B8AE996FE6AF /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A208A4753D129CA4CC9F162C16D21033 /* CryptoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8BC8C4249B722BDAD7C1016AD88128 /* CryptoHash.m */; };
+		A2256E8623D51319003D41ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2256E8523D51319003D41ED /* Event.swift */; };
 		A22992AEB72EA516FDD3DBF84E97A28C /* AttributeExpressionActionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AEE4F7A7D76ABC6FE8D302DE5A337B /* AttributeExpressionActionTest.swift */; };
+		A2392EFF23D4F1C0004E5D30 /* UIView+EventHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2392EFE23D4F1C0004E5D30 /* UIView+EventHandlers.swift */; };
 		A25B0C602725C166CFB33269DF77AB20 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2438E389D1CE1D9A24CAC11F290304B /* CodableTransform.swift */; };
 		A2CEE8E523CD24DF0008DFA2 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8E423CD24DF0008DFA2 /* EventHandler.swift */; };
 		A2CEE8E923CDF3EE0008DFA2 /* EventHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8E823CDF3EE0008DFA2 /* EventHandlerProtocol.swift */; };
@@ -533,6 +535,8 @@
 		A0366225E76979AAB2AF1E6A79A5DEC2 /* UIImage+Tweakology.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Tweakology.swift"; sourceTree = "<group>"; };
 		A04537EF0EEF59C4CE4A3ADD77C8CED4 /* Pods-TweakologyEngine_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweakologyEngine_Tests-dummy.m"; sourceTree = "<group>"; };
 		A07A81E9208C390F36CFC78BEE64A415 /* SDWebImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransition.h; path = SDWebImage/SDWebImageTransition.h; sourceTree = "<group>"; };
+		A2256E8523D51319003D41ED /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A2392EFE23D4F1C0004E5D30 /* UIView+EventHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EventHandlers.swift"; sourceTree = "<group>"; };
 		A2BA1ECDCF0D3055C1D80C83A12BCC4F /* SatisfyAllOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAllOf.swift; path = Sources/Nimble/Matchers/SatisfyAllOf.swift; sourceTree = "<group>"; };
 		A2CEE8E423CD24DF0008DFA2 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A2CEE8E823CDF3EE0008DFA2 /* EventHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandlerProtocol.swift; sourceTree = "<group>"; };
@@ -961,6 +965,7 @@
 				8DCC9FE4EEA6A34DC5BA4C6A54CD21EE /* NSLayoutConstraint+Metadata.swift */,
 				A0366225E76979AAB2AF1E6A79A5DEC2 /* UIImage+Tweakology.swift */,
 				3BA7E0F36A9B792261C044D153A7722B /* UIView+ConstraintsState.swift */,
+				A2392EFE23D4F1C0004E5D30 /* UIView+EventHandlers.swift */,
 				E4538BA937895BA0B54991F1A245DCF8 /* UIView+Identifier.swift */,
 				037162AC51C04B92003ACE57A34A120E /* UIView+RenderImage.swift */,
 				7752EE4DFCDF02A9DADC45ACC6BE70B8 /* UIView+Tweakology.swift */,
@@ -1285,6 +1290,7 @@
 		A2CEE8E323CD244E0008DFA2 /* EventHandler */ = {
 			isa = PBXGroup;
 			children = (
+				A2256E8523D51319003D41ED /* Event.swift */,
 				A2CEE8E423CD24DF0008DFA2 /* EventHandler.swift */,
 				A2CEE8E823CDF3EE0008DFA2 /* EventHandlerProtocol.swift */,
 			);
@@ -1963,6 +1969,7 @@
 				E3873A462269E9DA6F49633E324F5A73 /* Error.swift in Sources */,
 				352365A333FB4CFBB01E5B1E9E46B173 /* ExpressionProcessorProtocol.swift in Sources */,
 				248F595DF6B3344E7BF2C6E5E976A024 /* Filter.swift in Sources */,
+				A2256E8623D51319003D41ED /* Event.swift in Sources */,
 				24A4E40825B6DFA6FE5E48571F3682C7 /* HTTPRequestAction.swift in Sources */,
 				A2CEE8E923CDF3EE0008DFA2 /* EventHandlerProtocol.swift in Sources */,
 				E582F86A41406F2723CD55FF60BC5AB1 /* InMemoryAttributeStore.swift in Sources */,
@@ -2004,6 +2011,7 @@
 				DFB8D43EB4D45621DDB286455078683B /* UIView+Tweakology.swift in Sources */,
 				11D4DDF3F4F38C39269A9E055FDD5172 /* UIViewController+TweakologyLayoutInspector.swift in Sources */,
 				7B96F47051F7475A26C27C523ADAFB7E /* UIWindow+MappableOverride.swift in Sources */,
+				A2392EFF23D4F1C0004E5D30 /* UIView+EventHandlers.swift in Sources */,
 				748B8867246D079E5B425EC98218E4C5 /* AttributeExpressionAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

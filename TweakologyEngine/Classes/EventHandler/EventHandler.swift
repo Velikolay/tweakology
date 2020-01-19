@@ -12,27 +12,33 @@ class EventHandler: EventHandlerProtocol {
     private var id: String
     private var events: [String]
     private var actions: [String]
-    private var index: [String: Action]
-    
-    init(id: String, events: [String], actions: [String], index: [String: Action]) {
+    private var actionIndex: [String: Action]
+
+    init(id: String, events: [String], actions: [String], actionIndex: [String: Action]) {
         self.id = id
         self.events = events
         self.actions = actions
-        self.index = index
+        self.actionIndex = actionIndex
     }
-    
+
     func getId() -> String {
         return self.id
     }
-    
+
     func handle(event: String) {
         if self.events.index(of: event) != nil {
             for actionId in self.actions {
-                self.index[actionId]?.execute()
+                self.actionIndex[actionId]?.execute()
             }
         }
     }
-    
+
+    func getEvents() -> [Event] {
+        return self.events.map { (name) -> Event in
+            Event(name: name)
+        }
+    }
+
     func toDTO() -> EventHandlerDTO {
         return EventHandlerDTO(JSON: [
             "id": id,

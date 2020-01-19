@@ -23,7 +23,7 @@ class EventHandlerDTO: Mappable {
         actions <- map["actions"]
     }
     
-    func toEventHandler(index: [String: Action]) -> EventHandler {
-        return EventHandler(id: id, events: events, actions: actions, index: index)
+    func toEventHandler(actionIndex: [String: Action]) -> EventHandler {
+        return EventHandler(id: id, events: events, actions: actions, actionIndex: actionIndex)
     }
 }

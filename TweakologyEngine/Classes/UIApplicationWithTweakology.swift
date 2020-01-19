@@ -13,8 +13,6 @@ public class UIApplicationWithTweakology: UIApplication {
                                     to target: Any?,
                                     from sender: Any?,
                                     for event: UIEvent?) -> Bool {
-        if let sender = sender as? UIView {
-        }
         print("Received action: \(action), \(String(describing: target)), \(String(describing: sender)), \(String(describing: event))")
         return super.sendAction(action, to: target, from: sender, for: event);
     }
