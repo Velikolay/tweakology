@@ -181,6 +181,14 @@
 		A2CEE8E523CD24DF0008DFA2 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8E423CD24DF0008DFA2 /* EventHandler.swift */; };
 		A2CEE8E923CDF3EE0008DFA2 /* EventHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8E823CDF3EE0008DFA2 /* EventHandlerProtocol.swift */; };
 		A2CEE8EB23D3ADD50008DFA2 /* EventHandlerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8EA23D3ADD50008DFA2 /* EventHandlerDTO.swift */; };
+		A2CEE8EE23D5E5AE0008DFA2 /* ChangeExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8ED23D5E5AE0008DFA2 /* ChangeExecutorProtocol.swift */; };
+		A2CEE8F323D5EEA00008DFA2 /* UIViewExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8F223D5EEA00008DFA2 /* UIViewExecutor.swift */; };
+		A2CEE8F523D5F4030008DFA2 /* UIControlExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8F423D5F4030008DFA2 /* UIControlExecutor.swift */; };
+		A2CEE8F723D77D100008DFA2 /* UILabelExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8F623D77D100008DFA2 /* UILabelExecutor.swift */; };
+		A2CEE8F923D780E10008DFA2 /* UIButtonExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8F823D780E10008DFA2 /* UIButtonExecutor.swift */; };
+		A2CEE8FB23D7B55F0008DFA2 /* UIImageViewExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8FA23D7B55F0008DFA2 /* UIImageViewExecutor.swift */; };
+		A2CEE8FD23D90E290008DFA2 /* ChangeExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8FC23D90E290008DFA2 /* ChangeExecutor.swift */; };
+		A2CEE8FF23D9BBD90008DFA2 /* ChangeExecutorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE8FE23D9BBD90008DFA2 /* ChangeExecutorContext.swift */; };
 		A3F25B6C98D87B0887BCFD9787D591A6 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F026FF31477185339113AD8D085BC3 /* EndWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A70759B999C1CC43B29B117F8B216CB1 /* MappableOverrideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAC6679729FFB3EC3D66E0D7B422C29 /* MappableOverrideProtocol.swift */; };
 		A78EDE0111467E2BAF72AAD51A10916D /* SDWebImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 550897F615EDF0BA88CC4605F53E6178 /* SDWebImageCoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -541,6 +549,14 @@
 		A2CEE8E423CD24DF0008DFA2 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A2CEE8E823CDF3EE0008DFA2 /* EventHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandlerProtocol.swift; sourceTree = "<group>"; };
 		A2CEE8EA23D3ADD50008DFA2 /* EventHandlerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandlerDTO.swift; sourceTree = "<group>"; };
+		A2CEE8ED23D5E5AE0008DFA2 /* ChangeExecutorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeExecutorProtocol.swift; sourceTree = "<group>"; };
+		A2CEE8F223D5EEA00008DFA2 /* UIViewExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8F423D5F4030008DFA2 /* UIControlExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8F623D77D100008DFA2 /* UILabelExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8F823D780E10008DFA2 /* UIButtonExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8FA23D7B55F0008DFA2 /* UIImageViewExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8FC23D90E290008DFA2 /* ChangeExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeExecutor.swift; sourceTree = "<group>"; };
+		A2CEE8FE23D9BBD90008DFA2 /* ChangeExecutorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeExecutorContext.swift; sourceTree = "<group>"; };
 		A391EAE5366896205FFE82EF4A5153AA /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		A5813DD66B69975A6674F99F052CE9BA /* STRFTimeFormatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STRFTimeFormatter-dummy.m"; sourceTree = "<group>"; };
 		A5C498D8CE963FC5ACFB203D901FC051 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
@@ -855,6 +871,7 @@
 				98E82840276DF7AA578E85526D5D888F /* Actions */,
 				CA21A4902283147D8F32CF68052A8E5D /* Agent */,
 				2470BA434A14FB6BC4530F27D16E652D /* Attributes */,
+				A2CEE8EC23D5E22E0008DFA2 /* ChangeExecutors */,
 				E17A15F6F567C72F0B68A4A51FDB687A /* CryptoHash */,
 				8C258AE94534E7E4DB0215C0D26E3606 /* DTOs */,
 				A2CEE8E323CD244E0008DFA2 /* EventHandler */,
@@ -1296,6 +1313,22 @@
 			);
 			name = EventHandler;
 			path = TweakologyEngine/Classes/EventHandler;
+			sourceTree = "<group>";
+		};
+		A2CEE8EC23D5E22E0008DFA2 /* ChangeExecutors */ = {
+			isa = PBXGroup;
+			children = (
+				A2CEE8FC23D90E290008DFA2 /* ChangeExecutor.swift */,
+				A2CEE8ED23D5E5AE0008DFA2 /* ChangeExecutorProtocol.swift */,
+				A2CEE8FE23D9BBD90008DFA2 /* ChangeExecutorContext.swift */,
+				A2CEE8F223D5EEA00008DFA2 /* UIViewExecutor.swift */,
+				A2CEE8F423D5F4030008DFA2 /* UIControlExecutor.swift */,
+				A2CEE8F623D77D100008DFA2 /* UILabelExecutor.swift */,
+				A2CEE8F823D780E10008DFA2 /* UIButtonExecutor.swift */,
+				A2CEE8FA23D7B55F0008DFA2 /* UIImageViewExecutor.swift */,
+			);
+			name = ChangeExecutors;
+			path = TweakologyEngine/Classes/ChangeExecutors;
 			sourceTree = "<group>";
 		};
 		AB8F8393DD6F9BD4E9D8D7F85F21C2A6 /* STRFTimeFormatter */ = {
@@ -1952,6 +1985,7 @@
 			files = (
 				A828CF48CBC6AE2CEF3D73F9C363A0DD /* ActionDTO.swift in Sources */,
 				2F89794AF299B23C4190319420416B01 /* ActionFactory.swift in Sources */,
+				A2CEE8F523D5F4030008DFA2 /* UIControlExecutor.swift in Sources */,
 				335188C2EB29E2EE8E56B3FB46E2C6BD /* ActionProtocol.swift in Sources */,
 				C822F99FF5F094ECDBCE04F954709BB9 /* AttributeExpression.swift in Sources */,
 				F2C1B505982C529CA0BCF5B43026A139 /* AttributeExpressionDTO.swift in Sources */,
@@ -1967,8 +2001,10 @@
 				A208A4753D129CA4CC9F162C16D21033 /* CryptoHash.m in Sources */,
 				57E12C1A1FF78E317BE4028DE0446593 /* Double+Extensions.swift in Sources */,
 				E3873A462269E9DA6F49633E324F5A73 /* Error.swift in Sources */,
+				A2CEE8F923D780E10008DFA2 /* UIButtonExecutor.swift in Sources */,
 				352365A333FB4CFBB01E5B1E9E46B173 /* ExpressionProcessorProtocol.swift in Sources */,
 				248F595DF6B3344E7BF2C6E5E976A024 /* Filter.swift in Sources */,
+				A2CEE8FF23D9BBD90008DFA2 /* ChangeExecutorContext.swift in Sources */,
 				A2256E8623D51319003D41ED /* Event.swift in Sources */,
 				24A4E40825B6DFA6FE5E48571F3682C7 /* HTTPRequestAction.swift in Sources */,
 				A2CEE8E923CDF3EE0008DFA2 /* EventHandlerProtocol.swift in Sources */,
@@ -1979,12 +2015,15 @@
 				7C931857DE091F35E97D126DF4BBAC71 /* NSLayoutConstraint+Mappable.swift in Sources */,
 				DCDF3C30C0B2F9681AFD75CC5AE0CA34 /* NSLayoutConstraint+Metadata.swift in Sources */,
 				A2CEE8EB23D3ADD50008DFA2 /* EventHandlerDTO.swift in Sources */,
+				A2CEE8F323D5EEA00008DFA2 /* UIViewExecutor.swift in Sources */,
 				CCD92E6A016B23032622675CFC68F1B3 /* NSRegularExpression+Additions.swift in Sources */,
 				8CA2353C08DD107F9DFE48D7AE5F980F /* Operator.swift in Sources */,
+				A2CEE8FB23D7B55F0008DFA2 /* UIImageViewExecutor.swift in Sources */,
 				65866E0E0B01342CFAA201F0AF26B084 /* Parser.swift in Sources */,
 				868536269BFFDD3B29D2865FFD366CA8 /* Pods-CryptoHash_Tests-dummy.m in Sources */,
 				AAAC548A7B6CD2030FD9EBF6BC878833 /* String+Extensions.swift in Sources */,
 				970206AB4C3FCE17E46B9F6A9F68F736 /* SwizzlingClassProvider.swift in Sources */,
+				A2CEE8F723D77D100008DFA2 /* UILabelExecutor.swift in Sources */,
 				D2BA831493AD806A1574A99299F23A4D /* Tag.swift in Sources */,
 				3FE8A33351271B1A6224CEB295F44EBF /* Tests.m in Sources */,
 				4EE6F1A91E8AA911B56B4875BBB51BA9 /* Token.swift in Sources */,
@@ -2002,10 +2041,12 @@
 				FE705C87896321101301569AFF6AE372 /* UIImage+Tweakology.swift in Sources */,
 				63FC3BD9961B1FC2CB2595BD07DE94A4 /* UIImageView+MappableOverride.swift in Sources */,
 				C1EA771E8E4F7434E86146683E3EE055 /* UILabel+MappableOverride.swift in Sources */,
+				A2CEE8FD23D90E290008DFA2 /* ChangeExecutor.swift in Sources */,
 				A2CEE8E523CD24DF0008DFA2 /* EventHandler.swift in Sources */,
 				9D3A5800B677C69380D4DDF5FC89484B /* UIScrollView+MappableOverride.swift in Sources */,
 				47E68923CB1FFFEB5C8E62979ADDAAE6 /* UIView+ConstraintsState.swift in Sources */,
 				82CC279D5E59DA0F0DFEC0E4FCB539E1 /* UIView+Identifier.swift in Sources */,
+				A2CEE8EE23D5E5AE0008DFA2 /* ChangeExecutorProtocol.swift in Sources */,
 				69179A770C926F9112C2A7ECE680F9E3 /* UIView+Mappable.swift in Sources */,
 				6C7219CF7068524BB0256D23796DAEF7 /* UIView+RenderImage.swift in Sources */,
 				DFB8D43EB4D45621DDB286455078683B /* UIView+Tweakology.swift in Sources */,

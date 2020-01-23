@@ -32,7 +32,7 @@ private var constraintsStateKey: UInt8 = 1
 
 extension UIView {
 
-    public var constraintsState: [NSLayoutConstraint] {
+    var constraintsState: [NSLayoutConstraint] {
         get {
             return associatedObjectArr(base: self, key: &constraintsStateKey)
             { return [NSLayoutConstraint]() }

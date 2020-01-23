@@ -41,7 +41,7 @@ class TweakologyDemoView: UIView {
         button.addTarget(self, action: #selector(self.pressButton(_:)), for: UIControl.Event.touchUpInside)
         self.addSubview(button)
         
-        imageView.image?.src = "TestImages"
+//        imageView.image?.src = "TestImages"
         self.addSubview(imageView)
     }
 

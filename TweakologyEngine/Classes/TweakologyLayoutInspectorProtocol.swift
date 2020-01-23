@@ -7,6 +7,6 @@
 
 import UIKit
 
-public protocol TweakologyLayoutInspectorProtocol {
+protocol TweakologyLayoutInspectorProtocol {
     func inspectLayout() -> [String: UIView]
 }

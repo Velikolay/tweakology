@@ -11,7 +11,7 @@ private var srcKey: UInt8 = 0
 
 extension UIImage {
     
-    public var src: String {
+    var src: String {
         get {
             return objc_getAssociatedObject(self, &srcKey) as? String ?? ""
         }

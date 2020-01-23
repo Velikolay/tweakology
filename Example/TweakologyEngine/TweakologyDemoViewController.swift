@@ -54,13 +54,5 @@ class TweakologyDemoViewController: UIViewController {
 
     func pressButton(_ sender: UIButton) {
         print("Button pressed in delegate!")
-        if let topView = self.tweakologyView, let vcView = self.view {
-            vcView.recursiveRender()
-            let screenSize = UIScreen.main.bounds
-            let imagesViewFrame = CGRect(x: 0, y: topView.frame.maxY, width: screenSize.width, height: screenSize.height - 80)
-            let imagesView = self.imagesViewWith(frame: imagesViewFrame, images: [vcView.subviews[0].subviews[1].renderedImage])
-            self.view.addSubview(imagesView)
-            self.view.setNeedsLayout()
-        }
     }
 }

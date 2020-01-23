@@ -7,7 +7,7 @@
 
 import Foundation
 
-let ControlEvents = [
+let NameToControlEvent = [
     "TouchUpInside": UIControl.Event.touchUpInside,
     "TouchUpOutside": UIControl.Event.touchUpOutside,
     "TouchDragInside": UIControl.Event.touchDragInside,
@@ -17,15 +17,23 @@ let ControlEvents = [
     "TouchDownRepeat": UIControl.Event.touchDownRepeat,
     "TouchDown": UIControl.Event.touchDown,
     "TouchCancel": UIControl.Event.touchCancel,
-    "ValueChanged": UIControl.Event.valueChanged
+    "ValueChanged": UIControl.Event.valueChanged,
+    "EditingChanged": UIControl.Event.editingChanged
 ]
 
 class Event {
-    public let name: String
-    public var control: UIControl.Event?
+    private(set) var name: String?
+    private(set) var control: UIControl.Event?
 
     init(name: String) {
         self.name = name
-        self.control = ControlEvents[name]
+        self.control = NameToControlEvent[name]
+    }
+    
+    init(control: UIControl.Event) {
+        self.control = control
+        if let idx = NameToControlEvent.values.index(of: control) {
+            self.name = NameToControlEvent.keys[idx]
+        }
     }
 }

@@ -39,7 +39,7 @@ private var metaKey: UInt8 = 0
 
 extension NSLayoutConstraint {
 
-    public var meta: ConstraintMetadata {
+    var meta: ConstraintMetadata {
         get {
             return associatedObject2(base: self, key: &metaKey)
             { return ConstraintMetadata() }

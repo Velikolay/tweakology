@@ -18,26 +18,34 @@ enum EngineMode {
 @objc public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
 
-    internal var viewIndex: ViewIndex
-    internal var actionIndex: [String: Action]
-    internal var eventHandlerIndex: [String: EventHandler]
+    var viewIndex: ViewIndex
+    var actionIndex: [String: Action]
+    var eventHandlerIndex: [String: EventHandler]
 
     private var mode: EngineMode
-    private let expressionProcessor: ExpressionProcessor
     private let attributeStore: AttributeStore
-    private let attributeIndexer: AttributeIndexer
+    private let changeExecutor: ChangeExecutor
 
     override init() {
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
             viewClass.swizzleDidAddSubview()
         }
-        self.attributeIndexer = AttributeIndexer.sharedInstance
-        self.attributeStore = InMemoryAttributeStore.sharedInstance
-        self.expressionProcessor = LiquidExpressionProcessor()
+
         self.viewIndex = [:]
         self.actionIndex = [:]
         self.eventHandlerIndex = [:]
+
         self.mode = EngineMode.development
+        
+        self.changeExecutor = ChangeExecutor(
+            ChangeExecutorContext(
+                viewIndex: viewIndex,
+                eventHandlerIndex: eventHandlerIndex,
+                actionIndex: actionIndex,
+                mode: mode
+            )
+        )
+        self.attributeStore = InMemoryAttributeStore.sharedInstance
     }
 
     public func tweak(changeSeq: [[String: Any]]) {
@@ -47,20 +55,19 @@ enum EngineMode {
     }
 
     private func handleChanges(changeSeq: [[String: Any]], resource: String, insertFunc: ([String: Any]) -> Void, modifyFunc: ([String: Any]) -> Void) {
-        let changes = changeSeq.filter { (change) -> Bool in
-            change[resource] != nil
-        }
-        for change in changes {
-            let config = dictVal(dict: change, key: resource)
-            switch change["operation"] as! String {
-            case "insert":
-                print("Operation: Insert \(resource)")
-                insertFunc(config)
-            case "modify":
-                print("Operation: Modify \(resource)")
-                modifyFunc(config)
-            default:
-                print("Unsupported operation")
+        for change in changeSeq {
+            if let config = change[resource] as? [String: Any],
+                let operation = change["operation"] as? String {
+                switch operation {
+                    case "insert":
+                        print("Operation: Insert \(resource)")
+                        insertFunc(config)
+                    case "modify":
+                        print("Operation: Modify \(resource)")
+                        modifyFunc(config)
+                    default:
+                        print("Unsupported operation")
+                }
             }
         }
     }
@@ -92,13 +99,13 @@ enum EngineMode {
     }
 
     private func handleUIViewInsert(_ viewConfig: [String: Any]) {
-        let superviewId = strVal(dict: viewConfig, key: "superview")
-        if let superview = self.viewIndex[superviewId] {
-            let viewId = strVal(dict: viewConfig, key: "id")
-            _ = strVal(dict: viewConfig, key: "type")
-            let view = self.createUIViewObject(viewConfig: viewConfig)
-            superview.insertSubview(view, at: intVal(dict: viewConfig, key: "index"))
-            self.setUIViewObjectConstraints(viewConfig: viewConfig, view: view, modify: false)
+        if let superviewId = viewConfig["superviewId"] as? String,
+            let superview = self.viewIndex[superviewId],
+            let viewId = viewConfig["id"] as? String,
+            let viewIndex = viewConfig["index"] as? Int,
+            let view = self.createUIViewObject(viewConfig: viewConfig) {
+            superview.insertSubview(view, at: viewIndex)
+            self.changeExecutor.execute(viewConfig, view: view)
             view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
                 constraint
             }
@@ -107,436 +114,24 @@ enum EngineMode {
     }
 
     private func handleUIViewModify(_ viewConfig: [String: Any]) {
-        let viewId = strVal(dict: viewConfig, key: "id")
-        if let modifiedView = self.viewIndex[viewId] {
-            if let props = dictValOpt(dict: viewConfig, key: "properties") {
-                self.setViewProperties(view: modifiedView, propertiesConfig: props)
+        if let id = viewConfig["id"] as? String,
+            let view = self.viewIndex[id] {
+            self.changeExecutor.execute(viewConfig, view: view)
+        }
+    }
+
+    private func createUIViewObject(viewConfig: [String: Any]) -> UIView? {
+        if let viewId = viewConfig["id"] as? String,
+            let viewType = viewConfig["type"] as? String {
+            let myclass = stringClassFromString(viewType) as! UIView.Type
+            let view = myclass.init()
+            if let uiButton = view as? UIButton {
+                uiButton.titleLabel?.uid = UIViewIdentifier(value: String(format: "%@_label", viewId), kind: .custom)
             }
-            if let layer = dictValOpt(dict: viewConfig, key: "layer") {
-                self.setViewLayer(view: modifiedView, layerConfig: layer)
-            }
-
-            self.setUIViewObjectConstraints(viewConfig: viewConfig, view: modifiedView, modify: true)
-            self.setUIViewObjectFrame(viewConfig: viewConfig, view: modifiedView)
-        }
-    }
-
-    private func createUIViewObject(viewConfig: [String: Any]) -> UIView {
-        let viewId = strVal(dict: viewConfig, key: "id")
-        let viewType = strVal(dict: viewConfig, key: "type")
-        let myclass = stringClassFromString(viewType) as! UIView.Type
-        let view = myclass.init()
-        if let uiButton = view as? UIButton {
-            uiButton.titleLabel?.uid = UIViewIdentifier(value: String(format: "%@_label", viewId), kind: .custom)
-        }
-        view.uid = UIViewIdentifier(value: viewId, kind: .custom)
-        if let frame = viewConfig["frame"] as? [String: Int] {
-            view.frame = CGRect(x: frame["x"]!, y: frame["y"]!, width: frame["width"]!, height: frame["height"]!)
-        }
-
-        if let props = dictValOpt(dict: viewConfig, key: "properties") {
-            self.setViewProperties(view: view, propertiesConfig: props)
-        }
-        if let layer = dictValOpt(dict: viewConfig, key: "layer") {
-            self.setViewLayer(view: view, layerConfig: layer)
-        }
-        return view
-    }
-
-    private func setViewProperties(view: UIView, propertiesConfig: [String: Any]) {
-        for (key, val) in propertiesConfig {
-            let val = self.resolve(value: val)
-            if !self.setUIViewEventHandlers(view: view, key: key, value: val),
-                !self.setUIViewSpecificProperty(view: view, key: key, value: val),
-                !self.setUILabelSpecificProperty(view: view, key: key, value: val),
-                !self.setUIButtonSpecificProperty(view: view, key: key, value: val),
-                !self.setUIImageViewSpecificProperties(view: view, key: key, value: val) {
-                if let valStr = val as? String {
-                    if key == "backgroundColor" {
-                        view.backgroundColor = toUIColor(colorValue: valStr)
-                    } else if (view.value(forKey: key) as? UIColor) != nil {
-                        if let color = toUIColor(colorValue: valStr) {
-                            view.setValue(color, forKey: key)
-                        }
-                    } else if(CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
-                        if let color = toUIColor(colorValue: valStr) {
-                            view.setValue(color.cgColor, forKey: key)
-                        }
-                    } else {
-                        view.setValue(valStr, forKey: key)
-                    }
-                } else if let valDouble = val as? Double {
-                    view.setValue(CGFloat(valDouble), forKey: key)
-                } else if let valInt = val as? Int {
-                    view.setValue(CGFloat(valInt), forKey: key)
-                } else if let valBool = val as? Bool {
-                    view.setValue(valBool, forKey: key)
-                } else if let valDict = val as? [String: Any] {
-                    if key == "backgroundColor" {
-                        view.backgroundColor = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat)
-                    } else if (view.value(forKey: key) as? UIColor) != nil {
-                        if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
-                            view.setValue(color, forKey: key)
-                        }
-                    } else if (CFGetTypeID(view.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
-                        if let color = toUIColor(colorValue: valDict["hexValue"] as! String)?.withAlphaComponent(valDict["alpha"] as! CGFloat) {
-                            view.setValue(color.cgColor, forKey: key)
-                        }
-                    } else if (view.value(forKey: key) as? UIFont) != nil,
-                        let font = font(from: valDict) {
-                        view.setValue(font, forKey: key)
-                    }
-                }
-            }
-        }
-    }
-
-    private func setUIViewEventHandlers(view: UIView, key: String, value: Any) -> Bool {
-        if key == "eventHandlers",
-            let eventHandlers = value as? [String],
-            let control = view as? UIControl {
-            manipulateTargets(manipFunc: control.removeTarget(_:action:for:), eventHandlers: control.eventHandlers)
-            manipulateTargets(manipFunc: control.addTarget(_:action:for:), eventHandlers: eventHandlers)
-            control.eventHandlers = eventHandlers
-            return true
-        }
-        return false
-    }
-
-    private func manipulateTargets(manipFunc: (_ target: Any?,_ action: Selector,_ for: UIControl.Event) -> Void, eventHandlers: [String]) {
-        let events = eventHandlers.flatMap { (id) -> [Event] in
-            self.eventHandlerIndex[id]?.getEvents() ?? []
-        }.filter { (event) -> Bool in
-            event.control != nil
-        }
-        
-        for event in events {
-            manipFunc(self, Selector("handle\(event.name)"), event.control!)
-        }
-    }
-
-    @objc private func handleTouchUpInside(_ sender: UIControl) {
-        for id in sender.eventHandlers {
-            if let eventHandler = TweakologyLayoutEngine.sharedInstance.eventHandlerIndex[id] {
-                eventHandler.handle(event: "TouchUpInside")
-            }
-        }
-    }
-
-    private func setUIViewSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
-        if key == "contentMode" {
-            if let contentModeRaw = value as? Int,
-                let contentMode = UIView.ContentMode(rawValue: contentModeRaw) {
-                view.contentMode = contentMode
-                return true
-            }
-        }
-        if key == "semanticContentAttribute" {
-            if let semanticRaw = value as? Int,
-                let semantic = UISemanticContentAttribute(rawValue: semanticRaw) {
-                view.semanticContentAttribute = semantic
-                return true
-            }
-        }
-        return false
-    }
-
-    private func findImage(named: String) -> UIImage? {
-        var image = UIImage(named: named)
-        if image == nil {
-            let bundle = Bundle(for: type(of: self))
-            image = UIImage(named: named, in: bundle, compatibleWith: nil)
-        }
-        return image
-    }
-
-    private func setUIImageViewSpecificProperties(view: UIView, key: String, value: Any) -> Bool {
-        if let imageView = view as? UIImageView {
-            if let valueObj = value as? [String: Any] {
-                if key == "image", let src = resolve(value: valueObj["src"]) as? String, !src.isEmpty {
-                    if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
-                        if (self.mode == EngineMode.production) {
-                            imageView.sd_setImage(with: url)
-                        } else {
-                            let data = try? Data(contentsOf: url)
-                            imageView.image = UIImage(data: data!)
-                            imageView.image?.src = src
-                        }
-                    } else {
-                        imageView.image = findImage(named: src)
-                        imageView.image?.src = src
-                    }
-                    return true
-                } else if key == "highlightedImage", let src = resolve(value: valueObj["src"]) as? String, !src.isEmpty {
-                    if let url = URL(string: src), UIApplication.shared.canOpenURL(url) {
-                        if (self.mode == EngineMode.production) {
-                            imageView.sd_setHighlightedImage(with: url)
-                        } else {
-                            let data = try? Data(contentsOf: url)
-                            imageView.highlightedImage = UIImage(data: data!)
-                            imageView.highlightedImage?.src = src
-                        }
-                    } else {
-                        imageView.highlightedImage = findImage(named: src)
-                        imageView.highlightedImage?.src = src
-                    }
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-    private func setUILabelSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
-        if let labelView = view as? UILabel {
-            if key == "textAlignment" {
-                if let alignmentRaw = value as? Int,
-                    let alignment = NSTextAlignment(rawValue: alignmentRaw) {
-                    labelView.textAlignment = alignment
-                    return true
-                }
-            } else if key == "lineBreakMode" {
-                if let lineBreakRaw = value as? Int,
-                    let lineBreak = NSLineBreakMode(rawValue: lineBreakRaw) {
-                    labelView.lineBreakMode = lineBreak
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-    private func setUIButtonSpecificProperty(view: UIView, key: String, value: Any) -> Bool {
-        if let buttonView = view as? UIButton,
-            key == "title",
-            let buttonTitle = value as? [String: Any] {
-            for (titleKey, titleVal) in buttonTitle {
-                let titleVal = self.resolve(value: titleVal)
-                if titleKey == "text" {
-                    buttonView.setTitle(titleVal as? String, for: UIControl.State.normal)
-                } else if titleKey == "textAlignment" {
-                    if let alignmentRaw = titleVal as? Int,
-                        let alignment = NSTextAlignment(rawValue: alignmentRaw) {
-                        buttonView.titleLabel?.textAlignment = alignment
-                    }
-                } else if titleKey == "textColor" {
-                    if let textColor = titleVal as? [String: Any],
-                        let color = toUIColor(colorValue: textColor["hexValue"] as! String)?.withAlphaComponent(textColor["alpha"] as! CGFloat) {
-                        buttonView.setTitleColor(color, for:  UIControl.State.normal)
-                    } else if let textColor = titleVal as? String {
-                        let color = toUIColor(colorValue: textColor)
-                        buttonView.setTitleColor(color, for:  UIControl.State.normal)
-                    }
-                } else if titleKey == "font",
-                    let titleFont = titleVal as? [String: Any],
-                    let font = font(from: titleFont) {
-                    buttonView.titleLabel?.font = font
-                } else if titleKey == "lineBreakMode" {
-                    if let lineBreakRaw = titleVal as? Int,
-                        let lineBreak = NSLineBreakMode(rawValue: lineBreakRaw) {
-                        buttonView.titleLabel?.lineBreakMode = lineBreak
-                    }
-                } else if titleKey == "numberOfLines" {
-                    if let numberOfLines = titleVal as? Int {
-                        buttonView.titleLabel?.numberOfLines = numberOfLines
-                    }
-                }
-            }
-            return true
-        }
-        return false
-    }
-
-    private func setViewLayer(view: UIView, layerConfig: [String: Any]) {
-        let layer = view.layer
-        for (key, val) in layerConfig {
-            let val = self.resolve(value: val)
-            if let valStr = val as? String {
-                if (layer.value(forKey: key) as? UIColor) != nil {
-                    if let color = toUIColor(colorValue: valStr) {
-                        layer.setValue(color, forKey: key)
-                    }
-                } else if(CFGetTypeID(layer.value(forKey: key) as CFTypeRef) == CGColor.typeID) {
-                    if let color = toUIColor(colorValue: valStr) {
-                        layer.setValue(color.cgColor, forKey: key)
-                    }
-                } else {
-                    layer.setValue(valStr, forKey: key)
-                }
-            } else if let valDouble = val as? Double {
-                layer.setValue(CGFloat(valDouble), forKey: key)
-            } else if let valInt = val as? Int {
-                layer.setValue(CGFloat(valInt), forKey: key)
-            } else if let valBool = val as? Bool {
-                layer.setValue(valBool, forKey: key)
-            }
-        }
-    }
-
-    private func setUIViewConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
-        if let constraints = viewConfig["constraints"] as? [[String: Any]] {
-            let constraintConfigs = constraints.map({ (config) -> ConstraintDTO? in
-                ConstraintDTO(JSON: config)
-            })
-            for constraintConfig in constraintConfigs {
-                if let uConstraintConfig = constraintConfig {
-                    if uConstraintConfig.idx < view.constraintsState.count {
-                        let toModify = view.constraintsState[uConstraintConfig.idx]
-                        toModify.constant = CGFloat(uConstraintConfig.constant ?? 0)
-                        toModify.isActive = uConstraintConfig.isActive
-                        toModify.priority = UILayoutPriority(rawValue: uConstraintConfig.priority)
-                    } else {
-                        if let constraint = uConstraintConfig.toNSLayoutConstraint(view: view) {
-                            view.constraintsState.append(constraint)
-                        }
-                    }
-                }
-            }
-            view.setNeedsUpdateConstraints()
-            view.setNeedsLayout()
-        }
-    }
-
-    private func setUIViewObjectConstraints(viewConfig: [String: Any], view: UIView, modify: Bool) {
-        if let constraints = viewConfig["constraints"] as? [String: String] {
-            view.translatesAutoresizingMaskIntoConstraints = false
-
-            for (attr, val) in constraints {
-                let tokens = parseExpression(expr: val)
-                let secondViewId = tokens[0]
-                var secondViewAttribute = tokens[1]
-                if secondViewAttribute.isEmpty {
-                    secondViewAttribute = attr
-                }
-                guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
-
-                if secondViewId.isEmpty {
-                    if let layoutAttribute = view.value(forKey: attr) as? NSLayoutDimension {
-                        if (modify) {
-                            if let constraint = view.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
-                                constraint.isActive = false
-                            }
-                        }
-                        layoutAttribute.constraint(equalToConstant: CGFloat(truncating: constant)).isActive = true
-                    }
-                } else {
-                    if let secondView = self.viewWith(id: secondViewId, view: view) {
-                        if let layoutAttribute = view.value(forKey: attr) as? NSLayoutAnchor<NSLayoutXAxisAnchor> {
-                            let relativeAnchor = secondView.value(forKey: secondViewAttribute) as! NSLayoutAnchor<NSLayoutXAxisAnchor>
-                            if (modify) {
-                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
-                                    constraint.isActive = false
-                                }
-                            }
-                            layoutAttribute.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
-                        }
-                        
-                        if let layoutAttribute = view.value(forKey: attr) as? NSLayoutAnchor<NSLayoutYAxisAnchor> {
-                            let relativeAnchor = secondView.value(forKey: secondViewAttribute) as! NSLayoutAnchor<NSLayoutYAxisAnchor>
-                            if (modify) {
-                                if let constraint = view.superview!.constraints.filter({ $0.firstAnchor == layoutAttribute }).first { // assuming it's only one
-                                    constraint.isActive = false
-                                }
-                            }
-                            layoutAttribute.constraint(equalTo: relativeAnchor, constant: CGFloat(truncating: constant)).isActive = true
-                        }
-                    }
-                }
-            }
-        } else {
-            self.setUIViewConstraints(viewConfig: viewConfig, view: view, modify: modify)
-        }
-    }
-
-    private func viewWith(id: String, view: UIView) -> UIView? {
-        if id == "self" {
+            view.uid = UIViewIdentifier(value: viewId, kind: .custom)
             return view
-        } else if id == "superview" {
-            return view.superview
-        } else {
-            return self.viewIndex[id]
-        }
-    }
-
-    private func frameValue(frame: CGRect, property: String) -> CGFloat? {
-        if property == "height" {
-            return frame.height
-        } else if property == "width" {
-            return frame.width
-        } else if property == "x" {
-            return frame.origin.x
-        } else if property == "y" {
-            return frame.origin.y
         }
         return nil
-    }
-
-    private func setUIViewObjectFrame(viewConfig: [String: Any], view: UIView) {
-        if let frameConfig = viewConfig["frame"] as? [String: Any] {
-            var x = view.frame.origin.x
-            var y = view.frame.origin.y
-            var height = view.frame.height
-            var width = view.frame.width
-            
-            for (attr, val) in frameConfig {
-                var propVal: CGFloat
-                if let expr = val as? String {
-                    let tokens = parseExpression(expr: expr)
-                    let secondViewId = tokens[0]
-                    var secondViewAttribute = tokens[1]
-
-                    if secondViewAttribute.isEmpty {
-                        secondViewAttribute = attr
-                    }
-
-                    guard let constant = NumberFormatter().number(from: tokens[2]) else { return }
-                    propVal = CGFloat(truncating: constant)
-
-                    if !secondViewId.isEmpty {
-                        if let secondView = self.viewWith(id: secondViewId, view: view) {
-                            if let secondViewPropVal = self.frameValue(frame: secondView.frame, property: secondViewAttribute) {
-                                propVal += secondViewPropVal
-                            }
-                        }
-                    }
-                } else {
-                    propVal = val as! CGFloat
-                }
-
-                if attr == "height" {
-                    height = propVal
-                } else if attr == "width" {
-                    width = propVal
-                } else if attr == "x" {
-                    x = propVal
-                } else if attr == "y" {
-                    y = propVal
-                }
-            }
-            view.frame = CGRect(x: x, y: y, width: width, height: height)
-        }
-    }
-    
-    private func resolve(value: Any?) -> Any? {
-        if let value = value {
-            return self.resolve(value: value)
-        }
-        return value
-    }
-    
-    private func resolve(value: Any) -> Any {
-        if let str = value as? String {
-            return self.stringToAttributeValue(str: str)
-        }
-        return value
-    }
-    
-    private func stringToAttributeValue(str: String) -> Any {
-        let pattern = "^\\s*\\{\\{\\s*([a-zA-Z0-9._-]+)\\s*\\}\\}\\s*$"
-        guard let regex = try? NSRegularExpression(pattern: pattern) else { return str }
-        guard let match = regex.firstMatch(in: str, options: [], range: NSRange(str.startIndex..., in: str)) else { return str }
-        let attributeName = String(str[Range(match.range(at: 1), in: str)!])
-        return self.attributeStore.get(key: attributeName) ?? str
     }
 }
 
@@ -589,10 +184,10 @@ func parseExpression(expr: String) -> [String] {
 }
 
 func stringClassFromString(_ className: String) -> AnyClass! {
-    /// get namespace
+    // get namespace
     _ = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
 
-    /// get 'anyClass' with classname and namespace
+    // get 'anyClass' with classname and namespace
     let cls: AnyClass = NSClassFromString("\(className)")!
 
     // return AnyClass!
@@ -726,20 +321,4 @@ func colorFromHex(hexColor: String) -> UIColor {
             return .clear
     }
     return UIColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
-}
-
-func intVal(dict: [String: Any], key: String) -> Int {
-    return dict[key] as! Int
-}
-
-func strVal(dict: [String: Any], key: String) -> String {
-    return dict[key] as! String
-}
-
-func dictVal(dict: [String: Any], key: String) -> [String: Any] {
-    return dict[key] as! [String: Any]
-}
-
-func dictValOpt(dict: [String: Any], key: String) -> [String: Any]? {
-    return dict[key] as? [String: Any]
 }

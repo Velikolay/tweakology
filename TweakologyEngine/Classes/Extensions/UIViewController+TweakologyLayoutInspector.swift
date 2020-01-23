@@ -34,7 +34,7 @@ extension UIViewController: TweakologyLayoutInspectorProtocol {
         return String(describing: thisType)
     }
 
-    public func inspectLayout() -> ViewIndex {
+    func inspectLayout() -> ViewIndex {
         var viewIndex: ViewIndex = [:]
         self.inspectLayout(view: self.view, viewIndex: &viewIndex)
         return viewIndex

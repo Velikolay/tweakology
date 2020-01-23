@@ -21,7 +21,7 @@ public struct UIViewIdentifier {
 
 extension UIView {
 
-    public var uid: UIViewIdentifier? {
+    var uid: UIViewIdentifier? {
         get {
             return objc_getAssociatedObject(self, &uidKey) as? UIViewIdentifier ?? nil
         }

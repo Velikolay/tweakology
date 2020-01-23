@@ -22,11 +22,57 @@ let changeSeq: [[String: Any]] = [
                 "textAlignment": 1,
                 "backgroundColor": "red"
             ],
+//            "constraints": [
+//                "topAnchor": "$(superview) + 20",
+//                "leadingAnchor": "$(superview) + 20",
+//                "trailingAnchor": "$(superview) - 20",
+//                "heightAnchor": "60"
+//            ],
             "constraints": [
-                "topAnchor": "$(superview) + 20",
-                "leadingAnchor": "$(superview) + 20",
-                "trailingAnchor": "$(superview) - 20",
-                "heightAnchor": "60"
+                [
+                    "first": [
+                        "item": "testLabel",
+                        "attribute": "top",
+                    ],
+                    "second": [
+                        "item": "MGQ3MDAyZD",
+                        "attribute": "top",
+                    ],
+                    "constant": 20,
+                    "relation": "="
+                ],
+                [
+                    "first": [
+                        "item": "testLabel",
+                        "attribute": "leading",
+                    ],
+                    "second": [
+                        "item": "MGQ3MDAyZD",
+                        "attribute": "leading",
+                    ],
+                    "constant": 20,
+                    "relation": "="
+                ],
+                [
+                    "first": [
+                        "item": "testLabel",
+                        "attribute": "trailing",
+                    ],
+                    "second": [
+                        "item": "MGQ3MDAyZD",
+                        "attribute": "trailing",
+                    ],
+                    "constant": -20,
+                    "relation": "="
+                ],
+                [
+                    "first": [
+                        "item": "testLabel",
+                        "attribute": "height",
+                    ],
+                    "constant": 60,
+                    "relation": "="
+                ]
             ]
         ]
     ],

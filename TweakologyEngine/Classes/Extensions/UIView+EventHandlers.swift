@@ -11,7 +11,7 @@ private var eventHandlersKey: UInt8 = 1
 
 extension UIView {
 
-    internal var eventHandlers: [String] {
+    var eventHandlers: [String] {
         get {
             return objc_getAssociatedObject(self, &eventHandlersKey) as? [String] ?? []
         }
