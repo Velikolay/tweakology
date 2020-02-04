@@ -46,6 +46,10 @@ extension UIView: StaticMappable {
         if !subviews.isEmpty {
             subviews >>> map["subviews"]
         }
+
+        if let uicontrol = self as? UIControl {
+            uicontrol.eventHandlers >>> map["properties.eventHandlers"]
+        }
     }
 
     private func applyMappingOverride(view: UIView, map: Map) {

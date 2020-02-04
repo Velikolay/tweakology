@@ -20,8 +20,8 @@ struct AttributeExpression {
     var expression: String
     var valueType: AttributeType
     var defaultValue: Any
-    
-    public init(attributeName: String, expression: String, valueType: AttributeType, defaultValue: Any? = nil) {
+
+    public init(attributeName: String, expression: String, valueType: AttributeType = AttributeType.string, defaultValue: Any? = nil) {
         self.attributeName = attributeName
         self.expression = expression
         self.valueType = valueType

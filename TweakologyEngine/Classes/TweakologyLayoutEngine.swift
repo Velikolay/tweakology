@@ -74,7 +74,7 @@ enum EngineMode {
 
     private func handleActionInsert(_ actionConfig: [String: Any]) {
         if let action = ActionDTO(JSON: actionConfig)?.toAction(actionFactory: ActionFactory.sharedInstance),
-            self.actionIndex[action.getId()] != nil {
+            self.actionIndex[action.getId()] == nil {
             self.actionIndex[action.getId()] = action
         }
     }
@@ -87,7 +87,7 @@ enum EngineMode {
 
     private func handleEventHandlerInsert(_ eventHandlerConfig: [String: Any]) {
         if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(actionIndex: self.actionIndex),
-            self.eventHandlerIndex[eventHandler.getId()] != nil {
+            self.eventHandlerIndex[eventHandler.getId()] == nil {
             self.eventHandlerIndex[eventHandler.getId()] = eventHandler
         }
     }

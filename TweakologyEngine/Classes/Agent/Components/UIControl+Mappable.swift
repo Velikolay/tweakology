@@ -15,7 +15,6 @@ extension UIControl.Event: StaticMappable {
     
     public func mapping(map: Map) {
         String(describing: self) >>> map["name"]
-        
         self.rawValue >>> map["value"]
     }
 }

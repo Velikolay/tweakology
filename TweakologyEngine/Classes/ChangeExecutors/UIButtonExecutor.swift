@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 10.0, *)
-class UIButtonExecutor: UIViewExecutor {
+class UIButtonExecutor: UIControlExecutor {
     override func execute(_ config: [String : Any], view: UIView) -> Bool {
         if let uibutton = view as? UIButton {
             super.execute(config, view: view)
