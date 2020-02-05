@@ -8,10 +8,10 @@
 import Foundation
 
 @available(iOS 10.0, *)
-class UIViewExecutor: ChangeExecutorProtocol {
-    let context: ChangeExecutorContext
+class UIViewExecutor: NSObject, ChangeExecutorProtocol {
+    let context: EngineContext
 
-    init(_ context: ChangeExecutorContext) {
+    init(_ context: EngineContext) {
         self.context = context
     }
 
@@ -150,7 +150,6 @@ class UIViewExecutor: ChangeExecutorProtocol {
     private func setLayer(_ layerConfig: [String: Any], view: UIView) {
         let layer = view.layer
         for (key, val) in layerConfig {
-            let val = self.resolve(value: val)
             if let valStr = val as? String {
                 if (layer.value(forKey: key) as? UIColor) != nil {
                     if let color = toUIColor(colorValue: valStr) {
@@ -171,27 +170,5 @@ class UIViewExecutor: ChangeExecutorProtocol {
                 layer.setValue(valBool, forKey: key)
             }
         }
-    }
-
-    private func resolve(value: Any?) -> Any? {
-        if let value = value {
-            return self.resolve(value: value)
-        }
-        return value
-    }
-
-    private func resolve(value: Any) -> Any {
-        if let str = value as? String {
-            return self.stringToAttributeValue(str: str)
-        }
-        return value
-    }
-
-    private func stringToAttributeValue(str: String) -> Any {
-        let pattern = "^\\s*\\{\\{\\s*([a-zA-Z0-9._-]+)\\s*\\}\\}\\s*$"
-        guard let regex = try? NSRegularExpression(pattern: pattern) else { return str }
-        guard let match = regex.firstMatch(in: str, options: [], range: NSRange(str.startIndex..., in: str)) else { return str }
-        let attributeName = String(str[Range(match.range(at: 1), in: str)!])
-        return InMemoryAttributeStore.sharedInstance.get(key: attributeName) ?? str
     }
 }

@@ -49,7 +49,7 @@ extension UIView {
         if view.uid == nil, let generatedUid = view.generateUID() {
             view.uid = UIViewIdentifier(value: generatedUid, kind: .generated)
             if #available(iOS 10.0, *) {
-                TweakologyLayoutEngine.sharedInstance.viewIndex[view.uid!.value] = view
+                TweakologyLayoutEngine.sharedInstance.context.viewIndex[view.uid!.value] = view
             }
         }
         //        view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in

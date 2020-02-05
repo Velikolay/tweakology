@@ -23,9 +23,9 @@ class EventHandlerDTO: Mappable {
         actions <- map["actions"]
     }
     
-    func toEventHandler(actionIndex: [String: Action]) -> EventHandler? {
+    func toEventHandler(context: EngineContext) -> EventHandler? {
         if self.id != nil, self.events != nil, self.actions != nil {
-            return EventHandler(id: self.id, events: self.events, actions: self.actions, actionIndex: actionIndex)
+            return EventHandler(id: self.id, events: self.events, actions: self.actions, context: context)
         }
         return nil
     }

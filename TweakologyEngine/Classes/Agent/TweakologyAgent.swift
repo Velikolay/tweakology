@@ -55,10 +55,10 @@ import GCDWebServer
             DispatchQueue.main.async {
                 let response = GCDWebServerDataResponse(jsonObject: [
                     "attributes": InMemoryAttributeStore.sharedInstance.toJSON(),
-                    "actions": TweakologyLayoutEngine.sharedInstance.actionIndex.mapValues({ (action) -> [String: Any] in
+                    "actions": self.engine.context.actionIndex.mapValues({ (action) -> [String: Any] in
                         action.toDTO().toJSON()
                     }),
-                    "eventHandlers": TweakologyLayoutEngine.sharedInstance.eventHandlerIndex.mapValues({ (eventHandler) -> [String: Any] in
+                    "eventHandlers": self.engine.context.eventHandlerIndex.mapValues({ (eventHandler) -> [String: Any] in
                         eventHandler.toDTO().toJSON()
                     })
                 ])
@@ -130,7 +130,7 @@ import GCDWebServer
                     let params = request.path.split(separator: "/")
                     let viewId = String(params.last!)
                     var imageData: Data?
-                    if let view = self.engine.viewIndex[viewId] {
+                    if let view = self.engine.context.viewIndex[viewId] {
                         let start = DispatchTime.now() // <<<<<<<<<< Start time
                         view.nonRecursiveRender()
                         imageData = view.renderedImage.pngData()

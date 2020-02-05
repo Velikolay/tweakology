@@ -12,13 +12,13 @@ class EventHandler: EventHandlerProtocol {
     private var id: String
     private var events: [String]
     private var actions: [String]
-    private var actionIndex: [String: Action]
+    private var context: EngineContext
 
-    init(id: String, events: [String], actions: [String], actionIndex: [String: Action]) {
+    init(id: String, events: [String], actions: [String], context: EngineContext) {
         self.id = id
         self.events = events
         self.actions = actions
-        self.actionIndex = actionIndex
+        self.context = context
     }
 
     func getId() -> String {
@@ -28,7 +28,7 @@ class EventHandler: EventHandlerProtocol {
     func handle(event: String) {
         if self.events.index(of: event) != nil {
             for actionId in self.actions {
-                self.actionIndex[actionId]?.execute()
+                self.context.actionIndex[actionId]?.execute()
             }
         }
     }

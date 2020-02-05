@@ -15,14 +15,25 @@ enum EngineMode {
 }
 
 @available(iOS 10.0, *)
+class EngineContext {
+    var viewIndex: [String: UIView]
+    var eventHandlerIndex: [String: EventHandler]
+    var actionIndex: [String: Action]
+    let mode: EngineMode
+
+    init(mode: EngineMode) {
+        self.viewIndex = [:]
+        self.actionIndex = [:]
+        self.eventHandlerIndex = [:]
+        self.mode = mode
+    }
+}
+
+@available(iOS 10.0, *)
 @objc public class TweakologyLayoutEngine: NSObject {
     public static let sharedInstance = TweakologyLayoutEngine()
 
-    var viewIndex: ViewIndex
-    var actionIndex: [String: Action]
-    var eventHandlerIndex: [String: EventHandler]
-
-    private var mode: EngineMode
+    let context: EngineContext
     private let attributeStore: AttributeStore
     private let changeExecutor: ChangeExecutor
 
@@ -31,20 +42,8 @@ enum EngineMode {
             viewClass.swizzleDidAddSubview()
         }
 
-        self.viewIndex = [:]
-        self.actionIndex = [:]
-        self.eventHandlerIndex = [:]
-
-        self.mode = EngineMode.development
-        
-        self.changeExecutor = ChangeExecutor(
-            ChangeExecutorContext(
-                viewIndex: viewIndex,
-                eventHandlerIndex: eventHandlerIndex,
-                actionIndex: actionIndex,
-                mode: mode
-            )
-        )
+        self.context = EngineContext(mode: EngineMode.development)
+        self.changeExecutor = ChangeExecutor(self.context)
         self.attributeStore = InMemoryAttributeStore.sharedInstance
     }
 
@@ -74,33 +73,33 @@ enum EngineMode {
 
     private func handleActionInsert(_ actionConfig: [String: Any]) {
         if let action = ActionDTO(JSON: actionConfig)?.toAction(actionFactory: ActionFactory.sharedInstance),
-            self.actionIndex[action.getId()] == nil {
-            self.actionIndex[action.getId()] = action
+            self.context.actionIndex[action.getId()] == nil {
+            self.context.actionIndex[action.getId()] = action
         }
     }
 
     private func handleActionModify(_ actionConfig: [String: Any]) {
         if let action = ActionDTO(JSON: actionConfig)?.toAction(actionFactory: ActionFactory.sharedInstance) {
-            self.actionIndex[action.getId()] = action
+            self.context.actionIndex[action.getId()] = action
         }
     }
 
     private func handleEventHandlerInsert(_ eventHandlerConfig: [String: Any]) {
-        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(actionIndex: self.actionIndex),
-            self.eventHandlerIndex[eventHandler.getId()] == nil {
-            self.eventHandlerIndex[eventHandler.getId()] = eventHandler
+        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(context: self.context),
+            self.context.eventHandlerIndex[eventHandler.getId()] == nil {
+            self.context.eventHandlerIndex[eventHandler.getId()] = eventHandler
         }
     }
 
     private func handleEventHandlerModify(_ eventHandlerConfig: [String: Any]) {
-        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(actionIndex: self.actionIndex) {
-            self.eventHandlerIndex[eventHandler.getId()] = eventHandler
+        if let eventHandler = EventHandlerDTO(JSON: eventHandlerConfig)?.toEventHandler(context: self.context) {
+            self.context.eventHandlerIndex[eventHandler.getId()] = eventHandler
         }
     }
 
     private func handleUIViewInsert(_ viewConfig: [String: Any]) {
         if let superviewId = viewConfig["superviewId"] as? String,
-            let superview = self.viewIndex[superviewId],
+            let superview = self.context.viewIndex[superviewId],
             let viewId = viewConfig["id"] as? String,
             let viewIndex = viewConfig["index"] as? Int,
             let view = self.createUIViewObject(viewConfig: viewConfig) {
@@ -109,13 +108,13 @@ enum EngineMode {
             view.constraintsState = view.constraints.map { (constraint) -> NSLayoutConstraint in
                 constraint
             }
-            self.viewIndex[viewId] = view
+            self.context.viewIndex[viewId] = view
         }
     }
 
     private func handleUIViewModify(_ viewConfig: [String: Any]) {
         if let id = viewConfig["id"] as? String,
-            let view = self.viewIndex[id] {
+            let view = self.context.viewIndex[id] {
             self.changeExecutor.execute(viewConfig, view: view)
         }
     }

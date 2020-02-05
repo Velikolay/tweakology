@@ -9,6 +9,20 @@ import Foundation
 
 @available(iOS 10.0, *)
 class UIControlExecutor: UIViewExecutor {
+    private let selectorMap = [
+        UIControl.Event.touchUpInside.rawValue: #selector(handleTouchUpInside),
+        UIControl.Event.touchUpOutside.rawValue: #selector(handleTouchUpOutside),
+        UIControl.Event.touchDragInside.rawValue: #selector(handleTouchDragInside),
+        UIControl.Event.touchDragOutside.rawValue: #selector(handleTouchDragOutside),
+        UIControl.Event.touchDragEnter.rawValue: #selector(handleTouchDragEnter),
+        UIControl.Event.touchDragExit.rawValue: #selector(handleTouchDragExit),
+        UIControl.Event.touchDownRepeat.rawValue: #selector(handleTouchDownRepeat),
+        UIControl.Event.touchDown.rawValue: #selector(handleTouchDown),
+        UIControl.Event.touchCancel.rawValue: #selector(handleTouchCancel),
+        UIControl.Event.valueChanged.rawValue: #selector(handleValueChanged),
+        UIControl.Event.editingChanged.rawValue: #selector(handleEditingChanged),
+    ]
+    
     override func execute(_ config: [String : Any], view: UIView) -> Bool {
         if let uicontrol = view as? UIControl {
             super.execute(config, view: view)
@@ -31,15 +45,16 @@ class UIControlExecutor: UIViewExecutor {
         }
 
         for event in events {
-            if let eventName = event.name, let controlEvent = event.control {
-                manipFunc(self, Selector("handle\(eventName)"), controlEvent)
+            if let controlEvent = event.control,
+                let selector = self.selectorMap[controlEvent.rawValue] {
+                manipFunc(self, selector, controlEvent)
             }
         }
     }
 
     private func handleControlEvent(_ sender: UIControl, event: Event) {
         for id in sender.eventHandlers {
-            if let eventHandler = TweakologyLayoutEngine.sharedInstance.eventHandlerIndex[id],
+            if let eventHandler = self.context.eventHandlerIndex[id],
                 let eventName = event.name {
                 eventHandler.handle(event: eventName)
             }
