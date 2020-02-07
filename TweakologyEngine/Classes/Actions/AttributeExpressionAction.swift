@@ -34,11 +34,11 @@ class AttributeExpressionAction: Action {
         self.tweakologyLayoutEngine = tweakologyLayoutEngine
         self.attributeIndexer = attributeIndexer
     }
-    
+
     func getId() -> String {
         return id
     }
-    
+
     func execute() {
         if self.attributeStore.get(key: self.attributeExpression.attributeName) == nil {
             self.attributeStore.set(key: self.attributeExpression.attributeName, value: self.attributeExpression.defaultValue)
@@ -46,7 +46,7 @@ class AttributeExpressionAction: Action {
         if let strValue = expressionProcessor.process(expression: self.attributeExpression.expression, context: self.attributeStore.getAll()), let value = valueFrom(string: strValue, type: attributeExpression.valueType) {
             self.attributeStore.set(key: self.attributeExpression.attributeName, value: value)
         }
-        
+
         if self.rerender,
             let attributeIndexer = self.attributeIndexer,
             let tweakologyLayoutEngine = self.tweakologyLayoutEngine,
@@ -60,7 +60,7 @@ class AttributeExpressionAction: Action {
             tweakologyLayoutEngine.tweak(changeSeq: changeSeq)
         }
     }
-    
+
     func toDTO() -> ActionDTO {
         return ActionDTO(JSON: [
             "id": id,

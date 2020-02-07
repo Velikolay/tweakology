@@ -34,8 +34,9 @@ class EngineContext {
     public static let sharedInstance = TweakologyLayoutEngine()
 
     let context: EngineContext
-    private let attributeStore: AttributeStore
     private let changeExecutor: ChangeExecutor
+    private let attributeStore: AttributeStore
+    private let attributeIndexer: AttributeIndexer
 
     override init() {
         for viewClass in SwizzlingClassProvider.sharedInstance.uiViewClasses {
@@ -45,6 +46,7 @@ class EngineContext {
         self.context = EngineContext(mode: EngineMode.development)
         self.changeExecutor = ChangeExecutor(self.context)
         self.attributeStore = InMemoryAttributeStore.sharedInstance
+        self.attributeIndexer = AttributeIndexer.sharedInstance
     }
 
     public func tweak(changeSeq: [[String: Any]]) {
@@ -109,6 +111,7 @@ class EngineContext {
                 constraint
             }
             self.context.viewIndex[viewId] = view
+            self.attributeIndexer.index(change: viewConfig)
         }
     }
 
@@ -116,6 +119,7 @@ class EngineContext {
         if let id = viewConfig["id"] as? String,
             let view = self.context.viewIndex[id] {
             self.changeExecutor.execute(viewConfig, view: view)
+            self.attributeIndexer.index(change: viewConfig)
         }
     }
 

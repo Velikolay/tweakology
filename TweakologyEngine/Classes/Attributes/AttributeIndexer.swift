@@ -9,7 +9,6 @@ import Foundation
 
 class AttributeIndexer {
     static let sharedInstance = AttributeIndexer()
-    // attr: [view(id,properties,layer)]
     private var index: [String: [[String: Any]]]
     
     init() {
@@ -21,9 +20,9 @@ class AttributeIndexer {
     }
     
     func index(change: [String: Any]) {
-        if let viewConfig = change["view"] as? [String: Any], let viewId = viewConfig["id"] as? String {
+        if let viewId = change["id"] as? String {
             for changeSection in ["properties", "layer"] {
-                if let dict = viewConfig[changeSection] as? [String: Any] {
+                if let dict = change[changeSection] as? [String: Any] {
                     let idx = self.indexByAttribute(dict: dict)
                     for (attributeName, change) in idx {
                         self.mergeToIndex(attributeName: attributeName, viewId: viewId, changeSection: changeSection, change: change)
