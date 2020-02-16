@@ -23,12 +23,12 @@ class UIViewExecutor: NSObject, ChangeExecutorProtocol {
     }
 
     func execute(_ config: [String : Any], view: UIView) -> Bool {
-        if let frame = config["frame"] as? [String: Any] {
-            view.frame = CGRect(x: cgFloatFrom(frame["x"], view.frame.origin.x), y: cgFloatFrom(frame["y"], view.frame.origin.y), width: cgFloatFrom(frame["width"], view.frame.size.width), height: cgFloatFrom(frame["height"], view.frame.size.height))
-            setFrame(frame, view: view)
-        }
-
         if let properties = config["properties"] as? [String: Any] {
+            if let frame = properties["frame"] as? [String: Any] {
+                view.frame = CGRect(x: cgFloatFrom(frame["x"], view.frame.origin.x), y: cgFloatFrom(frame["y"], view.frame.origin.y), width: cgFloatFrom(frame["width"], view.frame.size.width), height: cgFloatFrom(frame["height"], view.frame.size.height))
+                setFrame(frame, view: view)
+            }
+
             if let backgroundColorConfig = properties["backgroundColor"] as? [String: Any],
                 let uicolor = toUIColor(colorValue: backgroundColorConfig["hexValue"] as! String)?.withAlphaComponent(backgroundColorConfig["alpha"] as! CGFloat) {
                 view.backgroundColor = uicolor

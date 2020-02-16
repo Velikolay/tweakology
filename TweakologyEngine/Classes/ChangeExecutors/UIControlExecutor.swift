@@ -27,10 +27,12 @@ class UIControlExecutor: UIViewExecutor {
         if let uicontrol = view as? UIControl {
             super.execute(config, view: view)
 
-            if let eventHandlers = config["eventHandlers"] as? [String] {
-                updateTargets(manipFunc: uicontrol.removeTarget(_:action:for:), eventHandlers: uicontrol.eventHandlers)
-                updateTargets(manipFunc: uicontrol.addTarget(_:action:for:), eventHandlers: eventHandlers)
-                uicontrol.eventHandlers = eventHandlers
+            if let properties = config["properties"] as? [String: Any] {
+                if let eventHandlers = properties["eventHandlers"] as? [String] {
+                    updateTargets(manipFunc: uicontrol.removeTarget(_:action:for:), eventHandlers: uicontrol.eventHandlers)
+                    updateTargets(manipFunc: uicontrol.addTarget(_:action:for:), eventHandlers: eventHandlers)
+                    uicontrol.eventHandlers = eventHandlers
+                }
             }
             return true
         }
